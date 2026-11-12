@@ -57,3 +57,8 @@ A seed initializes a NumPy PCG64 generator. Agent skills, participation and firm
 ## Traceability
 
 The monetary transfer primitive always receives explicit typed source and destination account IDs and an amount. Optional `transaction_trace: true` stores a per-transaction JSONL record for independent audit; by default only category totals and counts are recorded to avoid immense event files. Enabling tracing does not change the economic transition rule or the seeded RNG stream.
+
+
+## v0.2 development extension
+
+See [v02_capital_model.md](v02_capital_model.md) for the optional physical capital and investment transition, new economic accounts, model-marked equity, and revised goods balance. The equations above remain the reference semantics when `capital_enabled=false`.

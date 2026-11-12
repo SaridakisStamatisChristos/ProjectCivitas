@@ -1,0 +1,251 @@
+{
+  "capital_depreciation_only": {
+    "replications": 30,
+    "employment_rate": {
+      "mean": 0.1242976644903903,
+      "sample_sd": 0.004618325079967364,
+      "n": 30
+    },
+    "consumption_units": {
+      "mean": 1195.8,
+      "sample_sd": 24.419325303453043,
+      "n": 30
+    },
+    "production_units": {
+      "mean": 1208.8666666666666,
+      "sample_sd": 42.655584049157184,
+      "n": 30
+    },
+    "income_gini": {
+      "mean": 0.6170532809664759,
+      "sample_sd": 0.008330781109536419,
+      "n": 30
+    },
+    "disposable_income_gini": {
+      "mean": 0.6170532809664759,
+      "sample_sd": 0.008330781109536419,
+      "n": 30
+    },
+    "modeled_net_worth_gini": {
+      "mean": 0.6516150292062606,
+      "sample_sd": 0.005060145295930945,
+      "n": 30
+    },
+    "liquid_wealth_gini": {
+      "mean": 0.7575037579028465,
+      "sample_sd": 0.0035700386278891896,
+      "n": 30
+    },
+    "resource_stock": {
+      "mean": 445802.86666666664,
+      "sample_sd": 698.1358297506362,
+      "n": 30
+    },
+    "capital_stock_units": {
+      "mean": 828,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "capital_added_units": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "capital_depreciated_units": {
+      "mean": 42,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "capital_interfirm_purchases_cents": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "disposable_income_total_cents": {
+      "mean": 3092654.933333333,
+      "sample_sd": 75837.27586085488,
+      "n": 30
+    },
+    "money_discrepancy_cents": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "goods_discrepancy_units": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "capital_discrepancy_units": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    }
+  },
+  "capital_reinvestment": {
+    "replications": 30,
+    "employment_rate": {
+      "mean": 0.2043136941897289,
+      "sample_sd": 0.005111674903017963,
+      "n": 30
+    },
+    "consumption_units": {
+      "mean": 1904.3,
+      "sample_sd": 38.71482830950543,
+      "n": 30
+    },
+    "production_units": {
+      "mean": 1988,
+      "sample_sd": 47.461781357795374,
+      "n": 30
+    },
+    "income_gini": {
+      "mean": 0.5335477156819105,
+      "sample_sd": 0.00805858393641734,
+      "n": 30
+    },
+    "disposable_income_gini": {
+      "mean": 0.5335477156819105,
+      "sample_sd": 0.00805858393641734,
+      "n": 30
+    },
+    "modeled_net_worth_gini": {
+      "mean": 0.6798234983329416,
+      "sample_sd": 0.00477775334561068,
+      "n": 30
+    },
+    "liquid_wealth_gini": {
+      "mean": 0.7674580408677049,
+      "sample_sd": 0.004044774630998234,
+      "n": 30
+    },
+    "resource_stock": {
+      "mean": 414407.93333333335,
+      "sample_sd": 1028.1991264721833,
+      "n": 30
+    },
+    "capital_stock_units": {
+      "mean": 1597.3666666666666,
+      "sample_sd": 15.998886455503456,
+      "n": 30
+    },
+    "capital_added_units": {
+      "mean": 27.433333333333334,
+      "sample_sd": 17.46658550476888,
+      "n": 30
+    },
+    "capital_depreciated_units": {
+      "mean": 80.16666666666667,
+      "sample_sd": 1.2887666740841357,
+      "n": 30
+    },
+    "capital_interfirm_purchases_cents": {
+      "mean": 97129.93333333333,
+      "sample_sd": 62300.59989578521,
+      "n": 30
+    },
+    "disposable_income_total_cents": {
+      "mean": 4130113.9,
+      "sample_sd": 84468.77371257912,
+      "n": 30
+    },
+    "money_discrepancy_cents": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "goods_discrepancy_units": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "capital_discrepancy_units": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    }
+  },
+  "capital_concentrated_ownership": {
+    "replications": 30,
+    "employment_rate": {
+      "mean": 0.10709604130335446,
+      "sample_sd": 0.008351438191365978,
+      "n": 30
+    },
+    "consumption_units": {
+      "mean": 1058.2666666666667,
+      "sample_sd": 64.91582524944201,
+      "n": 30
+    },
+    "production_units": {
+      "mean": 1040.8,
+      "sample_sd": 80.94970767343013,
+      "n": 30
+    },
+    "income_gini": {
+      "mean": 0.7929802547893126,
+      "sample_sd": 0.01414368396860009,
+      "n": 30
+    },
+    "disposable_income_gini": {
+      "mean": 0.7929802547893126,
+      "sample_sd": 0.01414368396860009,
+      "n": 30
+    },
+    "modeled_net_worth_gini": {
+      "mean": 0.9200777085079278,
+      "sample_sd": 0.0009658135188770901,
+      "n": 30
+    },
+    "liquid_wealth_gini": {
+      "mean": 0.88832116325819,
+      "sample_sd": 0.0016596686780585169,
+      "n": 30
+    },
+    "resource_stock": {
+      "mean": 440203.93333333335,
+      "sample_sd": 1352.7714829406596,
+      "n": 30
+    },
+    "capital_stock_units": {
+      "mean": 1311.7333333333333,
+      "sample_sd": 22.64864056715612,
+      "n": 30
+    },
+    "capital_added_units": {
+      "mean": 1.3,
+      "sample_sd": 4.356129253014139,
+      "n": 30
+    },
+    "capital_depreciated_units": {
+      "mean": 66.5,
+      "sample_sd": 1.5256428831468234,
+      "n": 30
+    },
+    "capital_interfirm_purchases_cents": {
+      "mean": 4220.833333333333,
+      "sample_sd": 14285.822772301537,
+      "n": 30
+    },
+    "disposable_income_total_cents": {
+      "mean": 2213162.1666666665,
+      "sample_sd": 164984.23446083095,
+      "n": 30
+    },
+    "money_discrepancy_cents": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "goods_discrepancy_units": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    },
+    "capital_discrepancy_units": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 30
+    }
+  }
+}

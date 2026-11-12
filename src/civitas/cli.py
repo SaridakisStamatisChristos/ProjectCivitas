@@ -69,7 +69,12 @@ def main(argv: list[str] | None = None) -> int:
         for name, observations in grouped.items():
             summary[name] = {"replications": len(observations)}
             for metric in ("employment_rate", "consumption_units", "production_units",
-                           "income_gini", "liquid_wealth_gini", "resource_stock"):
+                           "income_gini", "disposable_income_gini",
+                           "modeled_net_worth_gini", "liquid_wealth_gini", "resource_stock",
+                           "capital_stock_units", "capital_added_units",
+                           "capital_depreciated_units", "capital_interfirm_purchases_cents",
+                           "disposable_income_total_cents", "money_discrepancy_cents",
+                           "goods_discrepancy_units", "capital_discrepancy_units"):
                 vals = [r[metric] for r in observations if r[metric] is not None]
                 summary[name][metric] = {
                     "mean": statistics.mean(vals) if vals else None,

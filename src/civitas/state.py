@@ -12,6 +12,7 @@ class State:
     skills: np.ndarray
     household_cash: np.ndarray
     firm_cash: np.ndarray
+    firm_capital: np.ndarray
     gov_cash: int
     inventory: np.ndarray
     prices: np.ndarray
@@ -24,6 +25,10 @@ class State:
     last_employment: np.ndarray
     cumulative_output: np.ndarray
     cumulative_consumption: np.ndarray
+    cumulative_capital_goods_converted: np.ndarray
+    initial_capital_total: int = 0
+    cumulative_capital_added: int = 0
+    cumulative_capital_depreciated: int = 0
     cumulative_resource_extracted: int = 0
     cumulative_resource_regenerated: int = 0
     # Journals store summarized transaction categories, not personal trajectories.
@@ -81,6 +86,15 @@ class State:
     def validate(self, expected_resources: int | None = None) -> None:
         if (self.household_cash < 0).any() or (self.firm_cash < 0).any() or self.gov_cash < 0:
             raise AssertionError("negative monetary account")
+        if (self.firm_capital < 0).any():
+            raise AssertionError("negative firm physical capital")
+        if (int(self.firm_capital.sum()) != self.initial_capital_total +
+                self.cumulative_capital_added - self.cumulative_capital_depreciated):
+            raise AssertionError("physical capital stock identity violated")
+        if (self.cumulative_capital_goods_converted < 0).any():
+            raise AssertionError("negative converted goods total")
+        if int(self.cumulative_capital_goods_converted.sum()) != self.cumulative_capital_added:
+            raise AssertionError("capital goods conversion identity violated")
         if (self.inventory < 0).any() or self.resource < 0:
             raise AssertionError("negative physical stock")
         if self.total_money() != self.initial_total_money:

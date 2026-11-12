@@ -1,4 +1,6 @@
-# CIVITAS v0.1 — Foundational Economy
+# CIVITAS v0.1 foundation + v0.2 experimental capital branch
+
+**Release status:** v0.1 remains the stable foundational baseline on `main`. The `feature/v0.2-capital-accounting` branch introduces an **experimental, not yet final** v0.2 development slice.
 
 **Computational Intelligence for Virtual Institutions, Technology, and Artificial Societies**
 
@@ -26,7 +28,7 @@ civitas suite --scenarios scenarios/*.json --seeds 7,11,13 --steps 24 --output r
 
 Without installation, after installing NumPy: `PYTHONPATH=src python -m civitas run --scenario scenarios/market.json --output results/market`.
 
-Outputs per run: `config.json` (exact scenario), `metrics.csv` (all periods), `journals.jsonl` (categorized transfers); with `transaction_trace: true`, `transactions.jsonl` (individual source/destination movements), `experiments.sqlite3` (experiment metadata), `metadata.json` (runtime, software and configuration digest), `checkpoint.npz` (exact agent and RNG state). Suite writes `summary.json`, with replicate means and sample standard deviations. `results/` is ignored by Git; preserve experiment directories separately when needed.
+Outputs per run: `config.json` (exact scenario), `metrics.csv` (all periods), `journals.jsonl` (categorized transfers), `experiments.sqlite3` (experiment metadata), `metadata.json` (runtime, software and configuration digest), `checkpoint.npz` (exact agent and RNG state). Suite writes `summary.json`, with replicate means and sample standard deviations. `results/` is ignored by Git; preserve experiment directories separately when needed.
 
 ## Explicit model boundaries
 
@@ -62,3 +64,15 @@ See [docs/mathematical_model.md](docs/mathematical_model.md), [docs/scientific_a
 Before publishing a model-derived result, record the scenario JSON, software version, seed(s), execution platform, Python/NumPy versions, steps, and complete output. Reproducing a saved run requires matching software and NumPy RNG behavior, not just matching a seed. See [docs/validation.md](docs/validation.md) for software verification versus external scientific validation.
 
 MIT License; see `LICENSE`.
+
+
+## Experimental v0.2 capital branch
+
+Activate the capital mechanism with `capital_enabled: true`, configure `initial_capital_units_per_firm`, `capital_output_per_unit`, `capital_depreciation_rate`, `capital_investment_budget_share`, and `capital_input_sector`. Produced goods in that sector can be bought by firms and converted into productive physical capital; cash trades remain ledger-conserved. Wage taxes are deducted in the new **net disposable income** metric, and firm ownership is reflected in a transparent, non-market-marked net-worth proxy. Legacy metrics have not been redefined.
+
+```bash
+civitas run --scenario scenarios/capital_reinvestment.json --steps 24 --seed 7 --output results/capital_demo
+civitas suite --scenarios scenarios/capital_depreciation_only.json scenarios/capital_reinvestment.json scenarios/capital_concentrated_ownership.json --seeds 1,2,3 --steps 24 --output results/capital_compare
+```
+
+See [v0.2 capital mechanics](docs/v02_capital_model.md), [experimental analysis](research/v02_capital_experiment.md), and [CHECKPOINT.md](CHECKPOINT.md). These scenarios are *not* empirically calibrated forecasts. Experimental development outputs are subject to review; do not use a dev branch as a stable release.

@@ -1,0 +1,173 @@
+{
+  "model_version": "0.2.0.dev0",
+  "periods_per_run": 24,
+  "population_per_run": 10000,
+  "paired_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "period_records_audited": 2160,
+  "accounting_discrepancies_found": 0,
+  "confidence_interval_type": "95% normal approximation across paired stochastic model seeds",
+  "confidence_interval_caveat": "This is Monte Carlo variability for the specified artificial model only; not empirical or structural uncertainty.",
+  "comparisons": {
+    "reinvestment_minus_no_investment": {
+      "employment_rate": {
+        "mean_paired_difference": 0.08001602969933859,
+        "sample_sd_of_differences": 0.004489536813518606,
+        "normal_approx_95pct_mc_interval": [
+          0.07840949910438857,
+          0.0816225602942886
+        ],
+        "n_pairs": 30
+      },
+      "production_units": {
+        "mean_paired_difference": 779.1333333333333,
+        "sample_sd_of_differences": 44.02564560871729,
+        "normal_approx_95pct_mc_interval": [
+          763.3792478740365,
+          794.8874187926301
+        ],
+        "n_pairs": 30
+      },
+      "consumption_units": {
+        "mean_paired_difference": 708.5,
+        "sample_sd_of_differences": 36.58221727410266,
+        "normal_approx_95pct_mc_interval": [
+          695.4094622177973,
+          721.5905377822027
+        ],
+        "n_pairs": 30
+      },
+      "disposable_income_gini": {
+        "mean_paired_difference": -0.08350556528456542,
+        "sample_sd_of_differences": 0.008819204324351225,
+        "normal_approx_95pct_mc_interval": [
+          -0.08666141903044026,
+          -0.08034971153869057
+        ],
+        "n_pairs": 30
+      },
+      "modeled_net_worth_gini": {
+        "mean_paired_difference": 0.028208469126681082,
+        "sample_sd_of_differences": 0.004255274056624431,
+        "normal_approx_95pct_mc_interval": [
+          0.026685766842276287,
+          0.029731171411085878
+        ],
+        "n_pairs": 30
+      },
+      "capital_stock_units": {
+        "mean_paired_difference": 769.3666666666667,
+        "sample_sd_of_differences": 15.998886455503456,
+        "normal_approx_95pct_mc_interval": [
+          763.6416438762302,
+          775.0916894571031
+        ],
+        "n_pairs": 30
+      },
+      "capital_added_units": {
+        "mean_paired_difference": 27.433333333333334,
+        "sample_sd_of_differences": 17.46658550476888,
+        "normal_approx_95pct_mc_interval": [
+          21.18311083415984,
+          33.683555832506826
+        ],
+        "n_pairs": 30
+      }
+    },
+    "concentration_minus_reinvestment": {
+      "employment_rate": {
+        "mean_paired_difference": -0.09721765288637443,
+        "sample_sd_of_differences": 0.008405185994373789,
+        "normal_approx_95pct_mc_interval": [
+          -0.10022535479797184,
+          -0.09420995097477702
+        ],
+        "n_pairs": 30
+      },
+      "production_units": {
+        "mean_paired_difference": -947.2,
+        "sample_sd_of_differences": 81.8212517710363,
+        "normal_approx_95pct_mc_interval": [
+          -976.4788209000691,
+          -917.921179099931
+        ],
+        "n_pairs": 30
+      },
+      "consumption_units": {
+        "mean_paired_difference": -846.0333333333333,
+        "sample_sd_of_differences": 58.15999533589445,
+        "normal_approx_95pct_mc_interval": [
+          -866.8452379440532,
+          -825.2214287226134
+        ],
+        "n_pairs": 30
+      },
+      "disposable_income_gini": {
+        "mean_paired_difference": 0.2594325391074021,
+        "sample_sd_of_differences": 0.01613417052437265,
+        "normal_approx_95pct_mc_interval": [
+          0.2536591064242138,
+          0.2652059717905904
+        ],
+        "n_pairs": 30
+      },
+      "modeled_net_worth_gini": {
+        "mean_paired_difference": 0.2402542101749862,
+        "sample_sd_of_differences": 0.004941288816650684,
+        "normal_approx_95pct_mc_interval": [
+          0.2384860251723529,
+          0.24202239517761948
+        ],
+        "n_pairs": 30
+      },
+      "capital_stock_units": {
+        "mean_paired_difference": -285.6333333333333,
+        "sample_sd_of_differences": 26.41248833847135,
+        "normal_approx_95pct_mc_interval": [
+          -295.08474722457146,
+          -276.1819194420952
+        ],
+        "n_pairs": 30
+      },
+      "capital_added_units": {
+        "mean_paired_difference": -26.133333333333333,
+        "sample_sd_of_differences": 17.889957370341712,
+        "normal_approx_95pct_mc_interval": [
+          -32.535054725006326,
+          -19.73161194166034
+        ],
+        "n_pairs": 30
+      }
+    }
+  }
+}
