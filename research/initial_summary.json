@@ -1,0 +1,134 @@
+{
+  "market": {
+    "replications": 3,
+    "employment_rate": {
+      "mean": 0.2204984284400752,
+      "sample_sd": 0.004473298457728571,
+      "n": 3
+    },
+    "consumption_units": {
+      "mean": 2077.6666666666665,
+      "sample_sd": 42.44211744639201,
+      "n": 3
+    },
+    "production_units": {
+      "mean": 2147.6666666666665,
+      "sample_sd": 29.670411748631555,
+      "n": 3
+    },
+    "income_gini": {
+      "mean": 0.5187760407394036,
+      "sample_sd": 0.0064905993248236685,
+      "n": 3
+    },
+    "liquid_wealth_gini": {
+      "mean": 0.7635153698577544,
+      "sample_sd": 0.005125248953672001,
+      "n": 3
+    },
+    "resource_stock": {
+      "mean": 408255,
+      "sample_sd": 1045.232510018704,
+      "n": 3
+    }
+  },
+  "mixed_redistributive": {
+    "replications": 3,
+    "employment_rate": {
+      "mean": 0.2257306028511347,
+      "sample_sd": 0.009335899271018208,
+      "n": 3
+    },
+    "consumption_units": {
+      "mean": 2156.3333333333335,
+      "sample_sd": 62.06716791777544,
+      "n": 3
+    },
+    "production_units": {
+      "mean": 2198.6666666666665,
+      "sample_sd": 94.05494847871287,
+      "n": 3
+    },
+    "income_gini": {
+      "mean": 0.4448440676852725,
+      "sample_sd": 0.012066706940567896,
+      "n": 3
+    },
+    "liquid_wealth_gini": {
+      "mean": 0.740066966833636,
+      "sample_sd": 0.00902816602215981,
+      "n": 3
+    },
+    "resource_stock": {
+      "mean": 396170,
+      "sample_sd": 862.3062101133216,
+      "n": 3
+    }
+  },
+  "automation_shock": {
+    "replications": 3,
+    "employment_rate": {
+      "mean": 0.11440398754228676,
+      "sample_sd": 0.0004134653330299534,
+      "n": 3
+    },
+    "consumption_units": {
+      "mean": 1670.3333333333333,
+      "sample_sd": 69.86653944008772,
+      "n": 3
+    },
+    "production_units": {
+      "mean": 1724,
+      "sample_sd": 16.46207763315433,
+      "n": 3
+    },
+    "income_gini": {
+      "mean": 0.6139293955016911,
+      "sample_sd": 0.011484849290144723,
+      "n": 3
+    },
+    "liquid_wealth_gini": {
+      "mean": 0.762164957932027,
+      "sample_sd": 0.005673802553027431,
+      "n": 3
+    },
+    "resource_stock": {
+      "mean": 415511.6666666667,
+      "sample_sd": 663.2920422659489,
+      "n": 3
+    }
+  },
+  "resource_scarcity": {
+    "replications": 3,
+    "employment_rate": {
+      "mean": 0.0,
+      "sample_sd": 0.0,
+      "n": 3
+    },
+    "consumption_units": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 3
+    },
+    "production_units": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 3
+    },
+    "income_gini": {
+      "mean": null,
+      "sample_sd": null,
+      "n": 0
+    },
+    "liquid_wealth_gini": {
+      "mean": 0.5421216973503249,
+      "sample_sd": 0.010942555593305613,
+      "n": 3
+    },
+    "resource_stock": {
+      "mean": 0,
+      "sample_sd": 0.0,
+      "n": 3
+    }
+  }
+}

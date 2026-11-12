@@ -1,0 +1,44 @@
+{
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "benchmark_note": "wall-time observations in this invocation, not hardware-independent predictions",
+  "runs": [
+    {
+      "agents": 1000,
+      "periods": 3,
+      "seed": 7,
+      "wall_seconds": 0.00818685399997321,
+      "state_array_bytes": 40224,
+      "final_accounting_discrepancies": {
+        "money_discrepancy_cents": 0,
+        "resource_discrepancy_units": 0,
+        "goods_discrepancy_units": 0
+      }
+    },
+    {
+      "agents": 10000,
+      "periods": 3,
+      "seed": 7,
+      "wall_seconds": 0.06548382599999059,
+      "state_array_bytes": 399864,
+      "final_accounting_discrepancies": {
+        "money_discrepancy_cents": 0,
+        "resource_discrepancy_units": 0,
+        "goods_discrepancy_units": 0
+      }
+    },
+    {
+      "agents": 100000,
+      "periods": 3,
+      "seed": 7,
+      "wall_seconds": 0.5021047440000075,
+      "state_array_bytes": 3996264,
+      "final_accounting_discrepancies": {
+        "money_discrepancy_cents": 0,
+        "resource_discrepancy_units": 0,
+        "goods_discrepancy_units": 0
+      }
+    }
+  ]
+}
