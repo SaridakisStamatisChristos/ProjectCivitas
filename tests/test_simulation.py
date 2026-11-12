@@ -166,3 +166,18 @@ def test_finite_prices_and_large_population_smoke():
     assert r["population"] == 10000
     assert r["money_discrepancy_cents"] == 0
     assert (sim.state.prices > 0).all()
+
+
+def test_optional_transaction_level_audit_and_saved_trace(tmp_path):
+    from civitas.persistence import save_run
+    c = config(transaction_trace=True, tax_rate=0.3)
+    sim = Simulation(c)
+    p = sim.step()
+    assert p.transactions
+    assert sum(e["cents"] for e in p.transactions if e["reason"] == "wage_tax") == p.metrics["government_tax_revenue_cents"]
+    assert all("source_id" in e and "destination_id" in e for e in p.transactions)
+    assert len(p.transactions) == sum(e["count"] for e in p.journal.values())
+    save_run(tmp_path, c, [p], seed=c.seed, elapsed_seconds=0)
+    lines = (tmp_path / "transactions.jsonl").read_text().splitlines()
+    assert len(lines) == len(p.transactions)
+    assert json.loads(lines[0])["step"] == 1

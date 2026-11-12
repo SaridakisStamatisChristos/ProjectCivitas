@@ -30,3 +30,5 @@ All firm and household cash use exact signed 64-bit cents; state transitions rej
 ## Scaling contract
 
 The state has `O(N × sectors + households + firms)` storage. Each period sorts candidate skills for each hiring firm and loops over household demands; this is a transparent CPU reference implementation, **not yet optimized for 1,000,000 agents**. All scheduling is sequential, so there is no claim of multithread reproducibility. Efficient vectorization or Numba must preserve accounting and deterministic event semantics or document any difference.
+
+Optional `transaction_trace: true` in a scenario persists each source/destination account and integer-cent amount as `transactions.jsonl`, at the cost of significant output size for large populations. When disabled, the aggregated journal remains available.

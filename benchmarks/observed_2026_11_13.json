@@ -8,7 +8,7 @@
       "agents": 1000,
       "periods": 3,
       "seed": 7,
-      "wall_seconds": 0.00818685399997321,
+      "wall_seconds": 0.0105534470000066,
       "state_array_bytes": 40224,
       "final_accounting_discrepancies": {
         "money_discrepancy_cents": 0,
@@ -20,7 +20,7 @@
       "agents": 10000,
       "periods": 3,
       "seed": 7,
-      "wall_seconds": 0.06548382599999059,
+      "wall_seconds": 0.0749805649999189,
       "state_array_bytes": 399864,
       "final_accounting_discrepancies": {
         "money_discrepancy_cents": 0,
@@ -32,7 +32,7 @@
       "agents": 100000,
       "periods": 3,
       "seed": 7,
-      "wall_seconds": 0.5021047440000075,
+      "wall_seconds": 0.551144579000038,
       "state_array_bytes": 3996264,
       "final_accounting_discrepancies": {
         "money_discrepancy_cents": 0,

@@ -21,6 +21,7 @@
   "output_inventory_buffer": 0.05,
   "price_adjustment": 0.02,
   "price_floor_cents": 1,
+  "transaction_trace": false,
   "automation_base": 0.0,
   "automation_shock_step": 12,
   "automation_shock_increase": 0.55,

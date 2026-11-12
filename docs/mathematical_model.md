@@ -53,3 +53,7 @@ Employment rate is `currently_hired_agents / initial_participants`, undefined fo
 ## Stochastic control and conflict resolution
 
 A seed initializes a NumPy PCG64 generator. Agent skills, participation and firm owners are drawn once. For each sector and period, demand Bernoulli draws, preferred-seller draws and a randomized household purchasing order are generated in fixed sizes. Firm priority rotates deterministically by period index; worker selection uses stable sorting with agent-ID ties; scarce resource residuals use the same rotating priority. Under an identical engine, config, runtime-compatible NumPy version and serialized RNG state, replay is exact. Matching seeds across scenarios helps initialize shared populations but does not guarantee perfectly coupled stochastic decisions once their paths diverge.
+
+## Traceability
+
+The monetary transfer primitive always receives explicit typed source and destination account IDs and an amount. Optional `transaction_trace: true` stores a per-transaction JSONL record for independent audit; by default only category totals and counts are recorded to avoid immense event files. Enabling tracing does not change the economic transition rule or the seeded RNG stream.

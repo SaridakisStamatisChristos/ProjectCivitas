@@ -17,3 +17,5 @@ No empirical calibration, real historical backtest, external replication, sensit
 ## Evidence protocol
 
 For every claim retain the exact scenario, `metadata.json`, `metrics.csv`, `journals.jsonl`, and checkpoint; record full command, environment, source revision, Python/NumPy versions, and tests. Data outputs and README claims must be updated only after execution. Use replicated experiments with multiple seeds for stochastic comparisons; descriptive mean/sample SD are **not** confidence bounds or causal estimates.
+
+Per-transaction source/destination tracing is optional and test-covered. It is off by default; the grouped journal proves only categorized event totals, not per-account history. To retain granular audit logs, set `transaction_trace: true` in the scenario file.

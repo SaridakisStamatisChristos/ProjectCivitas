@@ -19,6 +19,7 @@ from civitas.state import State
 class Period:
     metrics: dict[str, Any]
     journal: dict[str, dict[str, int]]
+    transactions: list[dict]
 
 
 class Simulation:
@@ -30,6 +31,7 @@ class Simulation:
         self.state = state if state is not None else self._initialize()
         if rng_state is not None:
             self.rng.bit_generator.state = rng_state
+        self.state.trace_enabled = scenario.transaction_trace
         self.state.validate()
 
     def _initialize(self) -> State:
@@ -79,6 +81,7 @@ class Simulation:
         nf = ns * nfirm_sector
         H = len(s.household_cash)
         s.journal = {}
+        s.transaction_events = []
         wages = np.zeros(H, dtype=np.int64)
         household_income = np.zeros(H, dtype=np.int64)
         sale_revenues = np.zeros(nf, dtype=np.int64)
@@ -284,7 +287,8 @@ class Simulation:
             "resource_discrepancy_units": s.initial_resource + s.cumulative_resource_regenerated - s.cumulative_resource_extracted - s.resource,
             "goods_discrepancy_units": int(np.abs(expected_stock - observed_stock).sum()),
         }
-        return Period(metrics, {key: dict(value) for key, value in s.journal.items()})
+        return Period(metrics, {key: dict(value) for key, value in s.journal.items()},
+                      list(s.transaction_events))
 
     def run(self, steps: int | None = None) -> list[Period]:
         count = self.scenario.steps if steps is None else steps

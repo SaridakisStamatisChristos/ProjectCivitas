@@ -29,9 +29,9 @@ PYTHONPATH=src python -m civitas suite --scenarios scenarios/market.json scenari
 ## Executed reference CPU benchmarks
 
 ```
-- 1,000 agents × 3 steps: 0.0082 s; NumPy state arrays 40,224 bytes; all recorded discrepancies zero
-- 10,000 agents × 3 steps: 0.0655 s; NumPy state arrays 399,864 bytes; all recorded discrepancies zero
-- 100,000 agents × 3 steps: 0.5021 s; NumPy state arrays 3,996,264 bytes; all recorded discrepancies zero
+- 1,000 agents × 3 steps: 0.0106 s; NumPy state arrays 40,224 bytes; all recorded discrepancies zero
+- 10,000 agents × 3 steps: 0.0750 s; NumPy state arrays 399,864 bytes; all recorded discrepancies zero
+- 100,000 agents × 3 steps: 0.5511 s; NumPy state arrays 3,996,264 bytes; all recorded discrepancies zero
 ```
 
 Measurements were collected with one invocation of `benchmarks/benchmark.py` using seed 7 and three periods per population; no warm-up, GPU, multiprocessing or memory profiler. `state_array_bytes` accounts only for explicitly stored NumPy state arrays, not Python runtime or total process RSS. These isolated times should not be used to claim industrial scale or high-fidelity million-agent performance.

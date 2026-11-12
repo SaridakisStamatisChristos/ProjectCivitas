@@ -49,6 +49,7 @@ class Scenario:
     output_inventory_buffer: float = 0.05
     price_adjustment: float = 0.02
     price_floor_cents: int = 1
+    transaction_trace: bool = False
     automation_base: float = 0.0
     automation_shock_step: int | None = None
     automation_shock_increase: float = 0.0
@@ -101,6 +102,8 @@ class Scenario:
             value = getattr(self, name)
             if not isinstance(value, (float, int)) or not 0 <= value <= 1:
                 raise ValueError(f"{name} must be in [0,1]")
+        if type(self.transaction_trace) is not bool:
+            raise ValueError("transaction_trace must be boolean")
         if self.initial_resource > self.resource_capacity:
             raise ValueError("initial_resource cannot exceed resource_capacity")
         if self.automation_base + self.automation_shock_increase > 1:

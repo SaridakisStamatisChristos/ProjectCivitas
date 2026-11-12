@@ -3,7 +3,7 @@
 - **Verified local software version:** 0.1.0, 2026-11-13.
 - **Current objective:** v0.1 foundational economic simulation, core-code-first.
 - **Verified implementation:** `src/civitas/model.py`, `state.py`, `engine.py`, `metrics.py`, `persistence.py`, `cli.py`; `scenarios/*.json`; automated tests; reproducible CLI/NPZ/CSV/JSONL/SQLite; docs and benchmark runner.
-- **Test evidence:** `PYTHONPATH=src pytest -q` reported 14 passed on Python 3.13.5, NumPy 2.3.5, pytest 9.0.2 (local container). Includes checkpoint equivalence, financial and stock conservation, zero-population case, boundary checks, 10,000-agent smoke, and CLI integration.
+- **Test evidence:** `PYTHONPATH=src pytest -q` reported 15 passed on Python 3.13.5, NumPy 2.3.5, pytest 9.0.2 (local container). Includes checkpoint equivalence, financial and stock conservation, zero-population case, boundary checks, 10,000-agent smoke, and CLI integration.
 - **Executed experiments:** 4 scenario types × 3 seeds × 24 abstract periods = 288 period records; the 288 records had zero monetary, physical resource, and finished-product accounting discrepancies. See `research/initial_experiment.md` and `research/initial_summary.json`.
 - **Performance evidence:** `benchmarks/observed_2026_11_13.json`, three periods each at 1,000, 10,000, and 100,000 agents, measured and environment disclosed. No 1m-agent claim.
 - **Source of truth:** this repository and checkpoint; local full source and raw experiment archives may also be provided separately.

@@ -28,6 +28,8 @@ class State:
     cumulative_resource_regenerated: int = 0
     # Journals store summarized transaction categories, not personal trajectories.
     journal: dict[str, dict[str, int]] = field(default_factory=dict)
+    trace_enabled: bool = False
+    transaction_events: list[dict] = field(default_factory=list)
 
     def total_money(self) -> int:
         return int(self.household_cash.sum()) + int(self.firm_cash.sum()) + int(self.gov_cash)
@@ -71,6 +73,10 @@ class State:
         v = self.journal.setdefault(reason, {"cents": 0, "count": 0})
         v["cents"] += amount
         v["count"] += 1
+        if self.trace_enabled:
+            self.transaction_events.append({"source": source, "source_id": source_id,
+                                            "destination": dest, "destination_id": dest_id,
+                                            "cents": amount, "reason": reason})
 
     def validate(self, expected_resources: int | None = None) -> None:
         if (self.household_cash < 0).any() or (self.firm_cash < 0).any() or self.gov_cash < 0:

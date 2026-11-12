@@ -26,7 +26,7 @@ civitas suite --scenarios scenarios/*.json --seeds 7,11,13 --steps 24 --output r
 
 Without installation, after installing NumPy: `PYTHONPATH=src python -m civitas run --scenario scenarios/market.json --output results/market`.
 
-Outputs per run: `config.json` (exact scenario), `metrics.csv` (all periods), `journals.jsonl` (categorized transfers), `experiments.sqlite3` (experiment metadata), `metadata.json` (runtime, software and configuration digest), `checkpoint.npz` (exact agent and RNG state). Suite writes `summary.json`, with replicate means and sample standard deviations. `results/` is ignored by Git; preserve experiment directories separately when needed.
+Outputs per run: `config.json` (exact scenario), `metrics.csv` (all periods), `journals.jsonl` (categorized transfers); with `transaction_trace: true`, `transactions.jsonl` (individual source/destination movements), `experiments.sqlite3` (experiment metadata), `metadata.json` (runtime, software and configuration digest), `checkpoint.npz` (exact agent and RNG state). Suite writes `summary.json`, with replicate means and sample standard deviations. `results/` is ignored by Git; preserve experiment directories separately when needed.
 
 ## Explicit model boundaries
 
