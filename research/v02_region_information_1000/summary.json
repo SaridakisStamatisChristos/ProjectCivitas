@@ -1,0 +1,1195 @@
+{
+  "means": {
+    "modulo|full|open": {
+      "production_per_person": {
+        "mean": 0.13346666666666668,
+        "n": 30,
+        "sample_sd": 0.011993484821390298,
+        "approximate_95pct_seed_interval": [
+          0.12917485324254943,
+          0.13775848009078392
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.14,
+        "n": 30,
+        "sample_sd": 0.011085871716925912,
+        "approximate_95pct_seed_interval": [
+          0.13603297175414036,
+          0.14396702824585966
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.14528972290346243,
+        "n": 30,
+        "sample_sd": 0.013573530882850545,
+        "approximate_95pct_seed_interval": [
+          0.14043249725776932,
+          0.15014694854915553
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.6884087048041676,
+        "n": 30,
+        "sample_sd": 0.03084090088861778,
+        "approximate_95pct_seed_interval": [
+          0.6773724301586559,
+          0.6994449794496793
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0,
+        "n": 30,
+        "sample_sd": 0.0,
+        "approximate_95pct_seed_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0009333333333333333,
+        "n": 30,
+        "sample_sd": 0.0012298957997167563,
+        "approximate_95pct_seed_interval": [
+          0.0004932207737146609,
+          0.0013734458929520058
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.32256666666666667,
+        "n": 30,
+        "sample_sd": 0.016168686921998625,
+        "approximate_95pct_seed_interval": [
+          0.3167807763590873,
+          0.32835255697424603
+        ]
+      }
+    },
+    "modulo|full|local": {
+      "production_per_person": {
+        "mean": 0.1104,
+        "n": 30,
+        "sample_sd": 0.012223775589202072,
+        "approximate_95pct_seed_interval": [
+          0.10602577808298318,
+          0.11477422191701682
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.11306666666666666,
+        "n": 30,
+        "sample_sd": 0.008630073054125336,
+        "approximate_95pct_seed_interval": [
+          0.10997843468602085,
+          0.11615489864731247
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.1250371069615749,
+        "n": 30,
+        "sample_sd": 0.013808948816028559,
+        "approximate_95pct_seed_interval": [
+          0.12009563809041915,
+          0.12997857583273068
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.7349674986495421,
+        "n": 30,
+        "sample_sd": 0.02865725018431698,
+        "approximate_95pct_seed_interval": [
+          0.7247126333730227,
+          0.7452223639260616
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0,
+        "n": 30,
+        "sample_sd": 0.0,
+        "approximate_95pct_seed_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.00043333333333333337,
+        "n": 30,
+        "sample_sd": 0.0007738543627276671,
+        "approximate_95pct_seed_interval": [
+          0.00015641310608271092,
+          0.0007102535605839559
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.35,
+        "n": 30,
+        "sample_sd": 0.014105513717740983,
+        "approximate_95pct_seed_interval": [
+          0.3449524067417085,
+          0.35504759325829144
+        ]
+      }
+    },
+    "modulo|two_quotes|open": {
+      "production_per_person": {
+        "mean": 0.12703333333333333,
+        "n": 30,
+        "sample_sd": 0.011439445770675688,
+        "approximate_95pct_seed_interval": [
+          0.12293978023728198,
+          0.1311268864293847
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.12636666666666668,
+        "n": 30,
+        "sample_sd": 0.008426081567057885,
+        "approximate_95pct_seed_interval": [
+          0.12335143210217138,
+          0.129381901231162
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.14603902421549933,
+        "n": 30,
+        "sample_sd": 0.01377396964583098,
+        "approximate_95pct_seed_interval": [
+          0.1411100724796428,
+          0.15096797595135586
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.7107462344734568,
+        "n": 30,
+        "sample_sd": 0.026615618699859143,
+        "approximate_95pct_seed_interval": [
+          0.7012219576407955,
+          0.720270511306118
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.006066666666666666,
+        "n": 30,
+        "sample_sd": 0.0030954174509106682,
+        "approximate_95pct_seed_interval": [
+          0.004958985757664177,
+          0.007174347575669156
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0032333333333333333,
+        "n": 30,
+        "sample_sd": 0.002207875142230231,
+        "approximate_95pct_seed_interval": [
+          0.002443255360557776,
+          0.004023411306108891
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.33390000000000003,
+        "n": 30,
+        "sample_sd": 0.014145426944715236,
+        "approximate_95pct_seed_interval": [
+          0.32883812397686757,
+          0.3389618760231325
+        ]
+      }
+    },
+    "modulo|two_quotes|local": {
+      "production_per_person": {
+        "mean": 0.12786666666666666,
+        "n": 30,
+        "sample_sd": 0.010311471125964965,
+        "approximate_95pct_seed_interval": [
+          0.12417675411332058,
+          0.13155657922001274
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.12693333333333334,
+        "n": 30,
+        "sample_sd": 0.008241749618958903,
+        "approximate_95pct_seed_interval": [
+          0.12398406110931925,
+          0.12988260555734743
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.1478437925031986,
+        "n": 30,
+        "sample_sd": 0.011724200868836571,
+        "approximate_95pct_seed_interval": [
+          0.1436483411039374,
+          0.1520392439024598
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.7067889781885314,
+        "n": 30,
+        "sample_sd": 0.0241120968794033,
+        "approximate_95pct_seed_interval": [
+          0.6981605751337266,
+          0.7154173812433361
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0022333333333333333,
+        "n": 30,
+        "sample_sd": 0.0015013403972802927,
+        "approximate_95pct_seed_interval": [
+          0.0016960855719716664,
+          0.0027705810946950004
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0019333333333333333,
+        "n": 30,
+        "sample_sd": 0.001436790804568276,
+        "approximate_95pct_seed_interval": [
+          0.0014191843470690128,
+          0.002447482319597654
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.33463333333333334,
+        "n": 30,
+        "sample_sd": 0.013262556401344744,
+        "approximate_95pct_seed_interval": [
+          0.329887388476682,
+          0.3393792781899847
+        ]
+      }
+    },
+    "balanced_shuffle|full|open": {
+      "production_per_person": {
+        "mean": 0.13346666666666668,
+        "n": 30,
+        "sample_sd": 0.011993484821390298,
+        "approximate_95pct_seed_interval": [
+          0.12917485324254943,
+          0.13775848009078392
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.14,
+        "n": 30,
+        "sample_sd": 0.011085871716925912,
+        "approximate_95pct_seed_interval": [
+          0.13603297175414036,
+          0.14396702824585966
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.14528972290346243,
+        "n": 30,
+        "sample_sd": 0.013573530882850545,
+        "approximate_95pct_seed_interval": [
+          0.14043249725776932,
+          0.15014694854915553
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.6884087048041676,
+        "n": 30,
+        "sample_sd": 0.03084090088861778,
+        "approximate_95pct_seed_interval": [
+          0.6773724301586559,
+          0.6994449794496793
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0,
+        "n": 30,
+        "sample_sd": 0.0,
+        "approximate_95pct_seed_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0009333333333333333,
+        "n": 30,
+        "sample_sd": 0.0012298957997167563,
+        "approximate_95pct_seed_interval": [
+          0.0004932207737146609,
+          0.0013734458929520058
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.32256666666666667,
+        "n": 30,
+        "sample_sd": 0.016168686921998625,
+        "approximate_95pct_seed_interval": [
+          0.3167807763590873,
+          0.32835255697424603
+        ]
+      }
+    },
+    "balanced_shuffle|full|local": {
+      "production_per_person": {
+        "mean": 0.11083333333333334,
+        "n": 30,
+        "sample_sd": 0.013188509453656825,
+        "approximate_95pct_seed_interval": [
+          0.10611388583660986,
+          0.11555278083005682
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.11256666666666666,
+        "n": 30,
+        "sample_sd": 0.009772174901159444,
+        "approximate_95pct_seed_interval": [
+          0.10906973878888944,
+          0.11606359454444388
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.12485929597423748,
+        "n": 30,
+        "sample_sd": 0.014142250213249942,
+        "approximate_95pct_seed_interval": [
+          0.11979855672986037,
+          0.1299200352186146
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.7370392968614072,
+        "n": 30,
+        "sample_sd": 0.026320234465550308,
+        "approximate_95pct_seed_interval": [
+          0.7276207219194775,
+          0.746457871803337
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0,
+        "n": 30,
+        "sample_sd": 0.0,
+        "approximate_95pct_seed_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.00046666666666666666,
+        "n": 30,
+        "sample_sd": 0.0008603661343041526,
+        "approximate_95pct_seed_interval": [
+          0.00015878859954502288,
+          0.0007745447337883104
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.35046666666666665,
+        "n": 30,
+        "sample_sd": 0.015053315211293975,
+        "approximate_95pct_seed_interval": [
+          0.3450799069997786,
+          0.3558534263335547
+        ]
+      }
+    },
+    "balanced_shuffle|two_quotes|open": {
+      "production_per_person": {
+        "mean": 0.12703333333333333,
+        "n": 30,
+        "sample_sd": 0.011439445770675688,
+        "approximate_95pct_seed_interval": [
+          0.12293978023728198,
+          0.1311268864293847
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.12636666666666668,
+        "n": 30,
+        "sample_sd": 0.008426081567057885,
+        "approximate_95pct_seed_interval": [
+          0.12335143210217138,
+          0.129381901231162
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.14603902421549933,
+        "n": 30,
+        "sample_sd": 0.01377396964583098,
+        "approximate_95pct_seed_interval": [
+          0.1411100724796428,
+          0.15096797595135586
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.7107462344734568,
+        "n": 30,
+        "sample_sd": 0.026615618699859143,
+        "approximate_95pct_seed_interval": [
+          0.7012219576407955,
+          0.720270511306118
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.006066666666666666,
+        "n": 30,
+        "sample_sd": 0.0030954174509106682,
+        "approximate_95pct_seed_interval": [
+          0.004958985757664177,
+          0.007174347575669156
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0032333333333333333,
+        "n": 30,
+        "sample_sd": 0.002207875142230231,
+        "approximate_95pct_seed_interval": [
+          0.002443255360557776,
+          0.004023411306108891
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.33390000000000003,
+        "n": 30,
+        "sample_sd": 0.014145426944715236,
+        "approximate_95pct_seed_interval": [
+          0.32883812397686757,
+          0.3389618760231325
+        ]
+      }
+    },
+    "balanced_shuffle|two_quotes|local": {
+      "production_per_person": {
+        "mean": 0.1275,
+        "n": 30,
+        "sample_sd": 0.012813651125749202,
+        "approximate_95pct_seed_interval": [
+          0.12291469383315812,
+          0.1320853061668419
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.1276,
+        "n": 30,
+        "sample_sd": 0.008556505893380095,
+        "approximate_95pct_seed_interval": [
+          0.12453809368972961,
+          0.13066190631027036
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.14694608212677215,
+        "n": 30,
+        "sample_sd": 0.015208965310718253,
+        "approximate_95pct_seed_interval": [
+          0.1415036237871361,
+          0.1523885404664082
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.7079996210316578,
+        "n": 30,
+        "sample_sd": 0.027400119096512094,
+        "approximate_95pct_seed_interval": [
+          0.6981946143374325,
+          0.7178046277258832
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0032,
+        "n": 30,
+        "sample_sd": 0.0021399323224876965,
+        "approximate_95pct_seed_interval": [
+          0.002434235053020192,
+          0.003965764946979808
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0028,
+        "n": 30,
+        "sample_sd": 0.001972220873131048,
+        "approximate_95pct_seed_interval": [
+          0.002094249824410346,
+          0.003505750175589654
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.3331,
+        "n": 30,
+        "sample_sd": 0.01376990721928024,
+        "approximate_95pct_seed_interval": [
+          0.3281725019848147,
+          0.33802749801518533
+        ]
+      }
+    }
+  },
+  "paired_effects": {
+    "quotes_effect|modulo|open": {
+      "production_per_person": {
+        "mean": -0.0064333333333333334,
+        "n": 30,
+        "sample_sd": 0.01052643088261338,
+        "approximate_95pct_seed_interval": [
+          -0.01020016824769189,
+          -0.002666498418974776
+        ]
+      },
+      "consumption_per_person": {
+        "mean": -0.01363333333333333,
+        "n": 30,
+        "sample_sd": 0.008294091512817328,
+        "approximate_95pct_seed_interval": [
+          -0.0166013358635137,
+          -0.01066533080315296
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.000749301312036917,
+        "n": 30,
+        "sample_sd": 0.01192023729109234,
+        "approximate_95pct_seed_interval": [
+          -0.0035163008199915087,
+          0.005014903444065343
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.02233752966928916,
+        "n": 30,
+        "sample_sd": 0.02583727241250268,
+        "approximate_95pct_seed_interval": [
+          0.013091780478463183,
+          0.03158327886011514
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.006066666666666666,
+        "n": 30,
+        "sample_sd": 0.0030954174509106682,
+        "approximate_95pct_seed_interval": [
+          0.004958985757664177,
+          0.007174347575669156
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0023,
+        "n": 30,
+        "sample_sd": 0.0022916640543349793,
+        "approximate_95pct_seed_interval": [
+          0.001479938550101765,
+          0.003120061449898235
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.011333333333333338,
+        "n": 30,
+        "sample_sd": 0.008193072487266865,
+        "approximate_95pct_seed_interval": [
+          0.008401479997186672,
+          0.014265186669480004
+        ]
+      }
+    },
+    "quotes_effect|modulo|local": {
+      "production_per_person": {
+        "mean": 0.01746666666666667,
+        "n": 30,
+        "sample_sd": 0.009115100518988497,
+        "approximate_95pct_seed_interval": [
+          0.014204869836790998,
+          0.020728463496542338
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.013866666666666668,
+        "n": 30,
+        "sample_sd": 0.006724803975265536,
+        "approximate_95pct_seed_interval": [
+          0.011460226469725148,
+          0.016273106863608187
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.02280668554162369,
+        "n": 30,
+        "sample_sd": 0.009853677785096913,
+        "approximate_95pct_seed_interval": [
+          0.01928059223139741,
+          0.02633277885184997
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": -0.02817852046101077,
+        "n": 30,
+        "sample_sd": 0.017483697604404668,
+        "approximate_95pct_seed_interval": [
+          -0.03443498129781133,
+          -0.02192205962421021
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0022333333333333333,
+        "n": 30,
+        "sample_sd": 0.0015013403972802927,
+        "approximate_95pct_seed_interval": [
+          0.0016960855719716664,
+          0.0027705810946950004
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0015,
+        "n": 30,
+        "sample_sd": 0.0015920058915156973,
+        "approximate_95pct_seed_interval": [
+          0.0009303080082033438,
+          0.0020696919917966563
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": -0.015366666666666659,
+        "n": 30,
+        "sample_sd": 0.006940552165917063,
+        "approximate_95pct_seed_interval": [
+          -0.017850311362105215,
+          -0.012883021971228105
+        ]
+      }
+    },
+    "access_effect|modulo|full": {
+      "production_per_person": {
+        "mean": -0.02306666666666667,
+        "n": 30,
+        "sample_sd": 0.011590523279173268,
+        "approximate_95pct_seed_interval": [
+          -0.027214282154817408,
+          -0.01891905117851593
+        ]
+      },
+      "consumption_per_person": {
+        "mean": -0.026933333333333333,
+        "n": 30,
+        "sample_sd": 0.007253695055213101,
+        "approximate_95pct_seed_interval": [
+          -0.02952903477257588,
+          -0.024337631894090786
+        ]
+      },
+      "employment_rate": {
+        "mean": -0.020252615941887507,
+        "n": 30,
+        "sample_sd": 0.012547870809123965,
+        "approximate_95pct_seed_interval": [
+          -0.02474281384388847,
+          -0.015762418039886546
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.04655879384537458,
+        "n": 30,
+        "sample_sd": 0.02524847267550458,
+        "approximate_95pct_seed_interval": [
+          0.03752374393444915,
+          0.055593843756300006
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0,
+        "n": 30,
+        "sample_sd": 0.0,
+        "approximate_95pct_seed_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": -0.0005,
+        "n": 30,
+        "sample_sd": 0.001306482511067078,
+        "approximate_95pct_seed_interval": [
+          -0.0009675187623009885,
+          -3.2481237699011464e-05
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.027433333333333327,
+        "n": 30,
+        "sample_sd": 0.007591662092936786,
+        "approximate_95pct_seed_interval": [
+          0.024716691942857867,
+          0.030149974723808787
+        ]
+      }
+    },
+    "access_effect|modulo|two_quotes": {
+      "production_per_person": {
+        "mean": 0.000833333333333335,
+        "n": 30,
+        "sample_sd": 0.012194072424700888,
+        "approximate_95pct_seed_interval": [
+          -0.0035302594427754543,
+          0.005196926109442125
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.0005666666666666663,
+        "n": 30,
+        "sample_sd": 0.0071423136082197445,
+        "approximate_95pct_seed_interval": [
+          -0.0019891774336520725,
+          0.003122510766985405
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.0018047682876992683,
+        "n": 30,
+        "sample_sd": 0.012691545251486382,
+        "approximate_95pct_seed_interval": [
+          -0.0027368428532073543,
+          0.0063463794286058904
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": -0.003957256284925352,
+        "n": 30,
+        "sample_sd": 0.02249475651654248,
+        "approximate_95pct_seed_interval": [
+          -0.012006901523793828,
+          0.004092388953943125
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": -0.003833333333333333,
+        "n": 30,
+        "sample_sd": 0.003833458268828627,
+        "approximate_95pct_seed_interval": [
+          -0.0052051187571668656,
+          -0.0024615479094998003
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": -0.0013,
+        "n": 30,
+        "sample_sd": 0.0029612439138377946,
+        "approximate_95pct_seed_interval": [
+          -0.0023596675253907784,
+          -0.0002403324746092215
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.0007333333333333321,
+        "n": 30,
+        "sample_sd": 0.007157987259641868,
+        "approximate_95pct_seed_interval": [
+          -0.0018281195111144214,
+          0.003294786177781086
+        ]
+      }
+    },
+    "quote_access_interaction|modulo": {
+      "production_per_person": {
+        "mean": 0.023900000000000005,
+        "n": 30,
+        "sample_sd": 0.01537653833066736,
+        "approximate_95pct_seed_interval": [
+          0.0183975764253011,
+          0.02940242357469891
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.0275,
+        "n": 30,
+        "sample_sd": 0.009324605936020513,
+        "approximate_95pct_seed_interval": [
+          0.024163232619476727,
+          0.030836767380523274
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.022057384229586776,
+        "n": 30,
+        "sample_sd": 0.01658750278261606,
+        "approximate_95pct_seed_interval": [
+          0.016121622591064005,
+          0.027993145868109547
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": -0.05051605013029993,
+        "n": 30,
+        "sample_sd": 0.03447785537497822,
+        "approximate_95pct_seed_interval": [
+          -0.06285379222417378,
+          -0.03817830803642608
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": -0.003833333333333333,
+        "n": 30,
+        "sample_sd": 0.003833458268828627,
+        "approximate_95pct_seed_interval": [
+          -0.0052051187571668656,
+          -0.0024615479094998003
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": -0.0008,
+        "n": 30,
+        "sample_sd": 0.002905405188669014,
+        "approximate_95pct_seed_interval": [
+          -0.0018396858942106935,
+          0.00023968589421069356
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": -0.026699999999999995,
+        "n": 30,
+        "sample_sd": 0.009318687194797495,
+        "approximate_95pct_seed_interval": [
+          -0.030034649386177743,
+          -0.023365350613822247
+        ]
+      }
+    },
+    "quotes_effect|balanced_shuffle|open": {
+      "production_per_person": {
+        "mean": -0.0064333333333333334,
+        "n": 30,
+        "sample_sd": 0.01052643088261338,
+        "approximate_95pct_seed_interval": [
+          -0.01020016824769189,
+          -0.002666498418974776
+        ]
+      },
+      "consumption_per_person": {
+        "mean": -0.01363333333333333,
+        "n": 30,
+        "sample_sd": 0.008294091512817328,
+        "approximate_95pct_seed_interval": [
+          -0.0166013358635137,
+          -0.01066533080315296
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.000749301312036917,
+        "n": 30,
+        "sample_sd": 0.01192023729109234,
+        "approximate_95pct_seed_interval": [
+          -0.0035163008199915087,
+          0.005014903444065343
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.02233752966928916,
+        "n": 30,
+        "sample_sd": 0.02583727241250268,
+        "approximate_95pct_seed_interval": [
+          0.013091780478463183,
+          0.03158327886011514
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.006066666666666666,
+        "n": 30,
+        "sample_sd": 0.0030954174509106682,
+        "approximate_95pct_seed_interval": [
+          0.004958985757664177,
+          0.007174347575669156
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0023,
+        "n": 30,
+        "sample_sd": 0.0022916640543349793,
+        "approximate_95pct_seed_interval": [
+          0.001479938550101765,
+          0.003120061449898235
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.011333333333333338,
+        "n": 30,
+        "sample_sd": 0.008193072487266865,
+        "approximate_95pct_seed_interval": [
+          0.008401479997186672,
+          0.014265186669480004
+        ]
+      }
+    },
+    "quotes_effect|balanced_shuffle|local": {
+      "production_per_person": {
+        "mean": 0.016666666666666666,
+        "n": 30,
+        "sample_sd": 0.012066863527955343,
+        "approximate_95pct_seed_interval": [
+          0.012348595009636292,
+          0.02098473832369704
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.015033333333333334,
+        "n": 30,
+        "sample_sd": 0.0071846739821570926,
+        "approximate_95pct_seed_interval": [
+          0.012462330767879368,
+          0.0176043358987873
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.022086786152534676,
+        "n": 30,
+        "sample_sd": 0.013245098030463791,
+        "approximate_95pct_seed_interval": [
+          0.01734708869366853,
+          0.026826483611400824
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": -0.029039675829749416,
+        "n": 30,
+        "sample_sd": 0.020967038497320293,
+        "approximate_95pct_seed_interval": [
+          -0.03654263419646962,
+          -0.021536717463029206
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0032,
+        "n": 30,
+        "sample_sd": 0.0021399323224876965,
+        "approximate_95pct_seed_interval": [
+          0.002434235053020192,
+          0.003965764946979808
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 0.0023333333333333335,
+        "n": 30,
+        "sample_sd": 0.0021708624272765236,
+        "approximate_95pct_seed_interval": [
+          0.0015565001905022838,
+          0.0031101664761643832
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": -0.017366666666666655,
+        "n": 30,
+        "sample_sd": 0.0071268474112323,
+        "approximate_95pct_seed_interval": [
+          -0.01991697625947242,
+          -0.014816357073860894
+        ]
+      }
+    },
+    "access_effect|balanced_shuffle|full": {
+      "production_per_person": {
+        "mean": -0.02263333333333333,
+        "n": 30,
+        "sample_sd": 0.010250259318278441,
+        "approximate_95pct_seed_interval": [
+          -0.02630134152261377,
+          -0.018965325144052893
+        ]
+      },
+      "consumption_per_person": {
+        "mean": -0.027433333333333334,
+        "n": 30,
+        "sample_sd": 0.009339140229693793,
+        "approximate_95pct_seed_interval": [
+          -0.030775301744051416,
+          -0.024091364922615252
+        ]
+      },
+      "employment_rate": {
+        "mean": -0.02043042692922493,
+        "n": 30,
+        "sample_sd": 0.010675412517686982,
+        "approximate_95pct_seed_interval": [
+          -0.02425057423701025,
+          -0.016610279621439614
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": 0.04863059205723958,
+        "n": 30,
+        "sample_sd": 0.025278501793893685,
+        "approximate_95pct_seed_interval": [
+          0.039584796364305334,
+          0.05767638775017383
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": 0.0,
+        "n": 30,
+        "sample_sd": 0.0,
+        "approximate_95pct_seed_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": -0.00046666666666666666,
+        "n": 30,
+        "sample_sd": 0.0015477087254553341,
+        "approximate_95pct_seed_interval": [
+          -0.0010205071211679116,
+          8.717378783457824e-05
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": 0.02789999999999999,
+        "n": 30,
+        "sample_sd": 0.009932010248998282,
+        "approximate_95pct_seed_interval": [
+          0.024345875777564068,
+          0.03145412422243591
+        ]
+      }
+    },
+    "access_effect|balanced_shuffle|two_quotes": {
+      "production_per_person": {
+        "mean": 0.0004666666666666666,
+        "n": 30,
+        "sample_sd": 0.010159871480769187,
+        "approximate_95pct_seed_interval": [
+          -0.0031689966503621898,
+          0.004102329983695523
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.001233333333333333,
+        "n": 30,
+        "sample_sd": 0.006240487013120014,
+        "approximate_95pct_seed_interval": [
+          -0.0009997962645105281,
+          0.0034664629311771944
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.0009070579112728304,
+        "n": 30,
+        "sample_sd": 0.011549141734515505,
+        "approximate_95pct_seed_interval": [
+          -0.0032257493813019115,
+          0.005039865203847572
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": -0.002746613441798999,
+        "n": 30,
+        "sample_sd": 0.017884701858401835,
+        "approximate_95pct_seed_interval": [
+          -0.009146571807971815,
+          0.003653344924373817
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": -0.0028666666666666667,
+        "n": 30,
+        "sample_sd": 0.0035207104821116113,
+        "approximate_95pct_seed_interval": [
+          -0.004126536732338313,
+          -0.0016067966009950202
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": -0.00043333333333333337,
+        "n": 30,
+        "sample_sd": 0.0029674479146965297,
+        "approximate_95pct_seed_interval": [
+          -0.0014952209319192907,
+          0.000628554265252624
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": -0.0008000000000000044,
+        "n": 30,
+        "sample_sd": 0.005833316912948966,
+        "approximate_95pct_seed_interval": [
+          -0.0028874256487550556,
+          0.001287425648755047
+        ]
+      }
+    },
+    "quote_access_interaction|balanced_shuffle": {
+      "production_per_person": {
+        "mean": 0.0231,
+        "n": 30,
+        "sample_sd": 0.013223151066895172,
+        "approximate_95pct_seed_interval": [
+          0.018368156161183834,
+          0.027831843838816164
+        ]
+      },
+      "consumption_per_person": {
+        "mean": 0.028666666666666667,
+        "n": 30,
+        "sample_sd": 0.009858772859684443,
+        "approximate_95pct_seed_interval": [
+          0.025138750107414995,
+          0.03219458322591834
+        ]
+      },
+      "employment_rate": {
+        "mean": 0.02133748484049776,
+        "n": 30,
+        "sample_sd": 0.014743912006309121,
+        "approximate_95pct_seed_interval": [
+          0.016061443688569613,
+          0.026613525992425904
+        ]
+      },
+      "disposable_income_gini": {
+        "mean": -0.051377205499038577,
+        "n": 30,
+        "sample_sd": 0.026582458012503574,
+        "approximate_95pct_seed_interval": [
+          -0.06088961593212825,
+          -0.0418647950659489
+        ]
+      },
+      "information_missed_per_person": {
+        "mean": -0.0028666666666666667,
+        "n": 30,
+        "sample_sd": 0.0035207104821116113,
+        "approximate_95pct_seed_interval": [
+          -0.004126536732338313,
+          -0.0016067966009950202
+        ]
+      },
+      "unmet_stock_per_person": {
+        "mean": 3.3333333333333335e-05,
+        "n": 30,
+        "sample_sd": 0.003418845674657813,
+        "approximate_95pct_seed_interval": [
+          -0.0011900848791375142,
+          0.001256751545804181
+        ]
+      },
+      "unmet_budget_per_person": {
+        "mean": -0.028699999999999993,
+        "n": 30,
+        "sample_sd": 0.00932238684842697,
+        "approximate_95pct_seed_interval": [
+          -0.03203597329022632,
+          -0.025364026709773668
+        ]
+      }
+    }
+  },
+  "notes": [
+    "Eight arms per seed share precisely matched agent, firm, equity, resource and RNG state.",
+    "Assignment shuffling is balanced and uses a separate deterministic RNG substream.",
+    "Price quote information (two sellers) is distinct from access eligibility (all or local firms).",
+    "Seed intervals quantify Monte Carlo variability, not structural/model uncertainty.",
+    "This is a synthetic simulation; no real-world policy implication is established."
+  ],
+  "design": {
+    "seeds": 30,
+    "periods": 24,
+    "population": 1000,
+    "firms_per_sector": 20,
+    "regions": 5,
+    "simulations": 240,
+    "observations": 5760,
+    "same_initial_state_for_all_treatments": true,
+    "global_hiring_and_interfirm_capital_markets": true
+  },
+  "periods_csv_sha256": "6e36cd4e48ccfb9cbfa9ca86cf1c23f375a346a272c3202d03c06f4b1a0a0dcf"
+}
