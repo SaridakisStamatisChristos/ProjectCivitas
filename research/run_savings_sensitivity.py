@@ -118,7 +118,7 @@ def main(argv=None):
             return
         elapsed = time.perf_counter() - t0
     with (a.output / "final_period.csv").open("w", newline="", encoding="utf8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(records[0]))
+        writer = csv.DictWriter(f, fieldnames=list(records[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(records)
     summary = {name: {key: stats([o[key] for o in obs.values()]) for key in KEYS}
