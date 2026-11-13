@@ -238,3 +238,16 @@ python research/restore_credit_pathways.py research/v02_credit_pathways_10000 re
 ```
 
 These are **six-seed synthetic experiments**, not empirical social-scientific predictions. v0.2 has not been released.
+
+## Long-horizon demand contraction diagnostics (v0.2 development)
+
+The reproducible [48-period experiment](research/v02_demand_contraction_experiment.md) examines why the earlier credit study experienced falling output even with credit off and growing natural-resource stocks. The six interventions vary saving propensity, dividends, price adjustments, hiring expectations and capital depreciation one at a time, with matched seeded initial states.
+
+```bash
+PYTHONPATH=src:. python research/run_demand_diagnostics.py --seed 1 --output results/demand_diagnostics
+# Repeat for each seed 2, 3, 4, 5, 6, 7 and 8.
+PYTHONPATH=src:. python research/run_demand_diagnostics.py --finalize --seeds 1,2,3,4,5,6,7,8 --output results/demand_diagnostics
+python research/audit_demand_diagnostics.py results/demand_diagnostics
+```
+
+The observer adds no changes to simulator transition rules. All eight-seed records and statistics are preserved in `research/v02_demand_diagnostics_raw.zip` (restore using `PYTHONPATH=src:. python research/restore_demand_diagnostics.py research/v02_demand_diagnostics_raw.zip results/restored_demand`), with a readable summary in `research/v02_demand_diagnostics/summary.json`; the [mathematical specifications and limitations](docs/v02_demand_diagnostics.md) distinguish affordability diagnostics from measured welfare and model interventions from real-world evidence. v0.2 remains a development preview.

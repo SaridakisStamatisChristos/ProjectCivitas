@@ -84,3 +84,9 @@ Added a resumable, exact-initial-state 12-cell credit/loan-maturity/savings/firm
 - Added strict per-period principal stock-flow checks, atomic resumable per-treatment results, complete digest verification, and independent stdlib-only audit of period-level evidence.
 - Executed 72 distinct 10,000-agent simulations over 48 periods (3,456 checked states), all eight conservation classes plus loan roll-forward passing; tests increased from 128 to 136.
 - Recorded large earlier-horizon effects diminishing by period 48, without claiming equilibrium or real-world significance. The stable v0.1 release is unchanged.
+
+## 0.2.0.dev0 — demand-contraction diagnostics (2026-11-13; research development)
+
+- Added a deterministic, non-mutating post-step observer for household/firm cash, reserve balances, liquidity affordability, budget unmet demand, unsold inventory, capital, resource, and price trajectories.
+- Executed eight-seed, six-intervention, 10,000-agent, 48-period experiment with checksum-protected, resumable treatment shards and an independent standard-library dataset/statistics auditor. Raw cell records are archived in a restorable ZIP with separate verification script.
+- Added seven regression/adversarial tests; full suite 144 passed. Every one of 2,304 audited periods satisfied eight reported accounting identities. The study identifies strong endogenous price/hiring/affordability sensitivity without changing the engine or claiming empirical calibration.
