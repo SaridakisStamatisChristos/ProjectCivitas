@@ -1,5 +1,18 @@
 # CIVITAS continuation checkpoint
 
+## Latest verified market-mechanism checkpoint — 2026-11-13
+
+- **Branch:** `feature/v0.2-capital-accounting`. The stable `main` remains v0.1.0. Development version is still `0.2.0.dev0` and **not a released v0.2**.
+- **Mechanisms implemented:** optional one-factor controls for buyer seller-search ranking (`mixed`, `cheapest`, `favorite`), hiring expectations (`adaptive`, `stationary`), and inventory ration order (`random`, `household_id`); `price_adjustment=0` provides a price-fixed control in the recorded scenarios. Default behavior and previous scenario rules remain unchanged.
+- **Scientific observability:** market-sector price dispersion, sales concentration (raw seller HHI, not directly comparable across firm counts), and share of active sellers; all prior conserved financial and physical accounting metrics remain checked.
+- **Latest executed evidence:** `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q`: **56 passed** on Python 3.13.5, NumPy 2.3.5. Market ablations: 6 rules × 12 master seeds × (one integrated 10,000-agent economy plus ten independent 1,000-agent communities) × 24 periods = **792 executable runs and 19,008 verified engine periods**; zero discrepancies in money, resource, finished-goods, capital, household account flows and firm account flows. **3,456 topology-level period rows** stored. Reference outputs matched **288 previous baseline seed-period records** on production, consumption, and employment.
+- **Main within-model discovery:** integrated-minus-isolated final production/person gap changes from +0.1430 (original rules) to +0.2834 (all buyers cheapest-first), −0.0053 (all buyers favorite-first), +0.0323 (stationary hiring expectation), +0.0220 (fixed posted prices), +0.1396 (fixed household-ID ration order). One-factor effects interact; this is evidence of **model mechanism sensitivity**, not causal evidence about real-world society. Monte Carlo intervals include seed variability only.
+- **Research and reproduction:** `research/run_market_ablation.py`, `research/analyze_market_ablation.py`, `research/v02_market_ablation_experiment.md`, `research/v02_market_ablation_12/`, and `docs/v02_market_mechanisms.md`.
+- **Highest-priority next scientific test:** factorial interactions among seller ranking, adaptive posted prices and hiring feedback, while holding labor accessibility and seller pools separately fixed. This is needed to rule out direct/indirect mechanism confounding.
+- **Unresolved v0.2 release gates:** missing inventory cost-of-goods-sold/full balance sheet; no two-sided savings-to-investment financial intermediation; no real-world calibration; longer horizons and more extensive seeds/sensitivity; remaining extreme-integer overflow possibilities. Do **not** promote to main on current evidence.
+
+---
+
 ## Latest verified scientific robustness checkpoint — 2026-11-13
 
 - **Branch:** `feature/v0.2-capital-accounting`; `main` remains frozen at v0.1.0 commit `85d9671978df6ce40a58e895aee5cb1d2a938a58`. Development version remains `0.2.0.dev0` (NOT a released v0.2).

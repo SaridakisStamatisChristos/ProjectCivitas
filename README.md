@@ -101,3 +101,26 @@ PYTHONPATH=src python research/run_population_normalized.py --population 10000 -
 ```
 
 Initial economic ratios, local runtime and every period's accounting identities are recorded. This corrects an important experimental-design error, **not** the lack of empirical economic calibration or the other unimplemented v0.2 financial mechanisms. [Protocol and mathematical caveats](docs/v02_population_normalization.md).
+
+## v0.2 experimental market-mechanism ablations
+
+The development branch now exposes three rule controls for carefully documented
+within-model experiments: `buyer_seller_rule` (`mixed`, `cheapest`, `favorite`),
+`hiring_expectation_rule` (`adaptive`, `stationary`) and `rationing_order_rule`
+(`random`, `household_id`). Defaults preserve all earlier scenarios. The
+previous `price_adjustment=0` setting acts as the fixed-price control in the
+new example configurations. These are **research interventions**, not normative
+preferences or proven realistic economic behavior.
+
+```bash
+PYTHONPATH=src python research/run_market_ablation.py --seeds 12 --steps 24 --output results/market_ablation_12
+PYTHONPATH=src python research/analyze_market_ablation.py --input results/market_ablation_12 --seeds 12 --steps 24
+```
+
+Six recorded treatments and raw period data are in
+`research/v02_market_ablation_12/`. The executed report is
+[market-mechanism experiment](research/v02_market_ablation_experiment.md),
+and the formal research protocol and limitations are in
+[market-mechanism documentation](docs/v02_market_mechanisms.md).
+**Status:** 56 passing tests in the recorded environment; v0.2 is still not a
+released or empirically validated economic model.

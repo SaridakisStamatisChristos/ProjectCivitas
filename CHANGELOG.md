@@ -24,3 +24,11 @@ Added explicit physical productive capital and rounded depreciation; budget-limi
 - Added preflight signed-int64 guards for initial total money/resource/capital stocks and atomic transfer destination overflow prevention. Does not establish overflow safety for all extreme future trajectories.
 - Added analytical normalization tests and bounded randomized-conservation/checkpoint-replay falsification cases.
 - Initial owner share rounding, scale-dependent decision rules and physical-regeneration rounding remain documented limitations.
+
+## 0.2.0.dev0 — market-mechanism falsification campaign (2026-11-13)
+
+- Added bounded configurable buyer seller choice, adaptive versus stationary hiring targets, and seeded-random versus household-ID consumption order; retained all historical rules by default.
+- Added price-spread, active-seller, and seller-sales concentration diagnostics without changing conservation identities.
+- Independently verified 56 tests, 288 historical baseline records and 792 mechanism-level synthetic simulations, all internal accounts conserving for 19,008 simulated periods.
+- Preserved 12-master-seed comparative research with six one-factor interventions and integrated-versus-isolated topology controls; documented that topology comparisons do not pair identical synthetic individuals.
+- No promotion to `main`; scientific and full financial-accounting acceptance criteria remain open.

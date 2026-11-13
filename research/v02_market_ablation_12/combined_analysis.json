@@ -1,0 +1,2366 @@
+{
+  "reference": {
+    "production_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.2519416666666667,
+        "sample_sd": 0.004567963209001133,
+        "approx_95pct_mc_interval": [
+          0.24935709817406887,
+          0.2545262351592645
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.10895833333333332,
+        "sample_sd": 0.00433263689042163,
+        "approx_95pct_mc_interval": [
+          0.1065069132398472,
+          0.11140975342681944
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.14298333333333335,
+        "sample_sd": 0.006865438254346369,
+        "approx_95pct_mc_interval": [
+          0.13909884596156674,
+          0.14686782070509996
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "consumption_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.2529666666666667,
+        "sample_sd": 0.005786714145874204,
+        "approx_95pct_mc_interval": [
+          0.24969252491621965,
+          0.25624080841711366
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.10611666666666666,
+        "sample_sd": 0.004124832411655344,
+        "approx_95pct_mc_interval": [
+          0.10378282302549999,
+          0.10845051030783334
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.14685,
+        "sample_sd": 0.00746038019991426,
+        "approx_95pct_mc_interval": [
+          0.1426288925336561,
+          0.15107110746634392
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "employment_rate": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.26069703277403045,
+        "sample_sd": 0.0051919941638284076,
+        "approx_95pct_mc_interval": [
+          0.2577593855304755,
+          0.2636346800175854
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.11444007308962188,
+        "sample_sd": 0.004427120490148729,
+        "approx_95pct_mc_interval": [
+          0.11193519386703406,
+          0.11694495231220971
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.14625695968440855,
+        "sample_sd": 0.007495862147028428,
+        "approx_95pct_mc_interval": [
+          0.14201577641658125,
+          0.15049814295223585
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "active_seller_fraction": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.9763888888888889,
+        "sample_sd": 0.01806041115751387,
+        "approx_95pct_mc_interval": [
+          0.9661702493102923,
+          0.9866075284674855
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.8944444444444445,
+        "sample_sd": 0.02782823699789071,
+        "approx_95pct_mc_interval": [
+          0.8786991371250756,
+          0.9101897517638133
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.08194444444444436,
+        "sample_sd": 0.034420405427076375,
+        "approx_95pct_mc_interval": [
+          0.06246926671228453,
+          0.10141962217660419
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "quoted_price_spread_mean_cents": {
+      "integrated": {
+        "n": 12,
+        "mean": 122.36111111111111,
+        "sample_sd": 20.444780684542874,
+        "approx_95pct_mc_interval": [
+          110.7933874720023,
+          133.92883475021992
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 28.68888888888889,
+        "sample_sd": 6.239501620432553,
+        "approx_95pct_mc_interval": [
+          25.158558507526365,
+          32.219219270251415
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 93.67222222222222,
+        "sample_sd": 20.498646584214086,
+        "approx_95pct_mc_interval": [
+          82.0740210812716,
+          105.27042336317284
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "unmet_stock_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.0015166666666666666,
+        "sample_sd": 0.0006820201721001477,
+        "approx_95pct_mc_interval": [
+          0.0011307774273109869,
+          0.0019025559060223463
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.0005166666666666667,
+        "sample_sd": 0.00047450133313987143,
+        "approx_95pct_mc_interval": [
+          0.0002481922636959084,
+          0.000785141069637425
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.0009999999999999998,
+        "sample_sd": 0.000649475312708791,
+        "approx_95pct_mc_interval": [
+          0.0006325247483080517,
+          0.001367475251691948
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "unmet_budget_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.20920833333333333,
+        "sample_sd": 0.006207394173422724,
+        "approx_95pct_mc_interval": [
+          0.20569616945028144,
+          0.21272049721638522
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.35270833333333335,
+        "sample_sd": 0.00512506467069324,
+        "approx_95pct_mc_interval": [
+          0.3498085550154391,
+          0.3556081116512276
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.14350000000000002,
+        "sample_sd": 0.00857278993518022,
+        "approx_95pct_mc_interval": [
+          -0.14835051252524678,
+          -0.13864948747475325
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "cheapest_only": {
+    "production_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.4043333333333333,
+        "sample_sd": 0.00830895829083213,
+        "approx_95pct_mc_interval": [
+          0.39963209761355395,
+          0.4090345690531127
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.12095833333333333,
+        "sample_sd": 0.005686420560236356,
+        "approx_95pct_mc_interval": [
+          0.11774093802097901,
+          0.12417572864568766
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.283375,
+        "sample_sd": 0.009648374804268157,
+        "approx_95pct_mc_interval": [
+          0.2779159180453231,
+          0.28883408195467686
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.15239166666666665,
+        "sample_sd": 0.009801155621412795,
+        "approx_95pct_mc_interval": [
+          0.1468461408270024,
+          0.1579371925063309
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.012000000000000002,
+        "sample_sd": 0.005251320180332146,
+        "approx_95pct_mc_interval": [
+          0.009028785902678638,
+          0.014971214097321366
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.14039166666666664,
+        "sample_sd": 0.011195328435909282,
+        "approx_95pct_mc_interval": [
+          0.1340573132982509,
+          0.14672602003508237
+        ]
+      }
+    },
+    "consumption_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.393,
+        "sample_sd": 0.00430369819827299,
+        "approx_95pct_mc_interval": [
+          0.39056495351298187,
+          0.39543504648701816
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.11720833333333333,
+        "sample_sd": 0.004023218596942982,
+        "approx_95pct_mc_interval": [
+          0.11493198312017866,
+          0.119484683546488
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.27579166666666666,
+        "sample_sd": 0.00449736454813126,
+        "approx_95pct_mc_interval": [
+          0.27324704312680936,
+          0.27833629020652395
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.14003333333333334,
+        "sample_sd": 0.007970323745373242,
+        "approx_95pct_mc_interval": [
+          0.13552369814461204,
+          0.14454296852205464
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.011091666666666658,
+        "sample_sd": 0.0027430766844858115,
+        "approx_95pct_mc_interval": [
+          0.009539624925714902,
+          0.012643708407618413
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.12894166666666668,
+        "sample_sd": 0.008234457351810614,
+        "approx_95pct_mc_interval": [
+          0.12428258382134229,
+          0.13360074951199105
+        ]
+      }
+    },
+    "employment_rate": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.4165563005829777,
+        "sample_sd": 0.008398127533569824,
+        "approx_95pct_mc_interval": [
+          0.41180461261462625,
+          0.42130798855132917
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.12626771768214587,
+        "sample_sd": 0.006025062857817786,
+        "approx_95pct_mc_interval": [
+          0.12285871745255726,
+          0.12967671791173446
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.2902885829008318,
+        "sample_sd": 0.010072336924852035,
+        "approx_95pct_mc_interval": [
+          0.2845896217945985,
+          0.2959875440070651
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.15585926780894727,
+        "sample_sd": 0.009971940963166526,
+        "approx_95pct_mc_interval": [
+          0.15021711106550856,
+          0.16150142455238597
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.011827644592523992,
+        "sample_sd": 0.005478514573229224,
+        "approx_95pct_mc_interval": [
+          0.008727883166183075,
+          0.014927406018864909
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.1440316232164233,
+        "sample_sd": 0.011511934441238747,
+        "approx_95pct_mc_interval": [
+          0.13751813313685163,
+          0.15054511329599496
+        ]
+      }
+    },
+    "active_seller_fraction": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.5041666666666667,
+        "sample_sd": 0.020257184783516593,
+        "approx_95pct_mc_interval": [
+          0.4927050854006351,
+          0.5156282479326982
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.6986111111111111,
+        "sample_sd": 0.02607132149918385,
+        "approx_95pct_mc_interval": [
+          0.6838598723151417,
+          0.7133623499070805
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.19444444444444436,
+        "sample_sd": 0.025949964805384126,
+        "approx_95pct_mc_interval": [
+          -0.2091270192269772,
+          -0.17976186966191152
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.47222222222222215,
+        "sample_sd": 0.031247895552036414,
+        "approx_95pct_mc_interval": [
+          -0.48990238351262816,
+          -0.45454206093181615
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.19583333333333344,
+        "sample_sd": 0.045574337099075865,
+        "approx_95pct_mc_interval": [
+          -0.22161944200977785,
+          -0.17004722465688904
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.27638888888888874,
+        "sample_sd": 0.048439451600740396,
+        "approx_95pct_mc_interval": [
+          -0.30379608870155234,
+          -0.24898168907622514
+        ]
+      }
+    },
+    "quoted_price_spread_mean_cents": {
+      "integrated": {
+        "n": 12,
+        "mean": 109.83333333333333,
+        "sample_sd": 5.100009902941463,
+        "approx_95pct_mc_interval": [
+          106.94773108480697,
+          112.71893558185968
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 27.836111111111112,
+        "sample_sd": 4.9422821852513845,
+        "approx_95pct_mc_interval": [
+          25.039751720046453,
+          30.63247050217577
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 81.99722222222222,
+        "sample_sd": 8.113767553099107,
+        "approx_95pct_mc_interval": [
+          77.40642605891688,
+          86.58801838552756
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -12.527777777777779,
+        "sample_sd": 19.07108358107187,
+        "approx_95pct_mc_interval": [
+          -23.318259112262083,
+          -1.7372964432934754
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.8527777777777761,
+        "sample_sd": 10.275345193968853,
+        "approx_95pct_mc_interval": [
+          -6.666601625256937,
+          4.961046069701385
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -11.675000000000002,
+        "sample_sd": 20.242125916419003,
+        "approx_95pct_mc_interval": [
+          -23.12806090987852,
+          -0.22193909012148616
+        ]
+      }
+    },
+    "unmet_stock_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.0006833333333333333,
+        "sample_sd": 0.0004783177592227564,
+        "approx_95pct_mc_interval": [
+          0.000412699584028805,
+          0.0009539670826378616
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.0005666666666666667,
+        "sample_sd": 0.0002870962250261094,
+        "approx_95pct_mc_interval": [
+          0.00040422668552056007,
+          0.0007291066478127733
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.00011666666666666664,
+        "sample_sd": 0.0006548189664234527,
+        "approx_95pct_mc_interval": [
+          -0.0002538320417376852,
+          0.00048716537507101853
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.0008333333333333333,
+        "sample_sd": 0.0009920899274977165,
+        "approx_95pct_mc_interval": [
+          -0.0013946610523004337,
+          -0.0002720056143662329
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 4.999999999999998e-05,
+        "sample_sd": 0.0005231026320296656,
+        "approx_95pct_mc_interval": [
+          -0.00024597317650780666,
+          0.0003459731765078066
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.0008833333333333333,
+        "sample_sd": 0.0010692676621563628,
+        "approx_95pct_mc_interval": [
+          -0.0014883284664634364,
+          -0.00027833820020323023
+        ]
+      }
+    },
+    "unmet_budget_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.07000833333333334,
+        "sample_sd": 0.0044112373719303695,
+        "approx_95pct_mc_interval": [
+          0.06751244083087286,
+          0.07250422583579381
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.3415666666666667,
+        "sample_sd": 0.005215245716050953,
+        "approx_95pct_mc_interval": [
+          0.33861586361897567,
+          0.3445174697143577
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.27155833333333335,
+        "sample_sd": 0.005628572939327813,
+        "approx_95pct_mc_interval": [
+          -0.2747429982729742,
+          -0.2683736683936925
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.1392,
+        "sample_sd": 0.008036846962018687,
+        "approx_95pct_mc_interval": [
+          -0.14374727424181816,
+          -0.13465272575818182
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.011141666666666675,
+        "sample_sd": 0.002908126023695828,
+        "approx_95pct_mc_interval": [
+          -0.012787093862432455,
+          -0.009496239470900895
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.12805833333333333,
+        "sample_sd": 0.007838304354355926,
+        "approx_95pct_mc_interval": [
+          -0.1324932715197314,
+          -0.12362339514693527
+        ]
+      }
+    }
+  },
+  "favorite_first": {
+    "production_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.1101,
+        "sample_sd": 0.004025148218614837,
+        "approx_95pct_mc_interval": [
+          0.10782255800060549,
+          0.11237744199939452
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.11541666666666667,
+        "sample_sd": 0.0045460938944295575,
+        "approx_95pct_mc_interval": [
+          0.11284447190363066,
+          0.11798886142970268
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.005316666666666667,
+        "sample_sd": 0.005782235071686593,
+        "approx_95pct_mc_interval": [
+          -0.008588274142319496,
+          -0.0020450591910138364
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.14184166666666667,
+        "sample_sd": 0.005956731613490039,
+        "approx_95pct_mc_interval": [
+          -0.14521200485519473,
+          -0.13847132847813862
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.006458333333333336,
+        "sample_sd": 0.005583980062046544,
+        "approx_95pct_mc_interval": [
+          0.003298899189200702,
+          0.009617767477465969
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.14830000000000002,
+        "sample_sd": 0.008131867726867728,
+        "approx_95pct_mc_interval": [
+          -0.1529010373006991,
+          -0.14369896269930094
+        ]
+      }
+    },
+    "consumption_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.10780833333333334,
+        "sample_sd": 0.002955259820398304,
+        "approx_95pct_mc_interval": [
+          0.10613623768155774,
+          0.10948042898510894
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.11341666666666667,
+        "sample_sd": 0.0034498572653829007,
+        "approx_95pct_mc_interval": [
+          0.11146472616624875,
+          0.11536860716708458
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.005608333333333333,
+        "sample_sd": 0.0046327801064966955,
+        "approx_95pct_mc_interval": [
+          -0.008229575438083898,
+          -0.002987091228582767
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.14515833333333333,
+        "sample_sd": 0.006000675467029203,
+        "approx_95pct_mc_interval": [
+          -0.14855353509761804,
+          -0.14176313156904863
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.007299999999999998,
+        "sample_sd": 0.003785378568794796,
+        "approx_95pct_mc_interval": [
+          0.005158220451035249,
+          0.009441779548964748
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.15245833333333333,
+        "sample_sd": 0.006438020352608874,
+        "approx_95pct_mc_interval": [
+          -0.15610098626128782,
+          -0.14881568040537885
+        ]
+      }
+    },
+    "employment_rate": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.11630641192033599,
+        "sample_sd": 0.00438811450543639,
+        "approx_95pct_mc_interval": [
+          0.11382360241120636,
+          0.11878922142946562
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.1216223331366893,
+        "sample_sd": 0.0047102104671772746,
+        "approx_95pct_mc_interval": [
+          0.118957280681148,
+          0.1242873855922306
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.005315921216353307,
+        "sample_sd": 0.006081767100141131,
+        "approx_95pct_mc_interval": [
+          -0.008757004891320096,
+          -0.0018748375413865175
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.14439062085369442,
+        "sample_sd": 0.006134552765307892,
+        "approx_95pct_mc_interval": [
+          -0.14786157083029472,
+          -0.14091967087709412
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.007182260047067416,
+        "sample_sd": 0.005870560069811434,
+        "approx_95pct_mc_interval": [
+          0.0038606779991999067,
+          0.010503842094934926
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.15157288090076185,
+        "sample_sd": 0.008587311724458506,
+        "approx_95pct_mc_interval": [
+          -0.15643160990177857,
+          -0.14671415189974513
+        ]
+      }
+    },
+    "active_seller_fraction": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.9944444444444445,
+        "sample_sd": 0.010855649121315501,
+        "approx_95pct_mc_interval": [
+          0.9883022827408732,
+          1.0005866061480158
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.9874999999999999,
+        "sample_sd": 0.012562972690740146,
+        "approx_95pct_mc_interval": [
+          0.9803918290484757,
+          0.9946081709515242
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.00694444444444454,
+        "sample_sd": 0.013216024351645995,
+        "approx_95pct_mc_interval": [
+          -0.0005332252682541359,
+          0.014422114157143217
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.018055555555555585,
+        "sample_sd": 0.021856202842525117,
+        "approx_95pct_mc_interval": [
+          0.005689244652852544,
+          0.030421866458258624
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0930555555555554,
+        "sample_sd": 0.03292042236597531,
+        "approx_95pct_mc_interval": [
+          0.07442907313502002,
+          0.11168203797609079
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.07499999999999982,
+        "sample_sd": 0.03370999312316208,
+        "approx_95pct_mc_interval": [
+          -0.09407322413195712,
+          -0.05592677586804252
+        ]
+      }
+    },
+    "quoted_price_spread_mean_cents": {
+      "integrated": {
+        "n": 12,
+        "mean": 177.94444444444446,
+        "sample_sd": 28.54761513623038,
+        "approx_95pct_mc_interval": [
+          161.7921106264925,
+          194.0967782623964
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 73.2388888888889,
+        "sample_sd": 10.44487050495696,
+        "approx_95pct_mc_interval": [
+          67.32914706715496,
+          79.14863071062283
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 104.70555555555556,
+        "sample_sd": 31.40916624021918,
+        "approx_95pct_mc_interval": [
+          86.93414678341955,
+          122.47696432769158
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 55.583333333333336,
+        "sample_sd": 33.434732137872935,
+        "approx_95pct_mc_interval": [
+          36.665852765251046,
+          74.50081390141563
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 44.550000000000004,
+        "sample_sd": 13.626834043922528,
+        "approx_95pct_mc_interval": [
+          36.8398928226082,
+          52.26010717739181
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 11.033333333333333,
+        "sample_sd": 37.49129461244533,
+        "approx_95pct_mc_interval": [
+          -10.179363522694286,
+          32.24603018936095
+        ]
+      }
+    },
+    "unmet_stock_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.00025833333333333334,
+        "sample_sd": 0.0004944387696871039,
+        "approx_95pct_mc_interval": [
+          -2.142173630777076e-05,
+          0.0005380884029744374
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 1.6666666666666667e-05,
+        "sample_sd": 3.892494720807615e-05,
+        "approx_95pct_mc_interval": [
+          -5.357195507132574e-06,
+          3.869052884046591e-05
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.00024166666666666667,
+        "sample_sd": 0.0004870287154747343,
+        "approx_95pct_mc_interval": [
+          -3.389577011610054e-05,
+          0.0005172291034494338
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.0012583333333333333,
+        "sample_sd": 0.0006855102059227436,
+        "approx_95pct_mc_interval": [
+          -0.0016461972452166305,
+          -0.0008704694214500361
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.0005,
+        "sample_sd": 0.0004748205402618399,
+        "approx_95pct_mc_interval": [
+          -0.0007686550114021981,
+          -0.0002313449885978019
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.0007583333333333333,
+        "sample_sd": 0.0005946096249310181,
+        "approx_95pct_mc_interval": [
+          -0.0010947653998096658,
+          -0.0004219012668570009
+        ]
+      }
+    },
+    "unmet_budget_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.355625,
+        "sample_sd": 0.003570109496665585,
+        "approx_95pct_mc_interval": [
+          0.3536050203946424,
+          0.3576449796053576
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.3459083333333333,
+        "sample_sd": 0.004268799774544525,
+        "approx_95pct_mc_interval": [
+          0.34349303248836244,
+          0.3483236341783042
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.009716666666666679,
+        "sample_sd": 0.006162619474531803,
+        "approx_95pct_mc_interval": [
+          0.006229836454383195,
+          0.013203496878950163
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.14641666666666667,
+        "sample_sd": 0.006288927258333178,
+        "approx_95pct_mc_interval": [
+          0.1428583710980643,
+          0.14997496223526904
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.00680000000000001,
+        "sample_sd": 0.00390733575819545,
+        "approx_95pct_mc_interval": [
+          -0.009010783324772235,
+          -0.004589216675227784
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.15321666666666667,
+        "sample_sd": 0.006361651205513084,
+        "approx_95pct_mc_interval": [
+          0.14961722365139304,
+          0.1568161096819403
+        ]
+      }
+    }
+  },
+  "stationary_hiring": {
+    "production_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.28923333333333334,
+        "sample_sd": 0.004838356846047733,
+        "approx_95pct_mc_interval": [
+          0.2864957752383822,
+          0.2919708914282845
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.2568916666666667,
+        "sample_sd": 0.007455011533840628,
+        "approx_95pct_mc_interval": [
+          0.2526735968091095,
+          0.26110973652422387
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.032341666666666664,
+        "sample_sd": 0.006867242179471685,
+        "approx_95pct_mc_interval": [
+          0.028456158628176503,
+          0.03622717470515683
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.03729166666666666,
+        "sample_sd": 0.005572245888546575,
+        "approx_95pct_mc_interval": [
+          0.034138871756198376,
+          0.040444461577134945
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.14793333333333333,
+        "sample_sd": 0.009217802275373372,
+        "approx_95pct_mc_interval": [
+          0.14271787072081024,
+          0.15314879594585643
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.11064166666666667,
+        "sample_sd": 0.01054431844716155,
+        "approx_95pct_mc_interval": [
+          -0.11660767645867873,
+          -0.1046756568746546
+        ]
+      }
+    },
+    "consumption_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.2874083333333333,
+        "sample_sd": 0.004309494451120983,
+        "approx_95pct_mc_interval": [
+          0.28497000730753597,
+          0.2898466593591307
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.251325,
+        "sample_sd": 0.007283371472058801,
+        "approx_95pct_mc_interval": [
+          0.24720404464959886,
+          0.2554459553504012
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.036083333333333335,
+        "sample_sd": 0.007961935960708575,
+        "approx_95pct_mc_interval": [
+          0.03157844398055139,
+          0.04058822268611528
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.03444166666666667,
+        "sample_sd": 0.007267794255022189,
+        "approx_95pct_mc_interval": [
+          0.03032952495650583,
+          0.03855380837682751
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.14520833333333333,
+        "sample_sd": 0.009502196715720133,
+        "approx_95pct_mc_interval": [
+          0.1398319594182538,
+          0.15058470724841286
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.11076666666666667,
+        "sample_sd": 0.012114554232097218,
+        "approx_95pct_mc_interval": [
+          -0.11762112099074004,
+          -0.10391221234259329
+        ]
+      }
+    },
+    "employment_rate": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.30001730170099655,
+        "sample_sd": 0.005182351076583425,
+        "approx_95pct_mc_interval": [
+          0.297085110547678,
+          0.3029494928543151
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.2670216507945917,
+        "sample_sd": 0.008059102444198885,
+        "approx_95pct_mc_interval": [
+          0.2624617843283184,
+          0.27158151726086505
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.03299565090640483,
+        "sample_sd": 0.007477417936364484,
+        "approx_95pct_mc_interval": [
+          0.028764903433169522,
+          0.03722639837964013
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.039320268926966155,
+        "sample_sd": 0.005649779889509283,
+        "approx_95pct_mc_interval": [
+          0.036123605025697246,
+          0.042516932828235064
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.15258157770496988,
+        "sample_sd": 0.009700333327278123,
+        "approx_95pct_mc_interval": [
+          0.1470930974483914,
+          0.15807005796154835
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.11326130877800372,
+        "sample_sd": 0.01095173543500826,
+        "approx_95pct_mc_interval": [
+          -0.11945783643146939,
+          -0.10706478112453806
+        ]
+      }
+    },
+    "active_seller_fraction": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.9874999999999999,
+        "sample_sd": 0.01608845498605706,
+        "approx_95pct_mc_interval": [
+          0.9783970996592957,
+          0.9966029003407042
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.9944444444444444,
+        "sample_sd": 0.00820609939862218,
+        "approx_95pct_mc_interval": [
+          0.9898014066215889,
+          0.9990874822672998
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.006944444444444355,
+        "sample_sd": 0.020668540156202442,
+        "approx_95pct_mc_interval": [
+          -0.018638771922925623,
+          0.004749883034036915
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.011111111111111127,
+        "sample_sd": 0.014793756076643258,
+        "approx_95pct_mc_interval": [
+          0.002740755638998992,
+          0.019481466583223264
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.09999999999999984,
+        "sample_sd": 0.02461829819586652,
+        "approx_95pct_mc_interval": [
+          0.0860708865314333,
+          0.11392911346856638
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.08888888888888871,
+        "sample_sd": 0.030429030972509197,
+        "approx_95pct_mc_interval": [
+          -0.10610573392758321,
+          -0.07167204385019421
+        ]
+      }
+    },
+    "quoted_price_spread_mean_cents": {
+      "integrated": {
+        "n": 12,
+        "mean": 101.94444444444444,
+        "sample_sd": 9.886051119330041,
+        "approx_95pct_mc_interval": [
+          96.3508844549762,
+          107.53800443391269
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 24.97222222222222,
+        "sample_sd": 3.6064429811700855,
+        "approx_95pct_mc_interval": [
+          22.93168501274655,
+          27.012759431697894
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 76.97222222222223,
+        "sample_sd": 10.653418224462976,
+        "approx_95pct_mc_interval": [
+          70.94448342013253,
+          82.99996102431193
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -20.416666666666664,
+        "sample_sd": 25.364066286497888,
+        "approx_95pct_mc_interval": [
+          -34.76773815495467,
+          -6.0655951783786595
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -3.716666666666667,
+        "sample_sd": 6.993770677025969,
+        "approx_95pct_mc_interval": [
+          -7.673764942037493,
+          0.24043160870415914
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -16.700000000000003,
+        "sample_sd": 25.305830365847527,
+        "approx_95pct_mc_interval": [
+          -31.0181214143133,
+          -2.3818785856867084
+        ]
+      }
+    },
+    "unmet_stock_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.0020499999999999997,
+        "sample_sd": 0.0005962000884388943,
+        "approx_95pct_mc_interval": [
+          0.0017126680440799468,
+          0.0023873319559200527
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.00013333333333333334,
+        "sample_sd": 0.00016143297699232974,
+        "approx_95pct_mc_interval": [
+          4.199402806518118e-05,
+          0.0002246726386014855
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.0019166666666666666,
+        "sample_sd": 0.0006012613005301036,
+        "approx_95pct_mc_interval": [
+          0.001576471060426594,
+          0.002256862272906739
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.0005333333333333333,
+        "sample_sd": 0.0005432784876575872,
+        "approx_95pct_mc_interval": [
+          0.0002259445918611733,
+          0.0008407220748054932
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.0003833333333333334,
+        "sample_sd": 0.0004667748792285077,
+        "approx_95pct_mc_interval": [
+          -0.0006474360834633967,
+          -0.00011923058320327008
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0009166666666666666,
+        "sample_sd": 0.0007043157005637501,
+        "approx_95pct_mc_interval": [
+          0.0005181625445380049,
+          0.0013151707887953284
+        ]
+      }
+    },
+    "unmet_budget_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.17423333333333332,
+        "sample_sd": 0.004943560243264755,
+        "approx_95pct_mc_interval": [
+          0.17143625081287336,
+          0.17703041585379328
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.20788333333333334,
+        "sample_sd": 0.008636585324108473,
+        "approx_95pct_mc_interval": [
+          0.2029967251688152,
+          0.21276994149785147
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.03365,
+        "sample_sd": 0.009220382559604261,
+        "approx_95pct_mc_interval": [
+          -0.038866922545762475,
+          -0.028433077454237524
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.034975,
+        "sample_sd": 0.007361709905128883,
+        "approx_95pct_mc_interval": [
+          -0.03914027949151365,
+          -0.030809720508486346
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.144825,
+        "sample_sd": 0.009643568275846297,
+        "approx_95pct_mc_interval": [
+          -0.15028136240520823,
+          -0.1393686375947918
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.10985,
+        "sample_sd": 0.011975922815078895,
+        "approx_95pct_mc_interval": [
+          0.10307398378414162,
+          0.11662601621585839
+        ]
+      }
+    }
+  },
+  "fixed_prices": {
+    "production_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.18166666666666667,
+        "sample_sd": 0.005928871321888773,
+        "approx_95pct_mc_interval": [
+          0.1783120919220572,
+          0.18502124141127615
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.15970833333333334,
+        "sample_sd": 0.0029062497963505897,
+        "approx_95pct_mc_interval": [
+          0.15806396771312314,
+          0.16135269895354354
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.02195833333333334,
+        "sample_sd": 0.0049338272684754094,
+        "approx_95pct_mc_interval": [
+          0.019166757761775732,
+          0.024749908904890948
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.070275,
+        "sample_sd": 0.004247592901225993,
+        "approx_95pct_mc_interval": [
+          -0.07267830192683215,
+          -0.06787169807316785
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.050749999999999997,
+        "sample_sd": 0.004859573494192105,
+        "approx_95pct_mc_interval": [
+          0.04800043745628178,
+          0.05349956254371821
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.121025,
+        "sample_sd": 0.006478653760269536,
+        "approx_95pct_mc_interval": [
+          -0.12469064344262844,
+          -0.11735935655737155
+        ]
+      }
+    },
+    "consumption_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.177875,
+        "sample_sd": 0.005233306793987907,
+        "approx_95pct_mc_interval": [
+          0.1749139779354644,
+          0.1808360220645356
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.16010833333333332,
+        "sample_sd": 0.003038976602061757,
+        "approx_95pct_mc_interval": [
+          0.15838887045325722,
+          0.16182779621340942
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.017766666666666667,
+        "sample_sd": 0.005512850002631591,
+        "approx_95pct_mc_interval": [
+          0.014647478142305716,
+          0.020885855191027616
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.07509166666666667,
+        "sample_sd": 0.005026377393010762,
+        "approx_95pct_mc_interval": [
+          -0.07793560740075202,
+          -0.07224772593258132
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.05399166666666667,
+        "sample_sd": 0.00485114013465501,
+        "approx_95pct_mc_interval": [
+          0.051246875745299396,
+          0.05673645758803394
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.12908333333333333,
+        "sample_sd": 0.008169325479369695,
+        "approx_95pct_mc_interval": [
+          -0.13370556435265285,
+          -0.1244611023140138
+        ]
+      }
+    },
+    "employment_rate": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.18920466670760977,
+        "sample_sd": 0.006544795005940369,
+        "approx_95pct_mc_interval": [
+          0.18550160033230859,
+          0.19290773308291095
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.1667005777405519,
+        "sample_sd": 0.003571251196925372,
+        "approx_95pct_mc_interval": [
+          0.16467995215746103,
+          0.16872120332364274
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.022504088967057887,
+        "sample_sd": 0.005207302069454184,
+        "approx_95pct_mc_interval": [
+          0.01955778046053784,
+          0.025450397473577933
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.07149236606642065,
+        "sample_sd": 0.004214168403303657,
+        "approx_95pct_mc_interval": [
+          -0.07387675630323727,
+          -0.06910797582960403
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.052260504650930004,
+        "sample_sd": 0.005232082152775352,
+        "approx_95pct_mc_interval": [
+          0.04930017549238946,
+          0.05522083380947055
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.12375287071735065,
+        "sample_sd": 0.006805511929058442,
+        "approx_95pct_mc_interval": [
+          -0.12760345157868144,
+          -0.11990228985601985
+        ]
+      }
+    },
+    "active_seller_fraction": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.9361111111111111,
+        "sample_sd": 0.029157646512850608,
+        "approx_95pct_mc_interval": [
+          0.9196136195492435,
+          0.9526086026729788
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.9624999999999999,
+        "sample_sd": 0.020257184783516523,
+        "approx_95pct_mc_interval": [
+          0.9510384187339684,
+          0.9739615812660314
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.02638888888888885,
+        "sample_sd": 0.04110735718596866,
+        "approx_95pct_mc_interval": [
+          -0.0496475657511421,
+          -0.003130212026635607
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.04027777777777775,
+        "sample_sd": 0.020668540156202397,
+        "approx_95pct_mc_interval": [
+          -0.051972105256259,
+          -0.028583450299296508
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.06805555555555545,
+        "sample_sd": 0.02883104153909384,
+        "approx_95pct_mc_interval": [
+          0.0517428581538146,
+          0.0843682529572963
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.10833333333333321,
+        "sample_sd": 0.037267799624996455,
+        "approx_95pct_mc_interval": [
+          -0.129419575996018,
+          -0.08724709067064841
+        ]
+      }
+    },
+    "quoted_price_spread_mean_cents": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -122.36111111111111,
+        "sample_sd": 20.444780684542874,
+        "approx_95pct_mc_interval": [
+          -133.92883475021992,
+          -110.7933874720023
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -28.68888888888889,
+        "sample_sd": 6.239501620432553,
+        "approx_95pct_mc_interval": [
+          -32.219219270251415,
+          -25.158558507526365
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -93.67222222222222,
+        "sample_sd": 20.498646584214086,
+        "approx_95pct_mc_interval": [
+          -105.27042336317284,
+          -82.0740210812716
+        ]
+      }
+    },
+    "unmet_stock_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.0015166666666666666,
+        "sample_sd": 0.0006820201721001477,
+        "approx_95pct_mc_interval": [
+          -0.0019025559060223463,
+          -0.0011307774273109869
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.0005166666666666667,
+        "sample_sd": 0.00047450133313987143,
+        "approx_95pct_mc_interval": [
+          -0.000785141069637425,
+          -0.0002481922636959084
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.0009999999999999998,
+        "sample_sd": 0.000649475312708791,
+        "approx_95pct_mc_interval": [
+          -0.001367475251691948,
+          -0.0006325247483080517
+        ]
+      }
+    },
+    "unmet_budget_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.28581666666666666,
+        "sample_sd": 0.006334154651689142,
+        "approx_95pct_mc_interval": [
+          0.28223278129129004,
+          0.2894005520420433
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.29923333333333335,
+        "sample_sd": 0.004420475773104745,
+        "approx_95pct_mc_interval": [
+          0.2967322137133361,
+          0.3017344529533306
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.01341666666666668,
+        "sample_sd": 0.007642326315667985,
+        "approx_95pct_mc_interval": [
+          -0.017740719839140835,
+          -0.009092613494192523
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.07660833333333333,
+        "sample_sd": 0.005221539016130177,
+        "approx_95pct_mc_interval": [
+          0.07365396951591738,
+          0.07956269715074929
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.053474999999999995,
+        "sample_sd": 0.004907346070387271,
+        "approx_95pct_mc_interval": [
+          -0.05625159242324984,
+          -0.05069840757675015
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.13008333333333333,
+        "sample_sd": 0.00820818143222007,
+        "approx_95pct_mc_interval": [
+          0.12543911748907277,
+          0.13472754917759389
+        ]
+      }
+    }
+  },
+  "household_id_ration": {
+    "production_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.25080833333333336,
+        "sample_sd": 0.007580412357857024,
+        "approx_95pct_mc_interval": [
+          0.24651931128026378,
+          0.25509735538640294
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.11119166666666666,
+        "sample_sd": 0.0035538604703089054,
+        "approx_95pct_mc_interval": [
+          0.10918088081345535,
+          0.11320245251987797
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.13961666666666667,
+        "sample_sd": 0.009951503617163793,
+        "approx_95pct_mc_interval": [
+          0.13398607344029984,
+          0.1452472598930335
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.0011333333333333334,
+        "sample_sd": 0.005088013245646937,
+        "approx_95pct_mc_interval": [
+          -0.004012147834007681,
+          0.0017454811673410144
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0022333333333333302,
+        "sample_sd": 0.0030221405217714993,
+        "approx_95pct_mc_interval": [
+          0.000523396362435152,
+          0.0039432703042315085
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.0033666666666666684,
+        "sample_sd": 0.006442519740447864,
+        "approx_95pct_mc_interval": [
+          -0.007011865362945581,
+          0.0002785320296122434
+        ]
+      }
+    },
+    "consumption_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.2511,
+        "sample_sd": 0.005332746179800964,
+        "approx_95pct_mc_interval": [
+          0.24808271480642052,
+          0.25411728519357946
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.10675,
+        "sample_sd": 0.0022330167120654595,
+        "approx_95pct_mc_interval": [
+          0.10548655185618039,
+          0.10801344814381961
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.14434999999999998,
+        "sample_sd": 0.006653843728525369,
+        "approx_95pct_mc_interval": [
+          0.14058523350154634,
+          0.14811476649845362
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.0018666666666666692,
+        "sample_sd": 0.004138364484438344,
+        "approx_95pct_mc_interval": [
+          -0.004208166798780029,
+          0.00047483346544669033
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.000633333333333333,
+        "sample_sd": 0.0036945496301575083,
+        "approx_95pct_mc_interval": [
+          -0.0014570549057024195,
+          0.0027237215723690854
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.002500000000000007,
+        "sample_sd": 0.0058877376423762786,
+        "approx_95pct_mc_interval": [
+          -0.005831301174488967,
+          0.0008313011744889532
+        ]
+      }
+    },
+    "employment_rate": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.25947059665163924,
+        "sample_sd": 0.008192455390953916,
+        "approx_95pct_mc_interval": [
+          0.2548352786528538,
+          0.26410591465042466
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.11663682087346035,
+        "sample_sd": 0.0038166291341996633,
+        "approx_95pct_mc_interval": [
+          0.11447735965259374,
+          0.11879628209432695
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.14283377577817888,
+        "sample_sd": 0.010592483473740245,
+        "approx_95pct_mc_interval": [
+          0.1368405140569273,
+          0.14882703749943046
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": -0.0012264361223911825,
+        "sample_sd": 0.005271975393483534,
+        "approx_95pct_mc_interval": [
+          -0.004209337006728208,
+          0.0017564647619458431
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.0021967477838384674,
+        "sample_sd": 0.0031267396925116794,
+        "approx_95pct_mc_interval": [
+          0.0004276282607441116,
+          0.003965867306932823
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.0034231839062296523,
+        "sample_sd": 0.006704606921731984,
+        "approx_95pct_mc_interval": [
+          -0.00721667238508079,
+          0.00037030457262148507
+        ]
+      }
+    },
+    "active_seller_fraction": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.9819444444444444,
+        "sample_sd": 0.018060411157513872,
+        "approx_95pct_mc_interval": [
+          0.9717258048658478,
+          0.992163084023041
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.9069444444444446,
+        "sample_sd": 0.03053259008402424,
+        "approx_95pct_mc_interval": [
+          0.8896690053224581,
+          0.924219883566431
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.07499999999999991,
+        "sample_sd": 0.040514369567033116,
+        "approx_95pct_mc_interval": [
+          0.05207683746793685,
+          0.09792316253206299
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.005555555555555564,
+        "sample_sd": 0.012974982402692068,
+        "approx_95pct_mc_interval": [
+          -0.0017857318357108612,
+          0.012896842946821988
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 0.012500000000000002,
+        "sample_sd": 0.014433756729740595,
+        "approx_95pct_mc_interval": [
+          0.004333333333333363,
+          0.020666666666666642
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": -0.006944444444444438,
+        "sample_sd": 0.0206685401562024,
+        "approx_95pct_mc_interval": [
+          -0.018638771922925682,
+          0.004749883034036807
+        ]
+      }
+    },
+    "quoted_price_spread_mean_cents": {
+      "integrated": {
+        "n": 12,
+        "mean": 129.91666666666666,
+        "sample_sd": 15.565518094022876,
+        "approx_95pct_mc_interval": [
+          121.10964572623976,
+          138.72368760709355
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 31.505555555555556,
+        "sample_sd": 7.7381755129591285,
+        "approx_95pct_mc_interval": [
+          27.127270594420903,
+          35.88384051669021
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 98.41111111111111,
+        "sample_sd": 19.036808223545968,
+        "approx_95pct_mc_interval": [
+          87.64002288578308,
+          109.18219933643914
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 7.555555555555556,
+        "sample_sd": 22.39107566331438,
+        "approx_95pct_mc_interval": [
+          -5.113388134871083,
+          20.224499245982194
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": 2.816666666666667,
+        "sample_sd": 10.106698448818662,
+        "approx_95pct_mc_interval": [
+          -2.901736301976285,
+          8.535069635309618
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 4.738888888888888,
+        "sample_sd": 24.631108003528414,
+        "approx_95pct_mc_interval": [
+          -9.197472410661472,
+          18.675250188439247
+        ]
+      }
+    },
+    "unmet_stock_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.0018666666666666666,
+        "sample_sd": 0.0009208033383295197,
+        "approx_95pct_mc_interval": [
+          0.0013456731325165176,
+          0.0023876602008168156
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.0002666666666666667,
+        "sample_sd": 0.0001669694219873444,
+        "approx_95pct_mc_interval": [
+          0.00017219482275045376,
+          0.0003611385105828796
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": 0.0015999999999999999,
+        "sample_sd": 0.0009572688422609587,
+        "approx_95pct_mc_interval": [
+          0.001058374164709118,
+          0.002141625835290882
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.00035000000000000005,
+        "sample_sd": 0.001166580083367229,
+        "approx_95pct_mc_interval": [
+          -0.00031005481866005927,
+          0.0010100548186600593
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.00025000000000000006,
+        "sample_sd": 0.0005000000000000001,
+        "approx_95pct_mc_interval": [
+          -0.0005329016319029168,
+          3.290163190291666e-05
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0006000000000000001,
+        "sample_sd": 0.0011755076272905174,
+        "approx_95pct_mc_interval": [
+          -6.510605214962565e-05,
+          0.0012651060521496258
+        ]
+      }
+    },
+    "unmet_budget_per_person": {
+      "integrated": {
+        "n": 12,
+        "mean": 0.210725,
+        "sample_sd": 0.00587693875167243,
+        "approx_95pct_mc_interval": [
+          0.20739980887311676,
+          0.21405019112688323
+        ]
+      },
+      "isolated": {
+        "n": 12,
+        "mean": 0.352325,
+        "sample_sd": 0.004136780698254915,
+        "approx_95pct_mc_interval": [
+          0.3499843959792784,
+          0.3546656040207216
+        ]
+      },
+      "integrated_minus_isolated": {
+        "n": 12,
+        "mean": -0.1416,
+        "sample_sd": 0.007323933369440224,
+        "approx_95pct_mc_interval": [
+          -0.14574390540432575,
+          -0.13745609459567426
+        ]
+      },
+      "change_in_integrated_vs_reference": {
+        "n": 12,
+        "mean": 0.0015166666666666685,
+        "sample_sd": 0.004013801945862061,
+        "approx_95pct_mc_interval": [
+          -0.0007543555745722901,
+          0.0037876889079056274
+        ]
+      },
+      "change_in_isolated_vs_reference": {
+        "n": 12,
+        "mean": -0.000383333333333342,
+        "sample_sd": 0.0038517607150575558,
+        "approx_95pct_mc_interval": [
+          -0.002562672117311997,
+          0.0017960054506453132
+        ]
+      },
+      "change_in_market_gap_vs_reference": {
+        "n": 12,
+        "mean": 0.0019000000000000104,
+        "sample_sd": 0.005477723482018294,
+        "approx_95pct_mc_interval": [
+          -0.0011993138243517937,
+          0.004999313824351814
+        ]
+      }
+    }
+  }
+}

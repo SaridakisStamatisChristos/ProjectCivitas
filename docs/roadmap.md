@@ -23,3 +23,13 @@
 ### Verified normalization investigation — v0.2 development only
 
 The experiment that held six firms fixed while scaling population failed comparability requirements. Exact per-capita initial stocks and firm density, signed-int64 initial-state and transfer-credit guards, and randomized restoration tests are implemented. The 360-run controlled replication campaign and 600-run disjoint-market counterfactual found continuing scale-sensitive output differences. **This is not a v0.2 acceptance pass:** the market interaction/seller-choice structure is still non-scale-invariant and uncalibrated. Next technical gate: mechanism-level market ablations under matched ownership fractions; next financial gate: inventory unit-cost/COGS and two-sided funding rules. Preserve legacy scenarios and complete release gates before promotion to main.
+
+
+**v0.2 market-structure research gate (2026-11-13):** Completed configurable
+seller-search, hiring-feedback, and rationing-order ablations, with fixed-price
+control, 12 master seeds and period-level provenance. The pronounced
+integrated-versus-isolated production difference is model-rule-dependent, and
+its attribution is not yet causally isolated. Before v0.2 release, implement
+interaction factorial controls, improve inventory cost accounting and
+model two-sided credit/equity flows if such mechanisms are activated. Evidence
+is in `research/v02_market_ablation_experiment.md` and `CHECKPOINT.md`.

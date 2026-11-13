@@ -1,0 +1,13 @@
+{
+  "reference_records": 288,
+  "metrics": [
+    "production_per_person",
+    "consumption_per_person",
+    "employment_rate"
+  ],
+  "status": "passed",
+  "sources": [
+    "research/v02_population_normalized_10000/o08_s00_periods.csv",
+    "research/v02_market_ablation_12/reference/reference_periods.csv"
+  ]
+}

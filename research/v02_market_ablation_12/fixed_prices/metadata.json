@@ -1,0 +1,16 @@
+{
+  "model_version": "0.2.0.dev0",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "seeds_per_treatment": 12,
+  "periods": 24,
+  "internal_simulations": 132,
+  "period_rows": 576,
+  "initial_firms": 60,
+  "initial_money_per_person": "15750",
+  "resource_stock_per_person": "50",
+  "capital_per_person": "27/10",
+  "total_wall_seconds": 31.39628899499985,
+  "caveat": "Uncalibrated model; isolated communities use independent substreams. Seed-level topology contrasts are NOT agent-level matched counterfactuals. Single-factor ablations preserve initial agent state only within the integrated comparison."
+}

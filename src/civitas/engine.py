@@ -139,7 +139,8 @@ class Simulation:
             f = (s.step + offset) % nf
             sec = f // nfirm_sector
             sector = c.sectors[sec]
-            expected = (H * sector.demand_probability / nfirm_sector if s.step == 0 else
+            expected = (H * sector.demand_probability / nfirm_sector
+                        if c.hiring_expectation_rule == "stationary" or s.step == 0 else
                         max(H * sector.demand_probability * 0.25 / nfirm_sector,
                             int(s.last_sales[f]) + int(s.last_unmet[sec]) / nfirm_sector))
             target = math.ceil(expected * (1 + c.output_inventory_buffer))
@@ -226,7 +227,10 @@ class Simulation:
         for k, sector in enumerate(c.sectors):
             would_buy = self.rng.random(H) < sector.demand_probability
             prefers_cheapest = self.rng.random(H) < c.buyer_cheapest_probability
-            order = self.rng.permutation(H)
+            # Draw permutation even for deterministic order: same RNG consumption
+            # across treatment arms isolates order without shifting future draws.
+            randomized_order = self.rng.permutation(H)
+            order = randomized_order if c.rationing_order_rule == "random" else range(H)
             ids = list(range(k * nfirm_sector, (k + 1) * nfirm_sector))
             by_price = sorted(ids, key=lambda f: (int(s.prices[f]), (f + s.step) % nf))
             for h in order:
@@ -241,7 +245,13 @@ class Simulation:
                     budget_unmet[k] += 1
                     continue
                 favorite = ids[(int(h) + s.step) % nfirm_sector]
-                candidates = by_price if prefers_cheapest[h] else [favorite] + [f for f in by_price if f != favorite]
+                if c.buyer_seller_rule == "cheapest":
+                    candidates = by_price
+                elif c.buyer_seller_rule == "favorite":
+                    candidates = [favorite] + [f for f in by_price if f != favorite]
+                else:
+                    candidates = (by_price if prefers_cheapest[h] else
+                                  [favorite] + [f for f in by_price if f != favorite])
                 bought = False
                 for f in candidates:
                     price = int(s.prices[f])
@@ -447,6 +457,18 @@ class Simulation:
             "capital_interfirm_purchases_cents": capital_purchases,
             "capital_discrepancy_units": (s.initial_capital_total + s.cumulative_capital_added -
                                           s.cumulative_capital_depreciated - int(s.firm_capital.sum())),
+            # Mechanism diagnostics; not a welfare objective or real-world index.
+            "quoted_price_spread_mean_cents": float(np.mean([
+                int(s.prices[k*nfirm_sector:(k+1)*nfirm_sector].max()) -
+                int(s.prices[k*nfirm_sector:(k+1)*nfirm_sector].min())
+                for k in range(ns)])),
+            "seller_sales_hhi_mean": float(np.mean([
+                float(np.sum((sold[k*nfirm_sector:(k+1)*nfirm_sector] /
+                              int(sold[k*nfirm_sector:(k+1)*nfirm_sector].sum())) ** 2))
+                if int(sold[k*nfirm_sector:(k+1)*nfirm_sector].sum()) else None
+                for k in range(ns)
+                if int(sold[k*nfirm_sector:(k+1)*nfirm_sector].sum())])) if int(sold.sum()) else None,
+            "active_sellers": int(np.count_nonzero(sold)),
             "unmet_stock_demand_units": int(stock_unmet.sum()),
             "unmet_budget_demand_units": int(budget_unmet.sum()),
             "total_money_cents": s.total_money(),

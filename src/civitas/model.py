@@ -43,6 +43,10 @@ class Scenario:
     dividend_share: float = 0.65
     ownership_fraction: float = 0.08
     buyer_cheapest_probability: float = 0.75
+    # Market-mechanism ablations; defaults preserve the historical algorithm.
+    buyer_seller_rule: str = "mixed"  # mixed | cheapest | favorite
+    hiring_expectation_rule: str = "adaptive"  # adaptive | stationary
+    rationing_order_rule: str = "random"  # random | household_id
     initial_resource: int = 500_000
     resource_capacity: int = 600_000
     regeneration_rate: float = 0.025
@@ -129,6 +133,11 @@ class Scenario:
             raise ValueError("capital endowment requires capital_enabled")
         if type(self.capital_input_sector) is not str or not self.capital_input_sector:
             raise ValueError("capital_input_sector must be nonempty string")
+        for field_name, choices in (("buyer_seller_rule", {"mixed", "cheapest", "favorite"}),
+                                    ("hiring_expectation_rule", {"adaptive", "stationary"}),
+                                    ("rationing_order_rule", {"random", "household_id"})):
+            if type(getattr(self, field_name)) is not str or getattr(self, field_name) not in choices:
+                raise ValueError(f"{field_name} must be one of {sorted(choices)}")
         if type(self.transaction_trace) is not bool:
             raise ValueError("transaction_trace must be boolean")
         if self.initial_resource > self.resource_capacity:

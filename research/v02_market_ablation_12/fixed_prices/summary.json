@@ -1,0 +1,144 @@
+{
+  "fixed_prices": {
+    "config_sha256_seed_1": "cd6f04461db0fb9f54e75b8770fbe3e1508a0ff02a6eed5ebc688cc9361f7126",
+    "integrated": {
+      "production_per_person": {
+        "n": 12,
+        "mean": 0.18166666666666667,
+        "sd": 0.005928871321888773
+      },
+      "consumption_per_person": {
+        "n": 12,
+        "mean": 0.177875,
+        "sd": 0.005233306793987907
+      },
+      "employment_rate": {
+        "n": 12,
+        "mean": 0.18920466670760977,
+        "sd": 0.006544795005940369
+      },
+      "active_seller_fraction": {
+        "n": 12,
+        "mean": 0.9361111111111111,
+        "sd": 0.029157646512850608
+      },
+      "quoted_price_spread_mean_cents": {
+        "n": 12,
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "unmet_stock_per_person": {
+        "n": 12,
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "unmet_budget_per_person": {
+        "n": 12,
+        "mean": 0.28581666666666666,
+        "sd": 0.006334154651689142
+      }
+    },
+    "isolated": {
+      "production_per_person": {
+        "n": 12,
+        "mean": 0.15970833333333334,
+        "sd": 0.0029062497963505897
+      },
+      "consumption_per_person": {
+        "n": 12,
+        "mean": 0.16010833333333332,
+        "sd": 0.003038976602061757
+      },
+      "employment_rate": {
+        "n": 12,
+        "mean": 0.1667005777405519,
+        "sd": 0.003571251196925372
+      },
+      "active_seller_fraction": {
+        "n": 12,
+        "mean": 0.9624999999999999,
+        "sd": 0.020257184783516523
+      },
+      "quoted_price_spread_mean_cents": {
+        "n": 12,
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "unmet_stock_per_person": {
+        "n": 12,
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "unmet_budget_per_person": {
+        "n": 12,
+        "mean": 0.29923333333333335,
+        "sd": 0.004420475773104745
+      }
+    },
+    "isolated_minus_integrated": {
+      "production_per_person": {
+        "n": 12,
+        "mean": -0.02195833333333334,
+        "sd": 0.0049338272684754094,
+        "approx_95pct_mc_interval": [
+          -0.024749908904890948,
+          -0.019166757761775732
+        ]
+      },
+      "consumption_per_person": {
+        "n": 12,
+        "mean": -0.017766666666666667,
+        "sd": 0.005512850002631591,
+        "approx_95pct_mc_interval": [
+          -0.020885855191027616,
+          -0.014647478142305716
+        ]
+      },
+      "employment_rate": {
+        "n": 12,
+        "mean": -0.022504088967057887,
+        "sd": 0.005207302069454184,
+        "approx_95pct_mc_interval": [
+          -0.025450397473577933,
+          -0.01955778046053784
+        ]
+      },
+      "active_seller_fraction": {
+        "n": 12,
+        "mean": 0.02638888888888885,
+        "sd": 0.04110735718596866,
+        "approx_95pct_mc_interval": [
+          0.003130212026635607,
+          0.0496475657511421
+        ]
+      },
+      "quoted_price_spread_mean_cents": {
+        "n": 12,
+        "mean": 0.0,
+        "sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "unmet_stock_per_person": {
+        "n": 12,
+        "mean": 0.0,
+        "sd": 0.0,
+        "approx_95pct_mc_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "unmet_budget_per_person": {
+        "n": 12,
+        "mean": 0.01341666666666668,
+        "sd": 0.007642326315667985,
+        "approx_95pct_mc_interval": [
+          0.009092613494192523,
+          0.017740719839140835
+        ]
+      }
+    }
+  }
+}
