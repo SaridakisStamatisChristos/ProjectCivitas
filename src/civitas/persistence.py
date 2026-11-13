@@ -10,7 +10,7 @@ from typing import Any
 import numpy as np
 from civitas import __version__
 from civitas.model import Scenario
-from civitas.state import State
+from civitas.state import State, LoanContract
 
 
 def canonical_json(obj: Any) -> str:
@@ -29,7 +29,9 @@ def checkpoint_save(path: str | Path, scenario: Scenario, state: State, rng_stat
     owner_offsets = np.r_[0, np.cumsum(owner_sizes)]
     owner_ids = np.concatenate(owners) if len(owners) else np.array([], dtype=np.int64)
     np.savez_compressed(
-        target, checkpoint_version=np.array(4 if scenario.cost_basis_accounting_enabled else 3, dtype=np.int64),
+        target, checkpoint_version=np.array(5 if scenario.credit_enabled else
+                                            (4 if scenario.cost_basis_accounting_enabled else 3),
+                                            dtype=np.int64),
         software_version=np.array(__version__),
         config_json=np.array(canonical_json(scenario.to_dict())),
         rng_json=np.array(canonical_json(rng_state)),
@@ -46,6 +48,12 @@ def checkpoint_save(path: str | Path, scenario: Scenario, state: State, rng_stat
         firm_cash=state.firm_cash, inventory=state.inventory,
         firm_inventory_basis_cents=state.firm_inventory_basis_cents,
         firm_capital_basis_cents=state.firm_capital_basis_cents,
+        household_loan_assets_cents=state.household_loan_assets_cents,
+        firm_loan_liabilities_cents=state.firm_loan_liabilities_cents,
+        loan_lender_ids=np.array([loan.lender_household for loan in state.loans], dtype=np.int64),
+        loan_borrower_ids=np.array([loan.borrower_firm for loan in state.loans], dtype=np.int64),
+        loan_principal_cents=np.array([loan.outstanding_cents for loan in state.loans], dtype=np.int64),
+        loan_origin_steps=np.array([loan.opened_step for loan in state.loans], dtype=np.int64),
         prices=state.prices, last_sales=state.last_sales,
         last_unmet=state.last_unmet, last_employment=state.last_employment,
         cumulative_output=state.cumulative_output,
@@ -62,10 +70,10 @@ def checkpoint_save(path: str | Path, scenario: Scenario, state: State, rng_stat
 def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
     with np.load(Path(path), allow_pickle=False) as z:
         version = int(z["checkpoint_version"])
-        if version not in (1, 2, 3, 4):
+        if version not in (1, 2, 3, 4, 5):
             raise ValueError("unsupported checkpoint format")
         software_version = str(z["software_version"])
-        expected_version = {1: "0.1.0", 2: "0.2.0.dev0", 3: __version__, 4: __version__}[version]
+        expected_version = {1: "0.1.0", 2: "0.2.0.dev0", 3: __version__, 4: __version__, 5: __version__}[version]
         if software_version != expected_version:
             raise ValueError("checkpoint software version differs; migration required")
         scenario = Scenario.from_dict(json.loads(str(z["config_json"])))
@@ -76,11 +84,11 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
                   "inventory", "prices", "last_sales", "last_unmet", "last_employment",
                   "cumulative_output", "cumulative_consumption")
         arrays = {f: z[f].copy() for f in fields}
-        arrays["household_savings"] = (z["household_savings"].copy() if version in (3,4)
+        arrays["household_savings"] = (z["household_savings"].copy() if version in (3,4,5)
                                        else np.zeros(len(arrays["household_cash"]), dtype=np.int64))
         nf = len(scenario.sectors) * scenario.firms_per_sector
         ns = len(scenario.sectors)
-        if version in (2, 3, 4):
+        if version in (2, 3, 4, 5):
             arrays["firm_capital"] = z["firm_capital"].copy()
             arrays["cumulative_capital_goods_converted"] = z["cumulative_capital_goods_converted"].copy()
             capital_scalars = dict(initial_capital_total=int(z["initial_capital_total"]),
@@ -93,7 +101,7 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
             arrays["cumulative_capital_goods_converted"] = np.zeros(ns, dtype=np.int64)
             capital_scalars = dict(initial_capital_total=0, cumulative_capital_added=0,
                                    cumulative_capital_depreciated=0)
-        if version == 4:
+        if version in (4, 5):
             arrays["firm_inventory_basis_cents"] = z["firm_inventory_basis_cents"].copy()
             arrays["firm_capital_basis_cents"] = z["firm_capital_basis_cents"].copy()
         else:
@@ -101,7 +109,22 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
                 raise ValueError("historical-cost checkpoint requires format 4; cannot fabricate missing cost history")
             arrays["firm_inventory_basis_cents"] = np.zeros(nf, dtype=np.int64)
             arrays["firm_capital_basis_cents"] = np.zeros(nf, dtype=np.int64)
+        if version == 5:
+            loans = [LoanContract(int(h), int(f), int(amt), int(step))
+                     for h, f, amt, step in zip(z["loan_lender_ids"],
+                                                 z["loan_borrower_ids"],
+                                                 z["loan_principal_cents"],
+                                                 z["loan_origin_steps"], strict=True)]
+            arrays["household_loan_assets_cents"] = z["household_loan_assets_cents"].copy()
+            arrays["firm_loan_liabilities_cents"] = z["firm_loan_liabilities_cents"].copy()
+        else:
+            if scenario.credit_enabled:
+                raise ValueError("credit checkpoint requires format 5; cannot fabricate loan history")
+            loans = []
+            arrays["household_loan_assets_cents"] = np.zeros(len(arrays["household_cash"]), dtype=np.int64)
+            arrays["firm_loan_liabilities_cents"] = np.zeros(nf, dtype=np.int64)
         state = State(
+            loans=loans,
             step=int(z["step"]), gov_cash=int(z["gov_cash"]), resource=int(z["resource"]),
             initial_total_money=int(z["initial_total_money"]),
             initial_resource=int(z["initial_resource"]),
@@ -113,7 +136,8 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
     # Validate checkpoint shapes as well as invariants before resuming.
     h = (scenario.population + scenario.household_size - 1) // scenario.household_size
     nf = len(scenario.sectors) * scenario.firms_per_sector
-    if (len(state.household_cash) != h or len(state.household_savings) != h or len(state.participation) != scenario.population
+    if (len(state.household_cash) != h or len(state.household_savings) != h or len(state.household_loan_assets_cents) != h or
+            len(state.firm_loan_liabilities_cents) != nf or len(state.participation) != scenario.population
             or state.skills.shape != (scenario.population, len(scenario.sectors))
             or len(state.firm_cash) != nf or len(owners) != nf
             or len(state.firm_capital) != nf or len(state.firm_inventory_basis_cents) != nf

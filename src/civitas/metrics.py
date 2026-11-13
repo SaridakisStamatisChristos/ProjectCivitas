@@ -36,6 +36,8 @@ def household_equity_values(state, scenario) -> np.ndarray:
             continue
         value = (int(state.firm_cash[f]) + int(state.inventory[f]) * int(state.prices[f])
                  + int(state.firm_capital[f]) * capital_price)
+        if scenario.credit_enabled:
+            value = max(0, value - int(state.firm_loan_liabilities_cents[f]))
         base, remainder = divmod(value, len(owners))
         wealth[owners] += base
         if remainder:

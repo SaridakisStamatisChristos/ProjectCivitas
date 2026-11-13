@@ -3,7 +3,7 @@
 Order each period: regenerate -> automation -> hire/pay wages -> produce ->
 collect wage tax -> redistribute -> consume -> pay dividends -> reprice -> audit.
 Markets are posted-price, budget constrained, with finite stock and rationing.
-No borrowing, issuance, credit, mortality or reproduction. v0.2 adds optional physical capital and savings.
+No issuance, mortality or reproduction. v0.2 adds optional physical capital, savings and bilateral credit.
 """
 from __future__ import annotations
 from dataclasses import dataclass
@@ -14,6 +14,7 @@ import numpy as np
 from civitas.model import Scenario
 from civitas.state import State
 from civitas.economy_costs import allocated_basis, checked_add_i64
+from civitas.finance import CreditFlows, service_loans, available_credit, originate
 
 
 @dataclass
@@ -83,6 +84,8 @@ class Simulation:
             inventory=np.zeros(nf, dtype=np.int64),
             firm_inventory_basis_cents=np.zeros(nf, dtype=np.int64),
             firm_capital_basis_cents=np.full(nf, initial_capital_basis, dtype=np.int64),
+            household_loan_assets_cents=np.zeros(h, dtype=np.int64),
+            firm_loan_liabilities_cents=np.zeros(nf, dtype=np.int64), loans=[],
             prices=np.array([sector.price_cents for sector in c.sectors for _ in range(c.firms_per_sector)], dtype=np.int64),
             resource=c.initial_resource,
             initial_total_money=int(hh.sum()) + int(ff.sum()),
@@ -120,11 +123,20 @@ class Simulation:
         household_dividends = np.zeros(H, dtype=np.int64)
         household_purchase_spending = np.zeros(H, dtype=np.int64)
         household_opening_assets = s.household_cash.copy() + s.household_savings.copy()
+        household_opening_claims = s.household_loan_assets_cents.copy()
         firm_opening_cash = s.firm_cash.copy()
+        firm_opening_debt = s.firm_loan_liabilities_cents.copy()
         if c.cost_basis_accounting_enabled:
             firm_opening_book_equity = (s.firm_cash.astype(object) +
                                         s.firm_inventory_basis_cents.astype(object) +
-                                        s.firm_capital_basis_cents.astype(object))
+                                        s.firm_capital_basis_cents.astype(object) -
+                                        s.firm_loan_liabilities_cents.astype(object))
+        credit_flows = CreditFlows.empty(s)
+        if c.credit_enabled:
+            service_loans(s, repayment_fraction=c.credit_repayment_fraction,
+                          term=c.credit_term_periods,
+                          reserve_cents=c.credit_firm_cash_reserve_cents,
+                          flows=credit_flows)
         firm_consumption_cogs = np.zeros(nf, dtype=np.int64)
         firm_capital_goods_cogs = np.zeros(nf, dtype=np.int64)
         firm_uncapitalized_labor_cost = np.zeros(nf, dtype=np.int64)
@@ -136,6 +148,7 @@ class Simulation:
         capital_depreciation_losses = np.zeros(nf, dtype=np.int64)
         sale_revenues = np.zeros(nf, dtype=np.int64)
         firm_wages = np.zeros(nf, dtype=np.int64)
+        firm_resource_fees = np.zeros(nf, dtype=np.int64)
         production = np.zeros(nf, dtype=np.int64)
         sold = np.zeros(nf, dtype=np.int64)
         stock_unmet = np.zeros(ns, dtype=np.int64)
@@ -218,6 +231,12 @@ class Simulation:
         # Resource scarcity: proportional preliminary shares, followed by stable
         # rotating residual allocation. No firm can extract more than exists.
         resource_cost = np.array([q.resource_per_unit for q in c.sectors for _ in range(nfirm_sector)], dtype=np.int64)
+        if c.resource_extraction_fee_cents_per_unit:
+            for f in range(nf):
+                fee_per_good = (int(resource_cost[f]) *
+                                c.resource_extraction_fee_cents_per_unit)
+                labor_potential[f] = min(int(labor_potential[f]),
+                                         int(s.firm_cash[f]) // fee_per_good)
         requested = int(np.dot(labor_potential, resource_cost))
         if requested <= s.resource:
             production[:] = labor_potential
@@ -238,11 +257,19 @@ class Simulation:
         used_resource = int(np.dot(production, resource_cost))
         s.resource -= used_resource
         s.cumulative_resource_extracted += used_resource
+        if c.resource_extraction_fee_cents_per_unit:
+            for f in range(nf):
+                amount = (int(production[f]) * int(resource_cost[f]) *
+                          c.resource_extraction_fee_cents_per_unit)
+                if amount:
+                    s.transfer("firm", f, "government", 0, amount, "resource_fee")
+                    firm_resource_fees[f] = amount
         if c.cost_basis_accounting_enabled:
             for f in range(nf):
                 if production[f] > 0:
                     s.firm_inventory_basis_cents[f] = checked_add_i64(
-                        int(s.firm_inventory_basis_cents[f]), int(firm_wages[f]))
+                        int(s.firm_inventory_basis_cents[f]),
+                        int(firm_wages[f]) + int(firm_resource_fees[f]))
                 else:
                     firm_uncapitalized_labor_cost[f] = firm_wages[f]
         s.inventory += production
@@ -373,6 +400,14 @@ class Simulation:
         capital_added = 0
         capital_purchases = 0
         investment_imputed_value = 0
+        if c.credit_enabled:
+            from fractions import Fraction
+            limit = Fraction(str(c.credit_lender_savings_share))
+            lending_caps = np.array(
+                [(int(value) * limit.numerator) // limit.denominator
+                 for value in s.household_savings], dtype=np.int64)
+        else:
+            lending_caps = np.zeros(H, dtype=np.int64)
         if c.capital_enabled and c.capital_investment_budget_share > 0:
             capital_sec = next(i for i, sector in enumerate(c.sectors)
                                if sector.name == c.capital_input_sector)
@@ -385,9 +420,20 @@ class Simulation:
                 need = max(0, target - int(s.firm_capital[f]))
                 budget = math.floor(int(s.firm_cash[f]) * c.capital_investment_budget_share)
                 for supplier in suppliers:
-                    if not need or budget <= 0:
+                    if not need or (budget <= 0 and not c.credit_enabled):
                         break
                     price = int(s.prices[supplier])
+                    if c.credit_enabled and supplier != f:
+                        # Only originate debt if a stocked, external supplier has
+                        # capital goods that baseline available cash cannot buy.
+                        headroom = available_credit(s, f, lending_caps,
+                                                    c.credit_max_principal_per_firm_cents)
+                        desired_units = min(need, int(s.inventory[supplier]),
+                                            (budget + headroom) // price)
+                        shortfall = max(0, desired_units * price - budget)
+                        if shortfall:
+                            originate(s, f, shortfall, lending_caps, credit_flows)
+                            budget += shortfall
                     units = min(need, int(s.inventory[supplier]), budget // price)
                     if units <= 0:
                         continue
@@ -429,7 +475,8 @@ class Simulation:
             quotes = s.prices[capital_sec_idx * nfirm_sector:(capital_sec_idx + 1) * nfirm_sector]
             capital_quote = int(quotes.min())
         depreciation_expense_cents = capital_depreciation_losses * capital_quote
-        firm_operating_surplus = sale_revenues + capital_sale_revenues - firm_wages
+        firm_operating_surplus = (sale_revenues + capital_sale_revenues -
+                                  firm_wages - firm_resource_fees)
         firm_profit_proxy = firm_operating_surplus - depreciation_expense_cents
         firm_cost_basis_earnings = (sale_revenues + capital_sale_revenues -
                                     firm_consumption_cogs - firm_capital_goods_cogs -
@@ -451,8 +498,9 @@ class Simulation:
                         firm_dividend_payments[f] += amount
                         dividends += amount
 
-        # Savings are a non-interest-bearing reserve, not bank deposits and not
-        # a source of capital lending. A household reserves a fraction of its
+        # Savings are non-interest-bearing cash, not bank deposits.
+        # When enabled, a prior savings balance can fund a documented
+        # bilateral capital-goods loan. A household reserves a fraction of its
         # nonnegative disposable income, bounded by its spendable cash above
         # an explicit liquidity floor. Moves are internal balance transfers.
         savings_deposits = 0
@@ -468,24 +516,32 @@ class Simulation:
         # Verify each household and each firm's period cash-flow identities,
         # not merely the aggregate stock of money.
         household_expected = (household_opening_assets + wages - household_taxes +
-                              household_transfers + household_dividends - household_purchase_spending)
+                              household_transfers + household_dividends - household_purchase_spending -
+                              credit_flows.household_principal_advanced +
+                              credit_flows.household_principal_repaid)
         household_actual = s.household_cash + s.household_savings
         household_flow_discrepancy = int(np.abs(household_actual - household_expected).sum())
         if household_flow_discrepancy:
             raise AssertionError("household cash-flow reconciliation violated")
         firm_expected = (firm_opening_cash + sale_revenues + capital_sale_revenues -
-                         firm_wages - capital_purchase_spending - firm_dividend_payments)
+                         firm_wages - firm_resource_fees - capital_purchase_spending -
+                         firm_dividend_payments + credit_flows.firm_principal_advanced -
+                         credit_flows.firm_principal_repaid)
         firm_flow_discrepancy = int(np.abs(s.firm_cash - firm_expected).sum())
         if firm_flow_discrepancy:
             raise AssertionError("firm cash-flow reconciliation violated")
-        if s.gov_cash != government_opening_cash + tax_revenue - transfer_spending:
+        if s.gov_cash != (government_opening_cash + tax_revenue +
+                          int(firm_resource_fees.sum()) - transfer_spending):
             raise AssertionError("government cash-flow reconciliation violated")
 
         firm_book_equity_discrepancy = None
         if c.cost_basis_accounting_enabled:
             closing = (s.firm_cash.astype(object) + s.firm_inventory_basis_cents.astype(object) +
-                       s.firm_capital_basis_cents.astype(object))
-            expected = firm_opening_book_equity + firm_cost_basis_earnings.astype(object) - firm_dividend_payments.astype(object)
+                       s.firm_capital_basis_cents.astype(object) -
+                       s.firm_loan_liabilities_cents.astype(object))
+            expected = (firm_opening_book_equity + firm_cost_basis_earnings.astype(object) -
+                        firm_dividend_payments.astype(object) +
+                        credit_flows.firm_principal_defaulted.astype(object))
             firm_book_equity_discrepancy = sum(abs(int(a-b)) for a,b in zip(closing,expected))
             if firm_book_equity_discrepancy:
                 raise AssertionError("firm book-equity reconciliation violated")
@@ -515,7 +571,19 @@ class Simulation:
                                             transfer_spending + dividends):
             raise AssertionError("household income flow identity violated")
         equity = household_equity_values(s, c)
-        modeled_net_worth = s.household_cash + s.household_savings + equity
+        modeled_net_worth = (s.household_cash + s.household_savings + equity +
+                             s.household_loan_assets_cents)
+        expected_claims = (household_opening_claims +
+                           credit_flows.household_principal_advanced -
+                           credit_flows.household_principal_repaid -
+                           credit_flows.household_principal_defaulted)
+        if not np.array_equal(expected_claims, s.household_loan_assets_cents):
+            raise AssertionError("household loan-claim reconciliation violated")
+        expected_debts = (firm_opening_debt + credit_flows.firm_principal_advanced -
+                          credit_flows.firm_principal_repaid -
+                          credit_flows.firm_principal_defaulted)
+        if not np.array_equal(expected_debts, s.firm_loan_liabilities_cents):
+            raise AssertionError("firm debt reconciliation violated")
         employee_count = int((s.last_employment >= 0).sum())
         workforce_count = int(s.participation.sum())
         total_sales = int(sold.sum())
@@ -544,6 +612,13 @@ class Simulation:
             "mean_household_liquid_wealth_cents": (float(s.household_cash.mean()) if H else None),
             "liquid_wealth_gini": gini(s.household_cash),
             "household_savings_stock_cents": int(s.household_savings.sum()),
+            "household_loan_assets_cents": int(s.household_loan_assets_cents.sum()),
+            "firm_loan_liabilities_cents": int(s.firm_loan_liabilities_cents.sum()),
+            "loan_origination_cents": int(credit_flows.firm_principal_advanced.sum()),
+            "loan_repayment_cents": int(credit_flows.firm_principal_repaid.sum()),
+            "loan_defaults_cents": int(credit_flows.firm_principal_defaulted.sum()),
+            "loan_discrepancy_cents": (int(s.household_loan_assets_cents.sum()) -
+                                       int(s.firm_loan_liabilities_cents.sum())),
             "household_savings_deposited_cents": savings_deposits,
             "household_savings_withdrawn_cents": s.journal.get("savings_withdrawal", {}).get("cents", 0),
             "household_monetary_assets_cents": int((s.household_cash + s.household_savings).sum()),
@@ -551,6 +626,7 @@ class Simulation:
             "household_cashflow_discrepancy_cents": household_flow_discrepancy,
             "firm_cashflow_discrepancy_cents": firm_flow_discrepancy,
             "government_tax_revenue_cents": tax_revenue,
+            "government_resource_fee_cents": int(firm_resource_fees.sum()),
             "government_transfer_cents": transfer_spending,
             "government_balance_cents": s.gov_cash,
             "wages_cents": int(firm_wages.sum()), "dividends_cents": dividends,
@@ -562,6 +638,7 @@ class Simulation:
             "firm_cost_basis_accounting_enabled": c.cost_basis_accounting_enabled,
             "firm_inventory_historical_cost_cents": int(s.firm_inventory_basis_cents.sum()),
             "firm_capital_historical_cost_cents": int(s.firm_capital_basis_cents.sum()),
+            "firm_resource_input_fees_cents": int(firm_resource_fees.sum()),
             "firm_consumer_cogs_cents": int(firm_consumption_cogs.sum()),
             "firm_capital_goods_cogs_cents": int(firm_capital_goods_cogs.sum()),
             "firm_uncapitalized_labor_cost_cents": int(firm_uncapitalized_labor_cost.sum()),

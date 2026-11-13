@@ -1,0 +1,598 @@
+{
+  "design": {
+    "population": 1000,
+    "seeds": 12,
+    "steps": 24,
+    "runs": 48,
+    "audited_periods": 1152,
+    "periods_sha256": "22e4730df33ee414056af8f54e3459532b6bdf08c2ed2b80b11532faee43477c",
+    "elapsed_wall_seconds": 3.5833084090008924,
+    "model_status": "uncalibrated, exploratory synthetic economy"
+  },
+  "configurations": {
+    "credit_0_resourcefee_0": {
+      "schema_version": 1,
+      "name": "credit_0_resourcefee_0",
+      "population": 1000,
+      "household_size": 4,
+      "steps": 24,
+      "seed": 42,
+      "firms_per_sector": 2,
+      "initial_household_cash_cents": 15000,
+      "initial_firm_cash_cents": 20000,
+      "labor_participation": 0.78,
+      "tax_rate": 0.0,
+      "redistribution_share": 0.9,
+      "transfer_recipient_fraction": 0.3,
+      "dividend_share": 0.65,
+      "ownership_fraction": 0.08,
+      "buyer_cheapest_probability": 0.75,
+      "buyer_seller_rule": "mixed",
+      "hiring_expectation_rule": "adaptive",
+      "rationing_order_rule": "random",
+      "market_regions": 1,
+      "restrict_household_sales": false,
+      "restrict_labor_hiring": false,
+      "household_region_assignment": "modulo",
+      "region_assignment_seed": 0,
+      "buyer_price_information": "full",
+      "initial_resource": 500000,
+      "resource_capacity": 600000,
+      "regeneration_rate": 0.025,
+      "output_inventory_buffer": 0.05,
+      "price_adjustment": 0.02,
+      "price_floor_cents": 1,
+      "transaction_trace": false,
+      "automation_base": 0.0,
+      "automation_shock_step": null,
+      "automation_shock_increase": 0.0,
+      "capital_enabled": true,
+      "initial_capital_units_per_firm": 20,
+      "capital_output_per_unit": 2,
+      "capital_depreciation_rate": 0.04,
+      "capital_investment_budget_share": 0.05,
+      "capital_target_buffer": 0.1,
+      "capital_input_sector": "goods",
+      "cost_basis_accounting_enabled": true,
+      "resource_extraction_fee_cents_per_unit": 0,
+      "credit_enabled": false,
+      "credit_max_principal_per_firm_cents": 500000,
+      "credit_term_periods": 4,
+      "credit_repayment_fraction": 0.1,
+      "credit_firm_cash_reserve_cents": 10000,
+      "credit_lender_savings_share": 0.5,
+      "household_savings_rate": 0.75,
+      "household_liquidity_floor_cents": 0,
+      "savings_emergency_food_enabled": true,
+      "savings_essential_sector": "food",
+      "sectors": [
+        {
+          "name": "food",
+          "demand_probability": 1.0,
+          "price_cents": 1500,
+          "wage_cents": 1400,
+          "productivity": 1.25,
+          "resource_per_unit": 2
+        },
+        {
+          "name": "goods",
+          "demand_probability": 0.55,
+          "price_cents": 2500,
+          "wage_cents": 2300,
+          "productivity": 1.25,
+          "resource_per_unit": 3
+        },
+        {
+          "name": "services",
+          "demand_probability": 0.3,
+          "price_cents": 4000,
+          "wage_cents": 3800,
+          "productivity": 1.25,
+          "resource_per_unit": 1
+        }
+      ]
+    },
+    "credit_1_resourcefee_0": {
+      "schema_version": 1,
+      "name": "credit_1_resourcefee_0",
+      "population": 1000,
+      "household_size": 4,
+      "steps": 24,
+      "seed": 42,
+      "firms_per_sector": 2,
+      "initial_household_cash_cents": 15000,
+      "initial_firm_cash_cents": 20000,
+      "labor_participation": 0.78,
+      "tax_rate": 0.0,
+      "redistribution_share": 0.9,
+      "transfer_recipient_fraction": 0.3,
+      "dividend_share": 0.65,
+      "ownership_fraction": 0.08,
+      "buyer_cheapest_probability": 0.75,
+      "buyer_seller_rule": "mixed",
+      "hiring_expectation_rule": "adaptive",
+      "rationing_order_rule": "random",
+      "market_regions": 1,
+      "restrict_household_sales": false,
+      "restrict_labor_hiring": false,
+      "household_region_assignment": "modulo",
+      "region_assignment_seed": 0,
+      "buyer_price_information": "full",
+      "initial_resource": 500000,
+      "resource_capacity": 600000,
+      "regeneration_rate": 0.025,
+      "output_inventory_buffer": 0.05,
+      "price_adjustment": 0.02,
+      "price_floor_cents": 1,
+      "transaction_trace": false,
+      "automation_base": 0.0,
+      "automation_shock_step": null,
+      "automation_shock_increase": 0.0,
+      "capital_enabled": true,
+      "initial_capital_units_per_firm": 20,
+      "capital_output_per_unit": 2,
+      "capital_depreciation_rate": 0.04,
+      "capital_investment_budget_share": 0.05,
+      "capital_target_buffer": 0.1,
+      "capital_input_sector": "goods",
+      "cost_basis_accounting_enabled": true,
+      "resource_extraction_fee_cents_per_unit": 0,
+      "credit_enabled": true,
+      "credit_max_principal_per_firm_cents": 500000,
+      "credit_term_periods": 4,
+      "credit_repayment_fraction": 0.1,
+      "credit_firm_cash_reserve_cents": 10000,
+      "credit_lender_savings_share": 0.5,
+      "household_savings_rate": 0.75,
+      "household_liquidity_floor_cents": 0,
+      "savings_emergency_food_enabled": true,
+      "savings_essential_sector": "food",
+      "sectors": [
+        {
+          "name": "food",
+          "demand_probability": 1.0,
+          "price_cents": 1500,
+          "wage_cents": 1400,
+          "productivity": 1.25,
+          "resource_per_unit": 2
+        },
+        {
+          "name": "goods",
+          "demand_probability": 0.55,
+          "price_cents": 2500,
+          "wage_cents": 2300,
+          "productivity": 1.25,
+          "resource_per_unit": 3
+        },
+        {
+          "name": "services",
+          "demand_probability": 0.3,
+          "price_cents": 4000,
+          "wage_cents": 3800,
+          "productivity": 1.25,
+          "resource_per_unit": 1
+        }
+      ]
+    },
+    "credit_0_resourcefee_20": {
+      "schema_version": 1,
+      "name": "credit_0_resourcefee_20",
+      "population": 1000,
+      "household_size": 4,
+      "steps": 24,
+      "seed": 42,
+      "firms_per_sector": 2,
+      "initial_household_cash_cents": 15000,
+      "initial_firm_cash_cents": 20000,
+      "labor_participation": 0.78,
+      "tax_rate": 0.0,
+      "redistribution_share": 0.9,
+      "transfer_recipient_fraction": 0.3,
+      "dividend_share": 0.65,
+      "ownership_fraction": 0.08,
+      "buyer_cheapest_probability": 0.75,
+      "buyer_seller_rule": "mixed",
+      "hiring_expectation_rule": "adaptive",
+      "rationing_order_rule": "random",
+      "market_regions": 1,
+      "restrict_household_sales": false,
+      "restrict_labor_hiring": false,
+      "household_region_assignment": "modulo",
+      "region_assignment_seed": 0,
+      "buyer_price_information": "full",
+      "initial_resource": 500000,
+      "resource_capacity": 600000,
+      "regeneration_rate": 0.025,
+      "output_inventory_buffer": 0.05,
+      "price_adjustment": 0.02,
+      "price_floor_cents": 1,
+      "transaction_trace": false,
+      "automation_base": 0.0,
+      "automation_shock_step": null,
+      "automation_shock_increase": 0.0,
+      "capital_enabled": true,
+      "initial_capital_units_per_firm": 20,
+      "capital_output_per_unit": 2,
+      "capital_depreciation_rate": 0.04,
+      "capital_investment_budget_share": 0.05,
+      "capital_target_buffer": 0.1,
+      "capital_input_sector": "goods",
+      "cost_basis_accounting_enabled": true,
+      "resource_extraction_fee_cents_per_unit": 20,
+      "credit_enabled": false,
+      "credit_max_principal_per_firm_cents": 500000,
+      "credit_term_periods": 4,
+      "credit_repayment_fraction": 0.1,
+      "credit_firm_cash_reserve_cents": 10000,
+      "credit_lender_savings_share": 0.5,
+      "household_savings_rate": 0.75,
+      "household_liquidity_floor_cents": 0,
+      "savings_emergency_food_enabled": true,
+      "savings_essential_sector": "food",
+      "sectors": [
+        {
+          "name": "food",
+          "demand_probability": 1.0,
+          "price_cents": 1500,
+          "wage_cents": 1400,
+          "productivity": 1.25,
+          "resource_per_unit": 2
+        },
+        {
+          "name": "goods",
+          "demand_probability": 0.55,
+          "price_cents": 2500,
+          "wage_cents": 2300,
+          "productivity": 1.25,
+          "resource_per_unit": 3
+        },
+        {
+          "name": "services",
+          "demand_probability": 0.3,
+          "price_cents": 4000,
+          "wage_cents": 3800,
+          "productivity": 1.25,
+          "resource_per_unit": 1
+        }
+      ]
+    },
+    "credit_1_resourcefee_20": {
+      "schema_version": 1,
+      "name": "credit_1_resourcefee_20",
+      "population": 1000,
+      "household_size": 4,
+      "steps": 24,
+      "seed": 42,
+      "firms_per_sector": 2,
+      "initial_household_cash_cents": 15000,
+      "initial_firm_cash_cents": 20000,
+      "labor_participation": 0.78,
+      "tax_rate": 0.0,
+      "redistribution_share": 0.9,
+      "transfer_recipient_fraction": 0.3,
+      "dividend_share": 0.65,
+      "ownership_fraction": 0.08,
+      "buyer_cheapest_probability": 0.75,
+      "buyer_seller_rule": "mixed",
+      "hiring_expectation_rule": "adaptive",
+      "rationing_order_rule": "random",
+      "market_regions": 1,
+      "restrict_household_sales": false,
+      "restrict_labor_hiring": false,
+      "household_region_assignment": "modulo",
+      "region_assignment_seed": 0,
+      "buyer_price_information": "full",
+      "initial_resource": 500000,
+      "resource_capacity": 600000,
+      "regeneration_rate": 0.025,
+      "output_inventory_buffer": 0.05,
+      "price_adjustment": 0.02,
+      "price_floor_cents": 1,
+      "transaction_trace": false,
+      "automation_base": 0.0,
+      "automation_shock_step": null,
+      "automation_shock_increase": 0.0,
+      "capital_enabled": true,
+      "initial_capital_units_per_firm": 20,
+      "capital_output_per_unit": 2,
+      "capital_depreciation_rate": 0.04,
+      "capital_investment_budget_share": 0.05,
+      "capital_target_buffer": 0.1,
+      "capital_input_sector": "goods",
+      "cost_basis_accounting_enabled": true,
+      "resource_extraction_fee_cents_per_unit": 20,
+      "credit_enabled": true,
+      "credit_max_principal_per_firm_cents": 500000,
+      "credit_term_periods": 4,
+      "credit_repayment_fraction": 0.1,
+      "credit_firm_cash_reserve_cents": 10000,
+      "credit_lender_savings_share": 0.5,
+      "household_savings_rate": 0.75,
+      "household_liquidity_floor_cents": 0,
+      "savings_emergency_food_enabled": true,
+      "savings_essential_sector": "food",
+      "sectors": [
+        {
+          "name": "food",
+          "demand_probability": 1.0,
+          "price_cents": 1500,
+          "wage_cents": 1400,
+          "productivity": 1.25,
+          "resource_per_unit": 2
+        },
+        {
+          "name": "goods",
+          "demand_probability": 0.55,
+          "price_cents": 2500,
+          "wage_cents": 2300,
+          "productivity": 1.25,
+          "resource_per_unit": 3
+        },
+        {
+          "name": "services",
+          "demand_probability": 0.3,
+          "price_cents": 4000,
+          "wage_cents": 3800,
+          "productivity": 1.25,
+          "resource_per_unit": 1
+        }
+      ]
+    }
+  },
+  "scenario_summary": {
+    "credit_0_resourcefee_0": {
+      "production_units": {
+        "mean": 137.25,
+        "sample_sd": 7.275425635783668,
+        "n": 12
+      },
+      "consumption_units": {
+        "mean": 133.41666666666666,
+        "sample_sd": 7.366488411390566,
+        "n": 12
+      },
+      "employment_rate": {
+        "mean": 0.14309424390460382,
+        "sample_sd": 0.008375781666964928,
+        "n": 12
+      },
+      "disposable_income_gini": {
+        "mean": 0.639047923872613,
+        "sample_sd": 0.020921627979591153,
+        "n": 12
+      },
+      "capital_stock_units": {
+        "mean": 172.66666666666666,
+        "sample_sd": 3.025147128903841,
+        "n": 12
+      },
+      "loan_defaults_cents": {
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "n": 12
+      },
+      "total_originations_cents": 0,
+      "total_repayments_cents": 0,
+      "total_defaults_cents": 0
+    },
+    "credit_1_resourcefee_0": {
+      "production_units": {
+        "mean": 129.66666666666666,
+        "sample_sd": 14.150704019320886,
+        "n": 12
+      },
+      "consumption_units": {
+        "mean": 126.0,
+        "sample_sd": 7.286350876186865,
+        "n": 12
+      },
+      "employment_rate": {
+        "mean": 0.13447234382245832,
+        "sample_sd": 0.015728747525958632,
+        "n": 12
+      },
+      "disposable_income_gini": {
+        "mean": 0.6536977091254543,
+        "sample_sd": 0.02712569679783793,
+        "n": 12
+      },
+      "capital_stock_units": {
+        "mean": 178.75,
+        "sample_sd": 4.433857339731501,
+        "n": 12
+      },
+      "loan_defaults_cents": {
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "n": 12
+      },
+      "total_originations_cents": 2373796,
+      "total_repayments_cents": 1755560,
+      "total_defaults_cents": 618236
+    },
+    "credit_0_resourcefee_20": {
+      "production_units": {
+        "mean": 8.833333333333334,
+        "sample_sd": 4.063883796954769,
+        "n": 12
+      },
+      "consumption_units": {
+        "mean": 9.416666666666666,
+        "sample_sd": 2.7455197664338145,
+        "n": 12
+      },
+      "employment_rate": {
+        "mean": 0.009913765092853122,
+        "sample_sd": 0.00445309500738877,
+        "n": 12
+      },
+      "disposable_income_gini": {
+        "mean": 0.9293646151021021,
+        "sample_sd": 0.016452714089480104,
+        "n": 12
+      },
+      "capital_stock_units": {
+        "mean": 120.0,
+        "sample_sd": 0.0,
+        "n": 12
+      },
+      "loan_defaults_cents": {
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "n": 12
+      },
+      "total_originations_cents": 0,
+      "total_repayments_cents": 0,
+      "total_defaults_cents": 0
+    },
+    "credit_1_resourcefee_20": {
+      "production_units": {
+        "mean": 8.833333333333334,
+        "sample_sd": 4.063883796954769,
+        "n": 12
+      },
+      "consumption_units": {
+        "mean": 9.416666666666666,
+        "sample_sd": 2.7455197664338145,
+        "n": 12
+      },
+      "employment_rate": {
+        "mean": 0.009913765092853122,
+        "sample_sd": 0.00445309500738877,
+        "n": 12
+      },
+      "disposable_income_gini": {
+        "mean": 0.9293646151021021,
+        "sample_sd": 0.016452714089480104,
+        "n": 12
+      },
+      "capital_stock_units": {
+        "mean": 120.0,
+        "sample_sd": 0.0,
+        "n": 12
+      },
+      "loan_defaults_cents": {
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "n": 12
+      },
+      "total_originations_cents": 0,
+      "total_repayments_cents": 0,
+      "total_defaults_cents": 0
+    }
+  },
+  "paired_credit_minus_no_credit": {
+    "0": {
+      "production_units": {
+        "paired_mean": -7.583333333333333,
+        "sample_sd": 10.326121628122916,
+        "mc_95_interval": [
+          -13.425886652981283,
+          -1.7407800136853817
+        ],
+        "n": 12
+      },
+      "consumption_units": {
+        "paired_mean": -7.416666666666667,
+        "sample_sd": 3.1754264805429417,
+        "mc_95_interval": [
+          -9.213333333333335,
+          -5.62
+        ],
+        "n": 12
+      },
+      "employment_rate": {
+        "paired_mean": -0.008621900082145504,
+        "sample_sd": 0.010888699733441073,
+        "mc_95_interval": [
+          -0.01478276192992817,
+          -0.0024610382343628386
+        ],
+        "n": 12
+      },
+      "disposable_income_gini": {
+        "paired_mean": 0.01464978525284133,
+        "sample_sd": 0.012388929205269617,
+        "mc_95_interval": [
+          0.007640088673440373,
+          0.021659481832242287
+        ],
+        "n": 12
+      },
+      "capital_stock_units": {
+        "paired_mean": 6.083333333333333,
+        "sample_sd": 3.7040109300185615,
+        "mc_95_interval": [
+          3.987591859956351,
+          8.179074806710315
+        ],
+        "n": 12
+      },
+      "loan_defaults_cents": {
+        "paired_mean": 0,
+        "sample_sd": 0.0,
+        "mc_95_interval": [
+          0.0,
+          0.0
+        ],
+        "n": 12
+      }
+    },
+    "20": {
+      "production_units": {
+        "paired_mean": 0,
+        "sample_sd": 0.0,
+        "mc_95_interval": [
+          0.0,
+          0.0
+        ],
+        "n": 12
+      },
+      "consumption_units": {
+        "paired_mean": 0,
+        "sample_sd": 0.0,
+        "mc_95_interval": [
+          0.0,
+          0.0
+        ],
+        "n": 12
+      },
+      "employment_rate": {
+        "paired_mean": 0.0,
+        "sample_sd": 0.0,
+        "mc_95_interval": [
+          0.0,
+          0.0
+        ],
+        "n": 12
+      },
+      "disposable_income_gini": {
+        "paired_mean": 0.0,
+        "sample_sd": 0.0,
+        "mc_95_interval": [
+          0.0,
+          0.0
+        ],
+        "n": 12
+      },
+      "capital_stock_units": {
+        "paired_mean": 0,
+        "sample_sd": 0.0,
+        "mc_95_interval": [
+          0.0,
+          0.0
+        ],
+        "n": 12
+      },
+      "loan_defaults_cents": {
+        "paired_mean": 0,
+        "sample_sd": 0.0,
+        "mc_95_interval": [
+          0.0,
+          0.0
+        ],
+        "n": 12
+      }
+    }
+  }
+}

@@ -182,3 +182,21 @@ PYTHONPATH=src:. python research/run_region_density.py --finalize --seeds 8 --st
 ```
 
 See [cost-basis specification](docs/v02_cost_basis_accounting.md), [new density results](research/v02_market_density_10000_experiment.md), [historical-cost experiment](research/v02_cost_basis_experiment.md) and [latest checkpoint](CHECKPOINT.md). Data are **conditional synthetic results**, not empirical predictions or full audited financial accounts. Historical-cost checkpoints use format 4; old v1/v2/v3 checkpoints still load when the new mechanism is disabled.
+
+## v0.2 experimental bilateral credit and physical input fees (development branch)
+
+This opt-in vertical slice finances actual interfirm purchases of productive goods with **existing household savings**. Loan claims and firm liabilities are registered bilaterally; principal repayments are cash transfers, and maturity defaults are matched noncash balance-sheet writeoffs. **No bank, credit-money creation, interest, or complete insolvency model** is implied. A separate opt-in resource extraction fee transfers cash from firms to government and capitalizes productive input cost in inventory. Historical rules remain the defaults. This feature is not yet part of the stable `main` release.
+
+```bash
+# Run a reproducible credit-enabled scenario locally.
+civitas run --scenario scenarios/credit_1_resourcefee_0.json --steps 24 --seed 7 --output results/credit_demo
+
+# Reproduce the 2×2 credit × resource-cost experiment (four arms).
+PYTHONPATH=src:. python research/run_credit_experiment.py --population 1000 --seeds 12 --steps 24 --output results/credit_1000
+PYTHONPATH=src:. python research/run_credit_experiment.py --population 10000 --seeds 8 --steps 24 --output results/credit_10000
+
+# Scientific software verification
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src:. python -m pytest -q
+```
+
+See [complete equations and accounting invariants](docs/v02_credit_resource_accounting.md), [executed 2×2 experiment](research/v02_credit_resource_experiment.md) and [continuation checkpoint](CHECKPOINT.md). The 10,000-agent research configuration deliberately holds only six firms and is **not per-capita normalized** to the 1,000-agent study. Run results are synthetic model evidence, not predictions or support for policy claims.

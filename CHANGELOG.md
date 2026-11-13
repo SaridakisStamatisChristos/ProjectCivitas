@@ -64,3 +64,12 @@ Added explicit physical productive capital and rounded depreciation; budget-limi
 - Preserved previous dividend behavior by default; cost-enabled runs deliberately base dividends on their specified cost-basis earnings. Published the behavioral sensitivity comparison and explicit limitations.
 - Implemented checkpoint format 4 for cost-enabled runs; retain v1/v2/v3 loader for original accounting-disabled scenarios and refuse fabricated basis on invalid downgrades.
 - Re-ran 109 automated tests and an exact byte-for-byte 96-period default-mode regression, preserving complete source and seed evidence. No stable release or empirical validation claimed.
+
+## 0.2.0.dev0 — continuing development (2026-11-13; bilateral credit and resource-use costs)
+
+- Opt-in household-savings-funded bilateral firm credit, with separately recorded lender claims, borrower obligations, exact money transfers, maturity repayment and symmetric principal writeoffs. **No credit money creation, interest, or automatic intermediary.**
+- Opt-in resource extraction fee credited to the government and capitalized into inventory cost when physical production occurs. A production constraint prevents unaffordable input-fee commitments.
+- Credit-aware historical-cost firm book equity, borrower debt-extinguishment gains and household financial claims, with multiple independently asserted invariants.
+- Nonpickle NPZ checkpoint version 5 for credit contracts and accounts; historical checkpoint formats 1–4 still load into compatible scenarios with zero loans.
+- Matched four-arm credit × resource-fee experiments at 1,000 and 10,000 agents, plus independent regression parity against the preceding development source; negative/null results and incomplete density campaign disclosed.
+- Still a **development checkpoint**, not release-ready or empirically validated.

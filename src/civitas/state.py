@@ -5,6 +5,14 @@ import numpy as np
 
 
 @dataclass
+class LoanContract:
+    lender_household: int
+    borrower_firm: int
+    outstanding_cents: int
+    opened_step: int
+
+
+@dataclass
 class State:
     step: int
     household_of_agent: np.ndarray
@@ -16,6 +24,9 @@ class State:
     firm_capital: np.ndarray
     firm_inventory_basis_cents: np.ndarray
     firm_capital_basis_cents: np.ndarray
+    household_loan_assets_cents: np.ndarray
+    firm_loan_liabilities_cents: np.ndarray
+    loans: list[LoanContract]
     gov_cash: int
     inventory: np.ndarray
     prices: np.ndarray
@@ -111,6 +122,22 @@ class State:
             raise AssertionError("zero inventory cannot carry historical cost")
         if (self.firm_capital == 0).any() and np.any(self.firm_capital_basis_cents[self.firm_capital == 0] != 0):
             raise AssertionError("zero physical capital cannot carry historical cost")
+        if ((self.household_loan_assets_cents < 0).any() or
+                (self.firm_loan_liabilities_cents < 0).any()):
+            raise AssertionError("negative loan claim or liability")
+        claims = [0] * len(self.household_loan_assets_cents)
+        debts = [0] * len(self.firm_loan_liabilities_cents)
+        for contract in self.loans:
+            if not (0 <= contract.lender_household < len(claims) and
+                    0 <= contract.borrower_firm < len(debts) and
+                    type(contract.outstanding_cents) is int and contract.outstanding_cents > 0 and
+                    type(contract.opened_step) is int and 0 <= contract.opened_step <= self.step):
+                raise AssertionError("invalid outstanding loan contract")
+            claims[contract.lender_household] += contract.outstanding_cents
+            debts[contract.borrower_firm] += contract.outstanding_cents
+        if (claims != [int(x) for x in self.household_loan_assets_cents] or
+                debts != [int(x) for x in self.firm_loan_liabilities_cents]):
+            raise AssertionError("bilateral credit asset/liability imbalance")
         if (self.firm_capital < 0).any():
             raise AssertionError("negative firm physical capital")
         if (int(self.firm_capital.sum()) != self.initial_capital_total +

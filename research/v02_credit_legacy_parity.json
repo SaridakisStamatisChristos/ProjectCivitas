@@ -1,0 +1,15 @@
+{
+  "baseline_reference": "CIVITAS v0.2.0.dev0 at GitHub e5c59783a32946c828c95c7d43bcca46a0e56a30",
+  "scenarios": 6,
+  "seeds": [
+    7,
+    11,
+    13
+  ],
+  "periods_each": 12,
+  "total_periods": 216,
+  "historical_metric_cells_exact": 15768,
+  "result": "PASS (all original numerical and structural metric values identical)",
+  "old_file_sha256": "edf9d3651cf2ed78fc4b29966a3b95d03bb32563819df06da40f049a6fdd8ce4",
+  "new_file_sha256": "c1499210fce7656019079ec6cdaa5041cfd05a3242c03e3fceb85fea4ce44893"
+}

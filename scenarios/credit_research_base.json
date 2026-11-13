@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "name": "credit_research_base",
+  "population": 1000,
+  "steps": 24,
+  "seed": 42,
+  "initial_firm_cash_cents": 20000,
+  "initial_capital_units_per_firm": 20,
+  "capital_enabled": true,
+  "cost_basis_accounting_enabled": true,
+  "capital_investment_budget_share": 0.05,
+  "household_savings_rate": 0.75,
+  "credit_max_principal_per_firm_cents": 500000,
+  "credit_term_periods": 4,
+  "credit_repayment_fraction": 0.1,
+  "credit_firm_cash_reserve_cents": 10000,
+  "credit_lender_savings_share": 0.5
+}

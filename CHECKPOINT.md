@@ -1,3 +1,19 @@
+# Latest CIVITAS continuation checkpoint — bilateral credit and resource-input accounting (2026-11-13)
+
+- **Stable:** `main` = v0.1.0, unchanged. **Development branch:** `feature/v0.2-capital-accounting` and version `0.2.0.dev0`. Prior verified checkpoint: `e5c59783a32946c828c95c7d43bcca46a0e56a30`. No merge authorized or performed.
+- **Implemented locally:** optional direct savings-funded investment loans, lender and borrower balance-sheet accounts, integer-cent principal transfers, repayment and explicit noncash maturity default; opt-in physical resource-use fee transferred to government and included in historical inventory production cost; all original market, capital, labor and regional rules retained.
+- **Files:** `src/civitas/finance.py` new; updated `model.py`, `state.py`, `engine.py`, `metrics.py`, `persistence.py`; `tests/test_financial_intermediation.py`; `research/run_credit_experiment.py`; `research/verify_legacy_parity.py`; `docs/v02_credit_resource_accounting.md`; four new scenario JSONs and base config; recorded evidence under `research/v02_credit_experiment_{1000,10000}/`.
+- **Verification:** `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src:. python -m pytest -q` reported **120 passing tests**, including 109 historical ones plus 11 new credit, resource cost, checkpoint, tamper and experiment-runner tests. Environment Python 3.13.5, NumPy 2.3.5, Linux x86_64.
+- **Legacy behavior:** independent executable old/new comparisons of 6 scenarios × 3 seeds × 12 periods = **216 compared states / 15,768 historical metrics identical**, new mechanisms disabled. Evidence: `research/v02_credit_legacy_parity.json`; runner `research/verify_legacy_parity.py`.
+- **Executed experiments:** four credit/resource-fee configurations × 12 seeds × 24 periods at 1,000 agents (48 runs, 1,152 audited periods) plus four configurations × 8 seeds × 24 periods at 10,000 agents (32 runs, 768 audited periods) = **80 complete runs / 1,920 checked periods**. Zero money, resource, goods, capital, household/firm cash-flow, historical book-equity and bilateral debt discrepancies. See report and period CSVs.
+- **Result:** at 1,000 agents without resource fee, credit enabled changed final production from 137.25 to 129.67 mean units, with observed repayments and defaults. At 10,000 agents and just six low-capital firms, the configured economy originated zero loans; enabling credit was inert. **Not an endorsement or refutation of credit in real economies.**
+- **Incomplete:** a larger 10,000-agent/60-firm, four-arm normalized campaign exceeded runtime limits and has **no complete dataset**; do not count it. A two-seed smoke showed loans can originate under that density but does not constitute effect measurement.
+- **Acceptance gates remaining:** firm-density normalized long-horizon credit study; interest/loan-risk alternatives; full resource opportunity cost; comprehensive financial statements, default sensitivity and extreme-input overflow audit; independent scientific calibration. No stable v0.2 release.
+- **Next engineering priority:** bounded, resumable normalized-density experiments and adversarial debt/accounting stress, then complete model-economy audit and release gate.
+- **GitHub preservation:** this checkpoint must be paired with the actual verified new development commit; do not infer a remote commit from local completion.
+
+---
+
 # Latest CIVITAS continuation — firm-density robustness and historical-cost accounting (2026-11-13)
 
 - **Status:** `0.2.0.dev0`, **development only**. Preserve `main` v0.1.0. Branch: `feature/v0.2-capital-accounting`. Predecessor verified GitHub commit: `25589844ab3495abcc97b7a093fb7cb3644188ce`.

@@ -77,6 +77,16 @@ class Scenario:
     capital_input_sector: str = "goods"
     # Opt-in moving-average historical cost and firm book-equity accounting.
     cost_basis_accounting_enabled: bool = False
+    # Optional fee transfers firms -> government for physical extraction.
+    # Resource units stay in the separate physical conservation ledger.
+    resource_extraction_fee_cents_per_unit: int = 0
+    # No credit creation: loans transfer existing savings directly to firms.
+    credit_enabled: bool = False
+    credit_max_principal_per_firm_cents: int = 200_000
+    credit_term_periods: int = 4
+    credit_repayment_fraction: float = 0.25
+    credit_firm_cash_reserve_cents: int = 100_000
+    credit_lender_savings_share: float = 0.5
     # Household balances are separate, noninterest-bearing accounts. No credit.
     household_savings_rate: float = 0.0
     household_liquidity_floor_cents: int = 0
@@ -114,12 +124,13 @@ class Scenario:
         for name in ("population", "steps", "seed", "initial_household_cash_cents",
                      "initial_firm_cash_cents", "initial_resource", "resource_capacity",
                      "initial_capital_units_per_firm", "household_liquidity_floor_cents",
-                     "region_assignment_seed"):
+                     "region_assignment_seed", "resource_extraction_fee_cents_per_unit",
+                     "credit_max_principal_per_firm_cents", "credit_firm_cash_reserve_cents"):
             value = getattr(self, name)
             if type(value) is not int or value < 0:
                 raise ValueError(f"{name} must be a nonnegative integer")
         for name in ("household_size", "firms_per_sector", "price_floor_cents",
-                     "capital_output_per_unit"):
+                     "capital_output_per_unit", "credit_term_periods"):
             value = getattr(self, name)
             if type(value) is not int or value < 1:
                 raise ValueError(f"{name} must be a positive integer")
@@ -132,7 +143,8 @@ class Scenario:
         for name in ("regeneration_rate", "output_inventory_buffer", "price_adjustment",
                      "automation_base", "automation_shock_increase",
                      "capital_depreciation_rate", "capital_investment_budget_share",
-                     "capital_target_buffer", "household_savings_rate"):
+                     "capital_target_buffer", "household_savings_rate",
+                     "credit_repayment_fraction", "credit_lender_savings_share"):
             value = getattr(self, name)
             if not isinstance(value, (float, int)) or not 0 <= value <= 1:
                 raise ValueError(f"{name} must be in [0,1]")
@@ -142,6 +154,12 @@ class Scenario:
             raise ValueError("savings_essential_sector must be nonempty string")
         if type(self.cost_basis_accounting_enabled) is not bool:
             raise ValueError("cost_basis_accounting_enabled must be boolean")
+        if type(self.credit_enabled) is not bool:
+            raise ValueError("credit_enabled must be boolean")
+        if self.credit_enabled and not (self.cost_basis_accounting_enabled and self.capital_enabled):
+            raise ValueError("credit requires both capital and historical-cost accounting")
+        if self.credit_enabled and self.credit_max_principal_per_firm_cents <= 0:
+            raise ValueError("credit requires a positive principal limit")
         if type(self.capital_enabled) is not bool:
             raise ValueError("capital_enabled must be boolean")
         if not self.capital_enabled and self.initial_capital_units_per_firm:
@@ -183,7 +201,10 @@ class Scenario:
                              ("household_liquidity_floor_cents", self.household_liquidity_floor_cents),
                              ("population", self.population),
                              ("initial_household_cash_cents", self.initial_household_cash_cents),
-                             ("initial_firm_cash_cents", self.initial_firm_cash_cents)):
+                             ("initial_firm_cash_cents", self.initial_firm_cash_cents),
+                             ("resource_extraction_fee_cents_per_unit", self.resource_extraction_fee_cents_per_unit),
+                             ("credit_max_principal_per_firm_cents", self.credit_max_principal_per_firm_cents),
+                             ("credit_firm_cash_reserve_cents", self.credit_firm_cash_reserve_cents)):
             if value > i64max:
                 raise ValueError(f"{label} exceeds signed int64 storage")
         if self.cost_basis_accounting_enabled and self.capital_enabled:
