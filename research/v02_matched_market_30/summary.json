@@ -1,0 +1,605 @@
+{
+  "final_period": {
+    "open": {
+      "production_per_person": {
+        "n": 30,
+        "mean": 0.2512466666666667,
+        "sample_sd": 0.0063688213240340845,
+        "approx_95pct_monte_carlo_interval": [
+          0.24896761322545632,
+          0.253525720107877
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": 0.25205,
+        "sample_sd": 0.004855267313923627,
+        "approx_95pct_monte_carlo_interval": [
+          0.25031256490537174,
+          0.25378743509462826
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": 0.2598080697731813,
+        "sample_sd": 0.0068331551443197,
+        "approx_95pct_monte_carlo_interval": [
+          0.2573628566083501,
+          0.26225328293801253
+        ]
+      },
+      "disposable_income_gini": {
+        "n": 30,
+        "mean": 0.4147423121708873,
+        "sample_sd": 0.007424642498253142,
+        "approx_95pct_monte_carlo_interval": [
+          0.41208543797478686,
+          0.41739918636698775
+        ]
+      },
+      "active_seller_fraction": {
+        "n": 30,
+        "mean": 0.98,
+        "sample_sd": 0.018257418583505547,
+        "approx_95pct_monte_carlo_interval": [
+          0.9734666666666666,
+          0.9865333333333334
+        ]
+      },
+      "resource_per_person": {
+        "n": 30,
+        "mean": 39.76038,
+        "sample_sd": 0.14033708286688265,
+        "approx_95pct_monte_carlo_interval": [
+          39.710161019852094,
+          39.8105989801479
+        ]
+      },
+      "unmet_stock_per_person": {
+        "n": 30,
+        "mean": 0.00135,
+        "sample_sd": 0.0007925297775325935,
+        "approx_95pct_monte_carlo_interval": [
+          0.0010663968613892204,
+          0.0016336031386107797
+        ]
+      },
+      "unmet_budget_per_person": {
+        "n": 30,
+        "mean": 0.20905,
+        "sample_sd": 0.005301512471244277,
+        "approx_95pct_monte_carlo_interval": [
+          0.20715287812666167,
+          0.21094712187333836
+        ]
+      }
+    },
+    "sales_only": {
+      "production_per_person": {
+        "n": 30,
+        "mean": 0.12115666666666666,
+        "sample_sd": 0.0052910258006353085,
+        "approx_95pct_monte_carlo_interval": [
+          0.11926329740021147,
+          0.12305003593312186
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": 0.11815,
+        "sample_sd": 0.003528186991682252,
+        "approx_95pct_monte_carlo_interval": [
+          0.11688745449973878,
+          0.11941254550026123
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": 0.12652658070971315,
+        "sample_sd": 0.005460281985089612,
+        "approx_95pct_monte_carlo_interval": [
+          0.12457264389551234,
+          0.12848051752391396
+        ]
+      },
+      "disposable_income_gini": {
+        "n": 30,
+        "mean": 0.6328999093527167,
+        "sample_sd": 0.010809411672254885,
+        "approx_95pct_monte_carlo_interval": [
+          0.6290318110632976,
+          0.6367680076421357
+        ]
+      },
+      "active_seller_fraction": {
+        "n": 30,
+        "mean": 0.7677777777777778,
+        "sample_sd": 0.03937571585029105,
+        "approx_95pct_monte_carlo_interval": [
+          0.7536873588222206,
+          0.781868196733335
+        ]
+      },
+      "resource_per_person": {
+        "n": 30,
+        "mean": 43.32201333333333,
+        "sample_sd": 0.08560081265056273,
+        "approx_95pct_monte_carlo_interval": [
+          43.2913814759274,
+          43.35264519073926
+        ]
+      },
+      "unmet_stock_per_person": {
+        "n": 30,
+        "mean": 0.00119,
+        "sample_sd": 0.0004237354412105872,
+        "approx_95pct_monte_carlo_interval": [
+          0.0010383682197505776,
+          0.0013416317802494226
+        ]
+      },
+      "unmet_budget_per_person": {
+        "n": 30,
+        "mean": 0.34311,
+        "sample_sd": 0.00458410672680716,
+        "approx_95pct_monte_carlo_interval": [
+          0.3414695984752815,
+          0.34475040152471853
+        ]
+      }
+    },
+    "labor_only": {
+      "production_per_person": {
+        "n": 30,
+        "mean": 0.2646966666666667,
+        "sample_sd": 0.006924692615278451,
+        "approx_95pct_monte_carlo_interval": [
+          0.2622186972385374,
+          0.26717463609479597
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": 0.26529,
+        "sample_sd": 0.005319408185905259,
+        "approx_95pct_monte_carlo_interval": [
+          0.2633864742274147,
+          0.26719352577258537
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": 0.27368776701100045,
+        "sample_sd": 0.0074762292774347245,
+        "approx_95pct_monte_carlo_interval": [
+          0.2710124327230505,
+          0.2763631012989504
+        ]
+      },
+      "disposable_income_gini": {
+        "n": 30,
+        "mean": 0.41276751578061527,
+        "sample_sd": 0.008603585022547168,
+        "approx_95pct_monte_carlo_interval": [
+          0.40968876242033697,
+          0.41584626914089357
+        ]
+      },
+      "active_seller_fraction": {
+        "n": 30,
+        "mean": 0.9772222222222222,
+        "sample_sd": 0.022524288011988275,
+        "approx_95pct_monte_carlo_interval": [
+          0.9691620092734282,
+          0.9852824351710162
+        ]
+      },
+      "resource_per_person": {
+        "n": 30,
+        "mean": 39.24248,
+        "sample_sd": 0.14100468419707607,
+        "approx_95pct_monte_carlo_interval": [
+          39.19202212178423,
+          39.292937878215774
+        ]
+      },
+      "unmet_stock_per_person": {
+        "n": 30,
+        "mean": 0.0011733333333333333,
+        "sample_sd": 0.0006907933137334572,
+        "approx_95pct_monte_carlo_interval": [
+          0.000926136120736369,
+          0.0014205305459302976
+        ]
+      },
+      "unmet_budget_per_person": {
+        "n": 30,
+        "mean": 0.19598666666666667,
+        "sample_sd": 0.0061712198164535085,
+        "approx_95pct_monte_carlo_interval": [
+          0.19377832401681427,
+          0.19819500931651907
+        ]
+      }
+    },
+    "both": {
+      "production_per_person": {
+        "n": 30,
+        "mean": 0.12165,
+        "sample_sd": 0.006423327636905538,
+        "approx_95pct_monte_carlo_interval": [
+          0.11935144172522671,
+          0.12394855827477327
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": 0.11845333333333333,
+        "sample_sd": 0.0038048728587515737,
+        "approx_95pct_monte_carlo_interval": [
+          0.11709177706712409,
+          0.11981488959954256
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": 0.12698905291668586,
+        "sample_sd": 0.006727016645495332,
+        "approx_95pct_monte_carlo_interval": [
+          0.12458182092587151,
+          0.12939628490750021
+        ]
+      },
+      "disposable_income_gini": {
+        "n": 30,
+        "mean": 0.634508385168711,
+        "sample_sd": 0.011059532610461418,
+        "approx_95pct_monte_carlo_interval": [
+          0.6305507822510513,
+          0.6384659880863707
+        ]
+      },
+      "active_seller_fraction": {
+        "n": 30,
+        "mean": 0.7694444444444445,
+        "sample_sd": 0.04571344473318766,
+        "approx_95pct_monte_carlo_interval": [
+          0.7530860983348445,
+          0.7858027905540445
+        ]
+      },
+      "resource_per_person": {
+        "n": 30,
+        "mean": 43.276453333333336,
+        "sample_sd": 0.08212329138865375,
+        "approx_95pct_monte_carlo_interval": [
+          43.247065890929115,
+          43.30584077573756
+        ]
+      },
+      "unmet_stock_per_person": {
+        "n": 30,
+        "mean": 0.00129,
+        "sample_sd": 0.00040030161042686903,
+        "approx_95pct_monte_carlo_interval": [
+          0.0011467539084001916,
+          0.0014332460915998082
+        ]
+      },
+      "unmet_budget_per_person": {
+        "n": 30,
+        "mean": 0.34270666666666666,
+        "sample_sd": 0.004826573949703249,
+        "approx_95pct_monte_carlo_interval": [
+          0.3409794993605567,
+          0.3444338339727766
+        ]
+      }
+    }
+  },
+  "paired_effects": {
+    "sales_given_open": {
+      "production_per_person": {
+        "n": 30,
+        "mean": -0.13009,
+        "sample_sd": 0.007232653445456165,
+        "approx_95pct_monte_carlo_interval": [
+          -0.1326781717958933,
+          -0.12750182820410672
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": -0.1339,
+        "sample_sd": 0.006431978298127741,
+        "approx_95pct_monte_carlo_interval": [
+          -0.13620165387413524,
+          -0.13159834612586474
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": -0.1332814890634682,
+        "sample_sd": 0.0075520080186153365,
+        "approx_95pct_monte_carlo_interval": [
+          -0.13598394042568848,
+          -0.13057903770124793
+        ]
+      },
+      "disposable_income_gini": {
+        "n": 30,
+        "mean": 0.2181575971818294,
+        "sample_sd": 0.01242937993565517,
+        "approx_95pct_monte_carlo_interval": [
+          0.21370980069434323,
+          0.22260539366931556
+        ]
+      },
+      "active_seller_fraction": {
+        "n": 30,
+        "mean": -0.21222222222222217,
+        "sample_sd": 0.041043228620335166,
+        "approx_95pct_monte_carlo_interval": [
+          -0.22690935295904566,
+          -0.1975350914853987
+        ]
+      },
+      "resource_per_person": {
+        "n": 30,
+        "mean": 3.5616333333333325,
+        "sample_sd": 0.11088136976480574,
+        "approx_95pct_monte_carlo_interval": [
+          3.5219549447475256,
+          3.6013117219191395
+        ]
+      },
+      "unmet_stock_per_person": {
+        "n": 30,
+        "mean": -0.00015999999999999999,
+        "sample_sd": 0.000954698002439551,
+        "approx_95pct_monte_carlo_interval": [
+          -0.0005016342926069592,
+          0.0001816342926069593
+        ]
+      },
+      "unmet_budget_per_person": {
+        "n": 30,
+        "mean": 0.13406,
+        "sample_sd": 0.006606089145107221,
+        "approx_95pct_monte_carlo_interval": [
+          0.13169604135944538,
+          0.13642395864055465
+        ]
+      }
+    },
+    "labor_given_open": {
+      "production_per_person": {
+        "n": 30,
+        "mean": 0.013450000000000002,
+        "sample_sd": 0.006948120559571832,
+        "approx_95pct_monte_carlo_interval": [
+          0.010963646989674634,
+          0.01593635301032537
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": 0.013240000000000005,
+        "sample_sd": 0.0057913490775406565,
+        "approx_95pct_monte_carlo_interval": [
+          0.01116759234827158,
+          0.01531240765172843
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": 0.013879697237819129,
+        "sample_sd": 0.0071066081561824415,
+        "approx_95pct_monte_carlo_interval": [
+          0.011336630169418133,
+          0.016422764306220125
+        ]
+      },
+      "disposable_income_gini": {
+        "n": 30,
+        "mean": -0.001974796390272034,
+        "sample_sd": 0.009318251644888064,
+        "approx_95pct_monte_carlo_interval": [
+          -0.005309289916916378,
+          0.0013596971363723097
+        ]
+      },
+      "active_seller_fraction": {
+        "n": 30,
+        "mean": -0.0027777777777777753,
+        "sample_sd": 0.015214515486254621,
+        "approx_95pct_monte_carlo_interval": [
+          -0.008222222222222221,
+          0.002666666666666671
+        ]
+      },
+      "resource_per_person": {
+        "n": 30,
+        "mean": -0.5179000000000007,
+        "sample_sd": 0.10920558593771687,
+        "approx_95pct_monte_carlo_interval": [
+          -0.5569787170447896,
+          -0.47882128295521176
+        ]
+      },
+      "unmet_stock_per_person": {
+        "n": 30,
+        "mean": -0.00017666666666666666,
+        "sample_sd": 0.0011059972355559806,
+        "approx_95pct_monte_carlo_interval": [
+          -0.0005724426945088786,
+          0.00021910936117554536
+        ]
+      },
+      "unmet_budget_per_person": {
+        "n": 30,
+        "mean": -0.013063333333333335,
+        "sample_sd": 0.006015295637721838,
+        "approx_95pct_monte_carlo_interval": [
+          -0.015215879232417216,
+          -0.010910787434249454
+        ]
+      }
+    },
+    "both_vs_open": {
+      "production_per_person": {
+        "n": 30,
+        "mean": -0.12959666666666667,
+        "sample_sd": 0.007772785562608738,
+        "approx_95pct_monte_carlo_interval": [
+          -0.13237812225836365,
+          -0.12681521107496968
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": -0.13359666666666667,
+        "sample_sd": 0.006383031564548542,
+        "approx_95pct_monte_carlo_interval": [
+          -0.13588080517713821,
+          -0.13131252815619512
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": -0.13281901685649547,
+        "sample_sd": 0.00800430825421715,
+        "approx_95pct_monte_carlo_interval": [
+          -0.13568332177936102,
+          -0.12995471193362992
+        ]
+      },
+      "disposable_income_gini": {
+        "n": 30,
+        "mean": 0.2197660729978237,
+        "sample_sd": 0.011192413466585935,
+        "approx_95pct_monte_carlo_interval": [
+          0.21576091927648886,
+          0.22377122671915853
+        ]
+      },
+      "active_seller_fraction": {
+        "n": 30,
+        "mean": -0.21055555555555552,
+        "sample_sd": 0.05404754068313632,
+        "approx_95pct_monte_carlo_interval": [
+          -0.2298962195993124,
+          -0.19121489151179866
+        ]
+      },
+      "resource_per_person": {
+        "n": 30,
+        "mean": 3.5160733333333325,
+        "sample_sd": 0.10789690779926768,
+        "approx_95pct_monte_carlo_interval": [
+          3.477462920746013,
+          3.554683745920652
+        ]
+      },
+      "unmet_stock_per_person": {
+        "n": 30,
+        "mean": -5.9999999999999974e-05,
+        "sample_sd": 0.0008422465852378551,
+        "approx_95pct_monte_carlo_interval": [
+          -0.0003613940697614276,
+          0.00024139406976142765
+        ]
+      },
+      "unmet_budget_per_person": {
+        "n": 30,
+        "mean": 0.13365666666666667,
+        "sample_sd": 0.006566092804144918,
+        "approx_95pct_monte_carlo_interval": [
+          0.13130702053291168,
+          0.13600631280042166
+        ]
+      }
+    },
+    "sales_labor_interaction": {
+      "production_per_person": {
+        "n": 30,
+        "mean": -0.012956666666666668,
+        "sample_sd": 0.010202693469030051,
+        "approx_95pct_monte_carlo_interval": [
+          -0.016607653635394952,
+          -0.009305679697938383
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": -0.012936666666666671,
+        "sample_sd": 0.006474218543355359,
+        "approx_95pct_monte_carlo_interval": [
+          -0.015253436018430464,
+          -0.010619897314902878
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": -0.013417225030846405,
+        "sample_sd": 0.010502759717529756,
+        "approx_95pct_monte_carlo_interval": [
+          -0.01717558932756686,
+          -0.009658860734125951
+        ]
+      },
+      "disposable_income_gini": {
+        "n": 30,
+        "mean": 0.00358327220626633,
+        "sample_sd": 0.013658419231003208,
+        "approx_95pct_monte_carlo_interval": [
+          -0.0013043303446864467,
+          0.008470874757219107
+        ]
+      },
+      "active_seller_fraction": {
+        "n": 30,
+        "mean": 0.004444444444444425,
+        "sample_sd": 0.0473297176321247,
+        "approx_95pct_monte_carlo_interval": [
+          -0.012492277494032509,
+          0.021381166382921358
+        ]
+      },
+      "resource_per_person": {
+        "n": 30,
+        "mean": 0.47234000000000076,
+        "sample_sd": 0.11949208197689272,
+        "approx_95pct_monte_carlo_interval": [
+          0.4295803076218937,
+          0.5150996923781078
+        ]
+      },
+      "unmet_stock_per_person": {
+        "n": 30,
+        "mean": 0.00027666666666666665,
+        "sample_sd": 0.0012019189637418567,
+        "approx_95pct_monte_carlo_interval": [
+          -0.0001534345107733039,
+          0.0007067678441066372
+        ]
+      },
+      "unmet_budget_per_person": {
+        "n": 30,
+        "mean": 0.012659999999999998,
+        "sample_sd": 0.006564355156501639,
+        "approx_95pct_monte_carlo_interval": [
+          0.010310975675468346,
+          0.015009024324531649
+        ]
+      }
+    }
+  },
+  "notes": [
+    "Four arms use exactly the same initial agents/firms/ownership/RNG for each seed.",
+    "Household-purchase eligibility and worker-to-firm hiring eligibility are the only direct interventions.",
+    "Common government, resource pool, global hiring information and interfirm capital trades persist.",
+    "Confidence intervals only quantify seed-related Monte Carlo error, not model or parameter uncertainty.",
+    "Effects are conditional on this synthetic model; not empirical policy estimates."
+  ]
+}

@@ -135,3 +135,17 @@ PYTHONPATH=src:. python research/run_market_factorial.py --seeds 8 --steps 24 --
 ```
 
 See [factorial report](research/v02_market_factorial_experiment.md), [source and versioned period records](research/v02_market_factorial_8seed/), and [CHECKPOINT.md](CHECKPOINT.md). Interactions are conditional within-model results, **not calibrated real-world effects**.
+
+## v0.2 matched-agent market-access experiments (development only)
+
+Exact same initial 10,000-agent economy is replayed with four combinations of open/restricted household purchases and open/restricted labor hiring, using 10 access regions. This eliminates independent-agent-initialization confounding from the earlier integrated-versus-isolated comparison. Thirty seed-paired replications across 24 abstract periods are archived, with all six accounting discrepancies zero.
+
+```bash
+# Development branch: feature/v0.2-capital-accounting
+PYTHONPATH=src:. python -m pytest -q
+PYTHONPATH=src:. python research/run_matched_market_access.py --seed 1 --steps 24 --output research/v02_matched_market_30
+# Repeat --seed for integers 2 through 30, then:
+PYTHONPATH=src:. python research/run_matched_market_access.py --finalize --seeds 30 --steps 24 --output research/v02_matched_market_30
+```
+
+The default access configuration leaves legacy scenarios unchanged. The restricted experiments have a common government, natural resource pool, interfirm capital-goods trade and aggregated hiring information. They are **not ten independent economies**. Read [the mathematical mechanism](docs/v02_matched_market_access.md) and [the executed research report](research/v02_matched_market_access_experiment.md) before interpreting results. This does **not** establish external economic or social validity.

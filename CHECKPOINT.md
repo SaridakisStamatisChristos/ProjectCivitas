@@ -1,3 +1,16 @@
+# Latest continuation checkpoint — matched-agent access (2026-11-13)
+
+- **Status:** v0.2.0.dev0, development. Stable v0.1 on `main` remains unchanged. Previous verified development ref: `96703d9dfa39e5e753ae7a710bb398876496ec78`. The matched-market patch is not a release; commit SHA must be verified from GitHub after writing.
+- **Files:** `src/civitas/model.py`, `src/civitas/engine.py`, `tests/test_matched_market_access.py`, `research/run_matched_market_access.py`, `docs/v02_matched_market_access.md`, `research/v02_matched_market_access_experiment.md`, and all files in `research/v02_matched_market_30/`.
+- **Verified local tests:** `PYTHONPATH=src:. python -m pytest -q`, **82 passed** (Python 3.13.5, NumPy 2.3.5, pytest 9.0.2; Linux x86_64). The 64 prior tests remain; 18 additional parameter, state-matching, replay, journal and data-integrity tests have been added.
+- **Executed paired experiments:** 4 access treatment arms × 30 exact-matched seeds × 24 periods at 10,000 agents, **120 simulations / 2,880 complete period states**; six accounting discrepancy classes zero. Exact common initial state and RNG confirmed per seed and RNG matches after each full run. See `research/v02_matched_market_access_experiment.md`.
+- **Key observation:** mean final-period production/person open 0.251247, sales-limited 0.121157, labor-limited 0.264697, both 0.121650. Sales/labor interaction -0.012957, approximate 95% seed Monte Carlo interval [-0.016608, -0.009306]. This tests **only simulator mechanisms**.
+- **Important limitation:** only consumer seller pools and worker hire pools are gated. Resource allocation, government transfers, capital procurement and the global unmet-demand signal remain shared; not full isolation or calibrated economic behavior. Initial regions use deterministic ID modulo and may introduce assignment artifacts.
+- **Remaining v0.2 release gates:** sensitivity to region assignment, information flows and price mechanisms; independently verified inventory/COGS and profit accounting; explicit two-sided savings-investment funding; multi-horizon stress and externally validated claims. Never label v0.2 finished or merge into stable `main` without review.
+- **Reproduction:** `PYTHONPATH=src:. python -m pytest -q`; use `--seed 1...30` then `--finalize` and `--verify-only` with `research/run_matched_market_access.py`. Data hashes and experiment scenario in the research folder.
+
+---
+
 # CIVITAS continuation checkpoint
 
 ## Latest verified factorial interaction checkpoint — 2026-11-13

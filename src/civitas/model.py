@@ -47,6 +47,11 @@ class Scenario:
     buyer_seller_rule: str = "mixed"  # mixed | cheapest | favorite
     hiring_expectation_rule: str = "adaptive"  # adaptive | stationary
     rationing_order_rule: str = "random"  # random | household_id
+    # Experimental access topology; false/false preserves fully open markets.
+    # Regions are immutable labels derived from existing household/firm IDs.
+    market_regions: int = 1
+    restrict_household_sales: bool = False
+    restrict_labor_hiring: bool = False
     initial_resource: int = 500_000
     resource_capacity: int = 600_000
     regeneration_rate: float = 0.025
@@ -138,6 +143,13 @@ class Scenario:
                                     ("rationing_order_rule", {"random", "household_id"})):
             if type(getattr(self, field_name)) is not str or getattr(self, field_name) not in choices:
                 raise ValueError(f"{field_name} must be one of {sorted(choices)}")
+        if type(self.market_regions) is not int or self.market_regions < 1:
+            raise ValueError("market_regions must be a positive integer")
+        if self.firms_per_sector % self.market_regions != 0:
+            raise ValueError("market_regions must divide firms_per_sector exactly")
+        for field_name in ("restrict_household_sales", "restrict_labor_hiring"):
+            if type(getattr(self, field_name)) is not bool:
+                raise ValueError(f"{field_name} must be boolean")
         if type(self.transaction_trace) is not bool:
             raise ValueError("transaction_trace must be boolean")
         if self.initial_resource > self.resource_capacity:

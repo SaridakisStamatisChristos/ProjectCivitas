@@ -33,3 +33,7 @@ its attribution is not yet causally isolated. Before v0.2 release, implement
 interaction factorial controls, improve inventory cost accounting and
 model two-sided credit/equity flows if such mechanisms are activated. Evidence
 is in `research/v02_market_ablation_experiment.md` and `CHECKPOINT.md`.
+
+## Latest scientific gate before v0.2 release
+
+Matched-initial-state topology interventions are complete and independently tested, but deeper resource, inventory-cost and balance-sheet validation is still required. The next falsification step should vary the access-region mapping and information locality while retaining identical initial agents, then add independently auditable cost-of-goods-sold and financial intermediation mechanisms. See `CHECKPOINT.md`.

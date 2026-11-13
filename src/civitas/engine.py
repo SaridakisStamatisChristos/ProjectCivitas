@@ -31,6 +31,14 @@ class Simulation:
         self.state = state if state is not None else self._initialize()
         if rng_state is not None:
             self.rng.bit_generator.state = rng_state
+        # Access assignments are derived from immutable IDs, not fresh RNG draws.
+        # All treatment arms therefore share identical agent/firm initial states,
+        # RNG consumption and ownership draws when initialized from a snapshot.
+        regions = scenario.market_regions
+        self.household_regions = np.arange(len(self.state.household_cash), dtype=np.int64) % regions
+        self.agent_regions = self.household_regions[self.state.household_of_agent]
+        self.firm_regions = np.tile(np.arange(scenario.firms_per_sector, dtype=np.int64) % regions,
+                                    len(scenario.sectors))
         self.state.trace_enabled = scenario.transaction_trace
         self.state.validate()
 
@@ -157,6 +165,8 @@ class Simulation:
             if worker_count <= 0:
                 continue
             available = np.flatnonzero(candidate)
+            if c.restrict_labor_hiring:
+                available = available[self.agent_regions[available] == self.firm_regions[f]]
             ranked = available[np.argsort(-s.skills[available, sec], kind="stable")]
             selected = ranked[:worker_count]
             candidate[selected] = False
@@ -231,11 +241,26 @@ class Simulation:
             # across treatment arms isolates order without shifting future draws.
             randomized_order = self.rng.permutation(H)
             order = randomized_order if c.rationing_order_rule == "random" else range(H)
-            ids = list(range(k * nfirm_sector, (k + 1) * nfirm_sector))
-            by_price = sorted(ids, key=lambda f: (int(s.prices[f]), (f + s.step) % nf))
+            sector_ids = list(range(k * nfirm_sector, (k + 1) * nfirm_sector))
+            # Price lists are local only when household-to-firm access is gated.
+            # The unconstrained path is unchanged from previous releases.
+            market_sellers = ({r: [f for f in sector_ids if self.firm_regions[f] == r]
+                               for r in range(c.market_regions)}
+                              if c.restrict_household_sales else None)
+            global_by_price = sorted(sector_ids, key=lambda f: (int(s.prices[f]), (f + s.step) % nf))
+            regional_by_price = ({r: sorted(firms, key=lambda f: (int(s.prices[f]), (f + s.step) % nf))
+                                  for r, firms in market_sellers.items()}
+                                 if market_sellers is not None else None)
             for h in order:
                 if not would_buy[h]:
                     continue
+                if market_sellers is None:
+                    ids = sector_ids
+                    by_price = global_by_price
+                else:
+                    region = int(self.household_regions[h])
+                    ids = market_sellers[region]
+                    by_price = regional_by_price[region]
                 emergency_access = (c.household_savings_rate > 0 and
                                     c.savings_emergency_food_enabled and
                                     sector.name == c.savings_essential_sector)
@@ -244,7 +269,7 @@ class Simulation:
                 if all(int(s.prices[f]) > purchasing_power for f in ids):
                     budget_unmet[k] += 1
                     continue
-                favorite = ids[(int(h) + s.step) % nfirm_sector]
+                favorite = ids[(int(h) + s.step) % len(ids)]
                 if c.buyer_seller_rule == "cheapest":
                     candidates = by_price
                 elif c.buyer_seller_rule == "favorite":
@@ -276,7 +301,7 @@ class Simulation:
                         stock_unmet[k] += 1
                     else:
                         budget_unmet[k] += 1
-            s.cumulative_consumption[k] += int(sold[ids].sum())
+            s.cumulative_consumption[k] += int(sold[sector_ids].sum())
         # Investment is physical conversion of already-produced goods into capital.
         # Monetary purchases are firm-to-firm transfers; own-firm conversion
         # requires a goods stock but never fabricates a cash movement.

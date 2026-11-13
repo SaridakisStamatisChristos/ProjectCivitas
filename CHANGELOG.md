@@ -39,3 +39,11 @@ Added explicit physical productive capital and rounded depreciation; budget-limi
 - Verified 64 automated tests and 704 synthetic simulation instances, 16,896 internally checked periods and archived full topology-level period records.
 - Demonstrated strong nonadditive seller-search × pricing × hiring interactions under exact simulator rules, while retaining an explicit warning about unmatched agent initialization and labor/seller access confounds.
 - `main` and the historical core engine remain unchanged. v0.2 is still development-only.
+
+## 0.2.0.dev0 — matched-market access research (2026-11-13, development only)
+
+- Added versioned `market_regions`, `restrict_household_sales` and `restrict_labor_hiring` scenario fields with fail-fast validation.
+- Consumer-seller access and worker-to-firm hiring eligibility can now be restricted independently. Region labels are derived deterministically from existing household and firm IDs; old rules remain the default.
+- Added copy-identical initial state/RNG 2×2 experimental runner, atomic checksum-verified seed shards, strict aggregate verifier and exploratory paired factorial intervals.
+- Executed 120 matched-arm simulations (30 seeds, 24 periods), 2,880 audited period states. No monetary, finished-goods, resource, capital, household-flow or firm-flow discrepancy.
+- Added dedicated checkpoint and regression tests, including zero agents, replay and legacy unconstrained behavior. Software remains experimental v0.2.0.dev0.
