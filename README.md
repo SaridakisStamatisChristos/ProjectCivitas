@@ -149,3 +149,16 @@ PYTHONPATH=src:. python research/run_matched_market_access.py --finalize --seeds
 ```
 
 The default access configuration leaves legacy scenarios unchanged. The restricted experiments have a common government, natural resource pool, interfirm capital-goods trade and aggregated hiring information. They are **not ten independent economies**. Read [the mathematical mechanism](docs/v02_matched_market_access.md) and [the executed research report](research/v02_matched_market_access_experiment.md) before interpreting results. This does **not** establish external economic or social validity.
+
+
+## Experimental v0.2 — regional assignment and price-quote information
+
+The development branch now supports optional `household_region_assignment: "balanced_shuffle"` (balanced seeded regional labels, independent of simulation RNG), and `buyer_price_information: "two_quotes"` (buyers see two legal seller quotes per sector per period). Both default to original rules. `information_missed_purchase_opportunities` tracks failed purchases with an accessible but unquoted firm holding affordable stock. No external search price, behavioral learning or geography is implied.
+
+See [equations and limitations](docs/v02_region_information.md), [executed research report](research/v02_region_information_experiment.md), and [latest checkpoint](CHECKPOINT.md). The stored research dataset includes 30 matched seeds, eight arms and 24 periods per arm at 1,000 agents, plus a short 10,000-agent smoke run. **The results are exploratory and should not be generalized.**
+
+```bash
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q
+PYTHONPATH=src:. python research/run_region_information.py --seed 1 --population 1000 --steps 24 --output results/region_info
+PYTHONPATH=src:. python -m civitas run --scenario scenarios/region_information_local_shuffled_2quotes.json --steps 24 --seed 7 --output results/region_shuffled
+```

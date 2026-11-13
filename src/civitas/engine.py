@@ -36,6 +36,13 @@ class Simulation:
         # RNG consumption and ownership draws when initialized from a snapshot.
         regions = scenario.market_regions
         self.household_regions = np.arange(len(self.state.household_cash), dtype=np.int64) % regions
+        if scenario.household_region_assignment == "balanced_shuffle" and regions > 1:
+            # A separate, explicitly seeded substream: never consume simulation RNG.
+            # Shuffling labels retains precisely the same household count in each
+            # region as the historical modulo assignment.
+            allocation_rng = np.random.default_rng(
+                np.random.SeedSequence([scenario.seed, scenario.region_assignment_seed, 20261113]))
+            allocation_rng.shuffle(self.household_regions)
         self.agent_regions = self.household_regions[self.state.household_of_agent]
         self.firm_regions = np.tile(np.arange(scenario.firms_per_sector, dtype=np.int64) % regions,
                                     len(scenario.sectors))
@@ -118,6 +125,9 @@ class Simulation:
         sold = np.zeros(nf, dtype=np.int64)
         stock_unmet = np.zeros(ns, dtype=np.int64)
         budget_unmet = np.zeros(ns, dtype=np.int64)
+        # Attempts that fail despite an accessible but unquoted stocked seller.
+        # This is a synthetic information-friction diagnostic, not welfare loss.
+        missed_quote_opportunities = np.zeros(ns, dtype=np.int64)
         automation = self.automation
         # Capital depreciates before production; fractional small-unit losses
         # round down independently each period (declared coarse model rule).
@@ -261,6 +271,15 @@ class Simulation:
                     region = int(self.household_regions[h])
                     ids = market_sellers[region]
                     by_price = regional_by_price[region]
+                # Search information is distinct from legal access: in the
+                # two-quote arm, households can trade with only two observed
+                # sellers per sector/period. This quote set is deterministic,
+                # computed from IDs/step, and consumes no shared RNG draws.
+                eligible_ids = ids
+                if c.buyer_price_information == "two_quotes" and len(ids) > 2:
+                    first = (int(h) * 13007 + int(s.step) * 107 + k * 29) % len(ids)
+                    ids = [ids[first], ids[(first + 1) % len(ids)]]
+                    by_price = sorted(ids, key=lambda f: (int(s.prices[f]), (f + s.step) % nf))
                 emergency_access = (c.household_savings_rate > 0 and
                                     c.savings_emergency_food_enabled and
                                     sector.name == c.savings_essential_sector)
@@ -268,6 +287,11 @@ class Simulation:
                                     (int(s.household_savings[h]) if emergency_access else 0))
                 if all(int(s.prices[f]) > purchasing_power for f in ids):
                     budget_unmet[k] += 1
+                    if len(eligible_ids) > len(ids) and any(
+                        int(s.inventory[f]) > 0 and int(s.prices[f]) <= purchasing_power
+                        for f in eligible_ids if f not in ids
+                    ):
+                        missed_quote_opportunities[k] += 1
                     continue
                 favorite = ids[(int(h) + s.step) % len(ids)]
                 if c.buyer_seller_rule == "cheapest":
@@ -295,6 +319,11 @@ class Simulation:
                         bought = True
                         break
                 if not bought:
+                    if len(eligible_ids) > len(ids) and any(
+                        int(s.inventory[f]) > 0 and int(s.prices[f]) <= purchasing_power
+                        for f in eligible_ids if f not in ids
+                    ):
+                        missed_quote_opportunities[k] += 1
                     if any(int(s.inventory[f]) and int(s.prices[f]) <= int(s.household_cash[h]) for f in ids):
                         raise AssertionError("affordable inventory failed to clear")
                     if any(int(s.prices[f]) <= int(s.household_cash[h]) for f in ids):
@@ -496,6 +525,7 @@ class Simulation:
             "active_sellers": int(np.count_nonzero(sold)),
             "unmet_stock_demand_units": int(stock_unmet.sum()),
             "unmet_budget_demand_units": int(budget_unmet.sum()),
+            "information_missed_purchase_opportunities": int(missed_quote_opportunities.sum()),
             "total_money_cents": s.total_money(),
             "money_discrepancy_cents": s.total_money() - s.initial_total_money,
             "resource_discrepancy_units": s.initial_resource + s.cumulative_resource_regenerated - s.cumulative_resource_extracted - s.resource,

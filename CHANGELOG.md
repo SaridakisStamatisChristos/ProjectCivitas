@@ -47,3 +47,11 @@ Added explicit physical productive capital and rounded depreciation; budget-limi
 - Added copy-identical initial state/RNG 2×2 experimental runner, atomic checksum-verified seed shards, strict aggregate verifier and exploratory paired factorial intervals.
 - Executed 120 matched-arm simulations (30 seeds, 24 periods), 2,880 audited period states. No monetary, finished-goods, resource, capital, household-flow or firm-flow discrepancy.
 - Added dedicated checkpoint and regression tests, including zero agents, replay and legacy unconstrained behavior. Software remains experimental v0.2.0.dev0.
+
+## 0.2.0.dev0 — regional assignment and quote-information study (development)
+
+- Added deterministic balanced region assignment on a separate seeded RNG stream, preserving household counts by region.
+- Added price-search information limitation (two eligible quotes vs complete observation), separated from trading eligibility and seller ranking.
+- Recorded opportunities where affordable stock existed with an accessible but unquoted seller; metric is diagnostic rather than welfare.
+- Added exact-initial-state 2 × 2 × 2 research runner, per-seed digest-verified datasets, checkpoint/replay and quote-access boundary tests.
+- Historical mode remains default; no empirical validation or release promotion is claimed.

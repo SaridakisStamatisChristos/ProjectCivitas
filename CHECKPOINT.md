@@ -1,3 +1,16 @@
+# Latest continuation checkpoint — regional assignment and price information (2026-11-13)
+
+- **Status:** `0.2.0.dev0` experimental development. GitHub branch `feature/v0.2-capital-accounting`; stable `main` remains v0.1. Parent development commit before this extension: `3472357dab4b9c3e2f2b664deef25ce884cf9b10`.
+- **Implemented:** separate RNG balanced region assignment, optional two-observed-price-quotes buyer information (independent of legal access), observation-level missed-opportunity diagnostic, strict validation, independently reproducible exact-state factorial runner and checkpointed scenario files.
+- **Local tests executed:** 97 passed, including 82 earlier tests and 15 tests in `tests/test_region_information.py`.
+- **Full replicated experiment:** 2 assignment rules × 2 price-information rules × 2 sales-access rules × 30 exact-matched seeds × 24 periods = **240 complete simulations, 5,760 audited engine periods** at 1,000 agents; all six accounting identity classes zero. Per-seed SHA-256 and identical post-run RNG verified; exact output retained in `research/v02_region_information_1000/`.
+- **Standard-scale smoke:** 10,000 agents × 2 seeds × 8 arms × 3 periods = **16 complete runs, 48 checked periods**, without claiming a full long-horizon replicate.
+- **Observed (1,000-agent):** modulo open production 0.13347/full vs 0.12703/two quotes; modulo sales-local 0.11040/full vs 0.12787/two quotes. The quote/access interaction is +0.02390 production units per person; this is internal-model evidence only. See `research/v02_region_information_experiment.md`.
+- **Next scientific objective:** replicate at 10,000 agents with longer horizon and multiple per-region firm densities; then implement inventory cost-basis / COGS before adding realistic investment finance. The same unresolved external calibration, int64 extreme inputs and long-term convergence limitations remain.
+- **Acceptance:** DO NOT release v0.2 or merge to `main`. Maintain the mathematical and software verification versus empirical-validation distinction. The latest GitHub commit and exact hashes must be verified following repository upload.
+
+---
+
 # Latest continuation checkpoint — matched-agent access (2026-11-13)
 
 - **Status:** v0.2.0.dev0, development. Stable v0.1 on `main` remains unchanged. Previous verified development ref: `96703d9dfa39e5e753ae7a710bb398876496ec78`. The matched-market patch is not a release; commit SHA must be verified from GitHub after writing.

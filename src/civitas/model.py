@@ -52,6 +52,11 @@ class Scenario:
     market_regions: int = 1
     restrict_household_sales: bool = False
     restrict_labor_hiring: bool = False
+    # v0.2 experimental access-map and quote-information controls.
+    # The defaults reproduce every historical scenario exactly.
+    household_region_assignment: str = "modulo"  # modulo | balanced_shuffle
+    region_assignment_seed: int = 0
+    buyer_price_information: str = "full"  # full | two_quotes
     initial_resource: int = 500_000
     resource_capacity: int = 600_000
     regeneration_rate: float = 0.025
@@ -106,7 +111,8 @@ class Scenario:
     def validate(self) -> None:
         for name in ("population", "steps", "seed", "initial_household_cash_cents",
                      "initial_firm_cash_cents", "initial_resource", "resource_capacity",
-                     "initial_capital_units_per_firm", "household_liquidity_floor_cents"):
+                     "initial_capital_units_per_firm", "household_liquidity_floor_cents",
+                     "region_assignment_seed"):
             value = getattr(self, name)
             if type(value) is not int or value < 0:
                 raise ValueError(f"{name} must be a nonnegative integer")
@@ -147,6 +153,10 @@ class Scenario:
             raise ValueError("market_regions must be a positive integer")
         if self.firms_per_sector % self.market_regions != 0:
             raise ValueError("market_regions must divide firms_per_sector exactly")
+        if self.household_region_assignment not in {"modulo", "balanced_shuffle"} or type(self.household_region_assignment) is not str:
+            raise ValueError("household_region_assignment must be modulo or balanced_shuffle")
+        if self.buyer_price_information not in {"full", "two_quotes"} or type(self.buyer_price_information) is not str:
+            raise ValueError("buyer_price_information must be full or two_quotes")
         for field_name in ("restrict_household_sales", "restrict_labor_hiring"):
             if type(getattr(self, field_name)) is not bool:
                 raise ValueError(f"{field_name} must be boolean")
