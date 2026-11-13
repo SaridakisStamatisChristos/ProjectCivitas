@@ -1,5 +1,17 @@
 # CIVITAS continuation checkpoint
 
+## Latest verified scientific robustness checkpoint — 2026-11-13
+
+- **Branch:** `feature/v0.2-capital-accounting`; `main` remains frozen at v0.1.0 commit `85d9671978df6ce40a58e895aee5cb1d2a938a58`. Development version remains `0.2.0.dev0` (NOT a released v0.2).
+- **New executable components:** `src/civitas/normalization.py` (exact rational initial firm-density/cash/capital/resource normalization); `research/run_population_normalized.py` and `research/run_market_partition_control.py`; 12 explicit normalized scenarios; randomized invariant and restoration tests; initial int64-state and transfer-credit overflow guards.
+- **Execution evidence:** `PYTHONPATH=src python -m pytest -q` gave **45 passed** on Linux x86_64, Python 3.13.5, NumPy 2.3.5, pytest 9.0.2. The 72-case randomized conservation/checkpoint tests passed. 6 scenarios × 30 seeds × 24 periods at both 1,000 and 10,000 agents = **360 executed simulations / 8,640 audited period states**. Additional ten-community control: 2 scenarios × 30 seeds × 10 independent 1,000-agent communities × 24 periods = **600 executed simulations / 14,400 audited internal periods**. No monetary, resource, finished-goods, capital, household-flow, or firm-flow discrepancy was reported in those runs.
+- **Critical research finding:** even when 1,000 and 10,000 agents start with exactly equivalent cash, capital, resources and firms *per person*, the synthetic saving/ownership outcomes are **not invariant to population**. An integrated 10,000-agent market differs sharply from ten independent 1,000-agent markets using the same total initial money, firms, natural resources and capital. See `research/v02_population_normalization_experiment.md`. Earlier broad interpretations of a universal savings effect do not survive this test.
+- **Scientific limitations:** ownership share 3% is rounded to 3.2% in 1,000-agent case; larger integrated market has more cross-community seller competition; logistic physical-resource rounding and behavioral decision rules are still size-dependent; model uncalibrated. Approximate MC intervals describe seed variability under fixed assumptions, not reality.
+- **Highest-priority next task:** isolate *which* market mechanisms (consumer seller-choice, posted-price updates, inventory rationing, hiring feedback) drive population/topology dependence. Test market-partition fixed pools as a reference. Separately implement cost-of-goods-sold/inventory valuation and correct two-sided borrowing/equity funding before claiming accounting-complete v0.2.
+- **Preservation:** all new source, tests, scenarios, report and per-period evidence are under version control on the development branch; keep `main` unchanged. Do not label v0.2 complete or economically validated.
+
+---
+
 ## Preserved versions and status — 2026-11-13
 
 - **Stable release:** v0.1.0 on GitHub `main` at commit `85d9671978df6ce40a58e895aee5cb1d2a938a58` (unchanged).

@@ -1,0 +1,16 @@
+{
+  "software_version": "0.2.0.dev0",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "seeds": 30,
+  "steps": 24,
+  "integrated_population": 10000,
+  "partition_count": 10,
+  "partition_population": 1000,
+  "independent_replicas": 600,
+  "source_integrated_directory": "results/normalized_10000_30",
+  "exact_stock_normalization_verified": true,
+  "remark": "Ownership share 8% matches at both scales; model not externally calibrated",
+  "elapsed_seconds": 44.96200996599998
+}

@@ -133,6 +133,24 @@ class Scenario:
             raise ValueError("transaction_trace must be boolean")
         if self.initial_resource > self.resource_capacity:
             raise ValueError("initial_resource cannot exceed resource_capacity")
+        # NumPy arrays/checkpoints use signed int64; refuse initial states that
+        # could wrap *before* the first accounting invariant is evaluated.
+        i64max = (1 << 63) - 1
+        n_households = (self.population + self.household_size - 1) // self.household_size
+        n_firms = self.firms_per_sector * len(self.sectors)
+        initial_money = (n_households * self.initial_household_cash_cents +
+                         n_firms * self.initial_firm_cash_cents)
+        initial_capital = n_firms * (self.initial_capital_units_per_firm if self.capital_enabled else 0)
+        for label, value in (("initial_total_money", initial_money),
+                             ("initial_capital_stock", initial_capital),
+                             ("resource_capacity", self.resource_capacity),
+                             ("initial_resource", self.initial_resource),
+                             ("household_liquidity_floor_cents", self.household_liquidity_floor_cents),
+                             ("population", self.population),
+                             ("initial_household_cash_cents", self.initial_household_cash_cents),
+                             ("initial_firm_cash_cents", self.initial_firm_cash_cents)):
+            if value > i64max:
+                raise ValueError(f"{label} exceeds signed int64 storage")
         if self.automation_base + self.automation_shock_increase > 1:
             raise ValueError("automation adoption must remain in [0,1]")
         if self.automation_shock_step is not None and (type(self.automation_shock_step) is not int or self.automation_shock_step < 0):
@@ -154,3 +172,6 @@ class Scenario:
                 raise ValueError("sector productivity must be in (0,100]")
             if type(sector.resource_per_unit) is not int or sector.resource_per_unit < 1:
                 raise ValueError("sector resource_per_unit must be a positive integer")
+            if (sector.price_cents > i64max or sector.wage_cents > i64max or
+                    sector.resource_per_unit > i64max):
+                raise ValueError("sector numeric parameter exceeds signed int64")

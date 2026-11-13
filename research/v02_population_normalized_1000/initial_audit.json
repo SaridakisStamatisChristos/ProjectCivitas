@@ -1,0 +1,164 @@
+{
+  "o03_s00": {
+    "reference": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "4/125"
+    },
+    "target": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "4/125"
+    },
+    "config_sha256_seed_1": "31645c4d7a58db81883d0c189e3b3cf56ba0737bf01a4ce49a4979cc34c601d3"
+  },
+  "o03_s15": {
+    "reference": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "4/125"
+    },
+    "target": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "4/125"
+    },
+    "config_sha256_seed_1": "eae952d93d7749d9e4c11caf103008a13a972aa52793593c9e6feafeb989da5b"
+  },
+  "o03_s30": {
+    "reference": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "4/125"
+    },
+    "target": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "4/125"
+    },
+    "config_sha256_seed_1": "fcf59e3eaeace4fca5a030449166fe69a3c795287c379dfaa8a7a285306dbffe"
+  },
+  "o08_s00": {
+    "reference": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "2/25"
+    },
+    "target": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "2/25"
+    },
+    "config_sha256_seed_1": "81049b908d1807cb99d0a727525a684a79bcaa554659f9ce89cf2b054d89fa08"
+  },
+  "o08_s15": {
+    "reference": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "2/25"
+    },
+    "target": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "2/25"
+    },
+    "config_sha256_seed_1": "ef07afd3422027b5c87a6b91770856f676081fdad5ff10274528c67ddacb56ab"
+  },
+  "o08_s30": {
+    "reference": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "2/25"
+    },
+    "target": {
+      "population": 1000,
+      "firms": 6,
+      "households": 250,
+      "firms_per_person": "3/500",
+      "household_money_per_person": "3750",
+      "firm_money_per_person": "12000",
+      "initial_resource_per_person": "50",
+      "resource_capacity_per_person": "60",
+      "initial_capital_per_person": "27/10",
+      "realized_ownership_fraction_per_firm": "2/25"
+    },
+    "config_sha256_seed_1": "08b57eec2d779815164ed99ccaca824a4a3fd8e6c6fc4b5a7dc138c67f699485"
+  }
+}

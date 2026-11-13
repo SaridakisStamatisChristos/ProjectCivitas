@@ -90,3 +90,14 @@ PYTHONPATH=src python research/run_savings_sensitivity.py --population 1000 --se
 ```
 
 The development branch is intentionally **not** promoted to `main` pending a broader economic-model and validation review.
+
+## Population-normalized v0.2 experimental branch
+
+`scale_population_exact()` preserves exact starting per-capita household money, firm money, firm density, physical capital, natural resources and resource capacity at feasible population multiples. It rejects noninteger firm/resource scaling rather than rounding. Twelve pinned scenarios and a runner allow 1,000/10,000-agent comparisons:
+
+```bash
+PYTHONPATH=src python research/run_population_normalized.py --population 1000 --seeds 30 --steps 24
+PYTHONPATH=src python research/run_population_normalized.py --population 10000 --seeds 30 --steps 24
+```
+
+Initial economic ratios, local runtime and every period's accounting identities are recorded. This corrects an important experimental-design error, **not** the lack of empirical economic calibration or the other unimplemented v0.2 financial mechanisms. [Protocol and mathematical caveats](docs/v02_population_normalization.md).

@@ -70,6 +70,12 @@ class State:
             raise ValueError(f"insufficient funds: {source}:{source_id}, {reason}")
         if source == dest and source_id == dest_id:
             return
+        # All stored account balances are serialised as signed int64. Even if
+        # the source can pay, crediting an almost-full destination must fail
+        # atomically instead of wrapping around in NumPy arithmetic.
+        i64max = (1 << 63) - 1
+        if amount > i64max or balance(dest, dest_id) > i64max - amount:
+            raise OverflowError("transfer destination exceeds signed int64")
         if source == "household":
             self.household_cash[source_id] -= amount
         elif source == "savings":

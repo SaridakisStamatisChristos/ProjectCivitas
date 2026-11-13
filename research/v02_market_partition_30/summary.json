@@ -1,0 +1,132 @@
+{
+  "o08_s00": {
+    "integrated": {
+      "production_per_person": {
+        "n": 30,
+        "mean": 0.2512466666666667,
+        "sd": 0.0063688213240340845
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": 0.25205,
+        "sd": 0.004855267313923627
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": 0.2598080697731813,
+        "sd": 0.0068331551443197
+      }
+    },
+    "ten_disconnected_markets": {
+      "production_per_person": {
+        "n": 30,
+        "mean": 0.11077333333333333,
+        "sd": 0.005508672368581002
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": 0.10647,
+        "sd": 0.004538733683338984
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": 0.11617183690606725,
+        "sd": 0.005753270557952987
+      }
+    },
+    "partition_minus_integrated": {
+      "production_per_person": {
+        "n": 30,
+        "mean": -0.14047333333333334,
+        "sd": 0.00725871335294554,
+        "approx_95pct_mc_interval": [
+          -0.14307083054735653,
+          -0.13787583611931015
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": -0.14558,
+        "sd": 0.005806144189117898,
+        "approx_95pct_mc_interval": [
+          -0.1476577020144115,
+          -0.14350229798558847
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": -0.1436362328671141,
+        "sd": 0.007924642906391218,
+        "approx_95pct_mc_interval": [
+          -0.14647202991138322,
+          -0.140800435822845
+        ]
+      }
+    }
+  },
+  "o08_s30": {
+    "integrated": {
+      "production_per_person": {
+        "n": 30,
+        "mean": 0.18644,
+        "sd": 0.004102698859413703
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": 0.18762666666666666,
+        "sd": 0.0027259839518506204
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": 0.19265482882580603,
+        "sd": 0.004603959967590459
+      }
+    },
+    "ten_disconnected_markets": {
+      "production_per_person": {
+        "n": 30,
+        "mean": 0.11698,
+        "sd": 0.003297480752081023
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": 0.11183333333333334,
+        "sd": 0.002525365570440806
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": 0.12201236242463015,
+        "sd": 0.00343983877097982
+      }
+    },
+    "partition_minus_integrated": {
+      "production_per_person": {
+        "n": 30,
+        "mean": -0.06946,
+        "sd": 0.005524653211148035,
+        "approx_95pct_mc_interval": [
+          -0.07143697176161089,
+          -0.0674830282383891
+        ]
+      },
+      "consumption_per_person": {
+        "n": 30,
+        "mean": -0.07579333333333334,
+        "sd": 0.003676855228019741,
+        "approx_95pct_mc_interval": [
+          -0.07710907907872391,
+          -0.07447758758794276
+        ]
+      },
+      "employment_rate": {
+        "n": 30,
+        "mean": -0.07064246640117587,
+        "sd": 0.006006457907641302,
+        "approx_95pct_mc_interval": [
+          -0.07279184975916654,
+          -0.0684930830431852
+        ]
+      }
+    }
+  }
+}

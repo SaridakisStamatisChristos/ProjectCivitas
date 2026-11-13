@@ -16,3 +16,11 @@ Added explicit physical productive capital and rounded depreciation; budget-limi
 - NPZ checkpoint schema v3 includes savings state, while legacy v1/v2 load remains supported; actual prior v2 file was resumed successfully.
 - Reproducible 2×3 savings/ownership factorial with 30 seeds each at 1,000 and 10,000 agents (360 runs). Exact final-period seed-level data and exploratory paired estimates preserved in `research/`.
 - The version remains a development preview. Structural model/real-world validation not claimed.
+
+## 0.2.0.dev0 — continued normalization / randomized validation (development branch)
+
+- Added `scale_population_exact` for integer-exact normalization of initial firm density, physical-capital, cash and resource stocks per person, with audit and explicit rejection of inexact scalings.
+- Added 12 frozen configuration files and a 2×3 factorial scenario runner preserving all period-level observations.
+- Added preflight signed-int64 guards for initial total money/resource/capital stocks and atomic transfer destination overflow prevention. Does not establish overflow safety for all extreme future trajectories.
+- Added analytical normalization tests and bounded randomized-conservation/checkpoint-replay falsification cases.
+- Initial owner share rounding, scale-dependent decision rules and physical-regeneration rounding remain documented limitations.

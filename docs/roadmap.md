@@ -19,3 +19,7 @@
 **v0.9 — Scale:** per-stage profiling, optional Numba/C++/CUDA backends with differential reference comparisons, stress test at 100k/1m.
 
 **v1.0 — Integrated laboratory:** documented component validation, robustness, reproducible release and independently inspected scientific limitations.
+
+### Verified normalization investigation — v0.2 development only
+
+The experiment that held six firms fixed while scaling population failed comparability requirements. Exact per-capita initial stocks and firm density, signed-int64 initial-state and transfer-credit guards, and randomized restoration tests are implemented. The 360-run controlled replication campaign and 600-run disjoint-market counterfactual found continuing scale-sensitive output differences. **This is not a v0.2 acceptance pass:** the market interaction/seller-choice structure is still non-scale-invariant and uncalibrated. Next technical gate: mechanism-level market ablations under matched ownership fractions; next financial gate: inventory unit-cost/COGS and two-sided funding rules. Preserve legacy scenarios and complete release gates before promotion to main.

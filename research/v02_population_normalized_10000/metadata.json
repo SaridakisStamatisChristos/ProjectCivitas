@@ -1,0 +1,14 @@
+{
+  "model_version": "0.2.0.dev0",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "population": 10000,
+  "seeds": 30,
+  "periods": 24,
+  "total_runs": 180,
+  "total_period_records": 4320,
+  "wall_seconds": 274.11312854500005,
+  "initialization_method": "exact integer-ratio normalization",
+  "limitation": "Uncalibrated synthetic rules; Monte Carlo intervals only; not scale-invariance evidence"
+}
