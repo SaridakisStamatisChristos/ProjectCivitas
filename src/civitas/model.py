@@ -61,6 +61,11 @@ class Scenario:
     capital_investment_budget_share: float = 0.15
     capital_target_buffer: float = 0.10
     capital_input_sector: str = "goods"
+    # Household balances are separate, noninterest-bearing accounts. No credit.
+    household_savings_rate: float = 0.0
+    household_liquidity_floor_cents: int = 0
+    savings_emergency_food_enabled: bool = True
+    savings_essential_sector: str = "food"
     sectors: tuple[Sector, ...] = field(default_factory=lambda: (
         Sector("food", 1.0, 1500, 1400, 1.25, 2),
         Sector("goods", 0.55, 2500, 2300, 1.25, 3),
@@ -92,7 +97,7 @@ class Scenario:
     def validate(self) -> None:
         for name in ("population", "steps", "seed", "initial_household_cash_cents",
                      "initial_firm_cash_cents", "initial_resource", "resource_capacity",
-                     "initial_capital_units_per_firm"):
+                     "initial_capital_units_per_firm", "household_liquidity_floor_cents"):
             value = getattr(self, name)
             if type(value) is not int or value < 0:
                 raise ValueError(f"{name} must be a nonnegative integer")
@@ -110,10 +115,14 @@ class Scenario:
         for name in ("regeneration_rate", "output_inventory_buffer", "price_adjustment",
                      "automation_base", "automation_shock_increase",
                      "capital_depreciation_rate", "capital_investment_budget_share",
-                     "capital_target_buffer"):
+                     "capital_target_buffer", "household_savings_rate"):
             value = getattr(self, name)
             if not isinstance(value, (float, int)) or not 0 <= value <= 1:
                 raise ValueError(f"{name} must be in [0,1]")
+        if type(self.savings_emergency_food_enabled) is not bool:
+            raise ValueError("savings_emergency_food_enabled must be boolean")
+        if not isinstance(self.savings_essential_sector, str) or not self.savings_essential_sector:
+            raise ValueError("savings_essential_sector must be nonempty string")
         if type(self.capital_enabled) is not bool:
             raise ValueError("capital_enabled must be boolean")
         if not self.capital_enabled and self.initial_capital_units_per_firm:
@@ -130,6 +139,8 @@ class Scenario:
             raise ValueError("automation_shock_step must be a nonnegative step index")
         if not self.sectors or len({s.name for s in self.sectors}) != len(self.sectors):
             raise ValueError("nonempty sectors with unique names required")
+        if self.household_savings_rate and self.savings_emergency_food_enabled and self.savings_essential_sector not in {s.name for s in self.sectors}:
+            raise ValueError("savings_essential_sector must identify a sector when savings enabled")
         if self.capital_enabled and self.capital_input_sector not in {s.name for s in self.sectors}:
             raise ValueError("capital_input_sector must identify an existing goods sector")
         for sector in self.sectors:

@@ -1,45 +1,45 @@
 # CIVITAS continuation checkpoint
 
-## Current branch and software status
+## Preserved versions and status — 2026-11-13
 
-- **Stable baseline:** v0.1.0 on GitHub `main`, checkpoint commit `85d9671978df6ce40a58e895aee5cb1d2a938a58` (2026-11-13).
-- **Active target:** v0.2 — Economic Depth. Branch `feature/v0.2-capital-accounting`.
-- **Current development version:** `0.2.0.dev0`. This is **not** a completed or released v0.2 milestone. Keep changes on development branch until acceptance and independent review.
-- **Execution environment:** local container Python 3.13.5, NumPy 2.3.5, pytest 9.0.2, Linux x86_64.
+- **Stable release:** v0.1.0 on GitHub `main` at commit `85d9671978df6ce40a58e895aee5cb1d2a938a58` (unchanged).
+- **Active branch:** `feature/v0.2-capital-accounting`. The preceding verified v0.2-dev checkpoint was commit `30493bc92233a81b96dc4ba6642a8631de6c7d72`. This document describes the next savings/firm-flow slice; commit verification is recorded in the GitHub commit itself after upload.
+- **Development version:** `0.2.0.dev0`, NOT a completed v0.2 release. Do not promote to main until remaining gate review.
+- **Environment:** Python 3.13.5, NumPy 2.3.5, pytest 9.0.2, Linux x86_64.
 
-## Implemented, executable functionality
+## Implemented and locally executed
 
-- All v0.1 baseline features remain (10,000-agent standard, multi-sector production, resource regeneration, household demand, wages, taxes, transfers, dividends, seeded RNG, checkpointing, command-line tools, SQLite/CSV/JSONL, four legacy scenarios).
-- Additional **after-tax disposable income** and income-flow accounting identity, separate from the legacy `income_gini` metric.
-- Simple **firm capital stock** with per-period depreciation, productive capacity limit and integer inventory conversion.
-- **Physical capital purchases** of actually produced goods, conserved interfirm cash transfers; same-firm conversion without fake money movement.
-- **Household ownership claims** via registered equal-share firm owner sets; explicitly modeled/marked equity and household net-worth Gini (not a market valuation).
-- Capital stock and completed-goods flow invariants, checkpoint v2, legacy checkpoint v1 migration support.
-- Separate ownership RNG substream in capital-enabled scenarios to hold nonownership initial conditions constant.
-- 3 paired experimental scenarios, analysis script and versioned report/summary.
+- Original v0.1 population, employment, wage, tax, transfer, sector production, consumer market, resource, automation and full save/restore functionality retained.
+- Original v0.2 physical capital, real-goods investment, depreciation, concentrated seeded owner claims, disposable income and equity-marked household net worth retained.
+- Household cash and separate non-interest-bearing `household_savings` reserve accounts; income-based saving subject to liquid-cash floor; logged essential-sector savings withdrawals; **no savings-to-investment intermediation**.
+- Firm capital-goods sales recognized as revenue of the supplier; purchases not charged as current operating expenses; noncash depreciation valued at posted capital quote. Defined **profit proxy**, not full inventory-adjusted net profit.
+- Exact reconciliation of each household's money assets and each firm's cash movements and government cash; documented total-money, finished-goods, capital, and resource conservation. Reject invalid account IDs.
+- Nonpickle checkpoint format 3 serializes household savings and all existing capital arrays; historical versions 1 and 2 are read with zero-initialized savings. Existing seeded RNG is retained.
+- Six versioned configurations in `scenarios/savings_ownership/`, standalone reproducible factorial experiment runner in `research/run_savings_sensitivity.py`, generated reports and source result datasets in `research/v02_savings_results_*/`.
 
-## Verification evidence
+## Verified local evidence
 
-- `pytest -q`: **28 tests passed** before packaging, covering old suite and new capital/financial/serialization/model experiments.
-- Re-execution of 4 original v0.1 scenarios × 3 seeds × 24 periods: aggregate metric means reproduced previously recorded `research/initial_summary.json` values exactly for the original six comparison metrics.
-- v0.2 comparison: 3 capital scenarios × 30 seeds × 24 periods = **90 simulations and 2,160 audited period records**; zero money, raw resource, finished inventory or capital-account discrepancies. Raw files in `results/v02_capital_suite/` (not committed by design); report `research/v02_capital_experiment.md`, machine-readable summaries and paired seed effects in `research/`.
-- No empirical calibration, external reproduction, historical validation, or formal proof of arbitrary parameter behavior.
+- `PYTHONPATH=src pytest -q` reported **37 passed**, including new savings/flow tests and 28 previous tests.
+- Exact behavioral compatibility check: original four v0.1 scenario configs, 12 periods, every one of the original 49 metrics per period unchanged when compared with the previous capital-development source archive.
+- Real checkpoint test: previous v2 `capital_reinvestment` seed-7 archive restored and advanced one period with zero money, goods and firm cash-flow discrepancies.
+- Savings/ownership factorial: **6 configurations × 30 seeds × 24 periods** at 1,000 agents, and again at 10,000 agents. **360 simulations = 8,640 tested period states**, zero per-period money, resource/goods/capital/household-flow/firm-flow reconciliation discrepancies (see research report for five asserted identities and seed-level final-period data).
+- Capital-only earlier experimental results still preserved in `research/v02_capital_experiment.md`; original v0.1 experimental records still preserved.
+- Experimental 10,000-agent (8% ownership) saving 0% → 30%: mean final production 1,944.7 → 1,576.6 units, disposable-income Gini 0.5369 → 0.5895. CONDITIONAL model evidence, NOT real-world inference.
 
-## Architectural decisions and limitations
+## Important assumptions and unresolved defects
 
-- Capital endowment is initially exogenous; investment converts one finished bundle from designated sector into one capital unit, after household consumption.
-- One unit of capital provides fixed physical production capacity per step; depreciation is floored to integer units (small-stock rounding artifacts).
-- Neither capital installation costs nor capital depreciation are part of full audited firm profit (positive operating surplus remains a simplified dividend basis).
-- Investment budget is a fraction of firm cash after consumption; self-conversion is imputed internally, not posted as a transfer.
-- Equity is a posted-price book-value proxy, not tradable capital market wealth. There is no credit, leverage, firm entry or household portfolio trading.
-- One global physical resource; no geographic heterogeneity. No empirical calibration. Int64 overflow under extreme inputs remains unproven.
-- Policy comparisons are conditional on these modeling assumptions; seed-to-seed Monte Carlo intervals omit structural model uncertainty.
+- Savings sit idle as reserved cash; firms do not borrow from them. This model can consequently exhibit lower spending, lower production and differing income inequality under high saving propensities.
+- Ownership changes only the registered income/marked-equity recipient pool; it does not simulate all cooperative governance mechanisms or fully capitalized asset markets.
+- Population scaling holds fixed six firms, firm endowments and resources: 1,000 vs 10,000 are not matched per-capita economic configurations. The saving effect differs across them. Normalize firm density/initial per-capita stocks before causal scaling claims.
+- Firm profit is an accrual proxy, not net earnings: no inventory FIFO/COGS, loans, liabilities, market pricing of equity, comprehensive taxes or full national accounts.
+- Total monetary stock is conserved by specified transfers, but extreme int64 overflow not formally ruled out. Consumption and wage behavior are deliberately stylized. No empirical calibration or external independent review.
+- Factorial compact research data retain final-period seed observations, paired contrast summaries, scripts and scenario configs; no complete per-period trajectory files for this campaign.
 
-## Next objective and release gates
+## Next development objective and release gate
 
-1. Audit and benchmark the new capital code with independent property-based and toy-model checks; inspect economic mechanisms and model sensitivities.
-2. Add richer household saving decisions and productive firm investment accounting (capital replacement costs, depreciation expenses/profit decomposition), and a capital-producing-sector capacity constraint.
-3. Sweep ownership concentration and investment rules over a broad parameter grid, identify counterexamples, and report robustness alongside descriptive Monte Carlo intervals.
-4. Preserve original v0.1 stable release. Merge/promote to v0.2 only when acceptance checks and scientific specification are complete.
+1. Implement **population-normalized endowment and firm-density controlled experiments**, verify whether apparent saving effects persist when per-capita endowments remain constant.
+2. Add independently verified cost-of-goods-sold and inventory accounting or clearly retain current profit-proxy status. Do not model lending or household investment without two-sided ledger treatment.
+3. Test longer horizons, alternate behavioral rules, and parameter sensitivity; audit extreme int64 configurations and randomized falsification cases.
+4. Keep the stable v0.1 `main` unchanged. Commit tests and scientific evidence to the v0.2 development branch; only promote after the full v0.2 acceptance criteria are met.
 
-**Source of truth:** GitHub repository and this file. No completed v0.2 release or real-world inference is claimed.
+**Scientific classification:** executable research model and code-verified experiments, **not** empirical predictions, proof of institutional superiority, or a finished v0.2 release.

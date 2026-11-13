@@ -76,3 +76,17 @@ civitas suite --scenarios scenarios/capital_depreciation_only.json scenarios/cap
 ```
 
 See [v0.2 capital mechanics](docs/v02_capital_model.md), [experimental analysis](research/v02_capital_experiment.md), and [CHECKPOINT.md](CHECKPOINT.md). These scenarios are *not* empirically calibrated forecasts. Experimental development outputs are subject to review; do not use a dev branch as a stable release.
+
+## v0.2 ongoing development — savings, firm accounting and sensitivity research
+
+The `feature/v0.2-capital-accounting` branch adds a second, **development-only** slice. Households may reserve current disposable income in separately accounted, non-interest-bearing savings balances; under a configured essential-sector rule they may make precisely logged emergency withdrawals. The simulation reconciles cash flows for **each household and firm**; suppliers recognize interfirm capital-good revenues and firms record noncash depreciation in an explicit **profit proxy**, not a full GAAP income statement. Existing scenarios have saving disabled by default and continue operating.
+
+See [docs/v02_savings_profit.md](docs/v02_savings_profit.md) for the equations and limitations. `checkpoint_version=3` persists savings while loading historical v1/v2 checkpoints via explicitly defined migration. The latest experiments vary ownership and saving rates on a controlled 2×3 grid over 30 seeds at both 1,000 and 10,000 agents; see [research/v02_savings_ownership_experiment.md](research/v02_savings_ownership_experiment.md). Their recorded effects **do not** imply real-world outcomes, especially as reserves do not finance investment and fixed firm numbers make cross-population comparisons structurally different.
+
+```bash
+PYTHONPATH=src pytest -q
+PYTHONPATH=src python research/run_savings_sensitivity.py --population 1000 --seeds 30 --steps 24
+# For 10,000-agent studies, see the split/restartable commands in the research report.
+```
+
+The development branch is intentionally **not** promoted to `main` pending a broader economic-model and validation review.

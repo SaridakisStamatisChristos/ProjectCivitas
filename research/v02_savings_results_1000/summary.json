@@ -1,0 +1,524 @@
+{
+  "savings_o03_s00": {
+    "employment_rate": {
+      "n": 30,
+      "mean": 0.11411075959944864,
+      "sample_sd": 0.01569473917506783
+    },
+    "production_units": {
+      "n": 30,
+      "mean": 108.93333333333334,
+      "sample_sd": 15.206471701522197
+    },
+    "consumption_units": {
+      "n": 30,
+      "mean": 105.16666666666667,
+      "sample_sd": 12.752507078281086
+    },
+    "disposable_income_gini": {
+      "n": 30,
+      "mean": 0.7290028958750627,
+      "sample_sd": 0.03239136318980633
+    },
+    "modeled_net_worth_gini": {
+      "n": 30,
+      "mean": 0.8253181480545514,
+      "sample_sd": 0.010771129418683679
+    },
+    "household_monetary_assets_gini": {
+      "n": 30,
+      "mean": 0.716139902859997,
+      "sample_sd": 0.02829623468926074
+    },
+    "household_savings_stock_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_savings_deposited_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_savings_withdrawn_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "capital_stock_units": {
+      "n": 30,
+      "mean": 828.0,
+      "sample_sd": 0.0
+    },
+    "firm_profit_proxy_cents": {
+      "n": 30,
+      "mean": -43098.166666666664,
+      "sample_sd": 18673.977761955888
+    },
+    "resource_stock": {
+      "n": 30,
+      "mean": 530951.6666666666,
+      "sample_sd": 234.1749027062278
+    },
+    "money_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "goods_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "capital_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "firm_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    }
+  },
+  "savings_o03_s15": {
+    "employment_rate": {
+      "n": 30,
+      "mean": 0.11698010454931762,
+      "sample_sd": 0.010319793567526474
+    },
+    "production_units": {
+      "n": 30,
+      "mean": 111.7,
+      "sample_sd": 9.559793678339183
+    },
+    "consumption_units": {
+      "n": 30,
+      "mean": 104.3,
+      "sample_sd": 7.507008219909786
+    },
+    "disposable_income_gini": {
+      "n": 30,
+      "mean": 0.7213559306030942,
+      "sample_sd": 0.030491364010507907
+    },
+    "modeled_net_worth_gini": {
+      "n": 30,
+      "mean": 0.8229287996888286,
+      "sample_sd": 0.010623964894351
+    },
+    "household_monetary_assets_gini": {
+      "n": 30,
+      "mean": 0.6881531943414602,
+      "sample_sd": 0.02535118894661566
+    },
+    "household_savings_stock_cents": {
+      "n": 30,
+      "mean": 641362.2,
+      "sample_sd": 29771.362012789265
+    },
+    "household_savings_deposited_cents": {
+      "n": 30,
+      "mean": 6413.9,
+      "sample_sd": 1766.7910586222656
+    },
+    "household_savings_withdrawn_cents": {
+      "n": 30,
+      "mean": 29599.4,
+      "sample_sd": 5624.631068974121
+    },
+    "capital_stock_units": {
+      "n": 30,
+      "mean": 828.0,
+      "sample_sd": 0.0
+    },
+    "firm_profit_proxy_cents": {
+      "n": 30,
+      "mean": -47017.86666666667,
+      "sample_sd": 12555.819128261175
+    },
+    "resource_stock": {
+      "n": 30,
+      "mean": 531099.8333333334,
+      "sample_sd": 189.82933956825414
+    },
+    "money_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "goods_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "capital_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "firm_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    }
+  },
+  "savings_o03_s30": {
+    "employment_rate": {
+      "n": 30,
+      "mean": 0.11384831854117061,
+      "sample_sd": 0.0078122209909365905
+    },
+    "production_units": {
+      "n": 30,
+      "mean": 108.96666666666667,
+      "sample_sd": 7.23250961992439
+    },
+    "consumption_units": {
+      "n": 30,
+      "mean": 105.53333333333333,
+      "sample_sd": 6.642254152762077
+    },
+    "disposable_income_gini": {
+      "n": 30,
+      "mean": 0.7220728494528579,
+      "sample_sd": 0.025694619801288565
+    },
+    "modeled_net_worth_gini": {
+      "n": 30,
+      "mean": 0.820568422046684,
+      "sample_sd": 0.010242039826537827
+    },
+    "household_monetary_assets_gini": {
+      "n": 30,
+      "mean": 0.689295909865747,
+      "sample_sd": 0.019018757866695678
+    },
+    "household_savings_stock_cents": {
+      "n": 30,
+      "mean": 1039736.8333333334,
+      "sample_sd": 38732.654609633915
+    },
+    "household_savings_deposited_cents": {
+      "n": 30,
+      "mean": 8399.966666666667,
+      "sample_sd": 3205.784055834653
+    },
+    "household_savings_withdrawn_cents": {
+      "n": 30,
+      "mean": 49130.8,
+      "sample_sd": 6848.999193942184
+    },
+    "capital_stock_units": {
+      "n": 30,
+      "mean": 828.0,
+      "sample_sd": 0.0
+    },
+    "firm_profit_proxy_cents": {
+      "n": 30,
+      "mean": -35490.566666666666,
+      "sample_sd": 11770.735985202171
+    },
+    "resource_stock": {
+      "n": 30,
+      "mean": 531428.5,
+      "sample_sd": 155.77121818164323
+    },
+    "money_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "goods_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "capital_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "firm_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    }
+  },
+  "savings_o08_s00": {
+    "employment_rate": {
+      "n": 30,
+      "mean": 0.1193986623818654,
+      "sample_sd": 0.014730049846509706
+    },
+    "production_units": {
+      "n": 30,
+      "mean": 113.86666666666666,
+      "sample_sd": 13.715667691727043
+    },
+    "consumption_units": {
+      "n": 30,
+      "mean": 108.36666666666666,
+      "sample_sd": 12.872004729144813
+    },
+    "disposable_income_gini": {
+      "n": 30,
+      "mean": 0.7071302559685824,
+      "sample_sd": 0.036168830326392475
+    },
+    "modeled_net_worth_gini": {
+      "n": 30,
+      "mean": 0.663557438533618,
+      "sample_sd": 0.012977763985628735
+    },
+    "household_monetary_assets_gini": {
+      "n": 30,
+      "mean": 0.7047422569484981,
+      "sample_sd": 0.027092549257605243
+    },
+    "household_savings_stock_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_savings_deposited_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_savings_withdrawn_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "capital_stock_units": {
+      "n": 30,
+      "mean": 828.0,
+      "sample_sd": 0.0
+    },
+    "firm_profit_proxy_cents": {
+      "n": 30,
+      "mean": -43733.8,
+      "sample_sd": 18014.11853461918
+    },
+    "resource_stock": {
+      "n": 30,
+      "mean": 530876.5,
+      "sample_sd": 229.46981621059476
+    },
+    "money_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "goods_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "capital_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "firm_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    }
+  },
+  "savings_o08_s15": {
+    "employment_rate": {
+      "n": 30,
+      "mean": 0.12364895940299864,
+      "sample_sd": 0.013033411816248253
+    },
+    "production_units": {
+      "n": 30,
+      "mean": 118.26666666666667,
+      "sample_sd": 11.723637582291579
+    },
+    "consumption_units": {
+      "n": 30,
+      "mean": 111.83333333333333,
+      "sample_sd": 8.77725639850275
+    },
+    "disposable_income_gini": {
+      "n": 30,
+      "mean": 0.6901964740880409,
+      "sample_sd": 0.02880275165885836
+    },
+    "modeled_net_worth_gini": {
+      "n": 30,
+      "mean": 0.6616376795957626,
+      "sample_sd": 0.013398614356444528
+    },
+    "household_monetary_assets_gini": {
+      "n": 30,
+      "mean": 0.6738174298016316,
+      "sample_sd": 0.02350513945390484
+    },
+    "household_savings_stock_cents": {
+      "n": 30,
+      "mean": 634346.1666666666,
+      "sample_sd": 39544.51255020516
+    },
+    "household_savings_deposited_cents": {
+      "n": 30,
+      "mean": 5770.5,
+      "sample_sd": 1216.3999951808048
+    },
+    "household_savings_withdrawn_cents": {
+      "n": 30,
+      "mean": 29155.166666666668,
+      "sample_sd": 5635.8041379743845
+    },
+    "capital_stock_units": {
+      "n": 30,
+      "mean": 828.0,
+      "sample_sd": 0.0
+    },
+    "firm_profit_proxy_cents": {
+      "n": 30,
+      "mean": -38490.13333333333,
+      "sample_sd": 14910.684946299954
+    },
+    "resource_stock": {
+      "n": 30,
+      "mean": 530987.4,
+      "sample_sd": 203.74148596554477
+    },
+    "money_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "goods_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "capital_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "firm_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    }
+  },
+  "savings_o08_s30": {
+    "employment_rate": {
+      "n": 30,
+      "mean": 0.12088111770888973,
+      "sample_sd": 0.009694297656546388
+    },
+    "production_units": {
+      "n": 30,
+      "mean": 115.8,
+      "sample_sd": 8.78635305459552
+    },
+    "consumption_units": {
+      "n": 30,
+      "mean": 110.63333333333334,
+      "sample_sd": 6.272453918596735
+    },
+    "disposable_income_gini": {
+      "n": 30,
+      "mean": 0.6837832533839868,
+      "sample_sd": 0.027321286051558192
+    },
+    "modeled_net_worth_gini": {
+      "n": 30,
+      "mean": 0.6599330561525,
+      "sample_sd": 0.013042891450320379
+    },
+    "household_monetary_assets_gini": {
+      "n": 30,
+      "mean": 0.6770796832873904,
+      "sample_sd": 0.019031614589633847
+    },
+    "household_savings_stock_cents": {
+      "n": 30,
+      "mean": 1021798.0333333333,
+      "sample_sd": 42391.40206374266
+    },
+    "household_savings_deposited_cents": {
+      "n": 30,
+      "mean": 6839.233333333334,
+      "sample_sd": 2795.7379345801664
+    },
+    "household_savings_withdrawn_cents": {
+      "n": 30,
+      "mean": 47051.566666666666,
+      "sample_sd": 6476.651405351131
+    },
+    "capital_stock_units": {
+      "n": 30,
+      "mean": 828.0,
+      "sample_sd": 0.0
+    },
+    "firm_profit_proxy_cents": {
+      "n": 30,
+      "mean": -33897.833333333336,
+      "sample_sd": 11863.703951718577
+    },
+    "resource_stock": {
+      "n": 30,
+      "mean": 531314.7666666667,
+      "sample_sd": 147.65282750853223
+    },
+    "money_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "goods_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "capital_discrepancy_units": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "household_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    },
+    "firm_cashflow_discrepancy_cents": {
+      "n": 30,
+      "mean": 0.0,
+      "sample_sd": 0.0
+    }
+  }
+}

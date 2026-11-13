@@ -73,7 +73,12 @@ def main(argv: list[str] | None = None) -> int:
                            "modeled_net_worth_gini", "liquid_wealth_gini", "resource_stock",
                            "capital_stock_units", "capital_added_units",
                            "capital_depreciated_units", "capital_interfirm_purchases_cents",
-                           "disposable_income_total_cents", "money_discrepancy_cents",
+                           "disposable_income_total_cents",
+                           "household_savings_stock_cents", "household_savings_deposited_cents",
+                           "household_savings_withdrawn_cents", "household_monetary_assets_gini",
+                           "firm_profit_proxy_cents", "firm_capital_depreciation_expense_cents",
+                           "firm_cashflow_discrepancy_cents", "household_cashflow_discrepancy_cents",
+                           "money_discrepancy_cents",
                            "goods_discrepancy_units", "capital_discrepancy_units"):
                 vals = [r[metric] for r in observations if r[metric] is not None]
                 summary[name][metric] = {

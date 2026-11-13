@@ -11,6 +11,7 @@ class State:
     participation: np.ndarray
     skills: np.ndarray
     household_cash: np.ndarray
+    household_savings: np.ndarray
     firm_cash: np.ndarray
     firm_capital: np.ndarray
     gov_cash: int
@@ -37,7 +38,8 @@ class State:
     transaction_events: list[dict] = field(default_factory=list)
 
     def total_money(self) -> int:
-        return int(self.household_cash.sum()) + int(self.firm_cash.sum()) + int(self.gov_cash)
+        return (int(self.household_cash.sum()) + int(self.household_savings.sum()) +
+                int(self.firm_cash.sum()) + int(self.gov_cash))
 
     def transfer(self, source: str, source_id: int, dest: str, dest_id: int,
                  amount: int, reason: str) -> None:
@@ -48,15 +50,20 @@ class State:
         if amount == 0:
             return
         def balance(kind: str, idx: int) -> int:
-            if kind == "household":
-                return int(self.household_cash[idx])
-            if kind == "firm":
-                return int(self.firm_cash[idx])
+            if type(idx) not in (int, np.int32, np.int64) or idx < 0:
+                raise IndexError("account id must be a nonnegative integer")
             if kind == "government":
                 if idx != 0:
                     raise IndexError("government account id must be 0")
                 return int(self.gov_cash)
-            raise ValueError(f"unknown account kind {kind}")
+            accounts = {"household": self.household_cash,
+                        "savings": self.household_savings,
+                        "firm": self.firm_cash}
+            if kind not in accounts:
+                raise ValueError(f"unknown account kind {kind}")
+            if idx >= len(accounts[kind]):
+                raise IndexError(f"account {kind}:{idx} out of range")
+            return int(accounts[kind][idx])
         available = balance(source, source_id)
         balance(dest, dest_id)  # validate destination before any mutation
         if available < amount:
@@ -65,12 +72,16 @@ class State:
             return
         if source == "household":
             self.household_cash[source_id] -= amount
+        elif source == "savings":
+            self.household_savings[source_id] -= amount
         elif source == "firm":
             self.firm_cash[source_id] -= amount
         else:
             self.gov_cash -= amount
         if dest == "household":
             self.household_cash[dest_id] += amount
+        elif dest == "savings":
+            self.household_savings[dest_id] += amount
         elif dest == "firm":
             self.firm_cash[dest_id] += amount
         else:
@@ -84,7 +95,7 @@ class State:
                                             "cents": amount, "reason": reason})
 
     def validate(self, expected_resources: int | None = None) -> None:
-        if (self.household_cash < 0).any() or (self.firm_cash < 0).any() or self.gov_cash < 0:
+        if (self.household_cash < 0).any() or (self.household_savings < 0).any() or (self.firm_cash < 0).any() or self.gov_cash < 0:
             raise AssertionError("negative monetary account")
         if (self.firm_capital < 0).any():
             raise AssertionError("negative firm physical capital")

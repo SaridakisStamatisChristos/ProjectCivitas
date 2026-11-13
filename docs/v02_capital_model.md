@@ -35,7 +35,7 @@ If buying its own production, no *external* monetary transfer occurs. The invent
 
 **Transition order:** resource regeneration → scheduled automation → capital depreciation → hiring/payroll → physical output → wage taxation → transfers → household purchases → investment conversion → dividends (bounded by remaining liquid firm cash) → repricing → invariant audit.
 
-The simple profit proxy for dividends remains `max(0, sales-current_wages)`; this excludes depreciation and capital-cost accounting. Investments are asset conversions, not expensed into that proxy. Thus this is *not* GAAP/IFRS profit or a complete corporate sector balance sheet.
+In the *initial* capital-only slice, the simple profit proxy for dividends was `max(0, sales-current_wages)`; it excluded depreciation and capital-cost accounting. Investments are asset conversions, not expensed into that proxy. Thus this is *not* GAAP/IFRS profit or a complete corporate sector balance sheet.
 
 ## Accounting identities
 
@@ -74,3 +74,7 @@ This is a **policy-comparison inside this particular computer model**, not ident
 The capital feature is off for the original scenarios. A new `checkpoint_version=2` stores capital arrays and cumulative conversions. The loader also migrates v0.1 format-1 checkpoints produced by software `0.1.0`, adding zero capital arrays and preserving original pseudorandom state. New development checkpoints must match `0.2.0.dev0` exactly. NumPy bit-generator behavior and NumPy versions affect exact replay portability.
 
 No capital repair industry, entry/exit, real loans, unemployment insurance, exogenous investment liquidity, endogenous wages, intertemporal household optimization, net financial asset issuance, or distribution of capital ownership rights is implemented. Extreme configurations can still exceed int64 safe ranges; arbitrary-scale integer validity has not been proven.
+
+## Superseding v0.2 savings/flow refinement
+
+This document records the original capital-only behavior. The later development slice changes the dividend base to recognize external capital-goods supplier revenues and subtract noncash posted-price depreciation expense; the resulting value remains a **proxy** without unit-cost inventory valuation. The latest written definition, complete reconciliation equations, and format-3 checkpoints are specified in [v02_savings_profit.md](v02_savings_profit.md).

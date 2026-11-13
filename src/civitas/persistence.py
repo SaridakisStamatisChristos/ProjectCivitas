@@ -29,7 +29,7 @@ def checkpoint_save(path: str | Path, scenario: Scenario, state: State, rng_stat
     owner_offsets = np.r_[0, np.cumsum(owner_sizes)]
     owner_ids = np.concatenate(owners) if len(owners) else np.array([], dtype=np.int64)
     np.savez_compressed(
-        target, checkpoint_version=np.array(2, dtype=np.int64),
+        target, checkpoint_version=np.array(3, dtype=np.int64),
         software_version=np.array(__version__),
         config_json=np.array(canonical_json(scenario.to_dict())),
         rng_json=np.array(canonical_json(rng_state)),
@@ -42,6 +42,7 @@ def checkpoint_save(path: str | Path, scenario: Scenario, state: State, rng_stat
         cumulative_resource_regenerated=np.array(state.cumulative_resource_regenerated, dtype=np.int64),
         household_of_agent=state.household_of_agent, participation=state.participation,
         skills=state.skills, household_cash=state.household_cash,
+        household_savings=state.household_savings,
         firm_cash=state.firm_cash, inventory=state.inventory,
         prices=state.prices, last_sales=state.last_sales,
         last_unmet=state.last_unmet, last_employment=state.last_employment,
@@ -59,10 +60,11 @@ def checkpoint_save(path: str | Path, scenario: Scenario, state: State, rng_stat
 def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
     with np.load(Path(path), allow_pickle=False) as z:
         version = int(z["checkpoint_version"])
-        if version not in (1, 2):
+        if version not in (1, 2, 3):
             raise ValueError("unsupported checkpoint format")
         software_version = str(z["software_version"])
-        if (version == 1 and software_version != "0.1.0") or (version == 2 and software_version != __version__):
+        expected_version = {1: "0.1.0", 2: "0.2.0.dev0", 3: __version__}[version]
+        if software_version != expected_version:
             raise ValueError("checkpoint software version differs; migration required")
         scenario = Scenario.from_dict(json.loads(str(z["config_json"])))
         offsets = z["owner_offsets"]
@@ -72,9 +74,11 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
                   "inventory", "prices", "last_sales", "last_unmet", "last_employment",
                   "cumulative_output", "cumulative_consumption")
         arrays = {f: z[f].copy() for f in fields}
+        arrays["household_savings"] = (z["household_savings"].copy() if version == 3
+                                       else np.zeros(len(arrays["household_cash"]), dtype=np.int64))
         nf = len(scenario.sectors) * scenario.firms_per_sector
         ns = len(scenario.sectors)
-        if version == 2:
+        if version in (2, 3):
             arrays["firm_capital"] = z["firm_capital"].copy()
             arrays["cumulative_capital_goods_converted"] = z["cumulative_capital_goods_converted"].copy()
             capital_scalars = dict(initial_capital_total=int(z["initial_capital_total"]),
@@ -99,7 +103,7 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
     # Validate checkpoint shapes as well as invariants before resuming.
     h = (scenario.population + scenario.household_size - 1) // scenario.household_size
     nf = len(scenario.sectors) * scenario.firms_per_sector
-    if (len(state.household_cash) != h or len(state.participation) != scenario.population
+    if (len(state.household_cash) != h or len(state.household_savings) != h or len(state.participation) != scenario.population
             or state.skills.shape != (scenario.population, len(scenario.sectors))
             or len(state.firm_cash) != nf or len(owners) != nf
             or len(state.firm_capital) != nf

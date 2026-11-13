@@ -129,7 +129,7 @@ def test_checkpoint_replay_with_capital(tmp_path):
     path = tmp_path / 'c2.npz'
     checkpoint_save(path, c, half.state, half.rng.bit_generator.state)
     with np.load(path, allow_pickle=False) as z:
-        assert int(z["checkpoint_version"]) == 2
+        assert int(z["checkpoint_version"]) == 3
     loaded_c, state, rng = checkpoint_load(path)
     continued = Simulation(loaded_c, state=state, rng_state=rng)
     remaining = [p.metrics for p in continued.run(6)]
@@ -149,10 +149,12 @@ def test_old_checkpoint_migration(tmp_path):
     new_path = tmp_path / "new.npz"
     old_path = tmp_path / "legacy.npz"
     checkpoint_save(new_path, c, sim.state, sim.rng.bit_generator.state)
-    excluded_fields = {"firm_capital", "cumulative_capital_goods_converted",
+    excluded_fields = {"household_savings", "firm_capital", "cumulative_capital_goods_converted",
                        "initial_capital_total", "cumulative_capital_added",
                        "cumulative_capital_depreciated"}
-    new_scenario_fields = {"capital_enabled", "initial_capital_units_per_firm",
+    new_scenario_fields = {"household_savings_rate", "household_liquidity_floor_cents",
+                           "savings_emergency_food_enabled", "savings_essential_sector",
+                           "capital_enabled", "initial_capital_units_per_firm",
                            "capital_output_per_unit", "capital_depreciation_rate",
                            "capital_investment_budget_share", "capital_target_buffer",
                            "capital_input_sector"}

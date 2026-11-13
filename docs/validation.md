@@ -12,7 +12,7 @@ Passing conservation tests only establishes that this implementation follows the
 
 ## Model validation still open
 
-No empirical calibration, real historical backtest, external replication, sensitivity map, Bayesian uncertainty model, mechanism identification, or independent economist review is claimed. Gini may be undefined in zero-income simulations and this is recorded as `null`. Random-event design and scheduling can change results: sensitivity to rule ordering is a future task. Runtime data are measurements from a particular execution environment, never guaranteed performance elsewhere.
+No empirical calibration, real historical backtest, external replication, comprehensive sensitivity map, Bayesian uncertainty model, mechanism identification, or independent economist review is claimed. A restricted 2×3 savings/ownership factorial exists, but it does not establish model validity. Gini may be undefined in zero-income simulations and this is recorded as `null`. Random-event design and scheduling can change results: sensitivity to rule ordering is a future task. Runtime data are measurements from a particular execution environment, never guaranteed performance elsewhere.
 
 ## Evidence protocol
 
@@ -23,3 +23,9 @@ Per-transaction source/destination tracing is optional and test-covered. It is o
 ## v0.2 development verification (provisional)
 
 The original 15 tests continue passing. Additional tests independently check capital capacity, exact depreciation with flooring, goods-to-capital conversion, cash source/destination for interfirm purchases, internal conversion, accounting identities, seeded substreams, capital checkpoint replay, and v0.1 checkpoint migration. See `tests/test_capital.py`. No v0.2 full milestone or external scientific validation is claimed.
+
+## Continued v0.2 development verification (savings and operating flows)
+
+The extended suite checks deterministic v3 checkpoint replay, format-1/format-2 migrations, exact analytical savings deposit/withdrawal toy economies, reserve account zero-sum transfers, nonnegative balances, strict account-ID validation, owner-independent agent initial state, firm capital receipts and a profit proxy consistent with individual cash-flow identities. An actual previous-generation format-2 checkpoint was also successfully loaded and advanced, rather than relying only on fabricated historical data. Existing original v0.1 scenarios were compared directly with the original v0.2-capital source across 12 periods: every preexisting metric was identical for all four legacy scenarios.
+
+The 2×3 factorial experiments executed 30 matched seeds at both 1,000 and 10,000 agents, all with zero money, goods, physical capital, firm flow and household flow discrepancies in the tested runs. The recorded CSV and paired normal-approximation seed intervals are research artifacts, **not proofs of any economic or political claim**. The initial 1,000-agent and 10,000-agent factorials are not normalized to equal per-capita firm money, firm count, capital or physical resource stocks. Exact commands and limitations are in `research/v02_savings_ownership_experiment.md`.
