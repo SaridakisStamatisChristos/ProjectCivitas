@@ -1,0 +1,1584 @@
+{
+  "design": {
+    "audited_periods": 3456,
+    "environment": {
+      "numpy": "2.3.5",
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.13.5"
+    },
+    "limits": "Same stochastic initial state; 0% fund sham; fixed synthetic rules, zero interest, no calibration; intervals are seed MC only.",
+    "population": 10000,
+    "runs": 72,
+    "scenarios": 12,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "source_sha256": "a533a3a926dc178403e65c28a7a74753f247641b64b8d1cd54b561883a13ca31",
+    "steps": 48
+  },
+  "final_period_means": {
+    "s25_broad_term2": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1465.1666666666667,
+          "n": 6,
+          "sample_sd": 22.745695563483363
+        },
+        "consumption_units": {
+          "mean": 1898.3333333333333,
+          "n": 6,
+          "sample_sd": 63.537915189803535
+        },
+        "disposable_income_gini": {
+          "mean": 0.4456227590039306,
+          "n": 6,
+          "sample_sd": 0.007667857738085852
+        },
+        "employment_rate": {
+          "mean": 0.21967480643061824,
+          "n": 6,
+          "sample_sd": 0.006704040240478582
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 526729.3333333334,
+          "n": 6,
+          "sample_sd": 95050.34038585378
+        },
+        "production_units": {
+          "mean": 2123.1666666666665,
+          "n": 6,
+          "sample_sd": 73.59461030990427
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1204.1666666666667,
+          "n": 6,
+          "sample_sd": 38.342752465970236
+        },
+        "consumption_units": {
+          "mean": 632.1666666666666,
+          "n": 6,
+          "sample_sd": 19.803198394872144
+        },
+        "disposable_income_gini": {
+          "mean": 0.6623831524890502,
+          "n": 6,
+          "sample_sd": 0.03050791646722544
+        },
+        "employment_rate": {
+          "mean": 0.06978826850945959,
+          "n": 6,
+          "sample_sd": 0.002417189340176955
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 673.3333333333334,
+          "n": 6,
+          "sample_sd": 24.50034013369338
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 4992844,
+        "loan_origination_cents": 15536983,
+        "loan_repayment_cents": 10544139
+      }
+    },
+    "s25_broad_term6": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1464.6666666666667,
+          "n": 6,
+          "sample_sd": 23.47480919340276
+        },
+        "consumption_units": {
+          "mean": 1900.3333333333333,
+          "n": 6,
+          "sample_sd": 64.42256333511317
+        },
+        "disposable_income_gini": {
+          "mean": 0.44543238084841336,
+          "n": 6,
+          "sample_sd": 0.007705940498839133
+        },
+        "employment_rate": {
+          "mean": 0.21976028954404372,
+          "n": 6,
+          "sample_sd": 0.006782974921610351
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 1294980.3333333333,
+          "n": 6,
+          "sample_sd": 71979.32203811499
+        },
+        "production_units": {
+          "mean": 2124.0,
+          "n": 6,
+          "sample_sd": 74.42848916913469
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1202.6666666666667,
+          "n": 6,
+          "sample_sd": 18.532853710820323
+        },
+        "consumption_units": {
+          "mean": 666.3333333333334,
+          "n": 6,
+          "sample_sd": 18.54364221685337
+        },
+        "disposable_income_gini": {
+          "mean": 0.6565815028889737,
+          "n": 6,
+          "sample_sd": 0.02637733170118716
+        },
+        "employment_rate": {
+          "mean": 0.06752446267158996,
+          "n": 6,
+          "sample_sd": 0.0034353284937615625
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 652.3333333333334,
+          "n": 6,
+          "sample_sd": 31.576362467305614
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 42950,
+        "loan_origination_cents": 15720369,
+        "loan_repayment_cents": 15677419
+      }
+    },
+    "s25_control": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1046.8333333333333,
+          "n": 6,
+          "sample_sd": 6.210206652492867
+        },
+        "consumption_units": {
+          "mean": 1247.3333333333333,
+          "n": 6,
+          "sample_sd": 19.03330414475287
+        },
+        "disposable_income_gini": {
+          "mean": 0.5214380633567183,
+          "n": 6,
+          "sample_sd": 0.008139545547571484
+        },
+        "employment_rate": {
+          "mean": 0.13807674058241745,
+          "n": 6,
+          "sample_sd": 0.0019863418079172123
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 1331.5,
+          "n": 6,
+          "sample_sd": 24.064496670406385
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1205.5,
+          "n": 6,
+          "sample_sd": 21.398598084921357
+        },
+        "consumption_units": {
+          "mean": 649.0,
+          "n": 6,
+          "sample_sd": 17.424121211699603
+        },
+        "disposable_income_gini": {
+          "mean": 0.6327516877493286,
+          "n": 6,
+          "sample_sd": 0.014558126232760586
+        },
+        "employment_rate": {
+          "mean": 0.06769746755869976,
+          "n": 6,
+          "sample_sd": 0.002473861863545791
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 653.1666666666666,
+          "n": 6,
+          "sample_sd": 21.094233019161106
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 0,
+        "loan_origination_cents": 0,
+        "loan_repayment_cents": 0
+      }
+    },
+    "s25_limited_term2": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1465.3333333333333,
+          "n": 6,
+          "sample_sd": 24.088724886690592
+        },
+        "consumption_units": {
+          "mean": 1903.3333333333333,
+          "n": 6,
+          "sample_sd": 68.23684244355586
+        },
+        "disposable_income_gini": {
+          "mean": 0.4451510924771785,
+          "n": 6,
+          "sample_sd": 0.007190536229568923
+        },
+        "employment_rate": {
+          "mean": 0.21982306851391284,
+          "n": 6,
+          "sample_sd": 0.007111947004747116
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 521632.1666666667,
+          "n": 6,
+          "sample_sd": 95502.47250708574
+        },
+        "production_units": {
+          "mean": 2125.6666666666665,
+          "n": 6,
+          "sample_sd": 77.60841878731112
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1189.6666666666667,
+          "n": 6,
+          "sample_sd": 20.539393045235457
+        },
+        "consumption_units": {
+          "mean": 634.1666666666666,
+          "n": 6,
+          "sample_sd": 16.265505423031485
+        },
+        "disposable_income_gini": {
+          "mean": 0.6648512894376601,
+          "n": 6,
+          "sample_sd": 0.01931751258094861
+        },
+        "employment_rate": {
+          "mean": 0.0658452347690168,
+          "n": 6,
+          "sample_sd": 0.00515033997299801
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 634.6666666666666,
+          "n": 6,
+          "sample_sd": 50.2858495669176
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 5000765,
+        "loan_origination_cents": 15481559,
+        "loan_repayment_cents": 10480794
+      }
+    },
+    "s25_limited_term6": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1465.3333333333333,
+          "n": 6,
+          "sample_sd": 24.622482950885896
+        },
+        "consumption_units": {
+          "mean": 1905.0,
+          "n": 6,
+          "sample_sd": 67.2785255486474
+        },
+        "disposable_income_gini": {
+          "mean": 0.4450382074369196,
+          "n": 6,
+          "sample_sd": 0.007206546496952885
+        },
+        "employment_rate": {
+          "mean": 0.21997357779542043,
+          "n": 6,
+          "sample_sd": 0.0070201041885731875
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 1291162.1666666667,
+          "n": 6,
+          "sample_sd": 70655.93826824937
+        },
+        "production_units": {
+          "mean": 2126.8333333333335,
+          "n": 6,
+          "sample_sd": 76.42360019435532
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1212.5,
+          "n": 6,
+          "sample_sd": 38.847136316593534
+        },
+        "consumption_units": {
+          "mean": 666.6666666666666,
+          "n": 6,
+          "sample_sd": 31.013975344458288
+        },
+        "disposable_income_gini": {
+          "mean": 0.6648365631073901,
+          "n": 6,
+          "sample_sd": 0.027488250910972897
+        },
+        "employment_rate": {
+          "mean": 0.07052832072410392,
+          "n": 6,
+          "sample_sd": 0.0044166022316829215
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 682.1666666666666,
+          "n": 6,
+          "sample_sd": 45.39787072833556
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 48436,
+        "loan_origination_cents": 15890214,
+        "loan_repayment_cents": 15841778
+      }
+    },
+    "s25_sham": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1046.8333333333333,
+          "n": 6,
+          "sample_sd": 6.210206652492867
+        },
+        "consumption_units": {
+          "mean": 1247.3333333333333,
+          "n": 6,
+          "sample_sd": 19.03330414475287
+        },
+        "disposable_income_gini": {
+          "mean": 0.5214380633567183,
+          "n": 6,
+          "sample_sd": 0.008139545547571484
+        },
+        "employment_rate": {
+          "mean": 0.13807674058241745,
+          "n": 6,
+          "sample_sd": 0.0019863418079172123
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 1331.5,
+          "n": 6,
+          "sample_sd": 24.064496670406385
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1205.5,
+          "n": 6,
+          "sample_sd": 21.398598084921357
+        },
+        "consumption_units": {
+          "mean": 649.0,
+          "n": 6,
+          "sample_sd": 17.424121211699603
+        },
+        "disposable_income_gini": {
+          "mean": 0.6327516877493286,
+          "n": 6,
+          "sample_sd": 0.014558126232760586
+        },
+        "employment_rate": {
+          "mean": 0.06769746755869976,
+          "n": 6,
+          "sample_sd": 0.002473861863545791
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 653.1666666666666,
+          "n": 6,
+          "sample_sd": 21.094233019161106
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 0,
+        "loan_origination_cents": 0,
+        "loan_repayment_cents": 0
+      }
+    },
+    "s75_broad_term2": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1641.0,
+          "n": 6,
+          "sample_sd": 26.366645596283195
+        },
+        "consumption_units": {
+          "mean": 1516.8333333333333,
+          "n": 6,
+          "sample_sd": 46.06263851177727
+        },
+        "disposable_income_gini": {
+          "mean": 0.5257843515329852,
+          "n": 6,
+          "sample_sd": 0.014076859161411303
+        },
+        "employment_rate": {
+          "mean": 0.15115166291710264,
+          "n": 6,
+          "sample_sd": 0.006372260357462612
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 3404.3333333333335,
+          "n": 6,
+          "sample_sd": 2849.416267705838
+        },
+        "production_units": {
+          "mean": 1465.6666666666667,
+          "n": 6,
+          "sample_sd": 61.14790811357872
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1159.8333333333333,
+          "n": 6,
+          "sample_sd": 34.72991025998579
+        },
+        "consumption_units": {
+          "mean": 704.0,
+          "n": 6,
+          "sample_sd": 25.487251715318386
+        },
+        "disposable_income_gini": {
+          "mean": 0.6401481409864714,
+          "n": 6,
+          "sample_sd": 0.01714589842575238
+        },
+        "employment_rate": {
+          "mean": 0.07416635586231743,
+          "n": 6,
+          "sample_sd": 0.0024130966714454747
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 717.8333333333334,
+          "n": 6,
+          "sample_sd": 21.692548643870012
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 8362846,
+        "loan_origination_cents": 16620623,
+        "loan_repayment_cents": 8257777
+      }
+    },
+    "s75_broad_term6": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1663.1666666666667,
+          "n": 6,
+          "sample_sd": 21.46081700836822
+        },
+        "consumption_units": {
+          "mean": 1559.6666666666667,
+          "n": 6,
+          "sample_sd": 46.64618598199286
+        },
+        "disposable_income_gini": {
+          "mean": 0.5137439397094848,
+          "n": 6,
+          "sample_sd": 0.012940102715144492
+        },
+        "employment_rate": {
+          "mean": 0.1638365859297524,
+          "n": 6,
+          "sample_sd": 0.005133239843428021
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 17169.666666666668,
+          "n": 6,
+          "sample_sd": 6926.5322540696125
+        },
+        "production_units": {
+          "mean": 1588.3333333333333,
+          "n": 6,
+          "sample_sd": 46.684758397861145
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1165.6666666666667,
+          "n": 6,
+          "sample_sd": 28.394835211120114
+        },
+        "consumption_units": {
+          "mean": 718.5,
+          "n": 6,
+          "sample_sd": 18.338484124921557
+        },
+        "disposable_income_gini": {
+          "mean": 0.6372414408465966,
+          "n": 6,
+          "sample_sd": 0.012222557755435503
+        },
+        "employment_rate": {
+          "mean": 0.07642155102894133,
+          "n": 6,
+          "sample_sd": 0.0037677930095094555
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 738.6666666666666,
+          "n": 6,
+          "sample_sd": 39.44954583600002
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 1512743,
+        "loan_origination_cents": 17316875,
+        "loan_repayment_cents": 15804132
+      }
+    },
+    "s75_control": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1332.8333333333333,
+          "n": 6,
+          "sample_sd": 8.256310717667224
+        },
+        "consumption_units": {
+          "mean": 1533.0,
+          "n": 6,
+          "sample_sd": 18.686893802876924
+        },
+        "disposable_income_gini": {
+          "mean": 0.48401494194456435,
+          "n": 6,
+          "sample_sd": 0.010252262413429275
+        },
+        "employment_rate": {
+          "mean": 0.1664343507023968,
+          "n": 6,
+          "sample_sd": 0.0022287739657783027
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 1612.1666666666667,
+          "n": 6,
+          "sample_sd": 26.202417191294902
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1170.1666666666667,
+          "n": 6,
+          "sample_sd": 19.732376102909317
+        },
+        "consumption_units": {
+          "mean": 710.6666666666666,
+          "n": 6,
+          "sample_sd": 21.07763427585427
+        },
+        "disposable_income_gini": {
+          "mean": 0.6123614370647517,
+          "n": 6,
+          "sample_sd": 0.012770871583113613
+        },
+        "employment_rate": {
+          "mean": 0.07343763602978333,
+          "n": 6,
+          "sample_sd": 0.003923326703115017
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 709.6666666666666,
+          "n": 6,
+          "sample_sd": 35.68005979068234
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 0,
+        "loan_origination_cents": 0,
+        "loan_repayment_cents": 0
+      }
+    },
+    "s75_limited_term2": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1653.1666666666667,
+          "n": 6,
+          "sample_sd": 29.239813040897964
+        },
+        "consumption_units": {
+          "mean": 1533.8333333333333,
+          "n": 6,
+          "sample_sd": 44.73663673843472
+        },
+        "disposable_income_gini": {
+          "mean": 0.5186710632291455,
+          "n": 6,
+          "sample_sd": 0.014223310244085591
+        },
+        "employment_rate": {
+          "mean": 0.1580511500781243,
+          "n": 6,
+          "sample_sd": 0.0072518724719902155
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 4870.666666666667,
+          "n": 6,
+          "sample_sd": 3524.642260806998
+        },
+        "production_units": {
+          "mean": 1532.3333333333333,
+          "n": 6,
+          "sample_sd": 68.09013633902246
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1172.8333333333333,
+          "n": 6,
+          "sample_sd": 32.597034629957776
+        },
+        "consumption_units": {
+          "mean": 695.8333333333334,
+          "n": 6,
+          "sample_sd": 22.542552354750487
+        },
+        "disposable_income_gini": {
+          "mean": 0.649998558026064,
+          "n": 6,
+          "sample_sd": 0.013169104048680729
+        },
+        "employment_rate": {
+          "mean": 0.07246561210710786,
+          "n": 6,
+          "sample_sd": 0.003017757185483726
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 700.8333333333334,
+          "n": 6,
+          "sample_sd": 29.43750442321269
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 8375109,
+        "loan_origination_cents": 16784300,
+        "loan_repayment_cents": 8409191
+      }
+    },
+    "s75_limited_term6": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1664.6666666666667,
+          "n": 6,
+          "sample_sd": 19.469634476966093
+        },
+        "consumption_units": {
+          "mean": 1555.3333333333333,
+          "n": 6,
+          "sample_sd": 43.05190665541617
+        },
+        "disposable_income_gini": {
+          "mean": 0.514383610624807,
+          "n": 6,
+          "sample_sd": 0.012363591936704516
+        },
+        "employment_rate": {
+          "mean": 0.161872529555969,
+          "n": 6,
+          "sample_sd": 0.006250360442308314
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 12134.5,
+          "n": 6,
+          "sample_sd": 2796.9124941620894
+        },
+        "production_units": {
+          "mean": 1569.8333333333333,
+          "n": 6,
+          "sample_sd": 57.14338690230626
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1185.3333333333333,
+          "n": 6,
+          "sample_sd": 23.122860261366167
+        },
+        "consumption_units": {
+          "mean": 718.1666666666666,
+          "n": 6,
+          "sample_sd": 16.880955739135942
+        },
+        "disposable_income_gini": {
+          "mean": 0.6303812318547979,
+          "n": 6,
+          "sample_sd": 0.015740825432088983
+        },
+        "employment_rate": {
+          "mean": 0.07572460933518682,
+          "n": 6,
+          "sample_sd": 0.004074475272293127
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 731.3333333333334,
+          "n": 6,
+          "sample_sd": 40.297229019706386
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 1493789,
+        "loan_origination_cents": 17459223,
+        "loan_repayment_cents": 15965434
+      }
+    },
+    "s75_sham": {
+      "24": {
+        "capital_stock_units": {
+          "mean": 1332.8333333333333,
+          "n": 6,
+          "sample_sd": 8.256310717667224
+        },
+        "consumption_units": {
+          "mean": 1533.0,
+          "n": 6,
+          "sample_sd": 18.686893802876924
+        },
+        "disposable_income_gini": {
+          "mean": 0.48401494194456435,
+          "n": 6,
+          "sample_sd": 0.010252262413429275
+        },
+        "employment_rate": {
+          "mean": 0.1664343507023968,
+          "n": 6,
+          "sample_sd": 0.0022287739657783027
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 1612.1666666666667,
+          "n": 6,
+          "sample_sd": 26.202417191294902
+        }
+      },
+      "48": {
+        "capital_stock_units": {
+          "mean": 1170.1666666666667,
+          "n": 6,
+          "sample_sd": 19.732376102909317
+        },
+        "consumption_units": {
+          "mean": 710.6666666666666,
+          "n": 6,
+          "sample_sd": 21.07763427585427
+        },
+        "disposable_income_gini": {
+          "mean": 0.6123614370647517,
+          "n": 6,
+          "sample_sd": 0.012770871583113613
+        },
+        "employment_rate": {
+          "mean": 0.07343763602978333,
+          "n": 6,
+          "sample_sd": 0.003923326703115017
+        },
+        "firm_loan_liabilities_cents": {
+          "mean": 0.0,
+          "n": 6,
+          "sample_sd": 0.0
+        },
+        "production_units": {
+          "mean": 709.6666666666666,
+          "n": 6,
+          "sample_sd": 35.68005979068234
+        }
+      },
+      "flows": {
+        "loan_defaults_cents": 0,
+        "loan_origination_cents": 0,
+        "loan_repayment_cents": 0
+      }
+    }
+  },
+  "paired_effects": {
+    "s25_broad_term2_minus_control_t24": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          604.576540413278,
+          697.423459586722
+        ],
+        "mean": 651.0,
+        "n": 6,
+        "sample_sd": 58.01723881744115
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          -0.08025016602391016,
+          -0.07138044268166518
+        ],
+        "mean": -0.07581530435278767,
+        "n": 6,
+        "sample_sd": 0.005542422537794278
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          0.07734277158804159,
+          0.08585336010836
+        ],
+        "mean": 0.0815980658482008,
+        "n": 6,
+        "sample_sd": 0.005318010021828621
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          747.3409971536431,
+          835.9923361796901
+        ],
+        "mean": 791.6666666666666,
+        "n": 6,
+        "sample_sd": 55.395547354157145
+      }
+    },
+    "s25_broad_term2_minus_control_t48": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -37.95177119643717,
+          4.285104529770507
+        ],
+        "mean": -16.833333333333332,
+        "n": 6,
+        "sample_sd": 26.392549453712626
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.009031999276537653,
+          0.05023093020290561
+        ],
+        "mean": 0.02963146473972163,
+        "n": 6,
+        "sample_sd": 0.025743969060655857
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.0013945747484550124,
+          0.0055761766499746466
+        ],
+        "mean": 0.002090800950759817,
+        "n": 6,
+        "sample_sd": 0.004355812257639017
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -13.525638950161902,
+          53.858972283495234
+        ],
+        "mean": 20.166666666666668,
+        "n": 6,
+        "sample_sd": 42.106610724049816
+      }
+    },
+    "s25_broad_term6_minus_control_t24": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          605.5804203589558,
+          700.4195796410442
+        ],
+        "mean": 653.0,
+        "n": 6,
+        "sample_sd": 59.262129560116215
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          -0.08078643377903437,
+          -0.07122493123757544
+        ],
+        "mean": -0.0760056825083049,
+        "n": 6,
+        "sample_sd": 0.00597469449002524
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          0.0773282415219478,
+          0.08603885640130478
+        ],
+        "mean": 0.08168354896162629,
+        "n": 6,
+        "sample_sd": 0.005443000459265165
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          747.3100615918396,
+          837.6899384081604
+        ],
+        "mean": 792.5,
+        "n": 6,
+        "sample_sd": 56.47565847336355
+      }
+    },
+    "s25_broad_term6_minus_control_t48": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -4.560645544684959,
+          39.227312211351624
+        ],
+        "mean": 17.333333333333332,
+        "n": 6,
+        "sample_sd": 27.36177382164151
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.007314405627216889,
+          0.04034522465207317
+        ],
+        "mean": 0.023829815139645032,
+        "n": 6,
+        "sample_sd": 0.020639962346202276
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.0023095778703851435,
+          0.001963568096165512
+        ],
+        "mean": -0.0001730048871098159,
+        "n": 6,
+        "sample_sd": 0.0026701600036941678
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -20.714965504203455,
+          19.04829883753679
+        ],
+        "mean": -0.8333333333333334,
+        "n": 6,
+        "sample_sd": 24.8468643226196
+      }
+    },
+    "s25_limited_term2_minus_control_t24": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          606.3767635074051,
+          705.6232364925949
+        ],
+        "mean": 656.0,
+        "n": 6,
+        "sample_sd": 62.01612693485461
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          -0.08048795686472514,
+          -0.0720859848943544
+        ],
+        "mean": -0.07628697087953977,
+        "n": 6,
+        "sample_sd": 0.005250138816473183
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          0.07714839321202939,
+          0.08634426265096139
+        ],
+        "mean": 0.08174632793149539,
+        "n": 6,
+        "sample_sd": 0.005746221394550306
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          746.6731078987195,
+          841.6602254346137
+        ],
+        "mean": 794.1666666666666,
+        "n": 6,
+        "sample_sd": 59.354584209365555
+      }
+    },
+    "s25_limited_term2_minus_control_t48": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -40.97034140830456,
+          11.303674741637893
+        ],
+        "mean": -14.833333333333334,
+        "n": 6,
+        "sample_sd": 32.664455707491385
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.010217987208111196,
+          0.05398121616855184
+        ],
+        "mean": 0.032099601688331515,
+        "n": 6,
+        "sample_sd": 0.027346321543283432
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.00705282362693934,
+          0.0033483580475734
+        ],
+        "mean": -0.0018522327896829695,
+        "n": 6,
+        "sample_sd": 0.006499384649118193
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -68.47231313437473,
+          31.472313134374723
+        ],
+        "mean": -18.5,
+        "n": 6,
+        "sample_sd": 62.45238186010202
+      }
+    },
+    "s25_limited_term6_minus_control_t24": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          608.9479719204219,
+          706.3853614129114
+        ],
+        "mean": 657.6666666666666,
+        "n": 6,
+        "sample_sd": 60.88568523607718
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          -0.08081344519556626,
+          -0.07198626664403114
+        ],
+        "mean": -0.0763998559197987,
+        "n": 6,
+        "sample_sd": 0.005515837581556363
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          0.07739243284813781,
+          0.08640124157786815
+        ],
+        "mean": 0.08189683721300298,
+        "n": 6,
+        "sample_sd": 0.005629332800553576
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          748.8666792922064,
+          841.7999873744603
+        ],
+        "mean": 795.3333333333334,
+        "n": 6,
+        "sample_sd": 58.07122064040558
+      }
+    },
+    "s25_limited_term6_minus_control_t48": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -18.52587719406674,
+          53.85921052740008
+        ],
+        "mean": 17.666666666666668,
+        "n": 6,
+        "sample_sd": 45.231257628620796
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.016063072193189712,
+          0.048106678522933405
+        ],
+        "mean": 0.03208487535806156,
+        "n": 6,
+        "sample_sd": 0.020023082914920737
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.002250230436033686,
+          0.007911936766841982
+        ],
+        "mean": 0.0028308531654041478,
+        "n": 6,
+        "sample_sd": 0.006350031716298868
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -20.185196688976795,
+          78.18519668897679
+        ],
+        "mean": 29.0,
+        "n": 6,
+        "sample_sd": 61.46869121756213
+      }
+    },
+    "s75_broad_term2_minus_control_t24": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -55.55378119808559,
+          23.22044786475225
+        ],
+        "mean": -16.166666666666668,
+        "n": 6,
+        "sample_sd": 49.22363930741678
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.035725651729397526,
+          0.04781316744744421
+        ],
+        "mean": 0.04176940958842087,
+        "n": 6,
+        "sample_sd": 0.0075531239201749424
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.020889712983478546,
+          -0.009675662587109776
+        ],
+        "mean": -0.015282687785294161,
+        "n": 6,
+        "sample_sd": 0.007007321791060953
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -200.26202947558187,
+          -92.73797052441813
+        ],
+        "mean": -146.5,
+        "n": 6,
+        "sample_sd": 67.18854068961463
+      }
+    },
+    "s75_broad_term2_minus_control_t48": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -26.047665379610002,
+          12.714332046276667
+        ],
+        "mean": -6.666666666666667,
+        "n": 6,
+        "sample_sd": 24.221202832779934
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.01831348081436595,
+          0.03725992702907361
+        ],
+        "mean": 0.02778670392171978,
+        "n": 6,
+        "sample_sd": 0.011839062669673365
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.0010921449762828338,
+          0.0025495846413510293
+        ],
+        "mean": 0.0007287198325340976,
+        "n": 6,
+        "sample_sd": 0.0022756069756081254
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -9.512610593573486,
+          25.84594392690682
+        ],
+        "mean": 8.166666666666666,
+        "n": 6,
+        "sample_sd": 22.094494035090886
+      }
+    },
+    "s75_broad_term6_minus_control_t24": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -13.643523497994078,
+          66.97685683132741
+        ],
+        "mean": 26.666666666666668,
+        "n": 6,
+        "sample_sd": 50.377243539783585
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.023307697365241936,
+          0.036150298164599165
+        ],
+        "mean": 0.02972899776492055,
+        "n": 6,
+        "sample_sd": 0.008024953808337901
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.007475314259237988,
+          0.0022797847139491697
+        ],
+        "mean": -0.002597764772644409,
+        "n": 6,
+        "sample_sd": 0.006095667059861391
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -71.71357439835351,
+          24.046907731686847
+        ],
+        "mean": -23.833333333333332,
+        "n": 6,
+        "sample_sd": 59.837836413649406
+      }
+    },
+    "s75_broad_term6_minus_control_t48": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -10.218658000342604,
+          25.885324667009268
+        ],
+        "mean": 7.833333333333333,
+        "n": 6,
+        "sample_sd": 22.560289596250016
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.013274684345725525,
+          0.0364853232179644
+        ],
+        "mean": 0.02488000378184496,
+        "n": 6,
+        "sample_sd": 0.014503628020661642
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.0011554058159935305,
+          0.00712323581430951
+        ],
+        "mean": 0.0029839149991579897,
+        "n": 6,
+        "sample_sd": 0.005173073407552322
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -9.782914451254605,
+          67.78291445125461
+        ],
+        "mean": 29.0,
+        "n": 6,
+        "sample_sd": 48.46854650182941
+      }
+    },
+    "s75_limited_term2_minus_control_t24": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -38.53426947800268,
+          40.20093614466935
+        ],
+        "mean": 0.8333333333333334,
+        "n": 6,
+        "sample_sd": 49.199254736902944
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.028207866282892596,
+          0.0411043762862696
+        ],
+        "mean": 0.0346561212845811,
+        "n": 6,
+        "sample_sd": 0.008058640043615463
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.014670509345999441,
+          -0.0020958919025455738
+        ],
+        "mean": -0.008383200624272507,
+        "n": 6,
+        "sample_sd": 0.007857499093663949
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -139.23010129628267,
+          -20.43656537038399
+        ],
+        "mean": -79.83333333333333,
+        "n": 6,
+        "sample_sd": 74.23049687740657
+      }
+    },
+    "s75_limited_term2_minus_control_t48": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -40.565461975255765,
+          10.898795308589095
+        ],
+        "mean": -14.833333333333334,
+        "n": 6,
+        "sample_sd": 32.15846182059501
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.02185859934487555,
+          0.05341564257774911
+        ],
+        "mean": 0.03763712096131233,
+        "n": 6,
+        "sample_sd": 0.01971904431415538
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.006139245103340593,
+          0.0041951972579896465
+        ],
+        "mean": -0.0009720239226754732,
+        "n": 6,
+        "sample_sd": 0.00645768126567918
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -57.99617829214797,
+          40.329511625481295
+        ],
+        "mean": -8.833333333333334,
+        "n": 6,
+        "sample_sd": 61.44075737380413
+      }
+    },
+    "s75_limited_term6_minus_control_t24": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -14.176252135569367,
+          58.84291880223603
+        ],
+        "mean": 22.333333333333332,
+        "n": 6,
+        "sample_sd": 45.62747710170557
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.025402889547037358,
+          0.03533444781344801
+        ],
+        "mean": 0.030368668680242683,
+        "n": 6,
+        "sample_sd": 0.006205931148833255
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.010694665613987443,
+          0.001571023321131875
+        ],
+        "mean": -0.004561821146427785,
+        "n": 6,
+        "sample_sd": 0.007664458988455075
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -102.65266725243796,
+          17.986000585771293
+        ],
+        "mean": -42.333333333333336,
+        "n": 6,
+        "sample_sd": 75.38346414610214
+      }
+    },
+    "s75_limited_term6_minus_control_t48": {
+      "consumption_units": {
+        "approx_mc_95_interval": [
+          -11.480991895402447,
+          26.480991895402447
+        ],
+        "mean": 7.5,
+        "n": 6,
+        "sample_sd": 23.721298446754552
+      },
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.003518673661072268,
+          0.03252091591902019
+        ],
+        "mean": 0.01801979479004623,
+        "n": 6,
+        "sample_sd": 0.018122626257284762
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          0.0006980404476906335,
+          0.003875906163116332
+        ],
+        "mean": 0.0022869733054034828,
+        "n": 6,
+        "sample_sd": 0.0019857524168055037
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          6.521165537801881,
+          36.81216779553145
+        ],
+        "mean": 21.666666666666668,
+        "n": 6,
+        "sample_sd": 18.927933502278233
+      }
+    },
+    "savings_credit_interaction_broad_term2_t24": {
+      "production_units": {
+        "approx_mc_95_interval": [
+          -1020.170931542207,
+          -856.1624017911263
+        ],
+        "mean": -938.1666666666666,
+        "n": 6,
+        "sample_sd": 102.48398248832189
+      }
+    },
+    "savings_credit_interaction_broad_term2_t48": {
+      "production_units": {
+        "approx_mc_95_interval": [
+          -53.51623618136242,
+          29.516236181362423
+        ],
+        "mean": -12,
+        "n": 6,
+        "sample_sd": 51.884487084291386
+      }
+    },
+    "savings_credit_interaction_broad_term6_t24": {
+      "production_units": {
+        "approx_mc_95_interval": [
+          -901.103679511175,
+          -731.5629871554918
+        ],
+        "mean": -816.3333333333334,
+        "n": 6,
+        "sample_sd": 105.9408640075522
+      }
+    },
+    "savings_credit_interaction_broad_term6_t48": {
+      "production_units": {
+        "approx_mc_95_interval": [
+          -17.414231871423812,
+          77.08089853809048
+        ],
+        "mean": 29.833333333333332,
+        "n": 6,
+        "sample_sd": 59.0471562961898
+      }
+    },
+    "savings_credit_interaction_limited_term2_t24": {
+      "production_units": {
+        "approx_mc_95_interval": [
+          -958.5621324234436,
+          -789.4378675765564
+        ],
+        "mean": -874,
+        "n": 6,
+        "sample_sd": 105.68065101994783
+      }
+    },
+    "savings_credit_interaction_limited_term2_t48": {
+      "production_units": {
+        "approx_mc_95_interval": [
+          -66.65374120552553,
+          85.98707453885888
+        ],
+        "mean": 9.666666666666666,
+        "n": 6,
+        "sample_sd": 95.38064094283843
+      }
+    },
+    "savings_credit_interaction_limited_term6_t24": {
+      "production_units": {
+        "approx_mc_95_interval": [
+          -938.7726122441208,
+          -736.5607210892125
+        ],
+        "mean": -837.6666666666666,
+        "n": 6,
+        "sample_sd": 126.35611052365716
+      }
+    },
+    "savings_credit_interaction_limited_term6_t48": {
+      "production_units": {
+        "approx_mc_95_interval": [
+          -44.45163741336611,
+          29.78497074669944
+        ],
+        "mean": -7.333333333333333,
+        "n": 6,
+        "sample_sd": 46.388216894666975
+      }
+    }
+  },
+  "shard_sha256": {
+    "1": "6bac74aeae0a0df9a6c6beef01e515dd456169b2785312a8173bdd0c72d3cfd3",
+    "2": "329ab3ace5dbab1880888e40975ad25c34358d6ffb05226e42218c4b23f1ce93",
+    "3": "150a98867ea12a46984cdc0ca9c495a612a10f15b168c757a3c2ed1f4639c47a",
+    "4": "2b5ac3111ebfac9741b932c1d3e0c5b6211fe16773ca65ace366d5ffc817357d",
+    "5": "17e1a14bfeb89262b8c0dc5ea418d78d727b5c0f846e4bb7c777a9dbcfc2cbb4",
+    "6": "d2a4a76985c70d79df0c6aace8b0c5442ac7063e6ecd9b69d6e82f731e322768"
+  }
+}

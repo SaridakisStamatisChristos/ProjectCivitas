@@ -77,3 +77,10 @@ Added explicit physical productive capital and rounded depreciation; budget-limi
 ## 0.2.0.dev0 — 2026-11-13, matched financing sensitivity (development only)
 
 Added a resumable, exact-initial-state 12-cell credit/loan-maturity/savings/firm-density experiment, per-seed SHA-256 evidence, strict finalization and seven adversarial tests. Eight seeds at 10,000 agents over 24 periods yielded 96 complete runs and 2,304 checked periods. Experimental evidence identifies sign changes in credit-output effects across savings regimes. No v0.2 release or empirical validity claimed.
+
+## 0.2.0.dev0 — matched credit pathway / horizon falsification (development only)
+
+- Added negative-control studies separating enabling credit from having actually lendable savings, independently varying household saving rates, lender funding availability, two loan maturities and periods 24 versus 48.
+- Added strict per-period principal stock-flow checks, atomic resumable per-treatment results, complete digest verification, and independent stdlib-only audit of period-level evidence.
+- Executed 72 distinct 10,000-agent simulations over 48 periods (3,456 checked states), all eight conservation classes plus loan roll-forward passing; tests increased from 128 to 136.
+- Recorded large earlier-horizon effects diminishing by period 48, without claiming equilibrium or real-world significance. The stable v0.1 release is unchanged.

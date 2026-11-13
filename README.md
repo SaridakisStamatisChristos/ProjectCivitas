@@ -223,3 +223,18 @@ refuses to publish and requires manual reconciliation; **do not force-push**.
 ## Savings-backed credit sensitivity research (v0.2 development)
 
 After running the normal test suite, reproduce the 10,000-agent, eight-seed 12-cell experiment using `research/run_credit_sensitivity.py`. Each `--seed N` invocation writes or verifies an atomic `seed_NNNN.json` shard, while `--finalize --seeds 1,2,3,4,5,6,7,8` checks every shard and builds `summary.json` with paired effects. See [research experiment](research/v02_credit_sensitivity_experiment.md); simulation evidence is not real-world policy evidence.
+
+## New research checkpoint: credit pathway falsification (v0.2 development)
+
+Use `research/run_credit_pathways.py` to compare **zero-credit, zero-funding sham, 15%-lendable and 75%-lendable savings**, two saving propensities and two loan maturities across matched initial states. Both 24-period and 48-period measurements are retained. All individual loan changes must balance via principal roll-forward. Saved per-treatment files survive interruptions and checked seed reports can be independently audited. See [executed research report](research/v02_credit_pathways_experiment.md).
+
+```bash
+PYTHONPATH=src:. python research/run_credit_pathways.py --seed 1 --population 10000 --steps 48 --output results/credit_pathways
+# Repeat for seeds 2–6; use --seed N --cell s25_limited_term2 for shorter resumable batches.
+PYTHONPATH=src:. python research/run_credit_pathways.py --finalize --seeds 1,2,3,4,5,6 --population 10000 --steps 48 --output results/credit_pathways
+python research/audit_credit_pathways.py results/credit_pathways
+# If working from the repository's compressed evidence:
+python research/restore_credit_pathways.py research/v02_credit_pathways_10000 results/restored_credit_pathways
+```
+
+These are **six-seed synthetic experiments**, not empirical social-scientific predictions. v0.2 has not been released.
