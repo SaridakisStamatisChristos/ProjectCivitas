@@ -13,6 +13,7 @@ import numpy as np
 
 from civitas.model import Scenario
 from civitas.state import State
+from civitas.economy_costs import allocated_basis, checked_add_i64
 
 
 @dataclass
@@ -67,6 +68,10 @@ class Simulation:
             owners.append(np.sort(owner_rng.choice(h, k, replace=False)).astype(np.int64))
         hh = np.full(h, c.initial_household_cash_cents, dtype=np.int64)
         ff = np.full(nf, c.initial_firm_cash_cents, dtype=np.int64)
+        initial_capital_basis = 0
+        if c.capital_enabled and c.cost_basis_accounting_enabled:
+            initial_quote = next(sec.price_cents for sec in c.sectors if sec.name == c.capital_input_sector)
+            initial_capital_basis = c.initial_capital_units_per_firm * initial_quote
         state = State(
             step=0,
             household_of_agent=np.arange(n, dtype=np.int64) // c.household_size,
@@ -76,6 +81,8 @@ class Simulation:
             firm_capital=np.full(nf, c.initial_capital_units_per_firm if c.capital_enabled else 0, dtype=np.int64),
             initial_capital_total=nf * (c.initial_capital_units_per_firm if c.capital_enabled else 0),
             inventory=np.zeros(nf, dtype=np.int64),
+            firm_inventory_basis_cents=np.zeros(nf, dtype=np.int64),
+            firm_capital_basis_cents=np.full(nf, initial_capital_basis, dtype=np.int64),
             prices=np.array([sector.price_cents for sector in c.sectors for _ in range(c.firms_per_sector)], dtype=np.int64),
             resource=c.initial_resource,
             initial_total_money=int(hh.sum()) + int(ff.sum()),
@@ -114,6 +121,14 @@ class Simulation:
         household_purchase_spending = np.zeros(H, dtype=np.int64)
         household_opening_assets = s.household_cash.copy() + s.household_savings.copy()
         firm_opening_cash = s.firm_cash.copy()
+        if c.cost_basis_accounting_enabled:
+            firm_opening_book_equity = (s.firm_cash.astype(object) +
+                                        s.firm_inventory_basis_cents.astype(object) +
+                                        s.firm_capital_basis_cents.astype(object))
+        firm_consumption_cogs = np.zeros(nf, dtype=np.int64)
+        firm_capital_goods_cogs = np.zeros(nf, dtype=np.int64)
+        firm_uncapitalized_labor_cost = np.zeros(nf, dtype=np.int64)
+        firm_book_depreciation_cost = np.zeros(nf, dtype=np.int64)
         government_opening_cash = s.gov_cash
         capital_sale_revenues = np.zeros(nf, dtype=np.int64)
         capital_purchase_spending = np.zeros(nf, dtype=np.int64)
@@ -134,6 +149,14 @@ class Simulation:
         capital_depreciated = 0
         if c.capital_enabled:
             losses = np.floor(s.firm_capital.astype(np.float64) * c.capital_depreciation_rate).astype(np.int64)
+            if c.cost_basis_accounting_enabled:
+                for f in range(nf):
+                    loss = int(losses[f])
+                    removed = allocated_basis(stock_units=int(s.firm_capital[f]),
+                                              stock_cost_cents=int(s.firm_capital_basis_cents[f]),
+                                              withdrawn_units=loss)
+                    s.firm_capital_basis_cents[f] -= removed
+                    firm_book_depreciation_cost[f] = removed
             s.firm_capital -= losses
             capital_depreciation_losses = losses
             capital_depreciated = int(losses.sum())
@@ -215,6 +238,13 @@ class Simulation:
         used_resource = int(np.dot(production, resource_cost))
         s.resource -= used_resource
         s.cumulative_resource_extracted += used_resource
+        if c.cost_basis_accounting_enabled:
+            for f in range(nf):
+                if production[f] > 0:
+                    s.firm_inventory_basis_cents[f] = checked_add_i64(
+                        int(s.firm_inventory_basis_cents[f]), int(firm_wages[f]))
+                else:
+                    firm_uncapitalized_labor_cost[f] = firm_wages[f]
         s.inventory += production
         for k in range(ns):
             s.cumulative_output[k] += int(production[k * nfirm_sector:(k + 1) * nfirm_sector].sum())
@@ -313,6 +343,12 @@ class Simulation:
                             purchasing_power = int(s.household_cash[h])
                         s.transfer("household", int(h), "firm", f, price, "sale")
                         household_purchase_spending[h] += price
+                        if c.cost_basis_accounting_enabled:
+                            taken = allocated_basis(stock_units=int(s.inventory[f]),
+                                                    stock_cost_cents=int(s.firm_inventory_basis_cents[f]),
+                                                    withdrawn_units=1)
+                            s.firm_inventory_basis_cents[f] -= taken
+                            firm_consumption_cogs[f] += taken
                         s.inventory[f] -= 1
                         sold[f] += 1
                         sale_revenues[f] += price
@@ -363,6 +399,16 @@ class Simulation:
                         capital_sale_revenues[supplier] += value
                     # When supplier == f, this is a documented internal inventory
                     # conversion; its valuation is imputed, not a transfer.
+                    if c.cost_basis_accounting_enabled:
+                        consumed_basis = allocated_basis(stock_units=int(s.inventory[supplier]),
+                                                        stock_cost_cents=int(s.firm_inventory_basis_cents[supplier]),
+                                                        withdrawn_units=int(units))
+                        s.firm_inventory_basis_cents[supplier] -= consumed_basis
+                        if supplier != f:
+                            firm_capital_goods_cogs[supplier] += consumed_basis
+                        acquisition_basis = value if supplier != f else consumed_basis
+                        s.firm_capital_basis_cents[f] = checked_add_i64(
+                            int(s.firm_capital_basis_cents[f]), int(acquisition_basis))
                     s.inventory[supplier] -= units
                     s.firm_capital[f] += units
                     s.cumulative_capital_goods_converted[capital_sec] += units
@@ -385,9 +431,13 @@ class Simulation:
         depreciation_expense_cents = capital_depreciation_losses * capital_quote
         firm_operating_surplus = sale_revenues + capital_sale_revenues - firm_wages
         firm_profit_proxy = firm_operating_surplus - depreciation_expense_cents
+        firm_cost_basis_earnings = (sale_revenues + capital_sale_revenues -
+                                    firm_consumption_cogs - firm_capital_goods_cogs -
+                                    firm_uncapitalized_labor_cost - firm_book_depreciation_cost)
         dividends = 0
         for f in range(nf):
-            profit = int(firm_profit_proxy[f])
+            profit = int(firm_cost_basis_earnings[f] if c.cost_basis_accounting_enabled
+                         else firm_profit_proxy[f])
             distributed = min(int(s.firm_cash[f]), math.floor(max(0, profit) * c.dividend_share))
             owners = s.firm_owner_households[f]
             if distributed and len(owners):
@@ -431,6 +481,14 @@ class Simulation:
         if s.gov_cash != government_opening_cash + tax_revenue - transfer_spending:
             raise AssertionError("government cash-flow reconciliation violated")
 
+        firm_book_equity_discrepancy = None
+        if c.cost_basis_accounting_enabled:
+            closing = (s.firm_cash.astype(object) + s.firm_inventory_basis_cents.astype(object) +
+                       s.firm_capital_basis_cents.astype(object))
+            expected = firm_opening_book_equity + firm_cost_basis_earnings.astype(object) - firm_dividend_payments.astype(object)
+            firm_book_equity_discrepancy = sum(abs(int(a-b)) for a,b in zip(closing,expected))
+            if firm_book_equity_discrepancy:
+                raise AssertionError("firm book-equity reconciliation violated")
         # Posted-price adjustment: shortage raises prices, excess stock lowers.
         old_prices = s.prices.copy()
         for f in range(nf):
@@ -501,6 +559,15 @@ class Simulation:
             "firm_operating_cash_surplus_cents": int(firm_operating_surplus.sum()),
             "firm_capital_depreciation_expense_cents": int(depreciation_expense_cents.sum()),
             "firm_profit_proxy_cents": int(firm_profit_proxy.sum()),
+            "firm_cost_basis_accounting_enabled": c.cost_basis_accounting_enabled,
+            "firm_inventory_historical_cost_cents": int(s.firm_inventory_basis_cents.sum()),
+            "firm_capital_historical_cost_cents": int(s.firm_capital_basis_cents.sum()),
+            "firm_consumer_cogs_cents": int(firm_consumption_cogs.sum()),
+            "firm_capital_goods_cogs_cents": int(firm_capital_goods_cogs.sum()),
+            "firm_uncapitalized_labor_cost_cents": int(firm_uncapitalized_labor_cost.sum()),
+            "firm_book_depreciation_cents": int(firm_book_depreciation_cost.sum()),
+            "firm_cost_basis_earnings_cents": (int(firm_cost_basis_earnings.sum()) if c.cost_basis_accounting_enabled else None),
+            "firm_book_equity_discrepancy_cents": firm_book_equity_discrepancy,
             "resource_stock": s.resource, "resource_extracted": used_resource,
             "resource_regenerated": regenerated,
             "automation_adoption": automation,

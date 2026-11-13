@@ -75,6 +75,8 @@ class Scenario:
     capital_investment_budget_share: float = 0.15
     capital_target_buffer: float = 0.10
     capital_input_sector: str = "goods"
+    # Opt-in moving-average historical cost and firm book-equity accounting.
+    cost_basis_accounting_enabled: bool = False
     # Household balances are separate, noninterest-bearing accounts. No credit.
     household_savings_rate: float = 0.0
     household_liquidity_floor_cents: int = 0
@@ -138,6 +140,8 @@ class Scenario:
             raise ValueError("savings_emergency_food_enabled must be boolean")
         if not isinstance(self.savings_essential_sector, str) or not self.savings_essential_sector:
             raise ValueError("savings_essential_sector must be nonempty string")
+        if type(self.cost_basis_accounting_enabled) is not bool:
+            raise ValueError("cost_basis_accounting_enabled must be boolean")
         if type(self.capital_enabled) is not bool:
             raise ValueError("capital_enabled must be boolean")
         if not self.capital_enabled and self.initial_capital_units_per_firm:
@@ -182,6 +186,10 @@ class Scenario:
                              ("initial_firm_cash_cents", self.initial_firm_cash_cents)):
             if value > i64max:
                 raise ValueError(f"{label} exceeds signed int64 storage")
+        if self.cost_basis_accounting_enabled and self.capital_enabled:
+            k = next((q for q in self.sectors if q.name == self.capital_input_sector), None)
+            if k is not None and (k.price_cents * self.initial_capital_units_per_firm * n_firms > i64max):
+                raise ValueError("initial historical capital cost basis exceeds signed int64")
         if self.automation_base + self.automation_shock_increase > 1:
             raise ValueError("automation adoption must remain in [0,1]")
         if self.automation_shock_step is not None and (type(self.automation_shock_step) is not int or self.automation_shock_step < 0):

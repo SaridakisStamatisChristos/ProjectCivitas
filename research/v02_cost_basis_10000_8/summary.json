@@ -1,0 +1,203 @@
+{
+  "design": {
+    "population": 10000,
+    "seeds": 8,
+    "periods": 24,
+    "executed_runs": 16,
+    "verified_periods": 384,
+    "python": "3.13.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "elapsed_seconds": 15.376536159001262,
+    "record_sha256": "448a4937721caa58f71deb35f6cf6bc9f6a509b755fa27e0ff979636a97cfe7d"
+  },
+  "final_means": {
+    "legacy_proxy": {
+      "production_units": {
+        "mean": 1950.5,
+        "sample_sd": 25.02570107480936,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1933.1580739247338,
+          1967.8419260752662
+        ]
+      },
+      "consumption_units": {
+        "mean": 1838.375,
+        "sample_sd": 30.146961467356636,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1817.4842215319773,
+          1859.2657784680227
+        ]
+      },
+      "dividends_cents": {
+        "mean": 1191204.625,
+        "sample_sd": 72591.91345939593,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1140900.9954188832,
+          1241508.2545811168
+        ]
+      },
+      "capital_stock_units": {
+        "mean": 1563.0,
+        "sample_sd": 21.01020160371079,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1548.4406730924811,
+          1577.5593269075189
+        ]
+      },
+      "firm_profit_proxy_cents": {
+        "mean": 1617071.75,
+        "sample_sd": 118042.65182158281,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1535272.3656191619,
+          1698871.1343808381
+        ]
+      }
+    },
+    "cost_basis": {
+      "production_units": {
+        "mean": 1926.125,
+        "sample_sd": 20.45509018033688,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1911.9503456832274,
+          1940.2996543167726
+        ]
+      },
+      "consumption_units": {
+        "mean": 1836.125,
+        "sample_sd": 35.97791981598873,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1811.1935735466259,
+          1861.0564264533741
+        ]
+      },
+      "dividends_cents": {
+        "mean": 1154068.25,
+        "sample_sd": 46967.94082821661,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1121521.1275311594,
+          1186615.3724688406
+        ]
+      },
+      "capital_stock_units": {
+        "mean": 1585.5,
+        "sample_sd": 28.69544513382867,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1565.6150710335692,
+          1605.3849289664308
+        ]
+      },
+      "firm_profit_proxy_cents": {
+        "mean": 1610538.75,
+        "sample_sd": 114678.97231557817,
+        "n": 8,
+        "approximate_95pct_seed_interval": [
+          1531070.2765958274,
+          1690007.2234041726
+        ]
+      }
+    }
+  },
+  "paired_cost_basis_minus_legacy": {
+    "production_units": {
+      "mean": -24.375,
+      "sample_sd": 33.05379813922405,
+      "n": 8,
+      "approximate_95pct_seed_interval": [
+        -47.28011351205228,
+        -1.469886487947722
+      ]
+    },
+    "consumption_units": {
+      "mean": -2.25,
+      "sample_sd": 36.326888899861174,
+      "n": 8,
+      "approximate_95pct_seed_interval": [
+        -27.423249690892114,
+        22.923249690892114
+      ]
+    },
+    "dividends_cents": {
+      "mean": -37136.375,
+      "sample_sd": 63002.365973571636,
+      "n": 8,
+      "approximate_95pct_seed_interval": [
+        -80794.78720649492,
+        6522.037206494919
+      ]
+    },
+    "capital_stock_units": {
+      "mean": 22.5,
+      "sample_sd": 18.508685219956295,
+      "n": 8,
+      "approximate_95pct_seed_interval": [
+        9.674135506719244,
+        35.325864493280754
+      ]
+    }
+  },
+  "metadata": [
+    {
+      "seed": 1,
+      "common_rng_sha256": "fcecc75a8e5783d256e8c80e1005eda615f192ce1337691787394cf40bf808fe",
+      "config_digest_legacy": "04bdb86dbaf71dc7f6469acb54bbf27dd41d622888594a74a54b0c2db0091390",
+      "notes": "Identical initial agents/firms/cash/capital; only cost-basis ledger initialized using posted price."
+    },
+    {
+      "seed": 2,
+      "common_rng_sha256": "f711a2f8b3d90e0357e21f4967cf1c6730f1f80961aff6b5a82b37ff5d91009e",
+      "config_digest_legacy": "c1ffd58e74d6bfc46c9023aa7fd92efc11886e4ab34f83ef8ec10868a88a7310",
+      "notes": "Identical initial agents/firms/cash/capital; only cost-basis ledger initialized using posted price."
+    },
+    {
+      "seed": 3,
+      "common_rng_sha256": "2e43493e27deaab37c296ec256708750f939a87524e645c2184b6fb1876fd6f9",
+      "config_digest_legacy": "6d73de520e7405aa7bde33bf2b0a9cba5989adef65820c12428945c97b180a45",
+      "notes": "Identical initial agents/firms/cash/capital; only cost-basis ledger initialized using posted price."
+    },
+    {
+      "seed": 4,
+      "common_rng_sha256": "30cca25e9da2606d63e79bb001b01966506a94092e6295f1ecefe1e6c42721b0",
+      "config_digest_legacy": "022d8248d2006aff430d78cc2b5539c39164c76ea2b5a27a65aad7fbd5f14222",
+      "notes": "Identical initial agents/firms/cash/capital; only cost-basis ledger initialized using posted price."
+    },
+    {
+      "seed": 5,
+      "common_rng_sha256": "96e57726cfa9a856e06ed87bcccf2ca26ce16e6a6b136a5e25c807251d4db217",
+      "config_digest_legacy": "9dc7afdb52ed2d442e2a35217b7f422142977f14a9066df3a938615c23d63cab",
+      "notes": "Identical initial agents/firms/cash/capital; only cost-basis ledger initialized using posted price."
+    },
+    {
+      "seed": 6,
+      "common_rng_sha256": "df4da258204f74b24f0f289621c2809b38045ae77c219336c6b2418c6451e481",
+      "config_digest_legacy": "6f0d4afe69fb55f84e3634adfb6c5a3a9a4439c292f296bfb3d20a0e27bc8a39",
+      "notes": "Identical initial agents/firms/cash/capital; only cost-basis ledger initialized using posted price."
+    },
+    {
+      "seed": 7,
+      "common_rng_sha256": "55a196764b85e2beb3a161fd056584e731c4e86f121fbb6a299f4044ab3828a7",
+      "config_digest_legacy": "9932c3e35a9412d44c73d92b42cba56127bdd62e51f1f4e84d0b1f185d9acf69",
+      "notes": "Identical initial agents/firms/cash/capital; only cost-basis ledger initialized using posted price."
+    },
+    {
+      "seed": 8,
+      "common_rng_sha256": "4eb515ab6b6a65bb6ff0384375a591acd3e4078659a7e124ba13f75016cb8624",
+      "config_digest_legacy": "1f86fab0e97f2ce5b6b85d493989b8cc662bc9ac3b88e9c0e1468e6906a27cc5",
+      "notes": "Identical initial agents/firms/cash/capital; only cost-basis ledger initialized using posted price."
+    }
+  ],
+  "limitations": [
+    "Cost-basis mode changes the dividend base as well as financial reporting, hence paired differences are conditional model responses.",
+    "Inventory manufacturing costs include paid direct labor only; no material/energy cost allocation, overhead, financing, taxes or IFRS/GAAP assertion.",
+    "Initial capital book value uses an explicitly imputed input-sector price, not historical purchase evidence.",
+    "Seed intervals measure Monte Carlo variability, not model uncertainty or real-world policy effects."
+  ]
+}

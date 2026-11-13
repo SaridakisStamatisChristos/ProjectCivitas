@@ -162,3 +162,23 @@ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q
 PYTHONPATH=src:. python research/run_region_information.py --seed 1 --population 1000 --steps 24 --output results/region_info
 PYTHONPATH=src:. python -m civitas run --scenario scenarios/region_information_local_shuffled_2quotes.json --steps 24 --seed 7 --output results/region_shuffled
 ```
+
+
+## v0.2 ongoing verification — firm density and historical-cost accounts
+
+The latest development campaign adds **reproducible 10,000-agent firm-density experiments** and an **opt-in historical-cost firm ledger**. `cost_basis_accounting_enabled: true` activates pooled moving-average integer-cent inventory carrying basis, COGS on consumer and capital-goods sales, capital acquisition/depreciation book values, and exact per-firm balance-sheet reconciliation. This mode also bases dividends on its defined cost-basis earnings; it is **not** merely a reporting option. All historical scenarios default to the original profit-proxy rule.
+
+New scenario and research commands:
+
+```bash
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src:. python -m pytest -q
+PYTHONPATH=src:. python -m civitas run --scenario scenarios/cost_basis_reinvestment.json --seed 7 --steps 24 --output results/cost_basis_7
+PYTHONPATH=src:. python research/run_cost_basis_comparison.py --population 10000 --seeds 8 --steps 24 --output results/cost_basis_comparison
+# Sharded, deterministic density study; the repository already retains seed records 1–8:
+PYTHONPATH=src:. python research/run_region_density.py --seed 1 --firms 10 --steps 24 --output results/region_density
+PYTHONPATH=src:. python research/run_region_density.py --seed 1 --firms 20 --steps 24 --output results/region_density
+# Repeat both commands for seeds 2–8, then:
+PYTHONPATH=src:. python research/run_region_density.py --finalize --seeds 8 --steps 24 --output results/region_density
+```
+
+See [cost-basis specification](docs/v02_cost_basis_accounting.md), [new density results](research/v02_market_density_10000_experiment.md), [historical-cost experiment](research/v02_cost_basis_experiment.md) and [latest checkpoint](CHECKPOINT.md). Data are **conditional synthetic results**, not empirical predictions or full audited financial accounts. Historical-cost checkpoints use format 4; old v1/v2/v3 checkpoints still load when the new mechanism is disabled.

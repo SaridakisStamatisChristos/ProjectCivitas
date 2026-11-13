@@ -14,6 +14,8 @@ class State:
     household_savings: np.ndarray
     firm_cash: np.ndarray
     firm_capital: np.ndarray
+    firm_inventory_basis_cents: np.ndarray
+    firm_capital_basis_cents: np.ndarray
     gov_cash: int
     inventory: np.ndarray
     prices: np.ndarray
@@ -103,6 +105,12 @@ class State:
     def validate(self, expected_resources: int | None = None) -> None:
         if (self.household_cash < 0).any() or (self.household_savings < 0).any() or (self.firm_cash < 0).any() or self.gov_cash < 0:
             raise AssertionError("negative monetary account")
+        if ((self.firm_inventory_basis_cents < 0).any() or (self.firm_capital_basis_cents < 0).any()):
+            raise AssertionError("negative historical cost basis")
+        if (self.inventory == 0).any() and np.any(self.firm_inventory_basis_cents[self.inventory == 0] != 0):
+            raise AssertionError("zero inventory cannot carry historical cost")
+        if (self.firm_capital == 0).any() and np.any(self.firm_capital_basis_cents[self.firm_capital == 0] != 0):
+            raise AssertionError("zero physical capital cannot carry historical cost")
         if (self.firm_capital < 0).any():
             raise AssertionError("negative firm physical capital")
         if (int(self.firm_capital.sum()) != self.initial_capital_total +

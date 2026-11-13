@@ -55,3 +55,12 @@ Added explicit physical productive capital and rounded depreciation; budget-limi
 - Recorded opportunities where affordable stock existed with an accessible but unquoted seller; metric is diagnostic rather than welfare.
 - Added exact-initial-state 2 × 2 × 2 research runner, per-seed digest-verified datasets, checkpoint/replay and quote-access boundary tests.
 - Historical mode remains default; no empirical validation or release promotion is claimed.
+
+
+## 0.2.0.dev0 — firm-density and inventory-cost development gate (2026-11-13)
+
+- Reproduced eight matched-seed 10,000-agent, 24-period buyer-information experiments at two firm densities with normalized aggregate starting capital, total firm cash, and resource stocks. Added a hash-verified, incomplete-shard-rejecting reproducible runner, new tests and full period-level evidence.
+- Added opt-in pooled integer historical-cost inventory basis, consumer and capital-goods COGS, physical-capital carrying basis, depreciation cost, zero-production paid labor expenses and per-firm `Δbook_equity = cost_basis_earnings - dividends` verification.
+- Preserved previous dividend behavior by default; cost-enabled runs deliberately base dividends on their specified cost-basis earnings. Published the behavioral sensitivity comparison and explicit limitations.
+- Implemented checkpoint format 4 for cost-enabled runs; retain v1/v2/v3 loader for original accounting-disabled scenarios and refuse fabricated basis on invalid downgrades.
+- Re-ran 109 automated tests and an exact byte-for-byte 96-period default-mode regression, preserving complete source and seed evidence. No stable release or empirical validation claimed.

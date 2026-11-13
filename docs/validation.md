@@ -41,3 +41,10 @@ Initial signed-int64 state sums and transfer destination credits are now explici
 ## Latest matched-access research gate
 
 The matched-market runner uses a copy of the exact same initial full simulation state and RNG for four access rules for every seed. A SHA-256 attestation records initial state, owners and RNG. All four treatments must consume the same final random stream. Each period asserts six nonnegative-accounting/stock identities, and an atomic per-seed CSV shard is only accepted after completion. The aggregator rechecks per-shard sha256, exact scenario configuration digests, seed/arm/period coverage and duplicates. The committed aggregate period CSV is also checksummed and subject to verification. This is stronger **software-level paired counterfactual control**, not external scientific validation. The experiment remains sensitive to initial region assignment and global resource/hiring information spillovers. See `docs/v02_matched_market_access.md`.
+
+
+## Latest v0.2 experimental checks (2026-11-13)
+
+The development branch now includes a historical-cost per-firm equation tested for each period, plus controlled 10,000-agent density experiments. The recorded `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src:. python -m pytest -q` command passed 109 tests in Python 3.13.5, NumPy 2.3.5, pytest 9.0.2. The density replication included 64 simulations / 1,536 checked periods, and the cost-enabled rule comparison included 16 simulations / 384 checked periods. Both retain raw period data. One 30-seed cost comparison exceeded execution capacity before a complete dataset was produced and is not counted. Precise cost-basis functionality and limitations are in `docs/v02_cost_basis_accounting.md`.
+
+All current initial-stock and basis values are signed-int64 NumPy values with explicit checks on some input sizes and transfer/basis credits. Exhaustive overflow safety for all extreme economic multiplications/aggregations remains **unverified**; do not claim unrestricted numerical robustness. Book-equity reconciliation is a software invariant for the modeled accounts, not independent confirmation of economic realism.
