@@ -1,0 +1,13 @@
+{
+  "seed": 18,
+  "steps": 24,
+  "population": 1000,
+  "firms_per_sector": 20,
+  "market_regions": 5,
+  "scenario_sha256": "09d665019183efa9d212b5592b58a7587479f83d44edab5220c2c8e809c2b77d",
+  "initial_state_sha256": "c6b81f4569dceab1711373db9584dcfeb65c11ee8a0234cb57aa538c5f931eb9",
+  "final_rng_sha256": "ebfb8997876aa235ca620d1f68a98093c587c60d2955dbfe66a0a8a8cde08fa2",
+  "records": 192,
+  "csv_sha256": "9bc09afc5613b32dd28bc63908e4f4a93d8e66de592e51d37f20604a8f003108",
+  "wall_seconds": 1.1754516229993897
+}
