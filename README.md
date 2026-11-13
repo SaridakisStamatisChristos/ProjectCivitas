@@ -192,7 +192,7 @@ This opt-in vertical slice finances actual interfirm purchases of productive goo
 civitas run --scenario scenarios/credit_1_resourcefee_0.json --steps 24 --seed 7 --output results/credit_demo
 
 # Reproduce the 2×2 credit × resource-cost experiment (four arms).
-PYTHONPATH=src:. python research/run_credit_experiment.py --population 1000 --seeds 12 --steps 24 --output results/credit_1000
+PYTHONPATH=src:. python research/run_credit_experiment.py --population 1000 --seeds 30 --steps 24 --output results/credit_1000
 PYTHONPATH=src:. python research/run_credit_experiment.py --population 10000 --seeds 8 --steps 24 --output results/credit_10000
 
 # Scientific software verification
@@ -200,3 +200,26 @@ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src:. python -m pytest -q
 ```
 
 See [complete equations and accounting invariants](docs/v02_credit_resource_accounting.md), [executed 2×2 experiment](research/v02_credit_resource_experiment.md) and [continuation checkpoint](CHECKPOINT.md). The 10,000-agent research configuration deliberately holds only six firms and is **not per-capita normalized** to the 1,000-agent study. Run results are synthetic model evidence, not predictions or support for policy claims.
+
+### Fail-closed GitHub publication from the downloadable archive
+
+If direct ChatGPT-to-GitHub transfer is unavailable in a session, the complete
+verified source archive includes `scripts/publish_feature_branch.sh` for
+publishing **only** `feature/v0.2-capital-accounting`. It checks that the remote
+branch still points to the previously verified commit, clones it, copies the
+source/evidence, installs the test environment, executes the full test suite,
+and performs a normal non-force push. It never touches `main`.
+
+```bash
+unzip CIVITAS_v02_finance_complete.zip
+cd CIVITAS
+bash scripts/publish_feature_branch.sh
+```
+
+Requires Git credentials configured on the local machine, network access,
+Python 3.11+, and Git. If the expected branch head has changed, the script
+refuses to publish and requires manual reconciliation; **do not force-push**.
+
+## Savings-backed credit sensitivity research (v0.2 development)
+
+After running the normal test suite, reproduce the 10,000-agent, eight-seed 12-cell experiment using `research/run_credit_sensitivity.py`. Each `--seed N` invocation writes or verifies an atomic `seed_NNNN.json` shard, while `--finalize --seeds 1,2,3,4,5,6,7,8` checks every shard and builds `summary.json` with paired effects. See [research experiment](research/v02_credit_sensitivity_experiment.md); simulation evidence is not real-world policy evidence.

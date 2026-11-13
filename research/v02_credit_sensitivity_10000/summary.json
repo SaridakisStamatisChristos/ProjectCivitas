@@ -1,0 +1,598 @@
+{
+  "design": {
+    "audited_periods": 2304,
+    "environment": {
+      "numpy": "2.3.5",
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.13.5"
+    },
+    "initial_total_capital_units": 1200,
+    "initial_total_firm_cash_cents": 1200000,
+    "limitations": "Within-model matched random seeds; firm counts, ownership and market structure differ across densities.",
+    "population": 10000,
+    "runs": 96,
+    "scenario_count": 12,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "source_sha256": "394310866c9368aa8b5e104058de522951f38177f98165b54969c7f6dd18fa2f",
+    "steps": 24
+  },
+  "paired_credit_effects": {
+    "density10_savings25_term2_minus_control": {
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          -0.08052306535382345,
+          -0.07353474260125001
+        ],
+        "mean": -0.07702890397753673,
+        "n": 8,
+        "sample_sd": 0.005042337150474412
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          0.07883123450523352,
+          0.0852367334093819
+        ],
+        "mean": 0.08203398395730771,
+        "n": 8,
+        "sample_sd": 0.004621807869394191
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          762.521227828883,
+          828.978772171117
+        ],
+        "mean": 795.75,
+        "n": 8,
+        "sample_sd": 47.95161251571362
+      }
+    },
+    "density10_savings25_term6_minus_control": {
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          -0.08062750564122216,
+          -0.07352386926949746
+        ],
+        "mean": -0.07707568745535981,
+        "n": 8,
+        "sample_sd": 0.005125540254622382
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          0.0789327053926952,
+          0.08523244829862722
+        ],
+        "mean": 0.08208257684566121,
+        "n": 8,
+        "sample_sd": 0.004545500947465683
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          764.0758091498421,
+          829.1741908501579
+        ],
+        "mean": 796.625,
+        "n": 8,
+        "sample_sd": 46.97092565771785
+      }
+    },
+    "density10_savings75_term2_minus_control": {
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.03566708613478273,
+          0.04445249778600566
+        ],
+        "mean": 0.04005979196039419,
+        "n": 8,
+        "sample_sd": 0.006339004238872488
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.017863685721120483,
+          -0.008891921589968235
+        ],
+        "mean": -0.013377803655544359,
+        "n": 8,
+        "sample_sd": 0.006473464547289785
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -170.22632656385244,
+          -85.02367343614756
+        ],
+        "mean": -127.625,
+        "n": 8,
+        "sample_sd": 61.47691204253605
+      }
+    },
+    "density10_savings75_term6_minus_control": {
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.025982235807934077,
+          0.036502988396981344
+        ],
+        "mean": 0.031242612102457712,
+        "n": 8,
+        "sample_sd": 0.0075911178560216855
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.009388527413896588,
+          -0.0012018744623600768
+        ],
+        "mean": -0.005295200938128332,
+        "n": 8,
+        "sample_sd": 0.005906977364543195
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -88.76123237526724,
+          -9.238767624732759
+        ],
+        "mean": -49,
+        "n": 8,
+        "sample_sd": 57.37844294058279
+      }
+    },
+    "density20_savings25_term2_minus_control": {
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.012393626083091178,
+          0.016681209869172722
+        ],
+        "mean": 0.01453741797613195,
+        "n": 8,
+        "sample_sd": 0.003093652622493625
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          0.00012309534018759135,
+          0.0039311059327776215
+        ],
+        "mean": 0.0020271006364826066,
+        "n": 8,
+        "sample_sd": 0.00274762256413328
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          10.08376950223959,
+          45.41623049776041
+        ],
+        "mean": 27.75,
+        "n": 8,
+        "sample_sd": 25.49369669994078
+      }
+    },
+    "density20_savings25_term6_minus_control": {
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.008208040198299845,
+          0.013067893827537595
+        ],
+        "mean": 0.01063796701291872,
+        "n": 8,
+        "sample_sd": 0.003506566792661294
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          0.0024941824509586204,
+          0.0074759208510919595
+        ],
+        "mean": 0.00498505165102529,
+        "n": 8,
+        "sample_sd": 0.0035945112294201087
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          33.96425035112756,
+          78.28574964887244
+        ],
+        "mean": 56.125,
+        "n": 8,
+        "sample_sd": 31.979625209990008
+      }
+    },
+    "density20_savings75_term2_minus_control": {
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.04806554769718948,
+          0.05241203177588464
+        ],
+        "mean": 0.05023878973653706,
+        "n": 8,
+        "sample_sd": 0.0031361513942497004
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.030732890559356334,
+          -0.02720879655337294
+        ],
+        "mean": -0.028970843556364638,
+        "n": 8,
+        "sample_sd": 0.002542766090989514
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -287.2228452933887,
+          -252.77715470661133
+        ],
+        "mean": -270,
+        "n": 8,
+        "sample_sd": 24.85385856792232
+      }
+    },
+    "density20_savings75_term6_minus_control": {
+      "disposable_income_gini": {
+        "approx_mc_95_interval": [
+          0.04143602477235263,
+          0.04854128298372552
+        ],
+        "mean": 0.044988653878039075,
+        "n": 8,
+        "sample_sd": 0.0051267104727991545
+      },
+      "employment_rate": {
+        "approx_mc_95_interval": [
+          -0.02856544708674059,
+          -0.021443752547508858
+        ],
+        "mean": -0.025004599817124724,
+        "n": 8,
+        "sample_sd": 0.0051385699002346585
+      },
+      "production_units": {
+        "approx_mc_95_interval": [
+          -265.73836724804517,
+          -197.51163275195483
+        ],
+        "mean": -231.625,
+        "n": 8,
+        "sample_sd": 49.22814961265266
+      }
+    }
+  },
+  "scenario_summary": {
+    "density10_savings25_control": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 1046.125,
+          "n": 8,
+          "sample_sd": 8.806450557890587
+        },
+        "disposable_income_gini": {
+          "mean": 0.5212573308417009,
+          "n": 8,
+          "sample_sd": 0.007102430216675818
+        },
+        "employment_rate": {
+          "mean": 0.13734103566547137,
+          "n": 8,
+          "sample_sd": 0.002359097586288702
+        },
+        "production_units": {
+          "mean": 1324.75,
+          "n": 8,
+          "sample_sd": 26.04803255526221
+        }
+      },
+      "total_defaults_cents": 0,
+      "total_originations_cents": 0,
+      "total_repayments_cents": 0
+    },
+    "density10_savings25_term2": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 1464.25,
+          "n": 8,
+          "sample_sd": 21.802686597232526
+        },
+        "disposable_income_gini": {
+          "mean": 0.4442284268641642,
+          "n": 8,
+          "sample_sd": 0.007013326654475832
+        },
+        "employment_rate": {
+          "mean": 0.21937501962277908,
+          "n": 8,
+          "sample_sd": 0.005906245669271967
+        },
+        "production_units": {
+          "mean": 2120.5,
+          "n": 8,
+          "sample_sd": 64.69268008934904
+        }
+      },
+      "total_defaults_cents": 6181837,
+      "total_originations_cents": 18450980,
+      "total_repayments_cents": 8084510
+    },
+    "density10_savings25_term6": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 1464.25,
+          "n": 8,
+          "sample_sd": 22.64477233901269
+        },
+        "disposable_income_gini": {
+          "mean": 0.4441816433863411,
+          "n": 8,
+          "sample_sd": 0.006879515279724468
+        },
+        "employment_rate": {
+          "mean": 0.2194236125111326,
+          "n": 8,
+          "sample_sd": 0.0057885285766702405
+        },
+        "production_units": {
+          "mean": 2121.375,
+          "n": 8,
+          "sample_sd": 63.547367035486666
+        }
+      },
+      "total_defaults_cents": 0,
+      "total_originations_cents": 18469703,
+      "total_repayments_cents": 8081558
+    },
+    "density10_savings75_control": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 1334.5,
+          "n": 8,
+          "sample_sd": 8.176621726430962
+        },
+        "disposable_income_gini": {
+          "mean": 0.48188644682441995,
+          "n": 8,
+          "sample_sd": 0.010160588382755457
+        },
+        "employment_rate": {
+          "mean": 0.16710847138441087,
+          "n": 8,
+          "sample_sd": 0.0022780333699331853
+        },
+        "production_units": {
+          "mean": 1618.25,
+          "n": 8,
+          "sample_sd": 24.846672671751097
+        }
+      },
+      "total_defaults_cents": 0,
+      "total_originations_cents": 0,
+      "total_repayments_cents": 0
+    },
+    "density10_savings75_term2": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 1649.5,
+          "n": 8,
+          "sample_sd": 24.512387538898427
+        },
+        "disposable_income_gini": {
+          "mean": 0.5219462387848142,
+          "n": 8,
+          "sample_sd": 0.012034796618453431
+        },
+        "employment_rate": {
+          "mean": 0.1537306677288665,
+          "n": 8,
+          "sample_sd": 0.006472079433929843
+        },
+        "production_units": {
+          "mean": 1490.625,
+          "n": 8,
+          "sample_sd": 63.58557226289624
+        }
+      },
+      "total_defaults_cents": 11194660,
+      "total_originations_cents": 22135670,
+      "total_repayments_cents": 10914026
+    },
+    "density10_savings75_term6": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 1661.625,
+          "n": 8,
+          "sample_sd": 18.204689348783578
+        },
+        "disposable_income_gini": {
+          "mean": 0.5131290589268777,
+          "n": 8,
+          "sample_sd": 0.010855787054733081
+        },
+        "employment_rate": {
+          "mean": 0.16181327044628255,
+          "n": 8,
+          "sample_sd": 0.004973495028867999
+        },
+        "production_units": {
+          "mean": 1569.25,
+          "n": 8,
+          "sample_sd": 48.72004574241343
+        }
+      },
+      "total_defaults_cents": 2044344,
+      "total_originations_cents": 22915223,
+      "total_repayments_cents": 20762953
+    },
+    "density20_savings25_control": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 1804.875,
+          "n": 8,
+          "sample_sd": 7.809106405802321
+        },
+        "disposable_income_gini": {
+          "mean": 0.42631650840951835,
+          "n": 8,
+          "sample_sd": 0.007546479764450638
+        },
+        "employment_rate": {
+          "mean": 0.20610689463903115,
+          "n": 8,
+          "sample_sd": 0.0028444241647039618
+        },
+        "production_units": {
+          "mean": 1978.25,
+          "n": 8,
+          "sample_sd": 25.228951623085727
+        }
+      },
+      "total_defaults_cents": 0,
+      "total_originations_cents": 0,
+      "total_repayments_cents": 0
+    },
+    "density20_savings25_term2": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 2168.0,
+          "n": 8,
+          "sample_sd": 12.259107401671391
+        },
+        "disposable_income_gini": {
+          "mean": 0.4408539263856503,
+          "n": 8,
+          "sample_sd": 0.008843190049877958
+        },
+        "employment_rate": {
+          "mean": 0.20813399527551374,
+          "n": 8,
+          "sample_sd": 0.0024853335161811253
+        },
+        "production_units": {
+          "mean": 2006.0,
+          "n": 8,
+          "sample_sd": 18.11865652540812
+        }
+      },
+      "total_defaults_cents": 9255143,
+      "total_originations_cents": 20986949,
+      "total_repayments_cents": 11405410
+    },
+    "density20_savings25_term6": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 2176.125,
+          "n": 8,
+          "sample_sd": 10.575409482109226
+        },
+        "disposable_income_gini": {
+          "mean": 0.43695447542243704,
+          "n": 8,
+          "sample_sd": 0.009076013219233414
+        },
+        "employment_rate": {
+          "mean": 0.21109194629005643,
+          "n": 8,
+          "sample_sd": 0.0028164729386467298
+        },
+        "production_units": {
+          "mean": 2034.375,
+          "n": 8,
+          "sample_sd": 20.708435134367004
+        }
+      },
+      "total_defaults_cents": 1006507,
+      "total_originations_cents": 21644071,
+      "total_repayments_cents": 20043527
+    },
+    "density20_savings75_control": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 1893.625,
+          "n": 8,
+          "sample_sd": 5.343554194407635
+        },
+        "disposable_income_gini": {
+          "mean": 0.44151545150020033,
+          "n": 8,
+          "sample_sd": 0.012582752142779229
+        },
+        "employment_rate": {
+          "mean": 0.18786137396349503,
+          "n": 8,
+          "sample_sd": 0.004356067159930495
+        },
+        "production_units": {
+          "mean": 1807.0,
+          "n": 8,
+          "sample_sd": 38.69662222247016
+        }
+      },
+      "total_defaults_cents": 0,
+      "total_originations_cents": 0,
+      "total_repayments_cents": 0
+    },
+    "density20_savings75_term2": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 2102.375,
+          "n": 8,
+          "sample_sd": 10.822430410956681
+        },
+        "disposable_income_gini": {
+          "mean": 0.4917542412367374,
+          "n": 8,
+          "sample_sd": 0.011217475273801325
+        },
+        "employment_rate": {
+          "mean": 0.1588905304071304,
+          "n": 8,
+          "sample_sd": 0.003145673469396002
+        },
+        "production_units": {
+          "mean": 1537.0,
+          "n": 8,
+          "sample_sd": 29.79453449400218
+        }
+      },
+      "total_defaults_cents": 12860051,
+      "total_originations_cents": 22574432,
+      "total_repayments_cents": 9714381
+    },
+    "density20_savings75_term6": {
+      "final_period": {
+        "capital_stock_units": {
+          "mean": 2115.375,
+          "n": 8,
+          "sample_sd": 9.635314510397972
+        },
+        "disposable_income_gini": {
+          "mean": 0.4865041053782394,
+          "n": 8,
+          "sample_sd": 0.008473643154844114
+        },
+        "employment_rate": {
+          "mean": 0.16285677414637031,
+          "n": 8,
+          "sample_sd": 0.0024340257478224514
+        },
+        "production_units": {
+          "mean": 1575.375,
+          "n": 8,
+          "sample_sd": 23.844361417923764
+        }
+      },
+      "total_defaults_cents": 3833390,
+      "total_originations_cents": 23504986,
+      "total_repayments_cents": 19657242
+    }
+  },
+  "seed_sha256": {
+    "1": "6dcd26cc9c4d01eec03675d1254e4ab776a3320d51ef74054f4360cce5843bcd",
+    "2": "600384f3b77297ad0eb51cc96686dd8c7df275f857bc1ccd17d9157bd2eea0fa",
+    "3": "07f16618fc8affadb60695fbce7284be2ce347ab2cce5c9265e6d69bb4f732da",
+    "4": "51bb4f3f67e80c6dcede833971171e23d4eca2635b6f8904c102ac56e1eab0fe",
+    "5": "a56abd52689f9df8dedb1dadc2f075d2ef6f073d4e9e1cd41c620ba517317c47",
+    "6": "541a40fadcecc1c9eafd325952d44ae2a7c07ad02191791d8e3926d6c057fb81",
+    "7": "1e07dda10c8d6cc6c18fcc2da2f811fef215258c31bf631c31093fb927ff0488",
+    "8": "8bee31692cbb9da5630392dff133123da3724e34d75916e989e952895a08b67c"
+  }
+}

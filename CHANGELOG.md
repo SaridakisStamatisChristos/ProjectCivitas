@@ -73,3 +73,7 @@ Added explicit physical productive capital and rounded depreciation; budget-limi
 - Nonpickle NPZ checkpoint version 5 for credit contracts and accounts; historical checkpoint formats 1–4 still load into compatible scenarios with zero loans.
 - Matched four-arm credit × resource-fee experiments at 1,000 and 10,000 agents, plus independent regression parity against the preceding development source; negative/null results and incomplete density campaign disclosed.
 - Still a **development checkpoint**, not release-ready or empirically validated.
+
+## 0.2.0.dev0 — 2026-11-13, matched financing sensitivity (development only)
+
+Added a resumable, exact-initial-state 12-cell credit/loan-maturity/savings/firm-density experiment, per-seed SHA-256 evidence, strict finalization and seven adversarial tests. Eight seeds at 10,000 agents over 24 periods yielded 96 complete runs and 2,304 checked periods. Experimental evidence identifies sign changes in credit-output effects across savings regimes. No v0.2 release or empirical validity claimed.
