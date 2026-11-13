@@ -1,0 +1,3155 @@
+{
+  "cells": {
+    "b0p0h0": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.2528375,
+          "sample_sd": 0.0052073951535978455,
+          "approx_95pct_mc_interval": [
+            0.24922895926308153,
+            0.25644604073691846
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.10794999999999999,
+          "sample_sd": 0.004571964254328451,
+          "approx_95pct_mc_interval": [
+            0.10478179041097341,
+            0.11111820958902657
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.1448875,
+          "sample_sd": 0.00695217078123291,
+          "approx_95pct_mc_interval": [
+            0.14006989143869078,
+            0.14970510856130922
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.2542,
+          "sample_sd": 0.006287402370727403,
+          "approx_95pct_mc_interval": [
+            0.24984305244465804,
+            0.2585569475553419
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.105725,
+          "sample_sd": 0.0042814383430938565,
+          "approx_95pct_mc_interval": [
+            0.1027581145960789,
+            0.10869188540392109
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.148475,
+          "sample_sd": 0.008260188513933214,
+          "approx_95pct_mc_interval": [
+            0.14275098139416023,
+            0.15419901860583976
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.2619422710724664,
+          "sample_sd": 0.005740348253742827,
+          "approx_95pct_mc_interval": [
+            0.2579644126794044,
+            0.26592012946552845
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.11353389766626838,
+          "sample_sd": 0.0048384872627373465,
+          "approx_95pct_mc_interval": [
+            0.1101809970551854,
+            0.11688679827735136
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.14840837340619803,
+          "sample_sd": 0.0075883739965247575,
+          "approx_95pct_mc_interval": [
+            0.14314989850929816,
+            0.1536668483030979
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.98125,
+          "sample_sd": 0.016517186816085255,
+          "approx_95pct_mc_interval": [
+            0.9698041734922966,
+            0.9926958265077033
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.9,
+          "sample_sd": 0.026726124191242394,
+          "approx_95pct_mc_interval": [
+            0.8814797408225479,
+            0.9185202591774522
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0812499999999999,
+          "sample_sd": 0.03825302145966575,
+          "approx_95pct_mc_interval": [
+            0.05474200854249582,
+            0.10775799145750399
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 123.70833333333333,
+          "sample_sd": 20.54143122631422,
+          "approx_95pct_mc_interval": [
+            109.47384772423753,
+            137.94281894242914
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 29.7375,
+          "sample_sd": 6.883715255171854,
+          "approx_95pct_mc_interval": [
+            24.967328698044483,
+            34.50767130195552
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 93.97083333333333,
+          "sample_sd": 22.13436197767467,
+          "approx_95pct_mc_interval": [
+            78.63250303071493,
+            109.30916363595173
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0014,
+          "sample_sd": 0.0006436503043467891,
+          "approx_95pct_mc_interval": [
+            0.0009539730949819282,
+            0.0018460269050180717
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0005125,
+          "sample_sd": 0.0005221863378417435,
+          "approx_95pct_mc_interval": [
+            0.0001506433294797511,
+            0.000874356670520249
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0008874999999999999,
+          "sample_sd": 0.0006577830732305077,
+          "approx_95pct_mc_interval": [
+            0.000431679585801601,
+            0.001343320414198399
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.20903750000000001,
+          "sample_sd": 0.007378721821175104,
+          "approx_95pct_mc_interval": [
+            0.2039243066484828,
+            0.21415069335151724
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.3532125,
+          "sample_sd": 0.005375988281237233,
+          "approx_95pct_mc_interval": [
+            0.3494871301861426,
+            0.3569378698138574
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.144175,
+          "sample_sd": 0.0099364768116557,
+          "approx_95pct_mc_interval": [
+            -0.15106062713193213,
+            -0.13728937286806786
+          ]
+        }
+      }
+    },
+    "b0p0h1": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.288975,
+          "sample_sd": 0.0041316720931983885,
+          "approx_95pct_mc_interval": [
+            0.286111897312355,
+            0.291838102687645
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.259025,
+          "sample_sd": 0.006583908956148849,
+          "approx_95pct_mc_interval": [
+            0.25446258386378445,
+            0.26358741613621556
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.029950000000000004,
+          "sample_sd": 0.005646996673327471,
+          "approx_95pct_mc_interval": [
+            0.02603683095177323,
+            0.03386316904822678
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.287475,
+          "sample_sd": 0.0037427071943791175,
+          "approx_95pct_mc_interval": [
+            0.28488143623560164,
+            0.2900685637643983
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.25385,
+          "sample_sd": 0.0054497706373754845,
+          "approx_95pct_mc_interval": [
+            0.2500735016218725,
+            0.25762649837812757
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.033624999999999995,
+          "sample_sd": 0.005988262328446021,
+          "approx_95pct_mc_interval": [
+            0.029475345918031234,
+            0.037774654081968756
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.30017684170438597,
+          "sample_sd": 0.004855492575262497,
+          "approx_95pct_mc_interval": [
+            0.2968121570129363,
+            0.30354152639583565
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.26954996921830543,
+          "sample_sd": 0.006831492256685383,
+          "approx_95pct_mc_interval": [
+            0.26481598660798633,
+            0.27428395182862453
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.030626872486080557,
+          "sample_sd": 0.006139753378110432,
+          "approx_95pct_mc_interval": [
+            0.026372240462575157,
+            0.03488150450958596
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.99375,
+          "sample_sd": 0.008625819491779454,
+          "approx_95pct_mc_interval": [
+            0.9877726120531902,
+            0.9997273879468098
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.9937499999999999,
+          "sample_sd": 0.008625819491779435,
+          "approx_95pct_mc_interval": [
+            0.9877726120531901,
+            0.9997273879468097
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 9.71445146547012e-17,
+          "sample_sd": 0.01259881576697428,
+          "approx_95pct_mc_interval": [
+            -0.008730533902472458,
+            0.008730533902472653
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 104.5,
+          "sample_sd": 6.7565371049668395,
+          "approx_95pct_mc_interval": [
+            99.81795865982464,
+            109.18204134017536
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 25.616666666666667,
+          "sample_sd": 2.8505081696772625,
+          "approx_95pct_mc_interval": [
+            23.64136528319235,
+            27.591968050140984
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 78.88333333333333,
+          "sample_sd": 6.3379682288444235,
+          "approx_95pct_mc_interval": [
+            74.49134542604375,
+            83.2753212406229
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0019875,
+          "sample_sd": 0.0007079901129253147,
+          "approx_95pct_mc_interval": [
+            0.001496887882334731,
+            0.0024781121176652692
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 8.75e-05,
+          "sample_sd": 6.408699444616557e-05,
+          "approx_95pct_mc_interval": [
+            4.308997860842668e-05,
+            0.0001319100213915733
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0019,
+          "sample_sd": 0.0007367883976130072,
+          "approx_95pct_mc_interval": [
+            0.001389431689193307,
+            0.002410568310806693
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.175175,
+          "sample_sd": 0.003995980122930691,
+          "approx_95pct_mc_interval": [
+            0.17240592705043728,
+            0.17794407294956271
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.2055125,
+          "sample_sd": 0.007077618142527071,
+          "approx_95pct_mc_interval": [
+            0.20060796085243476,
+            0.2104170391475652
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.030337500000000003,
+          "sample_sd": 0.008257626345212215,
+          "approx_95pct_mc_interval": [
+            -0.03605974311350016,
+            -0.024615256886499844
+          ]
+        }
+      }
+    },
+    "b0p1h0": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.18415,
+          "sample_sd": 0.005352169119685428,
+          "approx_95pct_mc_interval": [
+            0.18044113602298495,
+            0.18785886397701507
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.1608,
+          "sample_sd": 0.0027181926768666416,
+          "approx_95pct_mc_interval": [
+            0.15891638857510365,
+            0.16268361142489635
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.023350000000000013,
+          "sample_sd": 0.005227127044836116,
+          "approx_95pct_mc_interval": [
+            0.01972778576006334,
+            0.026972214239936686
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.179125,
+          "sample_sd": 0.005897638752682539,
+          "approx_95pct_mc_interval": [
+            0.17503814485208982,
+            0.1832118551479102
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.1613375,
+          "sample_sd": 0.002538805962314913,
+          "approx_95pct_mc_interval": [
+            0.15957819722617167,
+            0.16309680277382832
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.017787499999999998,
+          "sample_sd": 0.006593814742403885,
+          "approx_95pct_mc_interval": [
+            0.013218219504123215,
+            0.02235678049587678
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.1919652806945574,
+          "sample_sd": 0.005965308407846972,
+          "approx_95pct_mc_interval": [
+            0.18783153286804083,
+            0.19609902852107397
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.1681462183525718,
+          "sample_sd": 0.003266231467909399,
+          "approx_95pct_mc_interval": [
+            0.16588283542108584,
+            0.17040960128405774
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.023819062341985615,
+          "sample_sd": 0.0057123017508451945,
+          "approx_95pct_mc_interval": [
+            0.01986063918386332,
+            0.02777748550010791
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.9458333333333333,
+          "sample_sd": 0.02781743201320933,
+          "approx_95pct_mc_interval": [
+            0.9265568364178319,
+            0.9651098302488347
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.9583333333333333,
+          "sample_sd": 0.02357022603955154,
+          "approx_95pct_mc_interval": [
+            0.942,
+            0.9746666666666666
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.012499999999999983,
+          "sample_sd": 0.040581096545379246,
+          "approx_95pct_mc_interval": [
+            -0.040621265184119154,
+            0.015621265184119184
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.2855125,
+          "sample_sd": 0.00706489055622439,
+          "approx_95pct_mc_interval": [
+            0.28061678061976586,
+            0.29040821938023414
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.2981125,
+          "sample_sd": 0.003991218038214818,
+          "approx_95pct_mc_interval": [
+            0.29534672700678455,
+            0.30087827299321546
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.012600000000000021,
+          "sample_sd": 0.008819782958132877,
+          "approx_95pct_mc_interval": [
+            -0.018711797771523538,
+            -0.006488202228476503
+          ]
+        }
+      }
+    },
+    "b0p1h1": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.1953125,
+          "sample_sd": 0.004838664957550639,
+          "approx_95pct_mc_interval": [
+            0.1919594762526937,
+            0.1986655237473063
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.22575,
+          "sample_sd": 0.0042570949182343994,
+          "approx_95pct_mc_interval": [
+            0.22279998372885843,
+            0.2287000162711416
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.030437500000000003,
+          "sample_sd": 0.007962759302797339,
+          "approx_95pct_mc_interval": [
+            -0.03595541067796498,
+            -0.024919589322035026
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.190075,
+          "sample_sd": 0.004036175700550496,
+          "approx_95pct_mc_interval": [
+            0.18727807293623877,
+            0.19287192706376122
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.22340000000000002,
+          "sample_sd": 0.004310120979409144,
+          "approx_95pct_mc_interval": [
+            0.2204132385431709,
+            0.22638676145682912
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.03332500000000001,
+          "sample_sd": 0.006957370192824293,
+          "approx_95pct_mc_interval": [
+            -0.0381462115697198,
+            -0.028503788430280216
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.2037909896939445,
+          "sample_sd": 0.0055866422925440785,
+          "approx_95pct_mc_interval": [
+            0.19991964409780544,
+            0.20766233529008354
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.23541451510551986,
+          "sample_sd": 0.004469489260784911,
+          "approx_95pct_mc_interval": [
+            0.23231731706407324,
+            0.23851171314696648
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.031623525411575364,
+          "sample_sd": 0.008430169625210043,
+          "approx_95pct_mc_interval": [
+            -0.03746533491794346,
+            -0.025781715905207264
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.9520833333333333,
+          "sample_sd": 0.020773724245970415,
+          "approx_95pct_mc_interval": [
+            0.9376878768742047,
+            0.9664787897924618
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.9791666666666666,
+          "sample_sd": 0.017251638983558828,
+          "approx_95pct_mc_interval": [
+            0.9672118907730471,
+            0.9911214425602861
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.02708333333333328,
+          "sample_sd": 0.0332588453445214,
+          "approx_95pct_mc_interval": [
+            -0.05013053730932808,
+            -0.004036129357338478
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.2745625,
+          "sample_sd": 0.005117738758475275,
+          "approx_95pct_mc_interval": [
+            0.2710160879751501,
+            0.2781089120248499
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.23605,
+          "sample_sd": 0.005147537552766647,
+          "approx_95pct_mc_interval": [
+            0.23248293846422577,
+            0.23961706153577425
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.03851249999999999,
+          "sample_sd": 0.009105326149332285,
+          "approx_95pct_mc_interval": [
+            0.0322028308921941,
+            0.044822169107805884
+          ]
+        }
+      }
+    },
+    "b1p0h0": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.1110375,
+          "sample_sd": 0.003961218246953836,
+          "approx_95pct_mc_interval": [
+            0.10829251580150268,
+            0.11378248419849732
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.116575,
+          "sample_sd": 0.004668052515312386,
+          "approx_95pct_mc_interval": [
+            0.11334020464325793,
+            0.11980979535674206
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.005537499999999997,
+          "sample_sd": 0.006793050545541799,
+          "approx_95pct_mc_interval": [
+            -0.010244843863581668,
+            -0.0008301561364183266
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.108775,
+          "sample_sd": 0.003124899998399951,
+          "approx_95pct_mc_interval": [
+            0.10660955478018953,
+            0.11094044521981046
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.113925,
+          "sample_sd": 0.004201615335626463,
+          "approx_95pct_mc_interval": [
+            0.11101342911815631,
+            0.11683657088184368
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.005150000000000002,
+          "sample_sd": 0.005645984666747058,
+          "approx_95pct_mc_interval": [
+            -0.009062467763445475,
+            -0.0012375322365545298
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.11744916691514944,
+          "sample_sd": 0.004363022584695927,
+          "approx_95pct_mc_interval": [
+            0.11442574651616307,
+            0.1204725873141358
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.12313631549953843,
+          "sample_sd": 0.004567600765713339,
+          "approx_95pct_mc_interval": [
+            0.11997112965385344,
+            0.12630150134522342
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.005687148584389002,
+          "sample_sd": 0.006956015398009754,
+          "approx_95pct_mc_interval": [
+            -0.010507421329200326,
+            -0.0008668758395776787
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.9958333333333333,
+          "sample_sd": 0.007715167498104619,
+          "approx_95pct_mc_interval": [
+            0.9904869950225516,
+            1.0011796716441153
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.9833333333333332,
+          "sample_sd": 0.012598815766974239,
+          "approx_95pct_mc_interval": [
+            0.9746027994308606,
+            0.9920638672358058
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.012500000000000094,
+          "sample_sd": 0.011785113019775806,
+          "approx_95pct_mc_interval": [
+            0.00433333333333342,
+            0.02066666666666677
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 173.45833333333334,
+          "sample_sd": 28.477190816957293,
+          "approx_95pct_mc_interval": [
+            153.72464689223585,
+            193.19201977443083
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 69.08333333333334,
+          "sample_sd": 9.842925104011238,
+          "approx_95pct_mc_interval": [
+            62.262534227330846,
+            75.90413243933584
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 104.375,
+          "sample_sd": 34.39989271854811,
+          "approx_95pct_mc_interval": [
+            80.5370905348924,
+            128.2129094651076
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0002625,
+          "sample_sd": 0.0005878228596147944,
+          "approx_95pct_mc_interval": [
+            -0.00014484045956668725,
+            0.0006698404595666872
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0002625,
+          "sample_sd": 0.0005878228596147944,
+          "approx_95pct_mc_interval": [
+            -0.00014484045956668725,
+            0.0006698404595666872
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.3556,
+          "sample_sd": 0.004031306062733084,
+          "approx_95pct_mc_interval": [
+            0.352806447423083,
+            0.3583935525769171
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.34552499999999997,
+          "sample_sd": 0.005053923511208169,
+          "approx_95pct_mc_interval": [
+            0.34202280968535403,
+            0.3490271903146459
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.010075000000000008,
+          "sample_sd": 0.007633525678591383,
+          "approx_95pct_mc_interval": [
+            0.004785236583740271,
+            0.015364763416259744
+          ]
+        }
+      }
+    },
+    "b1p0h1": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.218475,
+          "sample_sd": 0.0044522065155541525,
+          "approx_95pct_mc_interval": [
+            0.21538977828997655,
+            0.22156022171002346
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.217075,
+          "sample_sd": 0.005086887906316443,
+          "approx_95pct_mc_interval": [
+            0.21354996652498165,
+            0.22060003347501833
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.001400000000000002,
+          "sample_sd": 0.007298532142052348,
+          "approx_95pct_mc_interval": [
+            -0.0036576247389461273,
+            0.006457624738946131
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.21475,
+          "sample_sd": 0.00487207787880519,
+          "approx_95pct_mc_interval": [
+            0.2113738222795593,
+            0.21812617772044068
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.2154375,
+          "sample_sd": 0.005421106239241475,
+          "approx_95pct_mc_interval": [
+            0.21168086503636566,
+            0.21919413496363435
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.0006874999999999937,
+          "sample_sd": 0.006996619081487043,
+          "approx_95pct_mc_interval": [
+            -0.005535909661940701,
+            0.004160909661940714
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.2276150694977667,
+          "sample_sd": 0.005161457269966921,
+          "approx_95pct_mc_interval": [
+            0.22403836209009645,
+            0.23119177690543694
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.22638148150191273,
+          "sample_sd": 0.005273224990801254,
+          "approx_95pct_mc_interval": [
+            0.22272732301518916,
+            0.2300356399886363
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0012335879958539561,
+          "sample_sd": 0.007816904514192235,
+          "approx_95pct_mc_interval": [
+            -0.004183250470221647,
+            0.006650426461929559
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 1.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            1.0,
+            1.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.9999999999999999,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.9999999999999999,
+            0.9999999999999999
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 1.1102230246251565e-16,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            1.1102230246251565e-16,
+            1.1102230246251565e-16
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 112.58333333333334,
+          "sample_sd": 18.78174561253475,
+          "approx_95pct_mc_interval": [
+            99.56824764189221,
+            125.59841902477447
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 36.641666666666666,
+          "sample_sd": 8.200498436264386,
+          "approx_95pct_mc_interval": [
+            30.959011174342287,
+            42.324322158991045
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 75.94166666666666,
+          "sample_sd": 17.302828009977368,
+          "approx_95pct_mc_interval": [
+            63.951418587498324,
+            87.931914745835
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.24988749999999998,
+          "sample_sd": 0.005477861287556873,
+          "approx_95pct_mc_interval": [
+            0.24609153579442586,
+            0.2536834642055741
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.2440125,
+          "sample_sd": 0.005435974745027007,
+          "approx_95pct_mc_interval": [
+            0.24024556168752392,
+            0.24777943831247606
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.005875000000000002,
+          "sample_sd": 0.008814233618739314,
+          "approx_95pct_mc_interval": [
+            -0.0002329522755175487,
+            0.011982952275517551
+          ]
+        }
+      }
+    },
+    "b1p1h0": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.1334125,
+          "sample_sd": 0.0033532233959068596,
+          "approx_95pct_mc_interval": [
+            0.13108883473796246,
+            0.13573616526203752
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.1355,
+          "sample_sd": 0.00329458430067978,
+          "approx_95pct_mc_interval": [
+            0.13321696955780263,
+            0.1377830304421974
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.0020875000000000025,
+          "sample_sd": 0.004628000956908148,
+          "approx_95pct_mc_interval": [
+            -0.005294541042768233,
+            0.0011195410427682286
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.1307375,
+          "sample_sd": 0.004502677774708858,
+          "approx_95pct_mc_interval": [
+            0.1276173034917653,
+            0.1338576965082347
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.1326375,
+          "sample_sd": 0.0034292596035546017,
+          "approx_95pct_mc_interval": [
+            0.1302611443342799,
+            0.13501385566572008
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.0018999999999999972,
+          "sample_sd": 0.0048905156023821205,
+          "approx_95pct_mc_interval": [
+            -0.005288954411024147,
+            0.0014889544110241533
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.14030663851345512,
+          "sample_sd": 0.0038248758370981214,
+          "approx_95pct_mc_interval": [
+            0.13765613478467864,
+            0.1429571422422316
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.1425189211398854,
+          "sample_sd": 0.0033764367813774987,
+          "approx_95pct_mc_interval": [
+            0.14017916982241288,
+            0.14485867245735792
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.0022122826264302925,
+          "sample_sd": 0.004946305261492287,
+          "approx_95pct_mc_interval": [
+            -0.00563989729880579,
+            0.0012153320459452046
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.9979166666666667,
+          "sample_sd": 0.005892556509887914,
+          "approx_95pct_mc_interval": [
+            0.9938333333333333,
+            1.002
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.9937499999999999,
+          "sample_sd": 0.01240039681904742,
+          "approx_95pct_mc_interval": [
+            0.9851569634134505,
+            1.0023430365865493
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.004166666666666777,
+          "sample_sd": 0.014773421007131986,
+          "approx_95pct_mc_interval": [
+            -0.006070791785290708,
+            0.014404125118624262
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 3.7500000000000003e-05,
+          "sample_sd": 0.00010606601717798214,
+          "approx_95pct_mc_interval": [
+            -3.5999999999999994e-05,
+            0.000111
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -3.7500000000000003e-05,
+          "sample_sd": 0.00010606601717798214,
+          "approx_95pct_mc_interval": [
+            -0.000111,
+            3.5999999999999994e-05
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.3339,
+          "sample_sd": 0.005007423061244743,
+          "approx_95pct_mc_interval": [
+            0.33043003285318145,
+            0.3373699671468185
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.32677500000000004,
+          "sample_sd": 0.004301743832447495,
+          "approx_95pct_mc_interval": [
+            0.32379404360984604,
+            0.32975595639015404
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0071249999999999855,
+          "sample_sd": 0.007177295551150957,
+          "approx_95pct_mc_interval": [
+            0.0021513879322970827,
+            0.012098612067702888
+          ]
+        }
+      }
+    },
+    "b1p1h1": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.163225,
+          "sample_sd": 0.004365366945793741,
+          "approx_95pct_mc_interval": [
+            0.1601999550416564,
+            0.1662500449583436
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.1636375,
+          "sample_sd": 0.003733224381913619,
+          "approx_95pct_mc_interval": [
+            0.16105050748938077,
+            0.16622449251061922
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.0004124999999999962,
+          "sample_sd": 0.0065857936933545564,
+          "approx_95pct_mc_interval": [
+            -0.004976222192465268,
+            0.004151222192465276
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.1566,
+          "sample_sd": 0.003938092359070752,
+          "approx_95pct_mc_interval": [
+            0.1538710412242029,
+            0.15932895877579709
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.156825,
+          "sample_sd": 0.003199888390910802,
+          "approx_95pct_mc_interval": [
+            0.1546075904753519,
+            0.15904240952464807
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.0002249999999999995,
+          "sample_sd": 0.005666883749343327,
+          "approx_95pct_mc_interval": [
+            -0.004151950088809383,
+            0.003701950088809384
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.17104645570926943,
+          "sample_sd": 0.004824916408008556,
+          "approx_95pct_mc_interval": [
+            0.16770295922072356,
+            0.1743899521978153
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.17148598146221608,
+          "sample_sd": 0.004169051604523472,
+          "approx_95pct_mc_interval": [
+            0.16859697609475438,
+            0.17437498682967778
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.000439525752946663,
+          "sample_sd": 0.007038936786933434,
+          "approx_95pct_mc_interval": [
+            -0.005317260088643061,
+            0.004438208582749735
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.9979166666666667,
+          "sample_sd": 0.005892556509887914,
+          "approx_95pct_mc_interval": [
+            0.9938333333333333,
+            1.002
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.9979166666666666,
+          "sample_sd": 0.005892556509887875,
+          "approx_95pct_mc_interval": [
+            0.9938333333333332,
+            1.0019999999999998
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 9.71445146547012e-17,
+          "sample_sd": 0.008908708063747477,
+          "approx_95pct_mc_interval": [
+            -0.006173419725817279,
+            0.006173419725817473
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "approx_95pct_mc_interval": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.3080375,
+          "sample_sd": 0.004755429228035798,
+          "approx_95pct_mc_interval": [
+            0.3047421556704951,
+            0.3113328443295049
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.302625,
+          "sample_sd": 0.004521614755814568,
+          "approx_95pct_mc_interval": [
+            0.29949168083336536,
+            0.3057583191666346
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.005412500000000001,
+          "sample_sd": 0.008011320115935956,
+          "approx_95pct_mc_interval": [
+            -0.00013906160462982126,
+            0.010964061604629823
+          ]
+        }
+      }
+    }
+  },
+  "factorial_interactions": {
+    "seller": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.1418,
+          "sample_sd": 0.006639707394585576,
+          "approx_95pct_mc_interval": [
+            -0.14640108248132983,
+            -0.1371989175186702
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.008625,
+          "sample_sd": 0.0045433625055835945,
+          "approx_95pct_mc_interval": [
+            0.005476610411654875,
+            0.011773389588345127
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.150425,
+          "sample_sd": 0.007429237607491874,
+          "approx_95pct_mc_interval": [
+            -0.15557319900547756,
+            -0.14527680099452245
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.145425,
+          "sample_sd": 0.006871629043704686,
+          "approx_95pct_mc_interval": [
+            -0.15018679598470996,
+            -0.14066320401529003
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0082,
+          "sample_sd": 0.00318657899859484,
+          "approx_95pct_mc_interval": [
+            0.005991813413680812,
+            0.01040818658631919
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.15362499999999998,
+          "sample_sd": 0.00666520817379322,
+          "approx_95pct_mc_interval": [
+            -0.15824375361975498,
+            -0.14900624638024498
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.14449310415731698,
+          "sample_sd": 0.006640157840297745,
+          "approx_95pct_mc_interval": [
+            -0.14909449878160005,
+            -0.1398917095330339
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.009602417833270056,
+          "sample_sd": 0.004650447236121279,
+          "approx_95pct_mc_interval": [
+            0.006379822312582694,
+            0.012825013353957417
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.15409552199058704,
+          "sample_sd": 0.007559655044983986,
+          "approx_95pct_mc_interval": [
+            -0.15933409566941154,
+            -0.14885694831176255
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.014583333333333351,
+          "sample_sd": 0.01651718681608526,
+          "approx_95pct_mc_interval": [
+            0.003137506825630002,
+            0.0260291598410367
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.08333333333333316,
+          "sample_sd": 0.0281718084909505,
+          "approx_95pct_mc_interval": [
+            0.0638112660475381,
+            0.10285540061912822
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.06874999999999981,
+          "sample_sd": 0.036118741562566774,
+          "approx_95pct_mc_interval": [
+            -0.09377901094507887,
+            -0.04372098905492076
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 49.75,
+          "sample_sd": 34.3741089350599,
+          "approx_95pct_mc_interval": [
+            25.929957785278567,
+            73.57004221472144
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 39.34583333333334,
+          "sample_sd": 12.984458811784211,
+          "approx_95pct_mc_interval": [
+            30.3480624350003,
+            48.343604231666376
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 10.404166666666669,
+          "sample_sd": 41.55272205665305,
+          "approx_95pct_mc_interval": [
+            -18.390400645492143,
+            39.19873397882548
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.0011375,
+          "sample_sd": 0.0006323143431644015,
+          "approx_95pct_mc_interval": [
+            -0.0015756714846952048,
+            -0.0006993285153047954
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.0005125,
+          "sample_sd": 0.0005221863378417435,
+          "approx_95pct_mc_interval": [
+            -0.000874356670520249,
+            -0.0001506433294797511
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.0006249999999999999,
+          "sample_sd": 0.0005496752287877426,
+          "approx_95pct_mc_interval": [
+            -0.001005905500091558,
+            -0.00024409449990844177
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.1465625,
+          "sample_sd": 0.007119176818384873,
+          "approx_95pct_mc_interval": [
+            0.14162916215934893,
+            0.1514958378406511
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.0076875,
+          "sample_sd": 0.0032847863596543927,
+          "approx_95pct_mc_interval": [
+            -0.00996374081546748,
+            -0.005411259184532519
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.15425,
+          "sample_sd": 0.006517449106601675,
+          "approx_95pct_mc_interval": [
+            0.14973363818987007,
+            0.15876636181012993
+          ]
+        }
+      }
+    },
+    "prices": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.0686875,
+          "sample_sd": 0.004246826546291446,
+          "approx_95pct_mc_interval": [
+            -0.07163040065241762,
+            -0.06574459934758238
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.052849999999999994,
+          "sample_sd": 0.0032654030597855928,
+          "approx_95pct_mc_interval": [
+            0.05058719112605593,
+            0.055112808873944055
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.12153749999999999,
+          "sample_sd": 0.006993657841215857,
+          "approx_95pct_mc_interval": [
+            -0.12638385762712576,
+            -0.11669114237287423
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.075075,
+          "sample_sd": 0.004790690376732167,
+          "approx_95pct_mc_interval": [
+            -0.0783947790589134,
+            -0.0717552209410866
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0556125,
+          "sample_sd": 0.00453948943006967,
+          "approx_95pct_mc_interval": [
+            0.05246679431605562,
+            0.05875820568394438
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.1306875,
+          "sample_sd": 0.008574286725853223,
+          "approx_95pct_mc_interval": [
+            -0.13662917756193485,
+            -0.12474582243806517
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.069976990377909,
+          "sample_sd": 0.004236577987966675,
+          "approx_95pct_mc_interval": [
+            -0.07291278914173956,
+            -0.06704119161407844
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.05461232068630341,
+          "sample_sd": 0.003375320358754814,
+          "approx_95pct_mc_interval": [
+            0.05227334301023792,
+            0.056951298362368896
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.12458931106421242,
+          "sample_sd": 0.0072340561807709425,
+          "approx_95pct_mc_interval": [
+            -0.12960225624150185,
+            -0.11957636588692298
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.03541666666666665,
+          "sample_sd": 0.018766527107660032,
+          "approx_95pct_mc_interval": [
+            -0.04842120647227127,
+            -0.02241212686106203
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.05833333333333324,
+          "sample_sd": 0.021821789023599197,
+          "approx_95pct_mc_interval": [
+            0.04321160503704826,
+            0.0734550616296182
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.09374999999999989,
+          "sample_sd": 0.019795582319423594,
+          "approx_95pct_mc_interval": [
+            -0.10746763868568882,
+            -0.08003236131431096
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": -123.70833333333333,
+          "sample_sd": 20.54143122631422,
+          "approx_95pct_mc_interval": [
+            -137.94281894242914,
+            -109.47384772423753
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -29.7375,
+          "sample_sd": 6.883715255171854,
+          "approx_95pct_mc_interval": [
+            -34.50767130195552,
+            -24.967328698044483
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -93.97083333333333,
+          "sample_sd": 22.13436197767467,
+          "approx_95pct_mc_interval": [
+            -109.30916363595173,
+            -78.63250303071493
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.0014,
+          "sample_sd": 0.0006436503043467891,
+          "approx_95pct_mc_interval": [
+            -0.0018460269050180717,
+            -0.0009539730949819282
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.0005125,
+          "sample_sd": 0.0005221863378417435,
+          "approx_95pct_mc_interval": [
+            -0.000874356670520249,
+            -0.0001506433294797511
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.0008874999999999999,
+          "sample_sd": 0.0006577830732305077,
+          "approx_95pct_mc_interval": [
+            -0.001343320414198399,
+            -0.000431679585801601
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.07647499999999999,
+          "sample_sd": 0.0047604771669595,
+          "approx_95pct_mc_interval": [
+            0.07317615762728802,
+            0.07977384237271196
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.05509999999999999,
+          "sample_sd": 0.004455173557626168,
+          "approx_95pct_mc_interval": [
+            -0.05818727776528124,
+            -0.05201272223471874
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.13157499999999997,
+          "sample_sd": 0.00854245699015051,
+          "approx_95pct_mc_interval": [
+            0.1256553793195847,
+            0.13749462068041524
+          ]
+        }
+      }
+    },
+    "hiring": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0361375,
+          "sample_sd": 0.0059679949971254455,
+          "approx_95pct_mc_interval": [
+            0.032001890462096304,
+            0.0402731095379037
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.15107500000000001,
+          "sample_sd": 0.006783962179813701,
+          "approx_95pct_mc_interval": [
+            0.14637395405255385,
+            0.15577604594744618
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.1149375,
+          "sample_sd": 0.008306785092406602,
+          "approx_95pct_mc_interval": [
+            -0.12069380838732603,
+            -0.10918119161267396
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.033275,
+          "sample_sd": 0.00718087738371852,
+          "approx_95pct_mc_interval": [
+            0.02829890584896145,
+            0.03825109415103855
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.148125,
+          "sample_sd": 0.007405548113215043,
+          "approx_95pct_mc_interval": [
+            0.14299321697652756,
+            0.15325678302347245
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.11485000000000001,
+          "sample_sd": 0.010174477873581528,
+          "approx_95pct_mc_interval": [
+            -0.12190055345345314,
+            -0.10779944654654687
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.03823457063191958,
+          "sample_sd": 0.006179856693219238,
+          "approx_95pct_mc_interval": [
+            0.03395214842887391,
+            0.04251699283496525
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.15601607155203706,
+          "sample_sd": 0.006998248781195529,
+          "approx_95pct_mc_interval": [
+            0.1511665325658155,
+            0.16086561053825862
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.11778150092011748,
+          "sample_sd": 0.008462791747440784,
+          "approx_95pct_mc_interval": [
+            -0.12364591640385471,
+            -0.11191708543638025
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.012500000000000011,
+          "sample_sd": 0.01725163898355887,
+          "approx_95pct_mc_interval": [
+            0.0005452241063804708,
+            0.02445477589361955
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.09374999999999982,
+          "sample_sd": 0.021707836343821924,
+          "approx_95pct_mc_interval": [
+            0.07870723688206763,
+            0.10879276311793201
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.08124999999999981,
+          "sample_sd": 0.0326568255341552,
+          "approx_95pct_mc_interval": [
+            -0.1038800255314824,
+            -0.058619974468517216
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": -19.20833333333333,
+          "sample_sd": 23.36388306224014,
+          "approx_95pct_mc_interval": [
+            -35.39867827852966,
+            -3.017988388136999
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -4.120833333333334,
+          "sample_sd": 7.997220499291345,
+          "approx_95pct_mc_interval": [
+            -9.662624402112451,
+            1.4209577354457839
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -15.0875,
+          "sample_sd": 23.021900804813377,
+          "approx_95pct_mc_interval": [
+            -31.040863331389822,
+            0.8658633313898214
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0005874999999999999,
+          "sample_sd": 0.0003943801646707327,
+          "approx_95pct_mc_interval": [
+            0.0003142084889719404,
+            0.0008607915110280594
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.0004250000000000001,
+          "sample_sd": 0.0005311712126450917,
+          "approx_95pct_mc_interval": [
+            -0.0007930828711037775,
+            -5.691712889622266e-05
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0010125,
+          "sample_sd": 0.0007679983258910326,
+          "approx_95pct_mc_interval": [
+            0.0004803043123060842,
+            0.0015446956876939157
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.033862500000000004,
+          "sample_sd": 0.0071404156541678785,
+          "approx_95pct_mc_interval": [
+            -0.038810555602961636,
+            -0.028914444397038372
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.1477,
+          "sample_sd": 0.0075096128871124735,
+          "approx_95pct_mc_interval": [
+            -0.15290389623263184,
+            -0.14249610376736815
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.1138375,
+          "sample_sd": 0.010075137361700978,
+          "approx_95pct_mc_interval": [
+            0.10685578600915219,
+            0.1208192139908478
+          ]
+        }
+      }
+    },
+    "seller_x_prices": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0910625,
+          "sample_sd": 0.007003659757583889,
+          "approx_95pct_mc_interval": [
+            0.08620921139844333,
+            0.09591578860155668
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.03392499999999998,
+          "sample_sd": 0.0028383848525928494,
+          "approx_95pct_mc_interval": [
+            -0.035891900353347855,
+            -0.03195809964665211
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.1249875,
+          "sample_sd": 0.00927538023864405,
+          "approx_95pct_mc_interval": [
+            0.11855998942046768,
+            0.13141501057953234
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0970375,
+          "sample_sd": 0.005790617410950225,
+          "approx_95pct_mc_interval": [
+            0.093024806858231,
+            0.101050193141769
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.03690000000000001,
+          "sample_sd": 0.003242573933511112,
+          "approx_95pct_mc_interval": [
+            -0.039146989096546764,
+            -0.034653010903453255
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.13393750000000001,
+          "sample_sd": 0.008178008402329467,
+          "approx_95pct_mc_interval": [
+            0.12827042930607005,
+            0.13960457069392998
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0928344619762147,
+          "sample_sd": 0.007136952503694515,
+          "approx_95pct_mc_interval": [
+            0.08788880621409337,
+            0.09778011773833603
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.03522971504595643,
+          "sample_sd": 0.003144024271991544,
+          "approx_95pct_mc_interval": [
+            -0.03740841271123794,
+            -0.03305101738067492
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.12806417702217113,
+          "sample_sd": 0.009861054339499487,
+          "approx_95pct_mc_interval": [
+            0.12123081499692419,
+            0.13489753904741805
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.03749999999999999,
+          "sample_sd": 0.019416079083690568,
+          "approx_95pct_mc_interval": [
+            0.024045343639550742,
+            0.05095465636044924
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.04791666666666658,
+          "sample_sd": 0.02587745847533826,
+          "approx_95pct_mc_interval": [
+            -0.06584883050709586,
+            -0.0299845028262373
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.08541666666666657,
+          "sample_sd": 0.018766527107660004,
+          "approx_95pct_mc_interval": [
+            0.07241212686106197,
+            0.09842120647227118
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": -49.75,
+          "sample_sd": 34.3741089350599,
+          "approx_95pct_mc_interval": [
+            -73.57004221472144,
+            -25.929957785278567
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -39.34583333333334,
+          "sample_sd": 12.984458811784211,
+          "approx_95pct_mc_interval": [
+            -48.343604231666376,
+            -30.3480624350003
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -10.404166666666669,
+          "sample_sd": 41.55272205665305,
+          "approx_95pct_mc_interval": [
+            -39.19873397882548,
+            18.390400645492143
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0011375,
+          "sample_sd": 0.0006323143431644015,
+          "approx_95pct_mc_interval": [
+            0.0006993285153047954,
+            0.0015756714846952048
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.00055,
+          "sample_sd": 0.0005318431562567511,
+          "approx_95pct_mc_interval": [
+            0.0001814514957295309,
+            0.0009185485042704692
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0005874999999999999,
+          "sample_sd": 0.0005841660722773961,
+          "approx_95pct_mc_interval": [
+            0.0001826935647744715,
+            0.0009923064352255285
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.09817499999999998,
+          "sample_sd": 0.006004938443838163,
+          "approx_95pct_mc_interval": [
+            -0.10233621004036082,
+            -0.09401378995963915
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.03635000000000001,
+          "sample_sd": 0.0032164754445999566,
+          "approx_95pct_mc_interval": [
+            0.0341210962335713,
+            0.03857890376642872
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.134525,
+          "sample_sd": 0.008216142647252442,
+          "approx_95pct_mc_interval": [
+            -0.14021849637744682,
+            -0.1288315036225532
+          ]
+        }
+      }
+    },
+    "seller_x_hiring": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0713,
+          "sample_sd": 0.006089569536745362,
+          "approx_95pct_mc_interval": [
+            0.06708014360433913,
+            0.07551985639566088
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.050574999999999995,
+          "sample_sd": 0.004286440414676434,
+          "approx_95pct_mc_interval": [
+            -0.05354535166268238,
+            -0.04760464833731761
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.12187500000000001,
+          "sample_sd": 0.005874825225363863,
+          "approx_95pct_mc_interval": [
+            0.11780395381996225,
+            0.12594604618003777
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.0727,
+          "sample_sd": 0.007716031548480294,
+          "approx_95pct_mc_interval": [
+            0.06735306293285584,
+            0.07804693706714416
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.04661250000000001,
+          "sample_sd": 0.004595164383815402,
+          "approx_95pct_mc_interval": [
+            -0.049796786458533526,
+            -0.04342821354146649
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.11931250000000002,
+          "sample_sd": 0.0072870604498659446,
+          "approx_95pct_mc_interval": [
+            0.11426282473816385,
+            0.12436217526183618
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.07193133195069767,
+          "sample_sd": 0.006336633563331163,
+          "approx_95pct_mc_interval": [
+            0.06754026891942244,
+            0.07632239498197291
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.05277090554966275,
+          "sample_sd": 0.0043616236807575755,
+          "approx_95pct_mc_interval": [
+            -0.05579335655767731,
+            -0.049748454541648196
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.12470223750036044,
+          "sample_sd": 0.005792177400236341,
+          "approx_95pct_mc_interval": [
+            0.12068846334116871,
+            0.12871601165955218
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.008333333333333331,
+          "sample_sd": 0.015430334996209204,
+          "approx_95pct_mc_interval": [
+            -0.019026009954896967,
+            0.002359343288230304
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.07708333333333316,
+          "sample_sd": 0.021707836343821917,
+          "approx_95pct_mc_interval": [
+            -0.09212609645126534,
+            -0.06204057021540098
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.06874999999999983,
+          "sample_sd": 0.028781470008896554,
+          "approx_95pct_mc_interval": [
+            0.04880545883650799,
+            0.08869454116349165
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": -41.66666666666667,
+          "sample_sd": 32.780172094418326,
+          "approx_95pct_mc_interval": [
+            -64.3821670035634,
+            -18.951166329769947
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -28.320833333333336,
+          "sample_sd": 12.479289986671064,
+          "approx_95pct_mc_interval": [
+            -36.968540095822455,
+            -19.673126570844218
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -13.345833333333335,
+          "sample_sd": 35.07759171431515,
+          "approx_95pct_mc_interval": [
+            -37.65336424284092,
+            10.961697576174249
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.00085,
+          "sample_sd": 0.0007329003050503234,
+          "approx_95pct_mc_interval": [
+            -0.0013578740001220775,
+            -0.0003421259998779225
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0004250000000000001,
+          "sample_sd": 0.0005311712126450917,
+          "approx_95pct_mc_interval": [
+            5.691712889622266e-05,
+            0.0007930828711037775
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.001275,
+          "sample_sd": 0.0009498120114753536,
+          "approx_95pct_mc_interval": [
+            -0.0019331861438833245,
+            -0.0006168138561166758
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.07185,
+          "sample_sd": 0.007967254411473444,
+          "approx_95pct_mc_interval": [
+            -0.07737102562935548,
+            -0.06632897437064451
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.04618749999999999,
+          "sample_sd": 0.004921508914956871,
+          "approx_95pct_mc_interval": [
+            0.04277706831911266,
+            0.049597931680887324
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.11803749999999999,
+          "sample_sd": 0.007363022962266073,
+          "approx_95pct_mc_interval": [
+            -0.12313981459731758,
+            -0.1129351854026824
+          ]
+        }
+      }
+    },
+    "prices_x_hiring": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.024975000000000004,
+          "sample_sd": 0.005395434578021893,
+          "approx_95pct_mc_interval": [
+            -0.02871384541001631,
+            -0.021236154589983697
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.086125,
+          "sample_sd": 0.005832605396757566,
+          "approx_95pct_mc_interval": [
+            -0.09016678933147187,
+            -0.08208321066852811
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.06114999999999999,
+          "sample_sd": 0.007804394366545754,
+          "approx_95pct_mc_interval": [
+            0.05574183062395417,
+            0.0665581693760458
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.022325,
+          "sample_sd": 0.0065652222245056535,
+          "approx_95pct_mc_interval": [
+            -0.026874466891845687,
+            -0.017775533108154315
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.0860625,
+          "sample_sd": 0.005658858415919977,
+          "approx_95pct_mc_interval": [
+            -0.08998388881647815,
+            -0.08214111118352185
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0637375,
+          "sample_sd": 0.009577195757184284,
+          "approx_95pct_mc_interval": [
+            0.05710084193663709,
+            0.07037415806336292
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.026408861632532487,
+          "sample_sd": 0.005665138166819199,
+          "approx_95pct_mc_interval": [
+            -0.03033460209436674,
+            -0.022483121170698235
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.08874777479908898,
+          "sample_sd": 0.006127809475825181,
+          "approx_95pct_mc_interval": [
+            -0.09299413012058064,
+            -0.08450141947759732
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0623389131665565,
+          "sample_sd": 0.008174391568156235,
+          "approx_95pct_mc_interval": [
+            0.05667434881083744,
+            0.06800347752227556
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.006250000000000019,
+          "sample_sd": 0.015268756355215084,
+          "approx_95pct_mc_interval": [
+            -0.016830708335876642,
+            0.004330708335876603
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.07291666666666653,
+          "sample_sd": 0.02808363360020344,
+          "approx_95pct_mc_interval": [
+            -0.09237763187054751,
+            -0.053455701462785554
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.06666666666666651,
+          "sample_sd": 0.03333333333333335,
+          "approx_95pct_mc_interval": [
+            0.04356784514790596,
+            0.08976548818542707
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 19.20833333333333,
+          "sample_sd": 23.36388306224014,
+          "approx_95pct_mc_interval": [
+            3.017988388136999,
+            35.39867827852966
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 4.120833333333334,
+          "sample_sd": 7.997220499291345,
+          "approx_95pct_mc_interval": [
+            -1.4209577354457839,
+            9.662624402112451
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 15.0875,
+          "sample_sd": 23.021900804813377,
+          "approx_95pct_mc_interval": [
+            -0.8658633313898214,
+            31.040863331389822
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.0005874999999999999,
+          "sample_sd": 0.0003943801646707327,
+          "approx_95pct_mc_interval": [
+            -0.0008607915110280594,
+            -0.0003142084889719404
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0004250000000000001,
+          "sample_sd": 0.0005311712126450917,
+          "approx_95pct_mc_interval": [
+            5.691712889622266e-05,
+            0.0007930828711037775
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.0010125,
+          "sample_sd": 0.0007679983258910326,
+          "approx_95pct_mc_interval": [
+            -0.0015446956876939157,
+            -0.0004803043123060842
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.02291250000000002,
+          "sample_sd": 0.006583624164763424,
+          "approx_95pct_mc_interval": [
+            0.01835028121414594,
+            0.0274747187858541
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0856375,
+          "sample_sd": 0.0056905780524853745,
+          "approx_95pct_mc_interval": [
+            0.08169413059681194,
+            0.08958086940318807
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.06272499999999998,
+          "sample_sd": 0.009577316952048701,
+          "approx_95pct_mc_interval": [
+            -0.06936174204711916,
+            -0.05608825795288079
+          ]
+        }
+      }
+    },
+    "seller_x_prices_x_hiring": {
+      "production_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.05265,
+          "sample_sd": 0.0058602779066232935,
+          "approx_95pct_mc_interval": [
+            -0.056710965402462815,
+            -0.04858903459753719
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.01376249999999998,
+          "sample_sd": 0.004589098106226453,
+          "approx_95pct_mc_interval": [
+            0.010582417257365773,
+            0.016942582742634184
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.06641249999999999,
+          "sample_sd": 0.006773991754181114,
+          "approx_95pct_mc_interval": [
+            -0.07110663679498154,
+            -0.06171836320501843
+          ]
+        }
+      },
+      "consumption_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.057787500000000006,
+          "sample_sd": 0.007735343283545069,
+          "approx_95pct_mc_interval": [
+            -0.06314781941678853,
+            -0.05242718058321148
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.0087375,
+          "sample_sd": 0.0053840870031178645,
+          "approx_95pct_mc_interval": [
+            0.005006518058205062,
+            0.012468481941794939
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.066525,
+          "sample_sd": 0.009520616726722228,
+          "approx_95pct_mc_interval": [
+            -0.07312245079557249,
+            -0.059927549204427506
+          ]
+        }
+      },
+      "employment_rate": {
+        "integrated": {
+          "n": 8,
+          "mean": -0.05301722375427047,
+          "sample_sd": 0.00645488154131349,
+          "approx_95pct_mc_interval": [
+            -0.05749022845369674,
+            -0.0485442190548442
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.014469669119045354,
+          "sample_sd": 0.004678695446352849,
+          "approx_95pct_mc_interval": [
+            0.01122749858736709,
+            0.01771183965072362
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.06748689287331583,
+          "sample_sd": 0.0073375400722313355,
+          "approx_95pct_mc_interval": [
+            -0.07257154872877258,
+            -0.06240223701785908
+          ]
+        }
+      },
+      "active_seller_fraction": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.00208333333333334,
+          "sample_sd": 0.013908716006604675,
+          "approx_95pct_mc_interval": [
+            -0.007554915124417342,
+            0.011721581791084021
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 0.06041666666666655,
+          "sample_sd": 0.02946278254943949,
+          "approx_95pct_mc_interval": [
+            0.03999999999999988,
+            0.08083333333333322
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": -0.05833333333333321,
+          "sample_sd": 0.029546842014263955,
+          "approx_95pct_mc_interval": [
+            -0.07880825023724816,
+            -0.03785841642941826
+          ]
+        }
+      },
+      "quoted_price_spread_mean_cents": {
+        "integrated": {
+          "n": 8,
+          "mean": 41.66666666666667,
+          "sample_sd": 32.780172094418326,
+          "approx_95pct_mc_interval": [
+            18.951166329769947,
+            64.3821670035634
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": 28.320833333333336,
+          "sample_sd": 12.479289986671064,
+          "approx_95pct_mc_interval": [
+            19.673126570844218,
+            36.968540095822455
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 13.345833333333335,
+          "sample_sd": 35.07759171431515,
+          "approx_95pct_mc_interval": [
+            -10.961697576174249,
+            37.65336424284092
+          ]
+        }
+      },
+      "unmet_stock_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.00085,
+          "sample_sd": 0.0007329003050503234,
+          "approx_95pct_mc_interval": [
+            0.0003421259998779225,
+            0.0013578740001220775
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.0004625000000000001,
+          "sample_sd": 0.0005396758286230727,
+          "approx_95pct_mc_interval": [
+            -0.0008364762693006069,
+            -8.852373069939321e-05
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0013125,
+          "sample_sd": 0.0009341726668173135,
+          "approx_95pct_mc_interval": [
+            0.0006651513690444692,
+            0.001959848630955531
+          ]
+        }
+      },
+      "unmet_budget_per_person": {
+        "integrated": {
+          "n": 8,
+          "mean": 0.05693749999999999,
+          "sample_sd": 0.00805852476750995,
+          "approx_95pct_mc_interval": [
+            0.051353227240723276,
+            0.0625217727592767
+          ]
+        },
+        "ten_isolated": {
+          "n": 8,
+          "mean": -0.008275000000000018,
+          "sample_sd": 0.005634016582966597,
+          "approx_95pct_mc_interval": [
+            -0.012179174304510498,
+            -0.00437082569548954
+          ]
+        },
+        "gap": {
+          "n": 8,
+          "mean": 0.0652125,
+          "sample_sd": 0.009891618024512334,
+          "approx_95pct_mc_interval": [
+            0.05835795842160105,
+            0.07206704157839897
+          ]
+        }
+      }
+    }
+  },
+  "notes": [
+    "Monte Carlo intervals quantify seed variation only; no external validity.",
+    "Topology seeds do not imply identical individual agents across topologies.",
+    "Factor contrasts are finite differences at other factors set to historical defaults.",
+    "Multiple exploratory contrasts are not multiplicity corrected."
+  ],
+  "metadata": {
+    "schema_version": 1,
+    "software_version": "0.2.0.dev0",
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "seeds": 8,
+    "periods": 24,
+    "cells": {
+      "b0p0h0": [
+        0,
+        0,
+        0
+      ],
+      "b0p0h1": [
+        0,
+        0,
+        1
+      ],
+      "b0p1h0": [
+        0,
+        1,
+        0
+      ],
+      "b0p1h1": [
+        0,
+        1,
+        1
+      ],
+      "b1p0h0": [
+        1,
+        0,
+        0
+      ],
+      "b1p0h1": [
+        1,
+        0,
+        1
+      ],
+      "b1p1h0": [
+        1,
+        1,
+        0
+      ],
+      "b1p1h1": [
+        1,
+        1,
+        1
+      ]
+    },
+    "population_integrated": 10000,
+    "isolated_communities": 10,
+    "population_per_community": 1000,
+    "hypothesis": "Do seller-search, posted-price adaptation and hiring feedback interact in the topology production gap?",
+    "baseline_commit": "5561d0f0716220dfe0948e2d041f00f50e96ce94",
+    "internal_simulations": 704,
+    "audited_periods": 16896,
+    "topology_period_rows": 3072,
+    "cell_digests": {
+      "b0p0h0": "33842f6f95c1d84689cd706143cb68957894355ed893384e8e0b44918a4053cb",
+      "b0p0h1": "149cea511b2da4d56bd0098f6f5e5bbf7571c71647bdbae716737cc0c9ac1efe",
+      "b0p1h0": "bca4d76ae44891689500479ec3669829c09f1c8348b84656f7410d9565d1eb3f",
+      "b0p1h1": "941a5c2e874b086e1e8197aad7f8804c7a463142b0069684fb0e329585a595f3",
+      "b1p0h0": "394630a39f85b2747efef19a174ebe39bd3662ca573c665164e0e56038e68491",
+      "b1p0h1": "21d567256a244e7539678cad4abc38b39416add6c92c8f0f7ef6817a731ee3ab",
+      "b1p1h0": "47a4346c8bcfcccf2dd94a7f3f84ea6a3125a023c6987ce40af58907e59e661f",
+      "b1p1h1": "2fe93a66634949df19ec3cc5d06948a463f08d45da6924bea99a64b402dd98fd"
+    }
+  }
+}

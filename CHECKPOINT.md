@@ -1,5 +1,20 @@
 # CIVITAS continuation checkpoint
 
+## Latest verified factorial interaction checkpoint — 2026-11-13
+
+- **Stable branch:** `main` remains v0.1.0; **active branch:** `feature/v0.2-capital-accounting`. Development release stays `0.2.0.dev0` and is **not** a completed v0.2.
+- **Baseline commit before this study:** `5561d0f0716220dfe0948e2d041f00f50e96ce94`. This checkpoint is pending GitHub revision identification until remote publication is confirmed.
+- **Implementation:** `research/run_market_factorial.py` performs a complete 2×2×2 factorial intervention of buyer seller search (mixed versus favorite), fixed/adaptive prices, and adaptive/stationary hiring. It records every topology-level period, audits conservation every engine step, uses atomic per-cell datasets and verifies dataset SHA-256, full row completeness, scenario digest and configuration before aggregation. `tests/test_market_factorial.py` exercises interaction arithmetic, invalid factors, a complete mini factorial, tamper detection and joint-intervention checkpoint replay.
+- **Executed verification:** `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src:. python -m pytest -q` reported **64 passed** on Python 3.13.5 / NumPy 2.3.5. Eight cells × eight master seeds × 11 market instances × 24 periods = **704 completed simulations**, **16,896 internally checked periods**, **3,072 topology-period rows**; all six conservation/flow discrepancies were zero in the checked runs. All eight cell files were complete with recorded checksums. An independent CSV recount reproduced the three-way interaction mean exactly.
+- **Scientific result:** the integrated-minus-isolated production gap depends nonadditively on seller ranking, pricing and hiring feedback. The gap's three-way interaction is −0.0664125 production units/person (approximate 95% Monte Carlo interval [−0.07111,−0.06172]), conditional on exactly these synthetic model assumptions and eight seeds. See `research/v02_market_factorial_experiment.md` and archived `research/v02_market_factorial_8seed/`.
+- **Critical remaining confounding:** isolated communities and integrated market do not have *identical individual initial agents*; consumer firm access (60 vs 6) and employee matching pools differ simultaneously. Do not interpret topology contrast as a pure market-size effect. Small seed count, model and parameter uncertainty, no empirical calibration.
+- **Highest priority next scientific engineering gate:** in the **same integrated 10,000-agent population**, experimentally restrict seller choice to six local firms, then independently restrict hiring to community labor pools, retaining initial agents and total endowments; audit paired counterfactuals. Next add inventory cost-of-goods-sold/asset basis and eventually correctly recorded two-sided financial intermediation.
+- **Existing release gaps:** no fully accrual-compliant profit or complete balance sheets, no lending, no external scientific calibration, extreme-input overflow risks, incomplete longer-horizon sensitivity. Do not merge development branch to `main` until release criteria pass.
+
+---
+
+# CIVITAS continuation checkpoint
+
 ## Latest verified market-mechanism checkpoint — 2026-11-13
 
 - **Branch:** `feature/v0.2-capital-accounting`. The stable `main` remains v0.1.0. Development version is still `0.2.0.dev0` and **not a released v0.2**.

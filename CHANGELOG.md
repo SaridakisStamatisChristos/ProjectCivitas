@@ -32,3 +32,10 @@ Added explicit physical productive capital and rounded depreciation; budget-limi
 - Independently verified 56 tests, 288 historical baseline records and 792 mechanism-level synthetic simulations, all internal accounts conserving for 19,008 simulated periods.
 - Preserved 12-master-seed comparative research with six one-factor interventions and integrated-versus-isolated topology controls; documented that topology comparisons do not pair identical synthetic individuals.
 - No promotion to `main`; scientific and full financial-accounting acceptance criteria remain open.
+
+## 0.2.0.dev0 — Factorial mechanism research checkpoint (2026-11-13)
+
+- Introduced executable 2×2×2 market mechanism factorial experiment runner, with resumable treatment-level execution and integrity-gated aggregation.
+- Verified 64 automated tests and 704 synthetic simulation instances, 16,896 internally checked periods and archived full topology-level period records.
+- Demonstrated strong nonadditive seller-search × pricing × hiring interactions under exact simulator rules, while retaining an explicit warning about unmatched agent initialization and labor/seller access confounds.
+- `main` and the historical core engine remain unchanged. v0.2 is still development-only.

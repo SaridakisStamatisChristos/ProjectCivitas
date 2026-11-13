@@ -124,3 +124,14 @@ and the formal research protocol and limitations are in
 [market-mechanism documentation](docs/v02_market_mechanisms.md).
 **Status:** 56 passing tests in the recorded environment; v0.2 is still not a
 released or empirically validated economic model.
+
+## Market mechanism factorial verification (v0.2 development)
+
+The eight-way interaction study evaluates seller ranking, posted-price adaptation, and hiring expectations **jointly**, contrasting integrated and isolated markets with matched aggregate endowments (but not matched individual agent identities). Use:
+
+```bash
+PYTHONPATH=src:. python research/run_market_factorial.py --seeds 8 --steps 24 --output results/market_factorial
+# or run --only b0p0h0 through b1p1h1 independently, followed by --finalize
+```
+
+See [factorial report](research/v02_market_factorial_experiment.md), [source and versioned period records](research/v02_market_factorial_8seed/), and [CHECKPOINT.md](CHECKPOINT.md). Interactions are conditional within-model results, **not calibrated real-world effects**.

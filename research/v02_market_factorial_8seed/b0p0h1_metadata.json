@@ -1,0 +1,68 @@
+{
+  "cell": "b0p0h1",
+  "factor_settings": {
+    "seller": 0,
+    "prices": 0,
+    "hiring": 1
+  },
+  "seeds": 8,
+  "steps": 24,
+  "scenario_sha256_seed1": "480add47d4f9c178a9d348c6e4ff8711ea95f18b20bacd32ffb434a8c847ca75",
+  "data_sha256": "149cea511b2da4d56bd0098f6f5e5bbf7571c71647bdbae716737cc0c9ac1efe",
+  "internal_simulations": 88,
+  "audited_periods": 2112,
+  "topology_period_rows": 384,
+  "wall_seconds": 23.033350168999732,
+  "schema_version": 1,
+  "software_version": "0.2.0.dev0",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "periods": 24,
+  "cells": {
+    "b0p0h0": [
+      0,
+      0,
+      0
+    ],
+    "b0p0h1": [
+      0,
+      0,
+      1
+    ],
+    "b0p1h0": [
+      0,
+      1,
+      0
+    ],
+    "b0p1h1": [
+      0,
+      1,
+      1
+    ],
+    "b1p0h0": [
+      1,
+      0,
+      0
+    ],
+    "b1p0h1": [
+      1,
+      0,
+      1
+    ],
+    "b1p1h0": [
+      1,
+      1,
+      0
+    ],
+    "b1p1h1": [
+      1,
+      1,
+      1
+    ]
+  },
+  "population_integrated": 10000,
+  "isolated_communities": 10,
+  "population_per_community": 1000,
+  "hypothesis": "Do seller-search, posted-price adaptation and hiring feedback interact in the topology production gap?",
+  "baseline_commit": "5561d0f0716220dfe0948e2d041f00f50e96ce94"
+}
