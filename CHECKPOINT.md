@@ -1,3 +1,11 @@
+# Publication verification — 2026-11-14
+
+World Genesis and the previously unpushed price/hiring extension were published to `feature/v0.2-capital-accounting` in [commit 5a1faad](https://github.com/SaridakisStamatisChristos/ProjectCivitas/commit/5a1faad9656a922ffc4b27dbb1b4179ab2765e84). The 24 expected remote file hashes matched exactly; stable `main` remained at `85d9671978df6ce40a58e895aee5cb1d2a938a58`. The archived source passed **185 local tests**, and a 1,200-agent Hybrid world successfully passed `verify-world`. This is **not** a stable release or empirical validation. Publication-pending wording below is preserved as historical checkpoint material and is superseded by this entry.
+
+See [docs/economy_completion_roadmap.md](docs/economy_completion_roadmap.md).
+
+---
+
 # Current continuation checkpoint — World Genesis (2026-11-13)
 
 - **Status:** CIVITAS remains `0.2.0.dev0`. Active branch `feature/v0.2-capital-accounting`. Stable `main` is not to be modified. Predecessor local checkpoint includes the price-and-hiring research (157 tests; that code was not previously pushed to GitHub).

@@ -74,3 +74,9 @@ PYTHONPATH=src python -m civitas verify-world --world results/world_1
 ```
 
 Tests cover legacy parity, determinism, independent substreams, exact total endowments, custom fixed endowments, starting savings, capital basis, zero population, checkpoint replay, malformed plans, forbidden sampling, and corrupted archive fingerprints.
+
+## Remote publication record
+
+World Genesis and the prior price/hiring research were published on 2026-11-14 to `feature/v0.2-capital-accounting` in [commit 5a1faad](https://github.com/SaridakisStamatisChristos/ProjectCivitas/commit/5a1faad9656a922ffc4b27dbb1b4179ab2765e84). Stable `main` was not changed. Local tests: 185 passed. Exact Git-tree match: 24/24 files. This publication does not imply external economic validation or completion of v0.2.
+
+If using an older local archive, its prepublication `scripts/publish_world_genesis.sh` has a now-obsolete expected branch SHA; start subsequent work from the current remote development branch instead.
