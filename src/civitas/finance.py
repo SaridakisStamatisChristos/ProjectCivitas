@@ -63,6 +63,11 @@ def service_loans(state: State, *, repayment_fraction: float, term: int,
             item = state.journal.setdefault("loan_default_noncash", {"cents": 0, "count": 0})
             item["cents"] += amount
             item["count"] += 1
+            if state.trace_enabled:
+                state.noncash_events.append({"reason": "loan_default_noncash",
+                                             "lender_household": h,
+                                             "borrower_firm": f,
+                                             "cents": amount})
         elif loan.outstanding_cents:
             active.append(loan)
     state.loans = active

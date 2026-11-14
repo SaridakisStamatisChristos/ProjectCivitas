@@ -6,7 +6,7 @@ Markets are posted-price, budget constrained, with finite stock and rationing.
 No issuance, mortality or reproduction. v0.2 adds optional physical capital, savings and bilateral credit.
 """
 from __future__ import annotations
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import math
 from typing import Any
 import numpy as np
@@ -23,6 +23,8 @@ class Period:
     metrics: dict[str, Any]
     journal: dict[str, dict[str, int]]
     transactions: list[dict]
+    # Separate trace: financial claim extinguishment is NOT a money transfer.
+    noncash_transactions: list[dict] = field(default_factory=list)
 
 
 class Simulation:
@@ -115,12 +117,17 @@ class Simulation:
     def step(self) -> Period:
         s = self.state
         c = self.scenario
+        # Capture only in opt-in trace mode; no hot-path array copies otherwise.
+        if s.trace_enabled:
+            from civitas.ledger_audit import capture_opening
+            opening_ledger = capture_opening(s)
         ns = len(c.sectors)
         nfirm_sector = c.firms_per_sector
         nf = ns * nfirm_sector
         H = len(s.household_cash)
         s.journal = {}
         s.transaction_events = []
+        s.noncash_events = []
         wages = np.zeros(H, dtype=np.int64)
         household_income = np.zeros(H, dtype=np.int64)
         household_taxes = np.zeros(H, dtype=np.int64)
@@ -702,8 +709,12 @@ class Simulation:
             "resource_discrepancy_units": s.initial_resource + s.cumulative_resource_regenerated - s.cumulative_resource_extracted - s.resource,
             "goods_discrepancy_units": int(np.abs(expected_stock - observed_stock).sum()),
         }
-        return Period(metrics, {key: dict(value) for key, value in s.journal.items()},
-                      list(s.transaction_events))
+        period = Period(metrics, {key: dict(value) for key, value in s.journal.items()},
+                        list(s.transaction_events), list(s.noncash_events))
+        if s.trace_enabled:
+            from civitas.ledger_audit import audit_period
+            audit_period(opening_ledger, s, period)
+        return period
 
     def run(self, steps: int | None = None) -> list[Period]:
         count = self.scenario.steps if steps is None else steps

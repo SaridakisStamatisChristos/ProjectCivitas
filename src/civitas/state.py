@@ -49,6 +49,7 @@ class State:
     journal: dict[str, dict[str, int]] = field(default_factory=dict)
     trace_enabled: bool = False
     transaction_events: list[dict] = field(default_factory=list)
+    noncash_events: list[dict] = field(default_factory=list)
 
     def total_money(self) -> int:
         return (int(self.household_cash.sum()) + int(self.household_savings.sum()) +

@@ -27,6 +27,8 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
     run = sub.add_parser("run", help="execute one scenario")
     run.add_argument("--scenario", required=True, type=Path)
+    run.add_argument("--audit-ledger", action="store_true",
+                     help="trace and independently verify every monetary/credit transaction")
     run.add_argument("--steps", type=int)
     run.add_argument("--seed", type=int)
     run.add_argument("--output", type=Path, default=Path("results/run"))
@@ -60,7 +62,11 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(write_world(args.output, plan, force=args.force), indent=2))
     elif args.command == "run":
         c = Scenario.from_file(args.scenario)
-        c = replace(c, **({"seed": args.seed} if args.seed is not None else {}))
+        override = {"seed": args.seed} if args.seed is not None else {}
+        if args.audit_ledger:
+            override["transaction_trace"] = True
+        if override:
+            c = replace(c, **override)
         c.validate()
         result = _run(Simulation(c), c.steps if args.steps is None else args.steps, args.output)
         print(json.dumps(result, indent=2))
