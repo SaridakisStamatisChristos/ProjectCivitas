@@ -105,3 +105,10 @@ Added a resumable, exact-initial-state 12-cell credit/loan-maturity/savings/firm
 - Seeded world-level parameter selection, separate named initial-attribute RNG streams, sampled aggregate-conserved cash/capital, starting savings allocations, per-firm price heterogeneity and agent skill/participation options.
 - `civitas genesis` emits plan, frozen resolved scenario, initial state checkpoint and SHA-256 manifest; `civitas verify-world` validates provenance and exact regenerated initial-state fingerprint.
 - New tests, sample plans and design documentation. This is infrastructure for falsifiable synthetic research; no external economic calibration.
+
+## v0.2.0.dev0 — physical stock and historical-cost event tracing (2026-11-14)
+
+- Added opt-in independent replay of per-firm production, resource inputs, consumer goods transfers, capital conversions, depreciation and inventory cost-basis flows; linked goods to monetary payments.
+- Extended trace exports with `physical_transactions.jsonl` without changing historical scenario outputs.
+- 22 additional tests: 228 total passing locally. Synthetic audit research: 20 runs, 240 periods, 14,116 physical events, 24,814 cash transfers; deterministic rerun verified.
+- Remains an experimental milestone. Complete balance-sheet and institutional-finance work remains open.

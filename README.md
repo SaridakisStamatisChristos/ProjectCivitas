@@ -1,5 +1,7 @@
 # CIVITAS v0.1 foundation + v0.2 experimental capital branch
 
+> **Experimental v0.2 physical reconciliation:** trace mode now independently audits firm inventories, raw resources, capital and historical-cost flows against cash settlement. [Audit methodology](docs/v02_physical_ledger_audit.md) · [Reproducible 20-world evidence](research/v02_physical_ledger_experiment.md). This branch is not a stable v0.2 release.
+
 > **Published development branch (2026-11-14):** World Genesis and price/hiring research are on `feature/v0.2-capital-accounting`, source [5a1faad](https://github.com/SaridakisStamatisChristos/ProjectCivitas/commit/5a1faad9656a922ffc4b27dbb1b4179ab2765e84). Stable `main` stays v0.1. Version `0.2.0.dev0` remains experimental. See the [economy completion roadmap](docs/economy_completion_roadmap.md).
 
 **Release status:** v0.1 remains the stable foundational baseline on `main`. The `feature/v0.2-capital-accounting` branch introduces an **experimental, not yet final** v0.2 development slice.

@@ -25,6 +25,7 @@ class Period:
     transactions: list[dict]
     # Separate trace: financial claim extinguishment is NOT a money transfer.
     noncash_transactions: list[dict] = field(default_factory=list)
+    physical_transactions: list[dict] = field(default_factory=list)
 
 
 class Simulation:
@@ -121,6 +122,8 @@ class Simulation:
         if s.trace_enabled:
             from civitas.ledger_audit import capture_opening
             opening_ledger = capture_opening(s)
+            from civitas.physical_audit import capture_physical_opening
+            opening_physical = capture_physical_opening(s)
         ns = len(c.sectors)
         nfirm_sector = c.firms_per_sector
         nf = ns * nfirm_sector
@@ -128,6 +131,7 @@ class Simulation:
         s.journal = {}
         s.transaction_events = []
         s.noncash_events = []
+        s.physical_events = []
         wages = np.zeros(H, dtype=np.int64)
         household_income = np.zeros(H, dtype=np.int64)
         household_taxes = np.zeros(H, dtype=np.int64)
@@ -182,6 +186,11 @@ class Simulation:
                                               withdrawn_units=loss)
                     s.firm_capital_basis_cents[f] -= removed
                     firm_book_depreciation_cost[f] = removed
+            if s.trace_enabled:
+                for f, loss in enumerate(losses):
+                    if loss:
+                        s.physical_events.append({"kind": "depreciate", "firm": f, "units": int(loss),
+                                                  "basis_cents": int(firm_book_depreciation_cost[f])})
             s.firm_capital -= losses
             capital_depreciation_losses = losses
             capital_depreciated = int(losses.sum())
@@ -192,6 +201,8 @@ class Simulation:
                               math.floor(c.regeneration_rate * s.resource * (1 - s.resource / c.resource_capacity)))
         else:
             regenerated = 0
+        if s.trace_enabled and regenerated:
+            s.physical_events.append({"kind": "regenerate", "units": int(regenerated)})
         s.resource += regenerated
         s.cumulative_resource_regenerated += regenerated
 
@@ -286,6 +297,13 @@ class Simulation:
                         int(firm_wages[f]) + int(firm_resource_fees[f]))
                 else:
                     firm_uncapitalized_labor_cost[f] = firm_wages[f]
+        if s.trace_enabled:
+            for f, count in enumerate(production):
+                if count:
+                    s.physical_events.append({"kind": "manufacture", "firm": f, "units": int(count),
+                                               "resource_units": int(count) * int(resource_cost[f]),
+                                               "basis_cents": (int(firm_wages[f]) + int(firm_resource_fees[f])
+                                                               if c.cost_basis_accounting_enabled else 0)})
         s.inventory += production
         for k in range(ns):
             s.cumulative_output[k] += int(production[k * nfirm_sector:(k + 1) * nfirm_sector].sum())
@@ -384,12 +402,17 @@ class Simulation:
                             purchasing_power = int(s.household_cash[h])
                         s.transfer("household", int(h), "firm", f, price, "sale")
                         household_purchase_spending[h] += price
+                        taken = 0
                         if c.cost_basis_accounting_enabled:
                             taken = allocated_basis(stock_units=int(s.inventory[f]),
                                                     stock_cost_cents=int(s.firm_inventory_basis_cents[f]),
                                                     withdrawn_units=1)
                             s.firm_inventory_basis_cents[f] -= taken
                             firm_consumption_cogs[f] += taken
+                        if s.trace_enabled:
+                            s.physical_events.append({"kind": "consumer_sale", "firm": f,
+                                                      "household": int(h), "units": 1,
+                                                      "basis_cents": int(taken), "price_cents": price})
                         s.inventory[f] -= 1
                         sold[f] += 1
                         sale_revenues[f] += price
@@ -459,6 +482,7 @@ class Simulation:
                         capital_sale_revenues[supplier] += value
                     # When supplier == f, this is a documented internal inventory
                     # conversion; its valuation is imputed, not a transfer.
+                    consumed_basis = acquisition_basis = 0
                     if c.cost_basis_accounting_enabled:
                         consumed_basis = allocated_basis(stock_units=int(s.inventory[supplier]),
                                                         stock_cost_cents=int(s.firm_inventory_basis_cents[supplier]),
@@ -469,6 +493,12 @@ class Simulation:
                         acquisition_basis = value if supplier != f else consumed_basis
                         s.firm_capital_basis_cents[f] = checked_add_i64(
                             int(s.firm_capital_basis_cents[f]), int(acquisition_basis))
+                    if s.trace_enabled:
+                        s.physical_events.append({"kind": "convert_capital", "supplier": int(supplier),
+                                                  "buyer": int(f), "units": int(units),
+                                                  "basis_cents": int(consumed_basis),
+                                                  "capital_cost_cents": int(acquisition_basis),
+                                                  "price_cents": int(value)})
                     s.inventory[supplier] -= units
                     s.firm_capital[f] += units
                     s.cumulative_capital_goods_converted[capital_sec] += units
@@ -710,10 +740,12 @@ class Simulation:
             "goods_discrepancy_units": int(np.abs(expected_stock - observed_stock).sum()),
         }
         period = Period(metrics, {key: dict(value) for key, value in s.journal.items()},
-                        list(s.transaction_events), list(s.noncash_events))
+                        list(s.transaction_events), list(s.noncash_events), list(s.physical_events))
         if s.trace_enabled:
             from civitas.ledger_audit import audit_period
             audit_period(opening_ledger, s, period)
+            from civitas.physical_audit import audit_physical_period
+            audit_physical_period(opening_physical, s, period, c)
         return period
 
     def run(self, steps: int | None = None) -> list[Period]:

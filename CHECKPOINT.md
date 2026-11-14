@@ -1,3 +1,13 @@
+# Verified v0.2 physical inventory and cost-ledger checkpoint — 2026-11-14
+
+- Experimental development branch only: `feature/v0.2-capital-accounting`; stable `main` remains unchanged.
+- Opt-in physical event trace independently reconstructs **per-firm** finished inventory, inventory cost basis, productive capital, capital carrying value, renewable resources, and verifies cash settlement of sales and external capex. Audit rejects invalid resource intensity, price mismatches, incorrect proportional cost allocation, cost basis discrepancies and corrupted event order.
+- Local test suite: **228 passed**. Reproducible campaign: **20 synthetic runs / 240 periods / 14,116 physical events / 24,814 monetary transfers**, all checked identities zero; independent deterministic rerun produces SHA-256 `e5edd2a6941be0b46976f116b29e7f160e980a13abd7d20569eda3a69e25b6c0`.
+- Code and evidence: `src/civitas/physical_audit.py`, `tests/test_physical_audit.py`, `research/run_physical_closure.py`, `research/v02_physical_ledger_20/summary.json`, `docs/v02_physical_ledger_audit.md`, `research/v02_physical_ledger_experiment.md`.
+- Historical scenario outputs unchanged with `transaction_trace=False`. This is **not** full double-entry general ledger accounting, standards-compliant financial statements, empirical calibration, or a stable v0.2 release. Next work: rigorous consolidated firm/household/government balance sheets and supply chain/firm lifecycle accounting.
+
+---
+
 # Publication verification — 2026-11-14
 
 World Genesis and the previously unpushed price/hiring extension were published to `feature/v0.2-capital-accounting` in [commit 5a1faad](https://github.com/SaridakisStamatisChristos/ProjectCivitas/commit/5a1faad9656a922ffc4b27dbb1b4179ab2765e84). The 24 expected remote file hashes matched exactly; stable `main` remained at `85d9671978df6ce40a58e895aee5cb1d2a938a58`. The archived source passed **185 local tests**, and a 1,200-agent Hybrid world successfully passed `verify-world`. This is **not** a stable release or empirical validation. Publication-pending wording below is preserved as historical checkpoint material and is superseded by this entry.
