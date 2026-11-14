@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "mode": "hybrid",
+  "seed": 1234,
+  "base_scenario": {
+    "name": "hybrid_example",
+    "population": 1200,
+    "seed": 1234
+  },
+  "scenario_draws": {},
+  "initialization": {
+    "household_cash_cents": {
+      "distribution": "lognormal",
+      "sigma": 0.7,
+      "preserve_total": true
+    },
+    "firm_cash_cents": {
+      "distribution": "lognormal",
+      "sigma": 0.5,
+      "preserve_total": true
+    },
+    "price_multiplier": {
+      "distribution": "uniform",
+      "low": 0.95,
+      "high": 1.05
+    },
+    "skills": {
+      "distribution": "uniform",
+      "low": 0.75,
+      "high": 1.25
+    },
+    "household_savings_fraction": {
+      "distribution": "uniform",
+      "low": 0.05,
+      "high": 0.3
+    }
+  }
+}

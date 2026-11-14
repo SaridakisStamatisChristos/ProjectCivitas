@@ -90,3 +90,18 @@ Added a resumable, exact-initial-state 12-cell credit/loan-maturity/savings/firm
 - Added a deterministic, non-mutating post-step observer for household/firm cash, reserve balances, liquidity affordability, budget unmet demand, unsold inventory, capital, resource, and price trajectories.
 - Executed eight-seed, six-intervention, 10,000-agent, 48-period experiment with checksum-protected, resumable treatment shards and an independent standard-library dataset/statistics auditor. Raw cell records are archived in a restorable ZIP with separate verification script.
 - Added seven regression/adversarial tests; full suite 144 passed. Every one of 2,304 audited periods satisfied eight reported accounting identities. The study identifies strong endogenous price/hiring/affordability sensitivity without changing the engine or claiming empirical calibration.
+
+
+## 0.2.0.dev0 — 2026-11-13 (continued, pricing/hiring stability campaign)
+
+- Added independently switchable affordability-threshold repricing and blended hiring expectations; historical defaults retained.
+- Added pure numerical formulas, config validation, checkpoint/replay and adversarial tests; matched-seed source-bound 2×3 experiment runner and independent result auditor.
+- Executed 96 simulations over 6,912 periods at two population settings, with full recorded period data and source/config digests; results report the persistent contraction and non-additive interactions without claiming empirical validation.
+- Development branch only; full v0.2 remains unreleased.
+
+## 0.2.0.dev0 — World Genesis (2026-11-13)
+
+- Added reproducible World Genesis plans in three modes (configured/randomized/hybrid), with Hybrid the default only for newly generated worlds. Old scenario serialization, config digests and economic trajectories remain unchanged.
+- Seeded world-level parameter selection, separate named initial-attribute RNG streams, sampled aggregate-conserved cash/capital, starting savings allocations, per-firm price heterogeneity and agent skill/participation options.
+- `civitas genesis` emits plan, frozen resolved scenario, initial state checkpoint and SHA-256 manifest; `civitas verify-world` validates provenance and exact regenerated initial-state fingerprint.
+- New tests, sample plans and design documentation. This is infrastructure for falsifiable synthetic research; no external economic calibration.

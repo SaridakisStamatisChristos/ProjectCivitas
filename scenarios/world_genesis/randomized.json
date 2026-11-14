@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "mode": "randomized",
+  "seed": 1234,
+  "base_scenario": {
+    "name": "randomized_example",
+    "population": 1200,
+    "seed": 1234
+  },
+  "scenario_draws": {
+    "population": {
+      "distribution": "uniform_int",
+      "low": 900,
+      "high": 1500
+    },
+    "firms_per_sector": {
+      "distribution": "choice",
+      "values": [
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    "labor_participation": {
+      "distribution": "uniform",
+      "low": 0.65,
+      "high": 0.85
+    },
+    "ownership_fraction": {
+      "distribution": "uniform",
+      "low": 0.03,
+      "high": 0.15
+    },
+    "tax_rate": {
+      "distribution": "uniform",
+      "low": 0,
+      "high": 0.25
+    },
+    "household_savings_rate": {
+      "distribution": "uniform",
+      "low": 0,
+      "high": 0.3
+    }
+  },
+  "initialization": {
+    "household_cash_cents": {
+      "distribution": "lognormal",
+      "sigma": 0.7,
+      "preserve_total": true
+    },
+    "firm_cash_cents": {
+      "distribution": "lognormal",
+      "sigma": 0.5,
+      "preserve_total": true
+    },
+    "price_multiplier": {
+      "distribution": "uniform",
+      "low": 0.95,
+      "high": 1.05
+    },
+    "skills": {
+      "distribution": "uniform",
+      "low": 0.75,
+      "high": 1.25
+    }
+  }
+}

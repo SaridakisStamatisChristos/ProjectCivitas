@@ -1,3 +1,26 @@
+# Current continuation checkpoint — World Genesis (2026-11-13)
+
+- **Status:** CIVITAS remains `0.2.0.dev0`. Active branch `feature/v0.2-capital-accounting`. Stable `main` is not to be modified. Predecessor local checkpoint includes the price-and-hiring research (157 tests; that code was not previously pushed to GitHub).
+- **Implemented:** separate `world_genesis.py` supporting configured, hybrid (new-world default) and randomized *initial* conditions. A generated scenario freezes once-drawn macro parameters; initialization samples household and firm cash, savings allocation, capital endowments, posted price multipliers, skills, and participation using independently seeded streams. Fixed-cost total allocation is exact in integer cents; all existing scenarios omit the Genesis field when disabled, preserving old config digests and trajectories.
+- **CLI:** `civitas genesis --mode hybrid --name example --population 10000 --seed 42 --output results/world`, or `--plan scenarios/world_genesis/*.json`; `civitas verify-world --world results/world`; `run` and `resume` unchanged. Self-contained plan/scenario/checkpoint/manifest are generated together.
+- **Verification:** `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src:. python -m pytest -q` must be rerun after implementation; `tests/test_world_genesis.py` tests seed replay, legacy parity, conserved initial money/capital/savings, malformed plan refusal, and altered-manifest detection. See `docs/v02_world_genesis.md`. The manifests are integrity digests, not cryptographic signatures.
+- **Scientific limits:** no calibration, initial distribution choices are assumptions, randomized population/firm size changes scale-dependent market endowments unless explicitly normalized, ownership remains based on the existing fractional sampling rule, initial loan/inventory distributions are not injected. Test extreme integer cases before claiming general numerical safety.
+- **Preservation:** publish price/hiring local source + Genesis additions to the existing feature branch, verify remote blob hashes and GitHub commit, then mark this checkpoint verified. Do not merge to `main` or declare a stable v0.2 release.
+
+---
+
+# Current continuation checkpoint — price and hiring interaction research (2026-11-13)
+
+- **Active development:** `feature/v0.2-capital-accounting`, version `0.2.0.dev0`. Stable v0.1 `main` remains unchanged. Pre-change branch commit: `13c92d49fcaf185e1d65b78e049c44509cd7406a`.
+- **Implemented:** optional `affordability_guard` price rule (`price_affordability_floor`, default 0.25), optional `blended` labor-demand expectation; no default behavior changes. Pure price/hiring formulas in `src/civitas/market_rules.py`, integrated with exact ledger and state checkpoints in `engine.py`, configuration/validation in `model.py`.
+- **Execution evidence:** 2 populations × 8 seeds × 6 rule combinations × 72 periods = **96 completed simulations / 6,912 periods**, SHA-256 source/config-bound per-cell records and matched initial state/RNG. Research folders `research/v02_price_hiring_10000_72/` and `research/v02_price_hiring_2000_72/`, report `research/v02_price_hiring_stability_experiment.md`, independent auditor `research/audit_price_hiring_stability.py`. Eight accounting identities zero for every recorded period.
+- **10,000-agent period-72 production:** default adaptive/inventory 160, guard/adaptive 210, inventory/blended 511.625, guard/blended 604.5, inventory/stationary 673.875, guard/stationary 762.25. All still contract from period 24. New price×hiring interaction is nonzero; real-economy inference unsupported.
+- **2,000-agent sensitivity:** guard/stationary 200.5 vs inventory/stationary 208.375 (opposite sign), under a **different unnormalized population/endowment regime**.
+- **Executed verification:** `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src:. python -m pytest -q` reported **157 passed** (Python 3.13.5, NumPy 2.3.5, pytest 9.0.2). Both compressed research archives were restored and independently audited, 48 runs / 3,456 periods each; source-bound dataset digest `7fcd60b536713884fe42cf74572c4f15e4c0ecaa45c1141e7d2e45478063df8e`. GitHub upload and remote integrity require separate confirmation.
+- **Next scientific gate:** vary affordability threshold and initial cash distributions, normalized endowments and firm density; analyze persistent production contraction and check possible numerical/int64 extremes. Separate later economic calibration and release-readiness reviews; do not declare a stable v0.2 yet.
+
+---
+
 # CIVITAS continuation checkpoint — long-horizon demand-contraction diagnosis (2026-11-13)
 
 - **Release:** `0.2.0.dev0` experimental development; the stable `main` remains CIVITAS v0.1.0 at `85d9671978df6ce40a58e895aee5cb1d2a938a58`. The active branch is `feature/v0.2-capital-accounting`; preceding GitHub commit `ba54ff516c4d90616a6e54d3594537c10c99f108`. This is not a stable release or empirical economic validation.

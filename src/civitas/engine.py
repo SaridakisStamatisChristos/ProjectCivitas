@@ -15,6 +15,7 @@ from civitas.model import Scenario
 from civitas.state import State
 from civitas.economy_costs import allocated_basis, checked_add_i64
 from civitas.finance import CreditFlows, service_loans, available_credit, originate
+from civitas.market_rules import expected_sales, updated_price
 
 
 @dataclass
@@ -98,6 +99,10 @@ class Simulation:
             cumulative_consumption=np.zeros(ns, dtype=np.int64),
             cumulative_capital_goods_converted=np.zeros(ns, dtype=np.int64),
         )
+        if c.world_genesis is not None:
+            # Independent substreams preserve legacy market RNG consumption.
+            from civitas.world_genesis import apply_initialization
+            apply_initialization(state, c)
         return state
 
     @property
@@ -193,10 +198,12 @@ class Simulation:
             f = (s.step + offset) % nf
             sec = f // nfirm_sector
             sector = c.sectors[sec]
-            expected = (H * sector.demand_probability / nfirm_sector
-                        if c.hiring_expectation_rule == "stationary" or s.step == 0 else
-                        max(H * sector.demand_probability * 0.25 / nfirm_sector,
-                            int(s.last_sales[f]) + int(s.last_unmet[sec]) / nfirm_sector))
+            expected = expected_sales(
+                rule=c.hiring_expectation_rule, period=s.step,
+                sector_household_demand=H * sector.demand_probability / nfirm_sector,
+                firm_last_sales=int(s.last_sales[f]),
+                sector_last_unmet_per_firm=int(s.last_unmet[sec]) / nfirm_sector,
+            )
             target = math.ceil(expected * (1 + c.output_inventory_buffer))
             need = max(0, target - int(s.inventory[f]))
             desired_output[f] = need
@@ -549,10 +556,30 @@ class Simulation:
         old_prices = s.prices.copy()
         for f in range(nf):
             sector = c.sectors[f // nfirm_sector]
-            if s.inventory[f] == 0 and sold[f] > 0:
-                s.prices[f] = max(c.price_floor_cents, math.ceil(s.prices[f] * (1 + c.price_adjustment)))
-            elif s.inventory[f] > max(2, math.ceil(H * sector.demand_probability * 0.25 / nfirm_sector)):
-                s.prices[f] = max(c.price_floor_cents, math.floor(s.prices[f] * (1 - c.price_adjustment)))
+            prospect = updated_price(
+                current=int(s.prices[f]), stock=int(s.inventory[f]),
+                units_sold=int(sold[f]),
+                excess_threshold=max(2, math.ceil(H * sector.demand_probability * 0.25 / nfirm_sector)),
+                adjustment=c.price_adjustment, floor=c.price_floor_cents,
+            )
+            if (c.price_update_rule == "affordability_guard" and prospect > int(s.prices[f])
+                    and c.price_affordability_floor > 0):
+                # Descriptive affordability proxy at the *end* of the period.
+                # End-period cash has already paid for observed purchases.
+                # No direct transfers or production changes occur here.
+                reserve_access = (sector.name == c.savings_essential_sector and
+                                  c.savings_emergency_food_enabled and c.household_savings_rate > 0)
+                affordable = s.household_cash >= prospect
+                if reserve_access:
+                    # Python-int addition prevents int64 wrap in the guard.
+                    affordable = np.logical_or(
+                        affordable,
+                        (s.household_cash.astype(object) +
+                         s.household_savings.astype(object)) >= prospect)
+                min_affordable = math.ceil(H * c.price_affordability_floor)
+                if int(np.count_nonzero(affordable)) < min_affordable:
+                    prospect = int(s.prices[f])
+            s.prices[f] = prospect
         s.last_sales[:] = sold
         s.last_unmet[:] = stock_unmet
         s.step += 1

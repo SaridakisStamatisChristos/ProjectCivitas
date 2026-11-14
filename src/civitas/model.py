@@ -45,7 +45,7 @@ class Scenario:
     buyer_cheapest_probability: float = 0.75
     # Market-mechanism ablations; defaults preserve the historical algorithm.
     buyer_seller_rule: str = "mixed"  # mixed | cheapest | favorite
-    hiring_expectation_rule: str = "adaptive"  # adaptive | stationary
+    hiring_expectation_rule: str = "adaptive"  # adaptive | stationary | blended
     rationing_order_rule: str = "random"  # random | household_id
     # Experimental access topology; false/false preserves fully open markets.
     # Regions are immutable labels derived from existing household/firm IDs.
@@ -62,6 +62,8 @@ class Scenario:
     regeneration_rate: float = 0.025
     output_inventory_buffer: float = 0.05
     price_adjustment: float = 0.02
+    price_update_rule: str = "inventory"  # inventory | affordability_guard
+    price_affordability_floor: float = 0.25  # minimum end-period affordable household share for a price increase
     price_floor_cents: int = 1
     transaction_trace: bool = False
     automation_base: float = 0.0
@@ -92,6 +94,8 @@ class Scenario:
     household_liquidity_floor_cents: int = 0
     savings_emergency_food_enabled: bool = True
     savings_essential_sector: str = "food"
+    # None retains exact legacy initialization; populated by World Genesis only.
+    world_genesis: dict[str, Any] | None = None
     sectors: tuple[Sector, ...] = field(default_factory=lambda: (
         Sector("food", 1.0, 1500, 1400, 1.25, 2),
         Sector("goods", 0.55, 2500, 2300, 1.25, 3),
@@ -118,9 +122,16 @@ class Scenario:
         return cls.from_dict(json.loads(Path(path).read_text(encoding="utf-8")))
 
     def to_dict(self) -> dict[str, Any]:
-        return {"schema_version": 1, **asdict(self)}
+        data = asdict(self)
+        # Exact legacy config digests/checkpoint JSON must stay unchanged for
+        # every pre-Genesis scenario. Omit the optional field when disabled.
+        if data["world_genesis"] is None:
+            del data["world_genesis"]
+        return {"schema_version": 1, **data}
 
     def validate(self) -> None:
+        from civitas.world_genesis import validate_resolved
+        validate_resolved(self.world_genesis, self)
         for name in ("population", "steps", "seed", "initial_household_cash_cents",
                      "initial_firm_cash_cents", "initial_resource", "resource_capacity",
                      "initial_capital_units_per_firm", "household_liquidity_floor_cents",
@@ -143,7 +154,7 @@ class Scenario:
         for name in ("regeneration_rate", "output_inventory_buffer", "price_adjustment",
                      "automation_base", "automation_shock_increase",
                      "capital_depreciation_rate", "capital_investment_budget_share",
-                     "capital_target_buffer", "household_savings_rate",
+                     "capital_target_buffer", "price_affordability_floor", "household_savings_rate",
                      "credit_repayment_fraction", "credit_lender_savings_share"):
             value = getattr(self, name)
             if not isinstance(value, (float, int)) or not 0 <= value <= 1:
@@ -167,7 +178,8 @@ class Scenario:
         if type(self.capital_input_sector) is not str or not self.capital_input_sector:
             raise ValueError("capital_input_sector must be nonempty string")
         for field_name, choices in (("buyer_seller_rule", {"mixed", "cheapest", "favorite"}),
-                                    ("hiring_expectation_rule", {"adaptive", "stationary"}),
+                                    ("hiring_expectation_rule", {"adaptive", "stationary", "blended"}),
+                                    ("price_update_rule", {"inventory", "affordability_guard"}),
                                     ("rationing_order_rule", {"random", "household_id"})):
             if type(getattr(self, field_name)) is not str or getattr(self, field_name) not in choices:
                 raise ValueError(f"{field_name} must be one of {sorted(choices)}")

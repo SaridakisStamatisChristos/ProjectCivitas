@@ -39,8 +39,26 @@ def main(argv: list[str] | None = None) -> int:
     suite.add_argument("--seeds", default="7,11,13")
     suite.add_argument("--steps", type=int)
     suite.add_argument("--output", type=Path, default=Path("results/suite"))
+    genesis = sub.add_parser("genesis", help="generate a reproducible initial world")
+    genesis.add_argument("--plan", type=Path, help="optional JSON plan with parameter distributions")
+    genesis.add_argument("--mode", choices=("configured", "randomized", "hybrid"), default="hybrid")
+    genesis.add_argument("--seed", type=int, default=42)
+    genesis.add_argument("--name", default="genesis_world")
+    genesis.add_argument("--population", type=int, default=10000)
+    genesis.add_argument("--output", required=True, type=Path)
+    genesis.add_argument("--force", action="store_true", help="replace an existing generated world")
+    verify = sub.add_parser("verify-world", help="verify genesis plan, scenario, checkpoint and hashes")
+    verify.add_argument("--world", required=True, type=Path)
     args = parser.parse_args(argv)
-    if args.command == "run":
+    if args.command == "verify-world":
+        from civitas.world_genesis import verify_world
+        print(json.dumps(verify_world(args.world), indent=2))
+    elif args.command == "genesis":
+        from civitas.world_genesis import default_plan, write_world
+        plan = (json.loads(args.plan.read_text(encoding="utf-8")) if args.plan is not None else
+                default_plan(mode=args.mode, seed=args.seed, name=args.name, population=args.population))
+        print(json.dumps(write_world(args.output, plan, force=args.force), indent=2))
+    elif args.command == "run":
         c = Scenario.from_file(args.scenario)
         c = replace(c, **({"seed": args.seed} if args.seed is not None else {}))
         c.validate()

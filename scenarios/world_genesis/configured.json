@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "mode": "configured",
+  "seed": 1234,
+  "base_scenario": {
+    "name": "configured_example",
+    "population": 1200,
+    "seed": 1234
+  },
+  "scenario_draws": {},
+  "initialization": {
+    "household_cash_cents": {
+      "distribution": "fixed",
+      "value": 17500
+    },
+    "firm_cash_cents": {
+      "distribution": "fixed",
+      "value": 1000000
+    },
+    "household_savings_fraction": {
+      "distribution": "fixed",
+      "value": 0.15
+    },
+    "skills": {
+      "distribution": "fixed",
+      "value": 1.0
+    }
+  }
+}

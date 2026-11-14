@@ -251,3 +251,24 @@ python research/audit_demand_diagnostics.py results/demand_diagnostics
 ```
 
 The observer adds no changes to simulator transition rules. All eight-seed records and statistics are preserved in `research/v02_demand_diagnostics_raw.zip` (restore using `PYTHONPATH=src:. python research/restore_demand_diagnostics.py research/v02_demand_diagnostics_raw.zip results/restored_demand`), with a readable summary in `research/v02_demand_diagnostics/summary.json`; the [mathematical specifications and limitations](docs/v02_demand_diagnostics.md) distinguish affordability diagnostics from measured welfare and model interventions from real-world evidence. v0.2 remains a development preview.
+
+
+## Latest v0.2 experiment: alternative price and hiring feedback
+
+Two opt-in rules are available in the development branch: `price_update_rule: "affordability_guard"` with `price_affordability_floor: 0.25` (end-period affordability threshold for **price increases only**), and `hiring_expectation_rule: "blended"` (50/50 mixture of prior-sales-adaptive and stationary expected sector demand). Defaults remain `inventory` and `adaptive`, preserving historical trajectories. The rules do not introduce external model calls.
+
+The matched-seed 2×3 factorial ran at 2,000 and 10,000 agents for 72 periods, with eight seeds at each population. All six rule combinations still exhibit contraction at the 10,000-agent horizon, and price/hiring interactions differ across the two structural regimes. See [equations](docs/v02_price_hiring_rules.md), [recorded experiment](research/v02_price_hiring_stability_experiment.md), and `research/audit_price_hiring_stability.py`. The experiment is **not** a calibrated prediction or evidence of optimal economic policy.
+
+
+## World Genesis — configurable or seeded civilizations (v0.2 experimental)
+
+Create a new artificial civilization from a **configured**, **randomized**, or **hybrid** (recommended default) world plan. Existing scenario files and their original initialization behavior are unchanged. New worlds preserve their complete initialization specification, exact starting-state checkpoint, and hashes for reproducible verification:
+
+```bash
+PYTHONPATH=src python -m civitas genesis --mode hybrid --name example --population 10000 --seed 42 --output results/my_world
+PYTHONPATH=src python -m civitas verify-world --world results/my_world
+PYTHONPATH=src python -m civitas run --scenario results/my_world/scenario.json --steps 24 --output results/my_run
+PYTHONPATH=src python -m civitas resume --checkpoint results/my_world/initial_checkpoint.npz --steps 24 --output results/from_initial_state
+```
+
+For user-defined worlds, edit the example plans in `scenarios/world_genesis/` and use `genesis --plan PATH --output DIR`. Starting wealth distributions preserve total currency by default; savings are an allocation of existing wealth, not newly created money. See [World Genesis specification](docs/v02_world_genesis.md). New worlds are **synthetic**, not predictions or empirically calibrated representations of societies.

@@ -1,0 +1,1922 @@
+{
+  "design": {
+    "arms": [
+      "inventory__adaptive",
+      "inventory__blended",
+      "inventory__stationary",
+      "affordability_guard__adaptive",
+      "affordability_guard__blended",
+      "affordability_guard__stationary"
+    ],
+    "audited_periods": 3456,
+    "population": 10000,
+    "price_affordability_floor": 0.25,
+    "runs": 48,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "steps": 72
+  },
+  "environment": {
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.13.5"
+  },
+  "means": {
+    "affordability_guard__adaptive_t24": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.6350533672852073,
+        "mc_95_upper": 0.6431765374626776,
+        "mean": 0.6391149523739424,
+        "n": 8,
+        "sample_sd": 0.0058611721604301965
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1067.5898271417354,
+        "mc_95_upper": 1079.1601728582646,
+        "mean": 1073.375,
+        "n": 8,
+        "sample_sd": 8.348438690643214
+      },
+      "consumption_units": {
+        "mc_95_lower": 1284.537575496581,
+        "mc_95_upper": 1308.462424503419,
+        "mean": 1296.5,
+        "n": 8,
+        "sample_sd": 17.26267650163207
+      },
+      "employed": {
+        "mc_95_lower": 1116.2415423551065,
+        "mc_95_upper": 1144.5084576448935,
+        "mean": 1130.375,
+        "n": 8,
+        "sample_sd": 20.395640290443026
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.3383127798368493,
+        "mc_95_upper": 0.34062411938795684,
+        "mean": 0.3394684496124031,
+        "n": 8,
+        "sample_sd": 0.0016677182349110467
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 13092704.579686068,
+        "mc_95_upper": 13182153.420313932,
+        "mean": 13137429,
+        "n": 8,
+        "sample_sd": 64540.6956910577
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.11423529619268262,
+        "mc_95_upper": 0.11946470380731737,
+        "mean": 0.11685,
+        "n": 8,
+        "sample_sd": 0.003773213863160009
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 17239892.24825395,
+        "mc_95_upper": 17425026.25174605,
+        "mean": 17332459.25,
+        "n": 8,
+        "sample_sd": 133581.13193620252
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 8122890.435068436,
+        "mc_95_upper": 8337333.064931564,
+        "mean": 8230111.75,
+        "n": 8,
+        "sample_sd": 154728.40586907664
+      },
+      "production_units": {
+        "mc_95_lower": 1385.0056527180784,
+        "mc_95_upper": 1419.7443472819216,
+        "mean": 1402.375,
+        "n": 8,
+        "sample_sd": 25.06527193434887
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 3435.2505312722574,
+        "mc_95_upper": 3462.2828020610755,
+        "mean": 3448.7666666666664,
+        "n": 8,
+        "sample_sd": 19.50479794453514
+      },
+      "resource_stock": {
+        "mc_95_lower": 5350915.033574394,
+        "mc_95_upper": 5351292.716425606,
+        "mean": 5351103.875,
+        "n": 8,
+        "sample_sd": 272.5123522757402
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 281.1959778435576,
+        "mc_95_upper": 307.5540221564424,
+        "mean": 294.375,
+        "n": 8,
+        "sample_sd": 19.01831823720038
+      }
+    },
+    "affordability_guard__adaptive_t48": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.8461058017197676,
+        "mc_95_upper": 0.8523341989206497,
+        "mean": 0.8492200003202086,
+        "n": 8,
+        "sample_sd": 0.004494022343537734
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1193.9347938268756,
+        "mc_95_upper": 1218.0652061731244,
+        "mean": 1206,
+        "n": 8,
+        "sample_sd": 17.410998166183845
+      },
+      "consumption_units": {
+        "mc_95_lower": 683.1303792673572,
+        "mc_95_upper": 711.8696207326428,
+        "mean": 697.5,
+        "n": 8,
+        "sample_sd": 20.73644135332772
+      },
+      "employed": {
+        "mc_95_lower": 559.528064294254,
+        "mc_95_upper": 571.721935705746,
+        "mean": 565.625,
+        "n": 8,
+        "sample_sd": 8.798335881615015
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.7233511832371825,
+        "mc_95_upper": 0.7363320531969261,
+        "mean": 0.7298416182170543,
+        "n": 8,
+        "sample_sd": 0.00936618487166882
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 27993690.791278962,
+        "mc_95_upper": 28496050.458721038,
+        "mean": 28244870.625,
+        "n": 8,
+        "sample_sd": 362471.3545335834
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.004700124449361157,
+        "mc_95_upper": 0.007849875550638843,
+        "mean": 0.006275,
+        "n": 8,
+        "sample_sd": 0.0022726636354727025
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 7982845.558316491,
+        "mc_95_upper": 8436590.191683508,
+        "mean": 8209717.875,
+        "n": 8,
+        "sample_sd": 327393.7828375738
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 2203411.4226913713,
+        "mc_95_upper": 2287411.5773086287,
+        "mean": 2245411.5,
+        "n": 8,
+        "sample_sd": 60609.26423528714
+      },
+      "production_units": {
+        "mc_95_lower": 693.485035319487,
+        "mc_95_upper": 709.764964680513,
+        "mean": 701.625,
+        "n": 8,
+        "sample_sd": 11.746580049407694
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 2973.545024407934,
+        "mc_95_upper": 3018.7716422587328,
+        "mean": 2996.1583333333333,
+        "n": 8,
+        "sample_sd": 32.63270221676805
+      },
+      "resource_stock": {
+        "mc_95_lower": 5579505.954051146,
+        "mc_95_upper": 5580726.295948854,
+        "mean": 5580116.125,
+        "n": 8,
+        "sample_sd": 880.5224808519737
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 851.6605236474054,
+        "mc_95_upper": 902.8394763525946,
+        "mean": 877.25,
+        "n": 8,
+        "sample_sd": 36.92753521618871
+      }
+    },
+    "affordability_guard__adaptive_t72": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.9547471929292688,
+        "mc_95_upper": 0.9611171772279561,
+        "mean": 0.9579321850786124,
+        "n": 8,
+        "sample_sd": 0.00459618274862609
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 890.3899060340667,
+        "mc_95_upper": 910.6100939659333,
+        "mean": 900.5,
+        "n": 8,
+        "sample_sd": 14.589624493356327
+      },
+      "consumption_units": {
+        "mc_95_lower": 179.45648176513984,
+        "mc_95_upper": 210.04351823486016,
+        "mean": 194.75,
+        "n": 8,
+        "sample_sd": 22.06969480014231
+      },
+      "employed": {
+        "mc_95_lower": 155.15465726676115,
+        "mc_95_upper": 191.84534273323885,
+        "mean": 173.5,
+        "n": 8,
+        "sample_sd": 26.47370663237664
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.8810968407796963,
+        "mc_95_upper": 0.8902437147758592,
+        "mean": 0.8856702777777777,
+        "n": 8,
+        "sample_sd": 0.006599812887087461
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 34098447.738174245,
+        "mc_95_upper": 34452431.761825755,
+        "mean": 34275439.75,
+        "n": 8,
+        "sample_sd": 255412.75873028403
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.015658161015719627,
+        "mc_95_upper": 0.022141838984280373,
+        "mean": 0.0189,
+        "n": 8,
+        "sample_sd": 0.0046782169985705325
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 2523701.816164316,
+        "mc_95_upper": 2869938.683835684,
+        "mean": 2696820.25,
+        "n": 8,
+        "sample_sd": 249822.89492572818
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 1707223.12231002,
+        "mc_95_upper": 1748256.87768998,
+        "mean": 1727740,
+        "n": 8,
+        "sample_sd": 29607.394578285435
+      },
+      "production_units": {
+        "mc_95_lower": 187.57595041032954,
+        "mc_95_upper": 232.42404958967046,
+        "mean": 210,
+        "n": 8,
+        "sample_sd": 32.35958678881511
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 2209.1370684517465,
+        "mc_95_upper": 2247.0712648815875,
+        "mean": 2228.104166666667,
+        "n": 8,
+        "sample_sd": 27.370946463676777
+      },
+      "resource_stock": {
+        "mc_95_lower": 5749115.38017399,
+        "mc_95_upper": 5749478.61982601,
+        "mean": 5749297,
+        "n": 8,
+        "sample_sd": 262.09104197914564
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 1046.846447139242,
+        "mc_95_upper": 1072.153552860758,
+        "mean": 1059.5,
+        "n": 8,
+        "sample_sd": 18.260026599886743
+      }
+    },
+    "affordability_guard__blended_t24": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.6143800460427524,
+        "mc_95_upper": 0.6233896183191381,
+        "mean": 0.6188848321809453,
+        "n": 8,
+        "sample_sd": 0.006500744543084385
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1268.7237605081154,
+        "mc_95_upper": 1285.5262394918846,
+        "mean": 1277.125,
+        "n": 8,
+        "sample_sd": 12.123619214456665
+      },
+      "consumption_units": {
+        "mc_95_lower": 1334.92534989503,
+        "mc_95_upper": 1357.57465010497,
+        "mean": 1346.25,
+        "n": 8,
+        "sample_sd": 16.342320170998626
+      },
+      "employed": {
+        "mc_95_lower": 1181.906636470042,
+        "mc_95_upper": 1211.343363529958,
+        "mean": 1196.625,
+        "n": 8,
+        "sample_sd": 21.239703387759445
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.2863721371830507,
+        "mc_95_upper": 0.2881175398195333,
+        "mean": 0.287244838501292,
+        "n": 8,
+        "sample_sd": 0.0012593735103650454
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 11082601.708984062,
+        "mc_95_upper": 11150148.791015938,
+        "mean": 11116375.25,
+        "n": 8,
+        "sample_sd": 48737.75485112718
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.1370939029225471,
+        "mc_95_upper": 0.1419560970774529,
+        "mean": 0.139525,
+        "n": 8,
+        "sample_sd": 0.0035082555697749742
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 18216540.294730447,
+        "mc_95_upper": 18383768.205269553,
+        "mean": 18300154.25,
+        "n": 8,
+        "sample_sd": 120661.2138223026
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 9188027.342913825,
+        "mc_95_upper": 9378913.657086175,
+        "mean": 9283470.5,
+        "n": 8,
+        "sample_sd": 137731.63998670955
+      },
+      "production_units": {
+        "mc_95_lower": 1462.6327739306487,
+        "mc_95_upper": 1499.6172260693513,
+        "mean": 1481.125,
+        "n": 8,
+        "sample_sd": 26.685670311985795
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 3254.0588775703136,
+        "mc_95_upper": 3264.591122429686,
+        "mean": 3259.325,
+        "n": 8,
+        "sample_sd": 7.59940996038716
+      },
+      "resource_stock": {
+        "mc_95_lower": 5348238.284439727,
+        "mc_95_upper": 5348544.965560273,
+        "mean": 5348391.625,
+        "n": 8,
+        "sample_sd": 221.28193877623954
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 902.9681541075098,
+        "mc_95_upper": 927.7818458924902,
+        "mean": 915.375,
+        "n": 8,
+        "sample_sd": 17.904009925951545
+      }
+    },
+    "affordability_guard__blended_t48": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.793173754719237,
+        "mc_95_upper": 0.8008091291085535,
+        "mean": 0.7969914419138953,
+        "n": 8,
+        "sample_sd": 0.0055092091914119715
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1869.2409117993416,
+        "mc_95_upper": 1876.2590882006584,
+        "mean": 1872.75,
+        "n": 8,
+        "sample_sd": 5.063877678504601
+      },
+      "consumption_units": {
+        "mc_95_lower": 920.9772721807935,
+        "mc_95_upper": 957.2727278192065,
+        "mean": 939.125,
+        "n": 8,
+        "sample_sd": 26.188533477731923
+      },
+      "employed": {
+        "mc_95_lower": 790.0770797210688,
+        "mc_95_upper": 821.1729202789312,
+        "mean": 805.625,
+        "n": 8,
+        "sample_sd": 22.436816046081812
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.6105652124801716,
+        "mc_95_upper": 0.626499619561172,
+        "mean": 0.6185324160206718,
+        "n": 8,
+        "sample_sd": 0.011497272756287983
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 23628873.722982645,
+        "mc_95_upper": 24245535.277017355,
+        "mean": 23937204.5,
+        "n": 8,
+        "sample_sd": 444944.4556683452
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.02454754988576087,
+        "mc_95_upper": 0.028902450114239128,
+        "mean": 0.026725,
+        "n": 8,
+        "sample_sd": 0.0031422239621916553
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 12301620.050415512,
+        "mc_95_upper": 12751555.699584488,
+        "mean": 12526587.875,
+        "n": 8,
+        "sample_sd": 324645.4577805665
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 2143813.0900385412,
+        "mc_95_upper": 2328602.1599614588,
+        "mean": 2236207.625,
+        "n": 8,
+        "sample_sd": 133332.24942005108
+      },
+      "production_units": {
+        "mc_95_lower": 982.5984428097925,
+        "mc_95_upper": 1021.9015571902075,
+        "mean": 1002.25,
+        "n": 8,
+        "sample_sd": 28.358672143002142
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 2463.6928223826235,
+        "mc_95_upper": 2481.7155109507094,
+        "mean": 2472.7041666666664,
+        "n": 8,
+        "sample_sd": 13.004046226231653
+      },
+      "resource_stock": {
+        "mc_95_lower": 5566923.417584137,
+        "mc_95_upper": 5568033.582415863,
+        "mean": 5567478.5,
+        "n": 8,
+        "sample_sd": 801.0255925998869
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 2562.0270402108113,
+        "mc_95_upper": 2614.9729597891887,
+        "mean": 2588.5,
+        "n": 8,
+        "sample_sd": 38.20246813268184
+      }
+    },
+    "affordability_guard__blended_t72": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.8742165637160474,
+        "mc_95_upper": 0.8797393976276252,
+        "mean": 0.8769779806718363,
+        "n": 8,
+        "sample_sd": 0.003984931949228269
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1651.1533437603725,
+        "mc_95_upper": 1674.5966562396275,
+        "mean": 1662.875,
+        "n": 8,
+        "sample_sd": 16.915229824037272
+      },
+      "consumption_units": {
+        "mc_95_lower": 557.6915182657929,
+        "mc_95_upper": 580.8084817342071,
+        "mean": 569.25,
+        "n": 8,
+        "sample_sd": 16.679756764242267
+      },
+      "employed": {
+        "mc_95_lower": 471.7317363476991,
+        "mc_95_upper": 505.0182636523009,
+        "mean": 488.375,
+        "n": 8,
+        "sample_sd": 24.017478754321523
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.7788266688886218,
+        "mc_95_upper": 0.8021922652199054,
+        "mean": 0.7905094670542636,
+        "n": 8,
+        "sample_sd": 0.016859154706446992
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 30140592.085989665,
+        "mc_95_upper": 31044840.664010335,
+        "mean": 30592716.375,
+        "n": 8,
+        "sample_sd": 652449.2871394982
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.016319539767478273,
+        "mc_95_upper": 0.021430460232521726,
+        "mean": 0.018875,
+        "n": 8,
+        "sample_sd": 0.003687720937691153
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 6578868.413751061,
+        "mc_95_upper": 7422219.836248939,
+        "mean": 7000544.125,
+        "n": 8,
+        "sample_sd": 608509.7038485411
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 1068326.942282795,
+        "mc_95_upper": 1145152.057717205,
+        "mean": 1106739.5,
+        "n": 8,
+        "sample_sd": 55432.204172561746
+      },
+      "production_units": {
+        "mc_95_lower": 584.0638359763874,
+        "mc_95_upper": 624.9361640236126,
+        "mean": 604.5,
+        "n": 8,
+        "sample_sd": 29.490918699055236
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 1600.2242605079598,
+        "mc_95_upper": 1612.5674061587067,
+        "mean": 1606.3958333333333,
+        "n": 8,
+        "sample_sd": 8.906042847771923
+      },
+      "resource_stock": {
+        "mc_95_lower": 5728173.9408189645,
+        "mc_95_upper": 5728949.3091810355,
+        "mean": 5728561.625,
+        "n": 8,
+        "sample_sd": 559.457374222048
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 2626.3274678702933,
+        "mc_95_upper": 2654.9225321297067,
+        "mean": 2640.625,
+        "n": 8,
+        "sample_sd": 20.632412088057677
+      }
+    },
+    "affordability_guard__stationary_t24": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.595369107839685,
+        "mc_95_upper": 0.6071088780431235,
+        "mean": 0.6012389929414043,
+        "n": 8,
+        "sample_sd": 0.008470684816758363
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1268.9467763421646,
+        "mc_95_upper": 1288.8032236578354,
+        "mean": 1278.875,
+        "n": 8,
+        "sample_sd": 14.327171986922512
+      },
+      "consumption_units": {
+        "mc_95_lower": 1366.0736575935796,
+        "mc_95_upper": 1390.6763424064204,
+        "mean": 1378.375,
+        "n": 8,
+        "sample_sd": 17.751760476076733
+      },
+      "employed": {
+        "mc_95_lower": 1231.5828392038472,
+        "mc_95_upper": 1266.1671607961528,
+        "mean": 1248.875,
+        "n": 8,
+        "sample_sd": 24.953886041485173
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.24563457465904584,
+        "mc_95_upper": 0.24828538658126423,
+        "mean": 0.24695998062015503,
+        "n": 8,
+        "sample_sd": 0.0019126602916844742
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 9506058.039305074,
+        "mc_95_upper": 9608644.460694926,
+        "mean": 9557351.25,
+        "n": 8,
+        "sample_sd": 74019.95328818922
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.15450639180089018,
+        "mc_95_upper": 0.1602436081991098,
+        "mean": 0.157375,
+        "n": 8,
+        "sample_sd": 0.004139616959505867
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 18944478.946687184,
+        "mc_95_upper": 19084352.053312816,
+        "mean": 19014415.5,
+        "n": 8,
+        "sample_sd": 100923.69612307537
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 10018833.276902406,
+        "mc_95_upper": 10237633.223097594,
+        "mean": 10128233.25,
+        "n": 8,
+        "sample_sd": 157872.3731406842
+      },
+      "production_units": {
+        "mc_95_lower": 1523.7902047565374,
+        "mc_95_upper": 1569.2097952434626,
+        "mean": 1546.5,
+        "n": 8,
+        "sample_sd": 32.77193921634788
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 3169.19114222015,
+        "mc_95_upper": 3179.4505244465163,
+        "mean": 3174.320833333333,
+        "n": 8,
+        "sample_sd": 7.4025293296407675
+      },
+      "resource_stock": {
+        "mc_95_lower": 5346276.814292525,
+        "mc_95_upper": 5346696.935707475,
+        "mean": 5346486.875,
+        "n": 8,
+        "sample_sd": 303.13336880936464
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 1567.5217943035866,
+        "mc_95_upper": 1606.9782056964134,
+        "mean": 1587.25,
+        "n": 8,
+        "sample_sd": 28.469281690973517
+      }
+    },
+    "affordability_guard__stationary_t48": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.7661012635071417,
+        "mc_95_upper": 0.7777356779565686,
+        "mean": 0.7719184707318552,
+        "n": 8,
+        "sample_sd": 0.00839466668604551
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 2022.433765681054,
+        "mc_95_upper": 2027.316234318946,
+        "mean": 2024.875,
+        "n": 8,
+        "sample_sd": 3.5228843701879127
+      },
+      "consumption_units": {
+        "mc_95_lower": 1030.3075558115443,
+        "mc_95_upper": 1079.6924441884557,
+        "mean": 1055,
+        "n": 8,
+        "sample_sd": 35.6330504688314
+      },
+      "employed": {
+        "mc_95_lower": 903.8006366922276,
+        "mc_95_upper": 932.6993633077724,
+        "mean": 918.25,
+        "n": 8,
+        "sample_sd": 20.851515875008086
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.5449499139204442,
+        "mc_95_upper": 0.5617225602397625,
+        "mean": 0.5533362370801034,
+        "n": 8,
+        "sample_sd": 0.012102093827381132
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 21089561.66872119,
+        "mc_95_upper": 21738663.08127881,
+        "mean": 21414112.375,
+        "n": 8,
+        "sample_sd": 468351.03111964994
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.025535424079557695,
+        "mc_95_upper": 0.0313145759204423,
+        "mean": 0.028425,
+        "n": 8,
+        "sample_sd": 0.0041698749553022735
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 14753046.762189269,
+        "mc_95_upper": 15174723.237810731,
+        "mean": 14963885,
+        "n": 8,
+        "sample_sd": 304255.40344773314
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 2206226.2159565226,
+        "mc_95_upper": 2437779.0340434774,
+        "mean": 2322002.625,
+        "n": 8,
+        "sample_sd": 167074.04884912344
+      },
+      "production_units": {
+        "mc_95_lower": 1122.4106521850536,
+        "mc_95_upper": 1160.5893478149464,
+        "mean": 1141.5,
+        "n": 8,
+        "sample_sd": 27.547361813014742
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 2327.77825606552,
+        "mc_95_upper": 2345.438410601147,
+        "mean": 2336.6083333333336,
+        "n": 8,
+        "sample_sd": 12.742464315249116
+      },
+      "resource_stock": {
+        "mc_95_lower": 5561190.383041496,
+        "mc_95_upper": 5562313.116958504,
+        "mean": 5561751.75,
+        "n": 8,
+        "sample_sd": 810.0946593718892
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 3721.403829417935,
+        "mc_95_upper": 3762.346170582065,
+        "mean": 3741.875,
+        "n": 8,
+        "sample_sd": 29.541435790621765
+      }
+    },
+    "affordability_guard__stationary_t72": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.8424998733632669,
+        "mc_95_upper": 0.8498293019478962,
+        "mean": 0.8461645876555816,
+        "n": 8,
+        "sample_sd": 0.005288457810626355
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1852.4008819072612,
+        "mc_95_upper": 1896.8491180927388,
+        "mean": 1874.625,
+        "n": 8,
+        "sample_sd": 32.0710706311556
+      },
+      "consumption_units": {
+        "mc_95_lower": 695.2502947394548,
+        "mc_95_upper": 728.4997052605452,
+        "mean": 711.875,
+        "n": 8,
+        "sample_sd": 23.990697601957542
+      },
+      "employed": {
+        "mc_95_lower": 602.0252699553325,
+        "mc_95_upper": 633.9747300446675,
+        "mean": 618,
+        "n": 8,
+        "sample_sd": 23.052734575936352
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.697502059377427,
+        "mc_95_upper": 0.7247015258938907,
+        "mean": 0.7111017926356589,
+        "n": 8,
+        "sample_sd": 0.019625435937191658
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 26993329.69790643,
+        "mc_95_upper": 28045949.05209357,
+        "mean": 27519639.375,
+        "n": 8,
+        "sample_sd": 759504.3707693171
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.020595716669230657,
+        "mc_95_upper": 0.025904283330769343,
+        "mean": 0.02325,
+        "n": 8,
+        "sample_sd": 0.003830330086484528
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 9610953.325098662,
+        "mc_95_upper": 10562495.174901338,
+        "mean": 10086724.25,
+        "n": 8,
+        "sample_sd": 686573.1577329229
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 1025791.7082153497,
+        "mc_95_upper": 1161481.0417846502,
+        "mean": 1093636.375,
+        "n": 8,
+        "sample_sd": 97904.94683830187
+      },
+      "production_units": {
+        "mc_95_lower": 742.3831909960356,
+        "mc_95_upper": 782.1168090039644,
+        "mean": 762.25,
+        "n": 8,
+        "sample_sd": 28.669296667839124
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 1501.078229840751,
+        "mc_95_upper": 1515.1051034925824,
+        "mean": 1508.0916666666667,
+        "n": 8,
+        "sample_sd": 10.120915793935652
+      },
+      "resource_stock": {
+        "mc_95_lower": 5718507.673168435,
+        "mc_95_upper": 5719664.076831565,
+        "mean": 5719085.875,
+        "n": 8,
+        "sample_sd": 834.3886448857545
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 3965.59747196077,
+        "mc_95_upper": 4047.40252803923,
+        "mean": 4006.5,
+        "n": 8,
+        "sample_sd": 59.02541825349483
+      }
+    },
+    "inventory__adaptive_t24": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.6402397549400799,
+        "mc_95_upper": 0.647359975116924,
+        "mean": 0.643799865028502,
+        "n": 8,
+        "sample_sd": 0.005137506092436486
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1040.0224411104848,
+        "mc_95_upper": 1052.2275588895152,
+        "mean": 1046.125,
+        "n": 8,
+        "sample_sd": 8.806450557890587
+      },
+      "consumption_units": {
+        "mc_95_lower": 1232.9940994270476,
+        "mc_95_upper": 1259.5059005729524,
+        "mean": 1246.25,
+        "n": 8,
+        "sample_sd": 19.12925956299855
+      },
+      "employed": {
+        "mc_95_lower": 1054.5061110564607,
+        "mc_95_upper": 1082.7438889435393,
+        "mean": 1068.625,
+        "n": 8,
+        "sample_sd": 20.374616560809187
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.3401507917676188,
+        "mc_95_upper": 0.34220747696623127,
+        "mean": 0.34117913436692504,
+        "n": 8,
+        "sample_sd": 0.0014839755619437147
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 13163835.641406849,
+        "mc_95_upper": 13243429.358593151,
+        "mean": 13203632.5,
+        "n": 8,
+        "sample_sd": 57429.854247221825
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.1065957884211525,
+        "mc_95_upper": 0.1121542115788475,
+        "mean": 0.109375,
+        "n": 8,
+        "sample_sd": 0.004010610926031093
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 17255616.30745885,
+        "mc_95_upper": 17432802.94254115,
+        "mean": 17344209.625,
+        "n": 8,
+        "sample_sd": 127846.80734930659
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 8044191.045204651,
+        "mc_95_upper": 8260124.704795349,
+        "mean": 8152157.875,
+        "n": 8,
+        "sample_sd": 155804.23977858285
+      },
+      "production_units": {
+        "mc_95_lower": 1306.699634352734,
+        "mc_95_upper": 1342.800365647266,
+        "mean": 1324.75,
+        "n": 8,
+        "sample_sd": 26.04803255526221
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 3626.9423303013405,
+        "mc_95_upper": 3650.249336365326,
+        "mean": 3638.5958333333333,
+        "n": 8,
+        "sample_sd": 16.816879629592048
+      },
+      "resource_stock": {
+        "mc_95_lower": 5351365.735272433,
+        "mc_95_upper": 5351709.764727567,
+        "mean": 5351537.75,
+        "n": 8,
+        "sample_sd": 248.23016393201348
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 303.04315879920654,
+        "mc_95_upper": 325.70684120079346,
+        "mean": 314.375,
+        "n": 8,
+        "sample_sd": 16.35269746206155
+      }
+    },
+    "inventory__adaptive_t48": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.8568652535410967,
+        "mc_95_upper": 0.8619361066977816,
+        "mean": 0.8594006801194392,
+        "n": 8,
+        "sample_sd": 0.003658810870911373
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1194.509633690868,
+        "mc_95_upper": 1220.990366309132,
+        "mean": 1207.75,
+        "n": 8,
+        "sample_sd": 19.106842454247342
+      },
+      "consumption_units": {
+        "mc_95_lower": 639.6528255470264,
+        "mc_95_upper": 661.0971744529736,
+        "mean": 650.375,
+        "n": 8,
+        "sample_sd": 15.472902581148576
+      },
+      "employed": {
+        "mc_95_lower": 516.8232504736939,
+        "mc_95_upper": 549.6767495263061,
+        "mean": 533.25,
+        "n": 8,
+        "sample_sd": 23.70503261817143
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.7275885610846247,
+        "mc_95_upper": 0.7391028665639541,
+        "mean": 0.7333457138242894,
+        "n": 8,
+        "sample_sd": 0.008308003556211502
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 28157677.313974977,
+        "mc_95_upper": 28603280.936025023,
+        "mean": 28380479.125,
+        "n": 8,
+        "sample_sd": 321519.73762538505
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.0017409435370670026,
+        "mc_95_upper": 0.004309056462932997,
+        "mean": 0.003025,
+        "n": 8,
+        "sample_sd": 0.0018529898619721126
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 7794106.2356534675,
+        "mc_95_upper": 8205521.7643465325,
+        "mean": 7999814,
+        "n": 8,
+        "sample_sd": 296851.7451268514
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 2285872.5063499836,
+        "mc_95_upper": 2353541.2436500164,
+        "mean": 2319706.875,
+        "n": 8,
+        "sample_sd": 48825.53369304543
+      },
+      "production_units": {
+        "mc_95_lower": 641.4902866502935,
+        "mc_95_upper": 681.2597133497065,
+        "mean": 661.375,
+        "n": 8,
+        "sample_sd": 28.695133982710626
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 3200.8220752357893,
+        "mc_95_upper": 3235.811258097544,
+        "mean": 3218.3166666666666,
+        "n": 8,
+        "sample_sd": 25.24600864257464
+      },
+      "resource_stock": {
+        "mc_95_lower": 5580325.186551753,
+        "mc_95_upper": 5581537.313448247,
+        "mean": 5580931.25,
+        "n": 8,
+        "sample_sd": 874.59504915132
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 924.895903023875,
+        "mc_95_upper": 953.604096976125,
+        "mean": 939.25,
+        "n": 8,
+        "sample_sd": 20.714039407402616
+      }
+    },
+    "inventory__adaptive_t72": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.9636726393358064,
+        "mc_95_upper": 0.9679134743677755,
+        "mean": 0.965793056851791,
+        "n": 8,
+        "sample_sd": 0.0030599216418356295
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 866.9865703060959,
+        "mc_95_upper": 884.5134296939041,
+        "mean": 875.75,
+        "n": 8,
+        "sample_sd": 12.646286863288031
+      },
+      "consumption_units": {
+        "mc_95_lower": 147.93813145622693,
+        "mc_95_upper": 168.81186854377307,
+        "mean": 158.375,
+        "n": 8,
+        "sample_sd": 15.061184738070432
+      },
+      "employed": {
+        "mc_95_lower": 122.55933568362396,
+        "mc_95_upper": 145.44066431637603,
+        "mean": 134,
+        "n": 8,
+        "sample_sd": 16.509737386507048
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.8867199590087825,
+        "mc_95_upper": 0.8939520500351451,
+        "mean": 0.8903360045219638,
+        "n": 8,
+        "sample_sd": 0.005218225109081024
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 34316062.41363988,
+        "mc_95_upper": 34595944.33636012,
+        "mean": 34456003.375,
+        "n": 8,
+        "sample_sd": 201945.31172143575
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.013018307487903285,
+        "mc_95_upper": 0.020081692512096714,
+        "mean": 0.01655,
+        "n": 8,
+        "sample_sd": 0.0050964973966721215
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 2195883.7317708293,
+        "mc_95_upper": 2411846.5182291707,
+        "mean": 2303865.125,
+        "n": 8,
+        "sample_sd": 155825.25590677114
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 1895245.1498466805,
+        "mc_95_upper": 1985017.8501533195,
+        "mean": 1940131.5,
+        "n": 8,
+        "sample_sd": 64774.37260433878
+      },
+      "production_units": {
+        "mc_95_lower": 146.1853266415742,
+        "mc_95_upper": 173.8146733584258,
+        "mean": 160,
+        "n": 8,
+        "sample_sd": 19.935610635959247
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 2421.997204424667,
+        "mc_95_upper": 2451.9444622419996,
+        "mean": 2436.9708333333333,
+        "n": 8,
+        "sample_sd": 21.6080704903853
+      },
+      "resource_stock": {
+        "mc_95_lower": 5751905.633373917,
+        "mc_95_upper": 5752325.616626083,
+        "mean": 5752115.625,
+        "n": 8,
+        "sample_sd": 303.0336791749157
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 1071.762443548471,
+        "mc_95_upper": 1109.737556451529,
+        "mean": 1090.75,
+        "n": 8,
+        "sample_sd": 27.4004692347725
+      }
+    },
+    "inventory__blended_t24": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.6167647420606996,
+        "mc_95_upper": 0.6259535214790439,
+        "mean": 0.6213591317698718,
+        "n": 8,
+        "sample_sd": 0.006630049221978153
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1237.4916050339612,
+        "mc_95_upper": 1251.5083949660388,
+        "mean": 1244.5,
+        "n": 8,
+        "sample_sd": 10.113640011673061
+      },
+      "consumption_units": {
+        "mc_95_lower": 1307.6467655461875,
+        "mc_95_upper": 1323.6032344538125,
+        "mean": 1315.625,
+        "n": 8,
+        "sample_sd": 11.51319119221823
+      },
+      "employed": {
+        "mc_95_lower": 1171.1104481344776,
+        "mc_95_upper": 1191.6395518655224,
+        "mean": 1181.375,
+        "n": 8,
+        "sample_sd": 14.812518836636606
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.2873714279438268,
+        "mc_95_upper": 0.288264373089765,
+        "mean": 0.2878179005167959,
+        "n": 8,
+        "sample_sd": 0.0006442934366535461
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 11121274.261426097,
+        "mc_95_upper": 11155831.238573903,
+        "mean": 11138552.75,
+        "n": 8,
+        "sample_sd": 24934.155998492166
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.13178714166772154,
+        "mc_95_upper": 0.13501285833227844,
+        "mean": 0.1334,
+        "n": 8,
+        "sample_sd": 0.002327475640504718
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 18232630.896704357,
+        "mc_95_upper": 18391826.603295643,
+        "mean": 18312228.75,
+        "n": 8,
+        "sample_sd": 114865.67721069435
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 9170500.577479243,
+        "mc_95_upper": 9327936.422520757,
+        "mean": 9249218.5,
+        "n": 8,
+        "sample_sd": 113595.87105172442
+      },
+      "production_units": {
+        "mc_95_lower": 1444.4488169577298,
+        "mc_95_upper": 1469.3011830422702,
+        "mean": 1456.875,
+        "n": 8,
+        "sample_sd": 17.931914884600904
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 3376.3451705806447,
+        "mc_95_upper": 3387.5798294193555,
+        "mean": 3381.9625,
+        "n": 8,
+        "sample_sd": 8.106228009356942
+      },
+      "resource_stock": {
+        "mc_95_lower": 5348667.110811243,
+        "mc_95_upper": 5348887.389188757,
+        "mean": 5348777.25,
+        "n": 8,
+        "sample_sd": 158.93911682510023
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 934.6577717169615,
+        "mc_95_upper": 955.8422282830385,
+        "mean": 945.25,
+        "n": 8,
+        "sample_sd": 15.285380503698857
+      }
+    },
+    "inventory__blended_t48": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.7975962476237599,
+        "mc_95_upper": 0.8057178796138258,
+        "mean": 0.8016570636187929,
+        "n": 8,
+        "sample_sd": 0.0058600623004869245
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1873.5425884061565,
+        "mc_95_upper": 1885.2074115938435,
+        "mean": 1879.375,
+        "n": 8,
+        "sample_sd": 8.416607731995457
+      },
+      "consumption_units": {
+        "mc_95_lower": 899.4753058278372,
+        "mc_95_upper": 935.5246941721628,
+        "mean": 917.5,
+        "n": 8,
+        "sample_sd": 26.010986689693812
+      },
+      "employed": {
+        "mc_95_lower": 784.8392500926024,
+        "mc_95_upper": 817.9107499073976,
+        "mean": 801.375,
+        "n": 8,
+        "sample_sd": 23.862328350052394
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.6157554110878806,
+        "mc_95_upper": 0.6302865398165122,
+        "mean": 0.6230209754521964,
+        "n": 8,
+        "sample_sd": 0.010484754757459266
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 23829734.40910098,
+        "mc_95_upper": 24392089.09089902,
+        "mean": 24110911.75,
+        "n": 8,
+        "sample_sd": 405760.0091136737
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.02003258700768828,
+        "mc_95_upper": 0.02166741299231172,
+        "mean": 0.02085,
+        "n": 8,
+        "sample_sd": 0.0011795883059053148
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 12183896.619778238,
+        "mc_95_upper": 12636592.630221762,
+        "mean": 12410244.625,
+        "n": 8,
+        "sample_sd": 326637.1620415435
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 2099492.745214083,
+        "mc_95_upper": 2258194.504785917,
+        "mean": 2178843.625,
+        "n": 8,
+        "sample_sd": 114509.27589742925
+      },
+      "production_units": {
+        "mc_95_lower": 976.3206744349291,
+        "mc_95_upper": 1018.4293255650709,
+        "mean": 997.375,
+        "n": 8,
+        "sample_sd": 30.382972204838683
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 2595.2611600241794,
+        "mc_95_upper": 2613.2305066424874,
+        "mean": 2604.2458333333334,
+        "n": 8,
+        "sample_sd": 12.965558007445848
+      },
+      "resource_stock": {
+        "mc_95_lower": 5567552.28207258,
+        "mc_95_upper": 5568715.46792742,
+        "mean": 5568133.875,
+        "n": 8,
+        "sample_sd": 839.2822507527318
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 2577.0308234656095,
+        "mc_95_upper": 2621.7191765343905,
+        "mean": 2599.375,
+        "n": 8,
+        "sample_sd": 32.244323974483144
+      }
+    },
+    "inventory__blended_t72": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.8954404946398806,
+        "mc_95_upper": 0.9009021649847566,
+        "mean": 0.8981713298123186,
+        "n": 8,
+        "sample_sd": 0.003940800140272678
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1621.8164745914203,
+        "mc_95_upper": 1636.6835254085797,
+        "mean": 1629.25,
+        "n": 8,
+        "sample_sd": 10.727135152100423
+      },
+      "consumption_units": {
+        "mc_95_lower": 458.08236923360926,
+        "mc_95_upper": 484.41763076639074,
+        "mean": 471.25,
+        "n": 8,
+        "sample_sd": 19.001879606276546
+      },
+      "employed": {
+        "mc_95_lower": 395.7063816173325,
+        "mc_95_upper": 428.2936183826675,
+        "mean": 412,
+        "n": 8,
+        "sample_sd": 23.512914384591777
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.7984595873725945,
+        "mc_95_upper": 0.8184439332992403,
+        "mean": 0.8084517603359174,
+        "n": 8,
+        "sample_sd": 0.014419455635009164
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 30900386.031319406,
+        "mc_95_upper": 31673780.218680594,
+        "mean": 31287083.125,
+        "n": 8,
+        "sample_sd": 558032.9330748544
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.024272288611966033,
+        "mc_95_upper": 0.029427711388033965,
+        "mean": 0.02685,
+        "n": 8,
+        "sample_sd": 0.003719831025348175
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 5743773.44429433,
+        "mc_95_upper": 6497498.30570567,
+        "mean": 6120635.875,
+        "n": 8,
+        "sample_sd": 543840.7761763778
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 1260567.6598083708,
+        "mc_95_upper": 1323994.3401916292,
+        "mean": 1292281,
+        "n": 8,
+        "sample_sd": 45764.73041546295
+      },
+      "production_units": {
+        "mc_95_lower": 490.8891319207514,
+        "mc_95_upper": 532.3608680792486,
+        "mean": 511.625,
+        "n": 8,
+        "sample_sd": 29.923414148217017
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 1747.854371677172,
+        "mc_95_upper": 1759.787294989495,
+        "mean": 1753.8208333333334,
+        "n": 8,
+        "sample_sd": 8.610052034206658
+      },
+      "resource_stock": {
+        "mc_95_lower": 5730390.5422631735,
+        "mc_95_upper": 5731195.9577368265,
+        "mean": 5730793.25,
+        "n": 8,
+        "sample_sd": 581.1374929517848
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 2734.9811729230178,
+        "mc_95_upper": 2781.0188270769822,
+        "mean": 2758,
+        "n": 8,
+        "sample_sd": 33.21789534917243
+      }
+    },
+    "inventory__stationary_t24": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.5967168541979522,
+        "mc_95_upper": 0.6086637778028259,
+        "mean": 0.602690316000389,
+        "n": 8,
+        "sample_sd": 0.00862015377073864
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1258.9483468052529,
+        "mc_95_upper": 1269.0516531947471,
+        "mean": 1264,
+        "n": 8,
+        "sample_sd": 7.28991475552747
+      },
+      "consumption_units": {
+        "mc_95_lower": 1342.92388963935,
+        "mc_95_upper": 1363.07611036065,
+        "mean": 1353,
+        "n": 8,
+        "sample_sd": 14.540583599999398
+      },
+      "employed": {
+        "mc_95_lower": 1211.2728712674964,
+        "mc_95_upper": 1245.2271287325036,
+        "mean": 1228.25,
+        "n": 8,
+        "sample_sd": 24.499271126184258
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.2457760731709607,
+        "mc_95_upper": 0.24799861675151993,
+        "mean": 0.24688734496124032,
+        "n": 8,
+        "sample_sd": 0.0016036486094857917
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 9511534.03171618,
+        "mc_95_upper": 9597546.46828382,
+        "mean": 9554540.25,
+        "n": 8,
+        "sample_sd": 62061.201187100094
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.15153790211844664,
+        "mc_95_upper": 0.15881209788155337,
+        "mean": 0.155175,
+        "n": 8,
+        "sample_sd": 0.005248605256909416
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 18960644.080254514,
+        "mc_95_upper": 19088383.669745486,
+        "mean": 19024513.875,
+        "n": 8,
+        "sample_sd": 92168.90811739917
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 10020920.797022516,
+        "mc_95_upper": 10220970.952977484,
+        "mean": 10120945.875,
+        "n": 8,
+        "sample_sd": 144343.69576855443
+      },
+      "production_units": {
+        "mc_95_lower": 1496.8685252719008,
+        "mc_95_upper": 1536.1314747280992,
+        "mean": 1516.5,
+        "n": 8,
+        "sample_sd": 28.329691642716984
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 3252.564215283931,
+        "mc_95_upper": 3272.510784716069,
+        "mean": 3262.5375,
+        "n": 8,
+        "sample_sd": 14.392198476401244
+      },
+      "resource_stock": {
+        "mc_95_lower": 5346637.599264175,
+        "mc_95_upper": 5346943.650735825,
+        "mean": 5346790.625,
+        "n": 8,
+        "sample_sd": 220.82762346616485
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 1593.0613293941904,
+        "mc_95_upper": 1619.6886706058096,
+        "mean": 1606.375,
+        "n": 8,
+        "sample_sd": 19.21262605684085
+      }
+    },
+    "inventory__stationary_t48": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.7655104797773956,
+        "mc_95_upper": 0.774198601498228,
+        "mean": 0.7698545406378118,
+        "n": 8,
+        "sample_sd": 0.006268805902627278
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 2021.7849825905714,
+        "mc_95_upper": 2028.9650174094286,
+        "mean": 2025.375,
+        "n": 8,
+        "sample_sd": 5.180664601601393
+      },
+      "consumption_units": {
+        "mc_95_lower": 1045.0707721962742,
+        "mc_95_upper": 1084.1792278037258,
+        "mean": 1064.625,
+        "n": 8,
+        "sample_sd": 28.218218532410177
+      },
+      "employed": {
+        "mc_95_lower": 906.5655259670821,
+        "mc_95_upper": 932.1844740329179,
+        "mean": 919.375,
+        "n": 8,
+        "sample_sd": 18.485032555325095
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.550455454033974,
+        "mc_95_upper": 0.5660902048807547,
+        "mean": 0.5582728294573643,
+        "n": 8,
+        "sample_sd": 0.011281059536653783
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 21302626.071114793,
+        "mc_95_upper": 21907690.928885207,
+        "mean": 21605158.5,
+        "n": 8,
+        "sample_sd": 436577.0040685017
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.02453404142048091,
+        "mc_95_upper": 0.02926595857951909,
+        "mean": 0.0269,
+        "n": 8,
+        "sample_sd": 0.0034142558277233492
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 14647034.855333947,
+        "mc_95_upper": 15067822.894666053,
+        "mean": 14857428.875,
+        "n": 8,
+        "sample_sd": 303614.36332033225
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 2139466.4287188365,
+        "mc_95_upper": 2335358.8212811635,
+        "mean": 2237412.625,
+        "n": 8,
+        "sample_sd": 141343.71343232525
+      },
+      "production_units": {
+        "mc_95_lower": 1126.5504158176545,
+        "mc_95_upper": 1160.6995841823455,
+        "mean": 1143.625,
+        "n": 8,
+        "sample_sd": 24.639906655667346
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 2407.8885480578897,
+        "mc_95_upper": 2430.219785275444,
+        "mean": 2419.054166666667,
+        "n": 8,
+        "sample_sd": 16.112825784507955
+      },
+      "resource_stock": {
+        "mc_95_lower": 5561782.211619099,
+        "mc_95_upper": 5562932.788380901,
+        "mean": 5562357.5,
+        "n": 8,
+        "sample_sd": 830.1843168839074
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 3716.978496849943,
+        "mc_95_upper": 3752.771503150057,
+        "mean": 3734.875,
+        "n": 8,
+        "sample_sd": 25.825997422309616
+      }
+    },
+    "inventory__stationary_t72": {
+      "budget_unmet_share_of_attempts": {
+        "mc_95_lower": 0.8541593079423542,
+        "mc_95_upper": 0.8612443735235962,
+        "mean": 0.8577018407329752,
+        "n": 8,
+        "sample_sd": 0.005112140732293513
+      },
+      "capital_stock_units": {
+        "mc_95_lower": 1789.293477153587,
+        "mc_95_upper": 1813.706522846413,
+        "mean": 1801.5,
+        "n": 8,
+        "sample_sd": 17.614928733483833
+      },
+      "consumption_units": {
+        "mc_95_lower": 642.2105923987397,
+        "mc_95_upper": 674.7894076012603,
+        "mean": 658.5,
+        "n": 8,
+        "sample_sd": 23.506837910944732
+      },
+      "employed": {
+        "mc_95_lower": 530.5358300465671,
+        "mc_95_upper": 558.2141699534329,
+        "mean": 544.375,
+        "n": 8,
+        "sample_sd": 19.970961061358206
+      },
+      "firm_cash_share": {
+        "mc_95_lower": 0.7145587261653267,
+        "mc_95_upper": 0.7419696265478516,
+        "mean": 0.7282641763565891,
+        "n": 8,
+        "sample_sd": 0.019777993407053315
+      },
+      "firm_cash_stock_cents": {
+        "mc_95_lower": 27653422.702598143,
+        "mc_95_upper": 28714224.547401857,
+        "mean": 28183823.625,
+        "n": 8,
+        "sample_sd": 765408.3448529638
+      },
+      "household_nonessential_affordability": {
+        "mc_95_lower": 0.024727668515584892,
+        "mc_95_upper": 0.02767233148441511,
+        "mean": 0.0262,
+        "n": 8,
+        "sample_sd": 0.0021246848505803665
+      },
+      "household_savings_stock_cents": {
+        "mc_95_lower": 8904326.001504729,
+        "mc_95_upper": 9874889.998495271,
+        "mean": 9389608,
+        "n": 8,
+        "sample_sd": 700298.3508648296
+      },
+      "household_spendable_cash_cents": {
+        "mc_95_lower": 1068788.320820695,
+        "mc_95_upper": 1184348.429179305,
+        "mean": 1126568.375,
+        "n": 8,
+        "sample_sd": 83380.95536227082
+      },
+      "production_units": {
+        "mc_95_lower": 656.790374601707,
+        "mc_95_upper": 690.959625398293,
+        "mean": 673.875,
+        "n": 8,
+        "sample_sd": 24.654396884010076
+      },
+      "quoted_price_mean_cents": {
+        "mc_95_lower": 1588.5739549433792,
+        "mc_95_upper": 1606.8177117232876,
+        "mean": 1597.6958333333334,
+        "n": 8,
+        "sample_sd": 13.163555238154217
+      },
+      "resource_stock": {
+        "mc_95_lower": 5720450.888434137,
+        "mc_95_upper": 5721442.611565863,
+        "mean": 5720946.75,
+        "n": 8,
+        "sample_sd": 715.5654607172069
+      },
+      "total_inventory_units": {
+        "mc_95_lower": 4124.117715014831,
+        "mc_95_upper": 4162.632284985169,
+        "mean": 4143.375,
+        "n": 8,
+        "sample_sd": 27.789707755621635
+      }
+    }
+  },
+  "paired": {
+    "affordability_guard__adaptive_vs_control_t24_production": {
+      "mc_95_lower": 70.71580142129349,
+      "mc_95_upper": 84.53419857870651,
+      "mean": 77.625,
+      "n": 8,
+      "sample_sd": 9.970492178709849
+    },
+    "affordability_guard__adaptive_vs_control_t48_production": {
+      "mc_95_lower": 20.393552684329457,
+      "mc_95_upper": 60.10644731567054,
+      "mean": 40.25,
+      "n": 8,
+      "sample_sd": 28.654343973845023
+    },
+    "affordability_guard__adaptive_vs_control_t72_production": {
+      "mc_95_lower": 31.903138393633,
+      "mc_95_upper": 68.096861606367,
+      "mean": 50,
+      "n": 8,
+      "sample_sd": 26.115129714401192
+    },
+    "affordability_guard__blended_vs_control_t24_production": {
+      "mc_95_lower": 129.53931061068116,
+      "mc_95_upper": 183.21068938931884,
+      "mean": 156.375,
+      "n": 8,
+      "sample_sd": 38.72591417347599
+    },
+    "affordability_guard__blended_vs_control_t48_production": {
+      "mc_95_lower": 322.40133157707976,
+      "mc_95_upper": 359.34866842292024,
+      "mean": 340.875,
+      "n": 8,
+      "sample_sd": 26.658890235180994
+    },
+    "affordability_guard__blended_vs_control_t72_production": {
+      "mc_95_lower": 419.34515156078254,
+      "mc_95_upper": 469.65484843921746,
+      "mean": 444.5,
+      "n": 8,
+      "sample_sd": 36.30033451242957
+    },
+    "affordability_guard__stationary_vs_control_t24_production": {
+      "mc_95_lower": 195.20264419946875,
+      "mc_95_upper": 248.29735580053125,
+      "mean": 221.75,
+      "n": 8,
+      "sample_sd": 38.309827161485046
+    },
+    "affordability_guard__stationary_vs_control_t48_production": {
+      "mc_95_lower": 456.81760149652047,
+      "mc_95_upper": 503.43239850347953,
+      "mean": 480.125,
+      "n": 8,
+      "sample_sd": 33.63432557883177
+    },
+    "affordability_guard__stationary_vs_control_t72_production": {
+      "mc_95_lower": 580.4094391097665,
+      "mc_95_upper": 624.0905608902335,
+      "mean": 602.25,
+      "n": 8,
+      "sample_sd": 31.517568796738477
+    },
+    "guard_effect__adaptive_t24": {
+      "mc_95_lower": 70.71580142129349,
+      "mc_95_upper": 84.53419857870651,
+      "mean": 77.625,
+      "n": 8,
+      "sample_sd": 9.970492178709849
+    },
+    "guard_effect__adaptive_t48": {
+      "mc_95_lower": 20.393552684329457,
+      "mc_95_upper": 60.10644731567054,
+      "mean": 40.25,
+      "n": 8,
+      "sample_sd": 28.654343973845023
+    },
+    "guard_effect__adaptive_t72": {
+      "mc_95_lower": 31.903138393633,
+      "mc_95_upper": 68.096861606367,
+      "mean": 50,
+      "n": 8,
+      "sample_sd": 26.115129714401192
+    },
+    "guard_effect__blended_t24": {
+      "mc_95_lower": 4.643875956732295,
+      "mc_95_upper": 43.856124043267705,
+      "mean": 24.25,
+      "n": 8,
+      "sample_sd": 28.293108701590217
+    },
+    "guard_effect__blended_t48": {
+      "mc_95_lower": -15.25827655897072,
+      "mc_95_upper": 25.00827655897072,
+      "mean": 4.875,
+      "n": 8,
+      "sample_sd": 29.053829351739505
+    },
+    "guard_effect__blended_t72": {
+      "mc_95_lower": 64.79145277034968,
+      "mc_95_upper": 120.95854722965032,
+      "mean": 92.875,
+      "n": 8,
+      "sample_sd": 40.52666670583351
+    },
+    "guard_effect__stationary_t24": {
+      "mc_95_lower": 16.31003287074801,
+      "mc_95_upper": 43.68996712925199,
+      "mean": 30,
+      "n": 8,
+      "sample_sd": 19.755650186357176
+    },
+    "guard_effect__stationary_t48": {
+      "mc_95_lower": -16.924703544328175,
+      "mc_95_upper": 12.674703544328175,
+      "mean": -2.125,
+      "n": 8,
+      "sample_sd": 21.357083134173543
+    },
+    "guard_effect__stationary_t72": {
+      "mc_95_lower": 72.7303132022402,
+      "mc_95_upper": 104.0196867977598,
+      "mean": 88.375,
+      "n": 8,
+      "sample_sd": 22.57645739639921
+    },
+    "inventory__blended_vs_control_t24_production": {
+      "mc_95_lower": 107.65459287220582,
+      "mc_95_upper": 156.59540712779418,
+      "mean": 132.125,
+      "n": 8,
+      "sample_sd": 35.31263432338549
+    },
+    "inventory__blended_vs_control_t48_production": {
+      "mc_95_lower": 306.2013691589697,
+      "mc_95_upper": 365.7986308410303,
+      "mean": 336,
+      "n": 8,
+      "sample_sd": 43.00166109748386
+    },
+    "inventory__blended_vs_control_t72_production": {
+      "mc_95_lower": 331.340665527309,
+      "mc_95_upper": 371.909334472691,
+      "mean": 351.625,
+      "n": 8,
+      "sample_sd": 29.27181726019561
+    },
+    "inventory__stationary_vs_control_t24_production": {
+      "mc_95_lower": 169.63166145480182,
+      "mc_95_upper": 213.86833854519818,
+      "mean": 191.75,
+      "n": 8,
+      "sample_sd": 31.918422803855993
+    },
+    "inventory__stationary_vs_control_t48_production": {
+      "mc_95_lower": 454.68092856115754,
+      "mc_95_upper": 509.81907143884246,
+      "mean": 482.25,
+      "n": 8,
+      "sample_sd": 39.78423952126915
+    },
+    "inventory__stationary_vs_control_t72_production": {
+      "mc_95_lower": 497.2049662567828,
+      "mc_95_upper": 530.5450337432172,
+      "mean": 513.875,
+      "n": 8,
+      "sample_sd": 24.056110004974382
+    },
+    "price_hiring_interaction__blended_t24": {
+      "mc_95_lower": -77.11256147964656,
+      "mc_95_upper": -29.63743852035345,
+      "mean": -53.375,
+      "n": 8,
+      "sample_sd": 34.255083043042156
+    },
+    "price_hiring_interaction__blended_t48": {
+      "mc_95_lower": -68.09026593197737,
+      "mc_95_upper": -2.6597340680226225,
+      "mean": -35.375,
+      "n": 8,
+      "sample_sd": 47.21058446698458
+    },
+    "price_hiring_interaction__blended_t72": {
+      "mc_95_lower": 17.86390596155378,
+      "mc_95_upper": 67.88609403844622,
+      "mean": 42.875,
+      "n": 8,
+      "sample_sd": 36.09288612138725
+    },
+    "price_hiring_interaction__stationary_t24": {
+      "mc_95_lower": -66.44995750327209,
+      "mc_95_upper": -28.800042496727915,
+      "mean": -47.625,
+      "n": 8,
+      "sample_sd": 27.1658267471679
+    },
+    "price_hiring_interaction__stationary_t48": {
+      "mc_95_lower": -72.73452939358579,
+      "mc_95_upper": -12.015470606414208,
+      "mean": -42.375,
+      "n": 8,
+      "sample_sd": 43.811079811911895
+    },
+    "price_hiring_interaction__stationary_t72": {
+      "mc_95_lower": 14.881447160976272,
+      "mc_95_upper": 61.86855283902373,
+      "mean": 38.375,
+      "n": 8,
+      "sample_sd": 33.9029602584452
+    }
+  },
+  "schema": 1,
+  "source_sha256": "7fcd60b536713884fe42cf74572c4f15e4c0ecaa45c1141e7d2e45478063df8e"
+}
