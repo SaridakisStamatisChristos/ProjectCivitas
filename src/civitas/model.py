@@ -94,6 +94,10 @@ class Scenario:
     household_liquidity_floor_cents: int = 0
     savings_emergency_food_enabled: bool = True
     savings_essential_sector: str = "food"
+    # Optional fixed-slot firm insolvency and owner-funded restart.
+    firm_lifecycle_enabled: bool = False
+    firm_reentry_enabled: bool = False
+    firm_reentry_contribution_cents: int = 0
     # None retains exact legacy initialization; populated by World Genesis only.
     world_genesis: dict[str, Any] | None = None
     sectors: tuple[Sector, ...] = field(default_factory=lambda: (
@@ -127,6 +131,11 @@ class Scenario:
         # every pre-Genesis scenario. Omit the optional field when disabled.
         if data["world_genesis"] is None:
             del data["world_genesis"]
+        # Preserve canonical pre-lifecycle scenario digests.
+        if not data["firm_lifecycle_enabled"] and not data["firm_reentry_enabled"]:
+            for key in ("firm_lifecycle_enabled", "firm_reentry_enabled",
+                        "firm_reentry_contribution_cents"):
+                del data[key]
         return {"schema_version": 1, **data}
 
     def validate(self) -> None:
@@ -136,7 +145,8 @@ class Scenario:
                      "initial_firm_cash_cents", "initial_resource", "resource_capacity",
                      "initial_capital_units_per_firm", "household_liquidity_floor_cents",
                      "region_assignment_seed", "resource_extraction_fee_cents_per_unit",
-                     "credit_max_principal_per_firm_cents", "credit_firm_cash_reserve_cents"):
+                     "credit_max_principal_per_firm_cents", "credit_firm_cash_reserve_cents",
+                     "firm_reentry_contribution_cents"):
             value = getattr(self, name)
             if type(value) is not int or value < 0:
                 raise ValueError(f"{name} must be a nonnegative integer")
@@ -194,6 +204,13 @@ class Scenario:
         for field_name in ("restrict_household_sales", "restrict_labor_hiring"):
             if type(getattr(self, field_name)) is not bool:
                 raise ValueError(f"{field_name} must be boolean")
+        for name in ("firm_lifecycle_enabled", "firm_reentry_enabled"):
+            if type(getattr(self, name)) is not bool:
+                raise ValueError(f"{name} must be boolean")
+        if self.firm_reentry_enabled and not self.firm_lifecycle_enabled:
+            raise ValueError("firm re-entry requires lifecycle accounting")
+        if self.firm_lifecycle_enabled and not self.cost_basis_accounting_enabled:
+            raise ValueError("firm lifecycle requires historical-cost accounting")
         if type(self.transaction_trace) is not bool:
             raise ValueError("transaction_trace must be boolean")
         if self.initial_resource > self.resource_capacity:
@@ -216,7 +233,8 @@ class Scenario:
                              ("initial_firm_cash_cents", self.initial_firm_cash_cents),
                              ("resource_extraction_fee_cents_per_unit", self.resource_extraction_fee_cents_per_unit),
                              ("credit_max_principal_per_firm_cents", self.credit_max_principal_per_firm_cents),
-                             ("credit_firm_cash_reserve_cents", self.credit_firm_cash_reserve_cents)):
+                             ("credit_firm_cash_reserve_cents", self.credit_firm_cash_reserve_cents),
+                             ("firm_reentry_contribution_cents", self.firm_reentry_contribution_cents)):
             if value > i64max:
                 raise ValueError(f"{label} exceeds signed int64 storage")
         if self.cost_basis_accounting_enabled and self.capital_enabled:

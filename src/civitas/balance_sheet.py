@@ -228,6 +228,9 @@ def audit_book_period(opening: BookSnapshot, closing: State,
                 manufacturing_firms.add(event["firm"])
             elif kind == "depreciate":
                 earnings[event["firm"]] -= event["basis_cents"]
+            elif kind == "firm_liquidation":
+                earnings[event["firm"]] -= (event["inventory_basis_cents"] +
+                                               event["capital_basis_cents"])
             elif kind == "consumer_sale":
                 earnings[event["firm"]] -= event["basis_cents"]
             elif kind == "convert_capital" and event["supplier"] != event["buyer"]:
@@ -240,8 +243,11 @@ def audit_book_period(opening: BookSnapshot, closing: State,
             earnings[event["destination_id"]] += cents
         elif reason == "capital_purchase":
             earnings[event["destination_id"]] += cents
-        elif reason == "dividend":
+        elif reason in ("dividend", "firm_liquidation_distribution",
+                        "firm_liquidation_escheat"):
             dividend[event["source_id"]] += cents
+        elif reason == "firm_capital_contribution":
+            earnings[event["destination_id"]] += cents
     for event in period.noncash_transactions:
         defaults[event["borrower_firm"]] += event["cents"]
     if scenario.cost_basis_accounting_enabled:
@@ -257,9 +263,10 @@ def audit_book_period(opening: BookSnapshot, closing: State,
     net_household_flows = [0] * len(opening.household_cash)
     for event in period.transactions:
         reason, value = event["reason"], event["cents"]
-        if reason in ("wages", "transfer", "dividend"):
+        if reason in ("wages", "transfer", "dividend",
+                      "firm_liquidation_distribution"):
             net_household_flows[event["destination_id"]] += value
-        elif reason in ("wage_tax", "sale"):
+        elif reason in ("wage_tax", "sale", "firm_capital_contribution"):
             net_household_flows[event["source_id"]] -= value
     losses: Counter[int] = Counter()
     for event in period.noncash_transactions:

@@ -1,5 +1,7 @@
 # CIVITAS v0.1 foundation + v0.2 experimental capital branch
 
+> **Experimental firm lifecycle (v0.2 development):** Opt-in insolvent firm closures and existing-owner funded re-entry; supports independent cash/physical/equity and activity-state auditing. Requires historical-cost accounting. See [firm lifecycle specification](docs/v02_firm_lifecycle.md) and [research report](research/v02_firm_lifecycle_experiment.md). This does **not** model unrestricted new legal firms.
+
 > **Latest v0.2 development milestone:** independently auditable book-value household, firm and government balance sheets, with signed equity allocation, cross-sector consolidation, and period-by-period cash/physical/loan/earnings checks. Historical default metrics unchanged; 247 tests passed locally. See [book balance-sheet specification](docs/v02_book_balance_sheets.md) and [synthetic verification campaign](research/v02_book_balance_experiment.md). Stable `main` is unchanged.
 
 > **Development checkpoint 2026-11-14:** independently audited physical inventory, resources, productive capital and historical cost, published on `feature/v0.2-capital-accounting` ([commit](https://github.com/SaridakisStamatisChristos/ProjectCivitas/commit/49683b324f2f36fdb91654bddc39ece8fa5a97f4)). **228 tests pass locally**. See [audit documentation](docs/v02_physical_ledger_audit.md) and [research evidence](research/v02_physical_ledger_experiment.md). Stable `main` unchanged.

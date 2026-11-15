@@ -36,6 +36,9 @@ TRANSFER_RULES = {
     "savings_withdrawal": ("savings", "household"),
     "loan_origination": ("savings", "firm"),
     "loan_repayment": ("firm", "savings"),
+    "firm_capital_contribution": ("household", "firm"),
+    "firm_liquidation_distribution": ("firm", "household"),
+    "firm_liquidation_escheat": ("firm", "government"),
 }
 NONCASH_WRITE_OFF = "loan_default_noncash"
 
@@ -52,6 +55,9 @@ REASON_METRICS = {
     "savings_withdrawal": "household_savings_withdrawn_cents",
     "loan_origination": "loan_origination_cents",
     "loan_repayment": "loan_repayment_cents",
+    "firm_capital_contribution": "firm_reentry_contributions_cents",
+    "firm_liquidation_distribution": "firm_liquidation_distributions_cents",
+    "firm_liquidation_escheat": "firm_liquidation_escheat_cents",
     NONCASH_WRITE_OFF: "loan_defaults_cents",
 }
 
@@ -215,6 +221,9 @@ def audit_period(opening: OpeningLedger, closing: State, period: Period) -> Ledg
 
     for reason, field in REASON_METRICS.items():
         measured = noncash_total if reason == NONCASH_WRITE_OFF else transfer_totals[reason]
+        if (field not in period.metrics and measured == 0 and
+                reason.startswith('firm_')):
+            continue
         if type(period.metrics.get(field)) is not int or period.metrics[field] != measured:
             raise LedgerAuditError(f"metric {field} differs from underlying transactions")
     total_money = sum(sum(values) for values in accounts.values())

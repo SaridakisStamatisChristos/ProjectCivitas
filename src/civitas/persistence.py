@@ -29,7 +29,8 @@ def checkpoint_save(path: str | Path, scenario: Scenario, state: State, rng_stat
     owner_offsets = np.r_[0, np.cumsum(owner_sizes)]
     owner_ids = np.concatenate(owners) if len(owners) else np.array([], dtype=np.int64)
     np.savez_compressed(
-        target, checkpoint_version=np.array(5 if scenario.credit_enabled else
+        target, checkpoint_version=np.array(6 if scenario.firm_lifecycle_enabled else
+                                            5 if scenario.credit_enabled else
                                             (4 if scenario.cost_basis_accounting_enabled else 3),
                                             dtype=np.int64),
         software_version=np.array(__version__),
@@ -64,16 +65,20 @@ def checkpoint_save(path: str | Path, scenario: Scenario, state: State, rng_stat
         cumulative_capital_added=np.array(state.cumulative_capital_added, dtype=np.int64),
         cumulative_capital_depreciated=np.array(state.cumulative_capital_depreciated, dtype=np.int64),
         owner_offsets=owner_offsets, owner_ids=owner_ids,
+        **({'firm_active': state.firm_active,
+            'cumulative_inventory_liquidated': state.cumulative_inventory_liquidated,
+            'cumulative_capital_liquidated': np.array(state.cumulative_capital_liquidated, dtype=np.int64)}
+           if scenario.firm_lifecycle_enabled else {}),
     )
 
 
 def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
     with np.load(Path(path), allow_pickle=False) as z:
         version = int(z["checkpoint_version"])
-        if version not in (1, 2, 3, 4, 5):
+        if version not in (1, 2, 3, 4, 5, 6):
             raise ValueError("unsupported checkpoint format")
         software_version = str(z["software_version"])
-        expected_version = {1: "0.1.0", 2: "0.2.0.dev0", 3: __version__, 4: __version__, 5: __version__}[version]
+        expected_version = {1: "0.1.0", 2: "0.2.0.dev0", 3: __version__, 4: __version__, 5: __version__, 6: __version__}[version]
         if software_version != expected_version:
             raise ValueError("checkpoint software version differs; migration required")
         scenario = Scenario.from_dict(json.loads(str(z["config_json"])))
@@ -84,11 +89,11 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
                   "inventory", "prices", "last_sales", "last_unmet", "last_employment",
                   "cumulative_output", "cumulative_consumption")
         arrays = {f: z[f].copy() for f in fields}
-        arrays["household_savings"] = (z["household_savings"].copy() if version in (3,4,5)
+        arrays["household_savings"] = (z["household_savings"].copy() if version in (3,4,5,6)
                                        else np.zeros(len(arrays["household_cash"]), dtype=np.int64))
         nf = len(scenario.sectors) * scenario.firms_per_sector
         ns = len(scenario.sectors)
-        if version in (2, 3, 4, 5):
+        if version in (2, 3, 4, 5, 6):
             arrays["firm_capital"] = z["firm_capital"].copy()
             arrays["cumulative_capital_goods_converted"] = z["cumulative_capital_goods_converted"].copy()
             capital_scalars = dict(initial_capital_total=int(z["initial_capital_total"]),
@@ -101,7 +106,7 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
             arrays["cumulative_capital_goods_converted"] = np.zeros(ns, dtype=np.int64)
             capital_scalars = dict(initial_capital_total=0, cumulative_capital_added=0,
                                    cumulative_capital_depreciated=0)
-        if version in (4, 5):
+        if version in (4, 5, 6):
             arrays["firm_inventory_basis_cents"] = z["firm_inventory_basis_cents"].copy()
             arrays["firm_capital_basis_cents"] = z["firm_capital_basis_cents"].copy()
         else:
@@ -109,7 +114,7 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
                 raise ValueError("historical-cost checkpoint requires format 4; cannot fabricate missing cost history")
             arrays["firm_inventory_basis_cents"] = np.zeros(nf, dtype=np.int64)
             arrays["firm_capital_basis_cents"] = np.zeros(nf, dtype=np.int64)
-        if version == 5:
+        if version in (5, 6):
             loans = [LoanContract(int(h), int(f), int(amt), int(step))
                      for h, f, amt, step in zip(z["loan_lender_ids"],
                                                  z["loan_borrower_ids"],
@@ -123,8 +128,14 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
             loans = []
             arrays["household_loan_assets_cents"] = np.zeros(len(arrays["household_cash"]), dtype=np.int64)
             arrays["firm_loan_liabilities_cents"] = np.zeros(nf, dtype=np.int64)
+        if scenario.firm_lifecycle_enabled and version != 6:
+            raise ValueError("lifecycle-enabled checkpoint requires format 6")
+        lifecycle = ({'firm_active': z['firm_active'].copy(),
+                      'cumulative_inventory_liquidated': z['cumulative_inventory_liquidated'].copy(),
+                      'cumulative_capital_liquidated': int(z['cumulative_capital_liquidated'])}
+                     if version == 6 else {})
         state = State(
-            loans=loans,
+            loans=loans, **lifecycle,
             step=int(z["step"]), gov_cash=int(z["gov_cash"]), resource=int(z["resource"]),
             initial_total_money=int(z["initial_total_money"]),
             initial_resource=int(z["initial_resource"]),
@@ -145,7 +156,7 @@ def checkpoint_load(path: str | Path) -> tuple[Scenario, State, dict]:
             or len(state.cumulative_capital_goods_converted) != len(scenario.sectors)):
         raise ValueError("checkpoint dimensions do not match scenario")
     state.validate(expected_resources=state.initial_resource + state.cumulative_resource_regenerated - state.cumulative_resource_extracted)
-    expected_stock = state.cumulative_output - state.cumulative_consumption - state.cumulative_capital_goods_converted
+    expected_stock = state.cumulative_output - state.cumulative_consumption - state.cumulative_capital_goods_converted - state.cumulative_inventory_liquidated
     observed_stock = state.inventory.reshape(len(scenario.sectors), scenario.firms_per_sector).sum(axis=1)
     if not np.array_equal(expected_stock, observed_stock):
         raise ValueError("checkpoint finished-goods conservation violated")
@@ -184,6 +195,11 @@ def save_run(directory: str | Path, scenario: Scenario, periods: list,
             for period in periods:
                 for event in period.physical_transactions:
                     f.write(canonical_json({"step": period.metrics["step"], **event}) + "\n")
+        if scenario.firm_lifecycle_enabled:
+            with (target / "firm_lifecycle_transactions.jsonl").open("w", encoding="utf-8") as f:
+                for period in periods:
+                    for event in period.lifecycle_transactions:
+                        f.write(canonical_json({"step": period.metrics["step"], **event}) + "\n")
         with (target / "book_balance_reports.jsonl").open("w", encoding="utf-8") as f:
             for period in periods:
                 if period.book_balance_report is None:

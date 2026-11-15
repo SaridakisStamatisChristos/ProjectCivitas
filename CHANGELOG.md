@@ -1,3 +1,10 @@
+## Unreleased — v0.2.0.dev0: bounded firm lifecycle (2026-11-15)
+
+- Opt-in liquidation of negative-book-equity or exhausted firm slots, with loan settlement, symmetric default, scrapping and owner payouts.
+- Owner-funded fixed-slot re-entry; independent firm-status transition journal and auditing; checkpoint format 6 (opt-in).
+- 13 new analytical/adversarial tests (260 total) and a reproducible 12-seed stress experiment.
+- Historical scenario serialization and default metric trajectories preserved; no new firm IDs, bankruptcy courts, salvage markets or full institutional model yet.
+
 # Changelog
 
 ## 0.2.0.dev0 — synthetic book-balance-sheet verification (2026-11-15)

@@ -85,6 +85,7 @@ def audit_physical_period(opening: PhysicalOpening, closing: State, period: Peri
     if len(opening.prices) != nf:
         raise PhysicalAuditError("opening price list differs from firm count")
     produced = consumed = extracted = regenerated = added = depreciated = 0
+    liquidation_inventory = liquidation_capital = liquidation_basis = 0
     prod_sectors = [0] * len(scenario.sectors)
     consumption_sectors = [0] * len(scenario.sectors)
     sales = Counter()
@@ -95,13 +96,16 @@ def audit_physical_period(opening: PhysicalOpening, closing: State, period: Peri
     produced_firms = set()
     last_stage = -1
     stage = {"depreciate": 0, "regenerate": 1, "manufacture": 2,
-             "consumer_sale": 3, "convert_capital": 4}
+             "consumer_sale": 3, "convert_capital": 4, "firm_liquidation": 5}
     for i, event in enumerate(events):
         if type(event) is not dict or type(event.get("kind")) is not str:
             raise PhysicalAuditError(f"physical event {i}: invalid schema")
         kind = event["kind"]
         fields = {
             "regenerate": {"kind", "units"},
+            "firm_liquidation": {"kind", "firm", "inventory_units",
+                                 "capital_units", "inventory_basis_cents",
+                                 "capital_basis_cents"},
             "depreciate": {"kind", "firm", "units", "basis_cents"},
             "manufacture": {"kind", "firm", "units", "resource_units", "basis_cents"},
             "consumer_sale": {"kind", "firm", "household", "units", "basis_cents", "price_cents"},
@@ -117,6 +121,22 @@ def audit_physical_period(opening: PhysicalOpening, closing: State, period: Peri
             if v >= nf:
                 raise PhysicalAuditError(f"physical event {i}: firm out of bounds")
             return v
+        if kind == "firm_liquidation":
+            f = firm("firm")
+            units_inv = _integer(event, "inventory_units")
+            units_cap = _integer(event, "capital_units")
+            inv_cost = _integer(event, "inventory_basis_cents")
+            cap_cost = _integer(event, "capital_basis_cents")
+            if (units_inv != inventory[f] or units_cap != capital[f] or
+                    inv_cost != inv_basis[f] or cap_cost != cap_basis[f] or
+                    not (units_inv or units_cap)):
+                raise PhysicalAuditError("liquidation event must dispose of complete firm stocks")
+            inventory[f] = 0
+            inv_basis[f] = capital[f] = cap_basis[f] = 0
+            liquidation_inventory += units_inv
+            liquidation_capital += units_cap
+            liquidation_basis += inv_cost + cap_cost
+            continue
         units = _integer(event, "units", positive=True)
         if kind == "regenerate":
             if resource > MAX_I64 - units:
@@ -250,6 +270,7 @@ def audit_physical_period(opening: PhysicalOpening, closing: State, period: Peri
         "resource_stock": resource, "capital_added_units": added,
         "capital_depreciated_units": depreciated,
         "capital_stock_units": sum(capital),
+
         "firm_inventory_historical_cost_cents": sum(inv_basis),
         "firm_capital_historical_cost_cents": sum(cap_basis),
         "firm_consumer_cogs_cents": consumer_cogs,
@@ -262,6 +283,14 @@ def audit_physical_period(opening: PhysicalOpening, closing: State, period: Peri
         "capital_investment_goods_value_cents": sum(
             event["price_cents"] for event in events if event["kind"] == "convert_capital"),
     }
+    if scenario.firm_lifecycle_enabled:
+        expected_metrics.update({
+            "firm_liquidation_inventory_units": liquidation_inventory,
+            "firm_liquidation_capital_units": liquidation_capital,
+            "firm_liquidation_basis_cents": liquidation_basis,
+        })
+    elif liquidation_inventory or liquidation_capital or liquidation_basis:
+        raise PhysicalAuditError("non-lifecycle scenario recorded a liquidation")
     for key, value in expected_metrics.items():
         if type(period.metrics.get(key)) is not int or period.metrics[key] != value:
             raise PhysicalAuditError(f"physical metric {key} differs from replay")

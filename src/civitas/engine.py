@@ -16,6 +16,7 @@ from civitas.state import State
 from civitas.economy_costs import allocated_basis, checked_add_i64
 from civitas.finance import CreditFlows, service_loans, available_credit, originate
 from civitas.market_rules import expected_sales, updated_price
+from civitas.firm_lifecycle import LifecycleFlows, close_insolvent, reenter
 
 
 @dataclass
@@ -27,6 +28,7 @@ class Period:
     noncash_transactions: list[dict] = field(default_factory=list)
     physical_transactions: list[dict] = field(default_factory=list)
     book_balance_report: dict[str, int] | None = None
+    lifecycle_transactions: list[dict] = field(default_factory=list)
 
 
 class Simulation:
@@ -121,6 +123,7 @@ class Simulation:
         c = self.scenario
         # Capture only in opt-in trace mode; no hot-path array copies otherwise.
         if s.trace_enabled:
+            opening_active = tuple(bool(v) for v in s.firm_active)
             from civitas.ledger_audit import capture_opening
             opening_ledger = capture_opening(s)
             from civitas.physical_audit import capture_physical_opening
@@ -135,6 +138,7 @@ class Simulation:
         s.transaction_events = []
         s.noncash_events = []
         s.physical_events = []
+        s.lifecycle_events = []
         wages = np.zeros(H, dtype=np.int64)
         household_income = np.zeros(H, dtype=np.int64)
         household_taxes = np.zeros(H, dtype=np.int64)
@@ -151,6 +155,10 @@ class Simulation:
                                         s.firm_capital_basis_cents.astype(object) -
                                         s.firm_loan_liabilities_cents.astype(object))
         credit_flows = CreditFlows.empty(s)
+        lifecycle_flows = LifecycleFlows.empty(s)
+        if c.firm_lifecycle_enabled and c.firm_reentry_enabled:
+            reenter(s, contribution_cents=c.firm_reentry_contribution_cents,
+                    flows=lifecycle_flows)
         if c.credit_enabled:
             service_loans(s, repayment_fraction=c.credit_repayment_fraction,
                           term=c.credit_term_periods,
@@ -219,6 +227,8 @@ class Simulation:
             f = (s.step + offset) % nf
             sec = f // nfirm_sector
             sector = c.sectors[sec]
+            if not bool(s.firm_active[f]):
+                continue
             expected = expected_sales(
                 rule=c.hiring_expectation_rule, period=s.step,
                 sector_household_demand=H * sector.demand_probability / nfirm_sector,
@@ -343,7 +353,8 @@ class Simulation:
             # across treatment arms isolates order without shifting future draws.
             randomized_order = self.rng.permutation(H)
             order = randomized_order if c.rationing_order_rule == "random" else range(H)
-            sector_ids = list(range(k * nfirm_sector, (k + 1) * nfirm_sector))
+            sector_ids = [f for f in range(k * nfirm_sector, (k + 1) * nfirm_sector)
+                          if bool(s.firm_active[f])]
             # Price lists are local only when household-to-firm access is gated.
             # The unconstrained path is unchanged from previous releases.
             market_sellers = ({r: [f for f in sector_ids if self.firm_regions[f] == r]
@@ -363,6 +374,9 @@ class Simulation:
                     region = int(self.household_regions[h])
                     ids = market_sellers[region]
                     by_price = regional_by_price[region]
+                if not ids:
+                    stock_unmet[k] += 1
+                    continue
                 # Search information is distinct from legal access: in the
                 # two-quote arm, households can trade with only two observed
                 # sellers per sector/period. This quote set is deterministic,
@@ -451,10 +465,13 @@ class Simulation:
         if c.capital_enabled and c.capital_investment_budget_share > 0:
             capital_sec = next(i for i, sector in enumerate(c.sectors)
                                if sector.name == c.capital_input_sector)
-            suppliers = list(range(capital_sec * nfirm_sector, (capital_sec + 1) * nfirm_sector))
+            suppliers = [f for f in range(capital_sec * nfirm_sector, (capital_sec + 1) * nfirm_sector)
+                         if bool(s.firm_active[f])]
             suppliers.sort(key=lambda f: (int(s.prices[f]), f))
             for offset in range(nf):
                 f = (s.step + offset) % nf
+                if not bool(s.firm_active[f]):
+                    continue
                 target = math.ceil(int(desired_output[f]) * (1 + c.capital_target_buffer)
                                    / c.capital_output_per_unit)
                 need = max(0, target - int(s.firm_capital[f]))
@@ -560,12 +577,18 @@ class Simulation:
                     s.transfer("household", h, "savings", h, amount, "savings_deposit")
                     savings_deposits += amount
 
+        if c.firm_lifecycle_enabled:
+            close_insolvent(s, credit=credit_flows, flows=lifecycle_flows,
+                            cost_basis_enabled=c.cost_basis_accounting_enabled,
+                            firms_per_sector=nfirm_sector)
         # Verify each household and each firm's period cash-flow identities,
         # not merely the aggregate stock of money.
         household_expected = (household_opening_assets + wages - household_taxes +
                               household_transfers + household_dividends - household_purchase_spending -
                               credit_flows.household_principal_advanced +
-                              credit_flows.household_principal_repaid)
+                              credit_flows.household_principal_repaid -
+                              lifecycle_flows.household_contributions +
+                              lifecycle_flows.household_distributions)
         household_actual = s.household_cash + s.household_savings
         household_flow_discrepancy = int(np.abs(household_actual - household_expected).sum())
         if household_flow_discrepancy:
@@ -573,12 +596,15 @@ class Simulation:
         firm_expected = (firm_opening_cash + sale_revenues + capital_sale_revenues -
                          firm_wages - firm_resource_fees - capital_purchase_spending -
                          firm_dividend_payments + credit_flows.firm_principal_advanced -
-                         credit_flows.firm_principal_repaid)
+                         credit_flows.firm_principal_repaid +
+                         lifecycle_flows.firm_contributions -
+                         lifecycle_flows.firm_distributions)
         firm_flow_discrepancy = int(np.abs(s.firm_cash - firm_expected).sum())
         if firm_flow_discrepancy:
             raise AssertionError("firm cash-flow reconciliation violated")
         if s.gov_cash != (government_opening_cash + tax_revenue +
-                          int(firm_resource_fees.sum()) - transfer_spending):
+                          int(firm_resource_fees.sum()) - transfer_spending +
+                          s.journal.get("firm_liquidation_escheat", {}).get("cents", 0)):
             raise AssertionError("government cash-flow reconciliation violated")
 
         firm_book_equity_discrepancy = None
@@ -588,13 +614,18 @@ class Simulation:
                        s.firm_loan_liabilities_cents.astype(object))
             expected = (firm_opening_book_equity + firm_cost_basis_earnings.astype(object) -
                         firm_dividend_payments.astype(object) +
-                        credit_flows.firm_principal_defaulted.astype(object))
+                        credit_flows.firm_principal_defaulted.astype(object) +
+                        lifecycle_flows.firm_contributions.astype(object) -
+                        lifecycle_flows.firm_distributions.astype(object) -
+                        lifecycle_flows.firm_asset_writeoffs.astype(object))
             firm_book_equity_discrepancy = sum(abs(int(a-b)) for a,b in zip(closing,expected))
             if firm_book_equity_discrepancy:
                 raise AssertionError("firm book-equity reconciliation violated")
         # Posted-price adjustment: shortage raises prices, excess stock lowers.
         old_prices = s.prices.copy()
         for f in range(nf):
+            if not bool(s.firm_active[f]):
+                continue
             sector = c.sectors[f // nfirm_sector]
             prospect = updated_price(
                 current=int(s.prices[f]), stock=int(s.inventory[f]),
@@ -625,7 +656,8 @@ class Simulation:
         s.step += 1
         s.validate(expected_resources=(s.initial_resource + s.cumulative_resource_regenerated - s.cumulative_resource_extracted))
         expected_stock = (s.cumulative_output - s.cumulative_consumption -
-                          s.cumulative_capital_goods_converted)
+                          s.cumulative_capital_goods_converted -
+                          s.cumulative_inventory_liquidated)
         observed_stock = np.array([int(s.inventory[k * nfirm_sector:(k+1)*nfirm_sector].sum()) for k in range(ns)])
         if not np.array_equal(expected_stock, observed_stock):
             raise AssertionError("physical product identity violated")
@@ -721,7 +753,9 @@ class Simulation:
             "capital_investment_goods_value_cents": investment_imputed_value,
             "capital_interfirm_purchases_cents": capital_purchases,
             "capital_discrepancy_units": (s.initial_capital_total + s.cumulative_capital_added -
-                                          s.cumulative_capital_depreciated - int(s.firm_capital.sum())),
+                                          s.cumulative_capital_depreciated -
+                                          s.cumulative_capital_liquidated -
+                                          int(s.firm_capital.sum())),
             # Mechanism diagnostics; not a welfare objective or real-world index.
             "quoted_price_spread_mean_cents": float(np.mean([
                 int(s.prices[k*nfirm_sector:(k+1)*nfirm_sector].max()) -
@@ -742,8 +776,21 @@ class Simulation:
             "resource_discrepancy_units": s.initial_resource + s.cumulative_resource_regenerated - s.cumulative_resource_extracted - s.resource,
             "goods_discrepancy_units": int(np.abs(expected_stock - observed_stock).sum()),
         }
+        if c.firm_lifecycle_enabled:
+            metrics.update({
+                "firm_active_count": int(np.count_nonzero(s.firm_active)),
+                "firm_liquidations": lifecycle_flows.liquidations,
+                "firm_reentries": lifecycle_flows.entries,
+                "firm_reentry_contributions_cents": int(lifecycle_flows.firm_contributions.sum()),
+                "firm_liquidation_distributions_cents": int(lifecycle_flows.household_distributions.sum()),
+                "firm_liquidation_escheat_cents": s.journal.get("firm_liquidation_escheat", {}).get("cents", 0),
+                "firm_liquidation_inventory_units": lifecycle_flows.inventory_scrapped,
+                "firm_liquidation_capital_units": lifecycle_flows.capital_scrapped,
+                "firm_liquidation_basis_cents": int(lifecycle_flows.firm_asset_writeoffs.sum())
+            })
         period = Period(metrics, {key: dict(value) for key, value in s.journal.items()},
-                        list(s.transaction_events), list(s.noncash_events), list(s.physical_events))
+                        list(s.transaction_events), list(s.noncash_events), list(s.physical_events),
+                        lifecycle_transactions=list(s.lifecycle_events))
         if s.trace_enabled:
             from civitas.ledger_audit import audit_period
             audit_period(opening_ledger, s, period)
@@ -751,6 +798,8 @@ class Simulation:
             audit_physical_period(opening_physical, s, period, c)
             from civitas.balance_sheet import audit_book_period
             period.book_balance_report = audit_book_period(opening_book, s, period, c)
+            from civitas.firm_lifecycle_audit import audit_firm_lifecycle
+            audit_firm_lifecycle(opening_active, s, period)
         return period
 
     def run(self, steps: int | None = None) -> list[Period]:

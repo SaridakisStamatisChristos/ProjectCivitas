@@ -52,6 +52,18 @@ class State:
     noncash_events: list[dict] = field(default_factory=list)
     physical_events: list[dict] = field(default_factory=list)
 
+    # Existing firm IDs are reused only after liquidation; fixed slot count.
+    firm_active: np.ndarray = field(default_factory=lambda: np.empty(0, dtype=np.bool_))
+    cumulative_inventory_liquidated: np.ndarray = field(default_factory=lambda: np.empty(0, dtype=np.int64))
+    cumulative_capital_liquidated: int = 0
+    lifecycle_events: list[dict] = field(default_factory=list)
+
+    def __post_init__(self) -> None:
+        if len(self.firm_active) == 0:
+            self.firm_active = np.ones(len(self.firm_cash), dtype=np.bool_)
+        if len(self.cumulative_inventory_liquidated) == 0:
+            self.cumulative_inventory_liquidated = np.zeros(len(self.cumulative_output), dtype=np.int64)
+
     def total_money(self) -> int:
         return (int(self.household_cash.sum()) + int(self.household_savings.sum()) +
                 int(self.firm_cash.sum()) + int(self.gov_cash))
@@ -116,6 +128,17 @@ class State:
                                             "cents": amount, "reason": reason})
 
     def validate(self, expected_resources: int | None = None) -> None:
+        if (len(self.firm_active) != len(self.firm_cash) or
+                len(self.cumulative_inventory_liquidated) != len(self.cumulative_output) or
+                self.cumulative_capital_liquidated < 0 or
+                (self.cumulative_inventory_liquidated < 0).any()):
+            raise AssertionError("invalid firm lifecycle arrays")
+        if any(not bool(self.firm_active[f]) and
+               any(int(a[f]) for a in (self.firm_cash, self.inventory, self.firm_capital,
+                                       self.firm_inventory_basis_cents,
+                                       self.firm_capital_basis_cents,
+                                       self.firm_loan_liabilities_cents)) for f in range(len(self.firm_cash))):
+            raise AssertionError("inactive firm retains assets or liabilities")
         if (self.household_cash < 0).any() or (self.household_savings < 0).any() or (self.firm_cash < 0).any() or self.gov_cash < 0:
             raise AssertionError("negative monetary account")
         if ((self.firm_inventory_basis_cents < 0).any() or (self.firm_capital_basis_cents < 0).any()):
@@ -143,7 +166,8 @@ class State:
         if (self.firm_capital < 0).any():
             raise AssertionError("negative firm physical capital")
         if (int(self.firm_capital.sum()) != self.initial_capital_total +
-                self.cumulative_capital_added - self.cumulative_capital_depreciated):
+                self.cumulative_capital_added - self.cumulative_capital_depreciated -
+                self.cumulative_capital_liquidated):
             raise AssertionError("physical capital stock identity violated")
         if (self.cumulative_capital_goods_converted < 0).any():
             raise AssertionError("negative converted goods total")

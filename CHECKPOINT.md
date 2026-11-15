@@ -1,3 +1,15 @@
+# 2026-11-15 — bounded firm lifecycle accounting (v0.2.0.dev0)
+
+- **New opt-in feature:** `firm_lifecycle_enabled`, `firm_reentry_enabled`, and `firm_reentry_contribution_cents`; fixed firm IDs and owners, liquidation with tracked zero-salvage scrapping, actual-cash principal recoveries and owner distributions, noncash symmetrical principal defaults, recapitalization only from owner cash. Does **not** yet support genuinely new firm IDs or bankruptcies governed by legal/collateral priorities.
+- **Independent audit:** `src/civitas/firm_lifecycle_audit.py` replays entry/exit from a separate event stream, cross-checks cash capital contributions and physical disposal. Monetary/physical/book auditors updated; all prior trace and accounting behavior retained by default.
+- **Checkpoint:** new format 6 only for lifecycle scenarios. Loading formats 1–5 remains backwards compatible. Legacy scenario digest and default metric hashes verified identical to pre-lifecycle version (5-period comparison).
+- **Tests:** `PYTHONPATH=src:. PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q` **260 passed** (247 existing + 13 targeted lifecycle tests).
+- **Experiment:** 12 matched seeds × 2 arms × 24 periods = **24 simulations / 576 periods**. 8,467 cash events, 4,850 physical events, 24 lifecycle transitions. 12 liquidations and 12 funded re-entries; zero audit discrepancies. Engineered initial financial stress, not real-world credit or endogenous bankruptcy. See `research/v02_firm_lifecycle_experiment.md`.
+- **Version:** `0.2.0.dev0` experimental. `main` stays v0.1; publish only to `feature/v0.2-capital-accounting`. Full release review and multi-sector entry competition remain open.
+- **Next:** restrict insolvent dividend distributions, implement salvage/liquidation markets with bilateral physical title, then genuine new incorporation and dynamic ownership.
+
+---
+
 # Latest continuation checkpoint — unified book-value balance sheets (2026-11-15)
 
 - Version `0.2.0.dev0`; active development branch `feature/v0.2-capital-accounting`, stable `main` untouched. Previous verified development commit was `49683b324f2f36fdb91654bddc39ece8fa5a97f4`; this local checkpoint requires separately verifying GitHub publication.

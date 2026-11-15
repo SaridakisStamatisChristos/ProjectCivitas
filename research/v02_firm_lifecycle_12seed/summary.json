@@ -1,0 +1,17 @@
+{
+  "design": "synthetic matched-seed initial insolvency stress; not population bankruptcy incidence",
+  "seeds": 12,
+  "simulations": 24,
+  "audited_periods": 576,
+  "cash_events_replayed": 8467,
+  "physical_events_replayed": 4850,
+  "lifecycle_events_replayed": 24,
+  "total_liquidations": 12,
+  "total_reentries": 12,
+  "total_defaults_cents": 12588,
+  "mean_final_production_no_lifecycle": 7.833333333333333,
+  "mean_final_production_with_lifecycle": 4,
+  "paired_mean_final_output_difference": -3.8333333333333335,
+  "paired_approx_95pct_halfwidth": 0.2202386217379924,
+  "caveat": "Only internal model consistency; no independent empirical calibration; small exploratory seed count"
+}
