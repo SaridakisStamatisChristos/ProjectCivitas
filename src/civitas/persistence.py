@@ -184,6 +184,11 @@ def save_run(directory: str | Path, scenario: Scenario, periods: list,
             for period in periods:
                 for event in period.physical_transactions:
                     f.write(canonical_json({"step": period.metrics["step"], **event}) + "\n")
+        with (target / "book_balance_reports.jsonl").open("w", encoding="utf-8") as f:
+            for period in periods:
+                if period.book_balance_report is None:
+                    raise ValueError("traced period is missing independently audited book balance")
+                f.write(canonical_json(period.book_balance_report) + "\n")
     meta = {
         "model_version": __version__, "config_sha256": config_digest(scenario),
         "scenario": scenario.name, "seed": seed, "initial_step": initial_step,

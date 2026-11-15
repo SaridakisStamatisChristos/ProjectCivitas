@@ -1,8 +1,8 @@
 # CIVITAS v0.1 foundation + v0.2 experimental capital branch
 
-> **Experimental v0.2 physical reconciliation:** trace mode now independently audits firm inventories, raw resources, capital and historical-cost flows against cash settlement. [Audit methodology](docs/v02_physical_ledger_audit.md) · [Reproducible 20-world evidence](research/v02_physical_ledger_experiment.md). This branch is not a stable v0.2 release.
+> **Latest v0.2 development milestone:** independently auditable book-value household, firm and government balance sheets, with signed equity allocation, cross-sector consolidation, and period-by-period cash/physical/loan/earnings checks. Historical default metrics unchanged; 247 tests passed locally. See [book balance-sheet specification](docs/v02_book_balance_sheets.md) and [synthetic verification campaign](research/v02_book_balance_experiment.md). Stable `main` is unchanged.
 
-> **Published development branch (2026-11-14):** World Genesis and price/hiring research are on `feature/v0.2-capital-accounting`, source [5a1faad](https://github.com/SaridakisStamatisChristos/ProjectCivitas/commit/5a1faad9656a922ffc4b27dbb1b4179ab2765e84). Stable `main` stays v0.1. Version `0.2.0.dev0` remains experimental. See the [economy completion roadmap](docs/economy_completion_roadmap.md).
+> **Development checkpoint 2026-11-14:** independently audited physical inventory, resources, productive capital and historical cost, published on `feature/v0.2-capital-accounting` ([commit](https://github.com/SaridakisStamatisChristos/ProjectCivitas/commit/49683b324f2f36fdb91654bddc39ece8fa5a97f4)). **228 tests pass locally**. See [audit documentation](docs/v02_physical_ledger_audit.md) and [research evidence](research/v02_physical_ledger_experiment.md). Stable `main` unchanged.
 
 **Release status:** v0.1 remains the stable foundational baseline on `main`. The `feature/v0.2-capital-accounting` branch introduces an **experimental, not yet final** v0.2 development slice.
 
@@ -276,3 +276,24 @@ PYTHONPATH=src python -m civitas resume --checkpoint results/my_world/initial_ch
 ```
 
 For user-defined worlds, edit the example plans in `scenarios/world_genesis/` and use `genesis --plan PATH --output DIR`. Starting wealth distributions preserve total currency by default; savings are an allocation of existing wealth, not newly created money. See [World Genesis specification](docs/v02_world_genesis.md). New worlds are **synthetic**, not predictions or empirically calibrated representations of societies.
+
+If this archive is ahead of GitHub, publish the feature-only changes from a Git-authenticated Linux/macOS installation using `bash scripts/publish_world_genesis.sh`; it will refuse to write if the development branch has moved.
+
+### Opt-in monetary and bilateral-credit ledger audit (v0.2 development)
+
+For participant-level checking, add `--audit-ledger` to `civitas run`:
+
+```bash
+python -m civitas run --scenario scenarios/market.json --steps 12 \
+  --audit-ledger --output results/audited_market
+```
+
+This enables `transaction_trace=True` for that run. Every household, savings,
+firm and government transfer is independently replayed against the opening and
+closing balances; loan principal and noncash defaults are checked on both sides.
+The default simulation remains untraced for speed. Traced runs write both
+`transactions.jsonl` and `noncash_transactions.jsonl`. For a seeded three-mode
+world-regeneration campaign, see `research/run_ledger_closure.py`. The exact
+rules, scope and limitations are in [the v0.2 audit documentation](docs/v02_transaction_ledger_audit.md).
+This does **not** replace the remaining inventory, supply-chain and full
+balance-sheet accounting work required by the economy completion roadmap.

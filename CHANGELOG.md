@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0.dev0 — synthetic book-balance-sheet verification (2026-11-15)
+
+- Introduced explicit per-household cash, savings, loan claim and attributed book equity; per-firm cash, historic-cost inventory/capital, principal debt and signed equity; government cash and residual unowned ownership.
+- Independent national book-net-worth consolidation (no double counting), audited owner allocation and period-by-period transaction-derived firm earnings and household wealth changes.
+- Added checkpoint-based `balance-sheet` CLI with optional entity-level JSON detail and opt-in traced `book_balance_reports.jsonl`; existing default trajectory, metrics and config schema unchanged.
+- Verified 18 standard runs / 216 periods plus six two-period active-credit boundary cases, with checksum-verified full seeded re-execution and adversarial tests. No release or empirical validation claimed.
+
+
 ## 0.1.0 — 2026-11-13
 
 Initial foundational simulation kernel, integer-cent transaction ledger, households and agents, skill-dependent production and paid labor, renewable resource, sector inventory, posted-price consumer exchange, wage taxes and targeted transfers, firm owner dividends, fixed automation and scheduled shocks, four scenarios, deterministic checkpoint/replay, CSV/JSONL/SQLite outputs, replication CLI, tests and scientific documentation.
@@ -108,7 +116,6 @@ Added a resumable, exact-initial-state 12-cell credit/loan-maturity/savings/firm
 
 ## v0.2.0.dev0 — physical stock and historical-cost event tracing (2026-11-14)
 
-- Added opt-in independent replay of per-firm production, resource inputs, consumer goods transfers, capital conversions, depreciation and inventory cost-basis flows; linked goods to monetary payments.
-- Extended trace exports with `physical_transactions.jsonl` without changing historical scenario outputs.
-- 22 additional tests: 228 total passing locally. Synthetic audit research: 20 runs, 240 periods, 14,116 physical events, 24,814 cash transfers; deterministic rerun verified.
-- Remains an experimental milestone. Complete balance-sheet and institutional-finance work remains open.
+- Added independent per-firm stock/basis audit and physical trace export.
+- Published to the feature branch in commit `49683b3`. 228 tests passed locally; 20 research simulations and 240 checked periods.
+- Full balance-sheet and supplier title accounting remain incomplete.

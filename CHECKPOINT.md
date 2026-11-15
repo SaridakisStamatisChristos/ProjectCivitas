@@ -1,18 +1,31 @@
-# Verified v0.2 physical inventory and cost-ledger checkpoint — 2026-11-14
+# Latest continuation checkpoint — unified book-value balance sheets (2026-11-15)
 
-- Experimental development branch only: `feature/v0.2-capital-accounting`; stable `main` remains unchanged.
-- Opt-in physical event trace independently reconstructs **per-firm** finished inventory, inventory cost basis, productive capital, capital carrying value, renewable resources, and verifies cash settlement of sales and external capex. Audit rejects invalid resource intensity, price mismatches, incorrect proportional cost allocation, cost basis discrepancies and corrupted event order.
-- Local test suite: **228 passed**. Reproducible campaign: **20 synthetic runs / 240 periods / 14,116 physical events / 24,814 monetary transfers**, all checked identities zero; independent deterministic rerun produces SHA-256 `e5edd2a6941be0b46976f116b29e7f160e980a13abd7d20569eda3a69e25b6c0`.
-- Code and evidence: `src/civitas/physical_audit.py`, `tests/test_physical_audit.py`, `research/run_physical_closure.py`, `research/v02_physical_ledger_20/summary.json`, `docs/v02_physical_ledger_audit.md`, `research/v02_physical_ledger_experiment.md`.
-- Historical scenario outputs unchanged with `transaction_trace=False`. This is **not** full double-entry general ledger accounting, standards-compliant financial statements, empirical calibration, or a stable v0.2 release. Next work: rigorous consolidated firm/household/government balance sheets and supply chain/firm lifecycle accounting.
+- Version `0.2.0.dev0`; active development branch `feature/v0.2-capital-accounting`, stable `main` untouched. Previous verified development commit was `49683b324f2f36fdb91654bddc39ece8fa5a97f4`; this local checkpoint requires separately verifying GitHub publication.
+- Added `src/civitas/balance_sheet.py`, `tests/test_balance_sheet.py`, `tests/test_book_research.py`, `research/run_book_balance_closure.py`, `docs/v02_book_balance_sheets.md`, `research/v02_book_balance_experiment.md`, source code changes to `engine.py`, `persistence.py`, `cli.py` and complete per-period verified research records.
+- Fully traced periods now replay cash/principal and physical assets and check per-firm historical-cost earnings, per-household wealth flows, government/cash balances, owner-share attribution and consolidated book-net-worth non-double-counting. Trace-off historical metrics preserve their previous behavior. Checkpoint-based `balance-sheet` CLI exports compact/detailed book financial statements.
+- Synthetic research: 18 main runs × 12 = 216 periods, 26,311 cash transfers and 11,858 physical events, no discrepancies. Standard credit settings originate **zero** loans; supplemental six seeded two-period credit boundary cases originate and default 1,200 cents total, all auditable. All research records checksum-verified and independently re-executed.
+- These are **book costs and accounting residuals, not economic market values**. No automated bankruptcy, firm lifecycle, public debt, intermediary banking or intermediate-goods title accounting. No empirical calibration, not IFRS/GAAP, not a stable release. Tests/actual commit must be rechecked after publication.
 
 ---
 
-# Publication verification — 2026-11-14
+# Verified local physical + monetary audit checkpoint — 2026-11-14
 
-World Genesis and the previously unpushed price/hiring extension were published to `feature/v0.2-capital-accounting` in [commit 5a1faad](https://github.com/SaridakisStamatisChristos/ProjectCivitas/commit/5a1faad9656a922ffc4b27dbb1b4179ab2765e84). The 24 expected remote file hashes matched exactly; stable `main` remained at `85d9671978df6ce40a58e895aee5cb1d2a938a58`. The archived source passed **185 local tests**, and a 1,200-agent Hybrid world successfully passed `verify-world`. This is **not** a stable release or empirical validation. Publication-pending wording below is preserved as historical checkpoint material and is superseded by this entry.
+- Development branch: `feature/v0.2-capital-accounting`; stable `main` left unchanged; version remains `0.2.0.dev0`.
+- Previous cash ledger published as `e8e9f26e7b09b2cb6d87693ceaef12fc58981549`.
+- Latest physical ledger extension records per-firm production, cost basis, sales, depreciation, investment goods conversions and resource regeneration. It audits each firm and cross-checks corresponding posted prices and cash transfers. Historical scenarios remain default trace-off.
+- Local regression suite **228 passed**. Independent execution/replay **20 synthetic runs, 240 periods, 14,116 physical events, 24,814 cash transfers**, all tracked identities zero. Research source and SHA-256 evidence in `research/run_physical_closure.py` and `research/v02_physical_ledger_20/summary.json`.
+- Scope excludes full balance-sheet / GAAP compliance and intermediate-goods title accounting. Further release gates: comprehensive household/firm/government asset-liability statements, firm lifecycle, production chains, long-horizon robustness and external calibration. Do not merge into `main` or call v0.2 stable.
+- **Published and remotely verified:** commit `49683b324f2f36fdb91654bddc39ece8fa5a97f4` (`12/12` changed files exact), feature branch only; stable `main` unchanged.
 
-See [docs/economy_completion_roadmap.md](docs/economy_completion_roadmap.md).
+---
+
+# 2026-11-14 v0.2 accounting closure checkpoint (local archive)
+
+- Status: `0.2.0.dev0`, implementation only. Stable `main` intentionally untouched.
+- Added independent per-account cash/credit event replay and explicit noncash writeoff tracing, opt-in with `transaction_trace=True` or CLI `--audit-ledger`; default scenarios preserve their histories.
+- Audited 15 generated worlds ×12 periods: 180 periods, 69,425 cash transfers, 123,516,369 gross cents transferred, 0 identity failures; full suite **206 passed**.
+- New files: `src/civitas/ledger_audit.py`, `tests/test_ledger_audit.py`, `research/run_ledger_closure.py`, `research/v02_transaction_ledger_15/summary.json`, `research/v02_transaction_ledger_audit_experiment.md`, `docs/v02_transaction_ledger_audit.md`.
+- Remaining gate: extend event-level closure beyond monetary transfers and bilateral principal to physical inventory, historic-cost valuations and complete accounting statements. This is not scientific calibration.
 
 ---
 

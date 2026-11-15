@@ -1,0 +1,26 @@
+{
+  "design": "3 accounting mechanisms \u00d7 6 seeds \u00d7 12 periods, synthetic uncalibrated",
+  "population": 128,
+  "seeds": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13
+  ],
+  "periods_per_run": 12,
+  "runs": 18,
+  "audited_periods": 216,
+  "cash_transfers": 26311,
+  "physical_events": 11858,
+  "loan_originations_cents": 0,
+  "loan_defaults_cents": 0,
+  "max_book_equity_discrepancy_cents": 0,
+  "active_credit_runs": 6,
+  "active_credit_periods": 12,
+  "active_credit_originated_cents": 1200,
+  "active_credit_defaulted_cents": 1200,
+  "active_credit_sha256": "0561360eff6e20f292eb4c29c9c07ccffaabb8e3523baccbacc83ab51fdc01d3",
+  "records_sha256": "fd22c75c3dfeb7379b3095f4c45449df64f379f6f7064ccd67e7e8c141d0a23e"
+}

@@ -51,8 +51,24 @@ def main(argv: list[str] | None = None) -> int:
     genesis.add_argument("--force", action="store_true", help="replace an existing generated world")
     verify = sub.add_parser("verify-world", help="verify genesis plan, scenario, checkpoint and hashes")
     verify.add_argument("--world", required=True, type=Path)
+    balance = sub.add_parser("balance-sheet", help="reconstruct book-value statements from a saved checkpoint")
+    balance.add_argument("--checkpoint", required=True, type=Path)
+    balance.add_argument("--details", action="store_true", help="include every household and firm account")
+    balance.add_argument("--output", type=Path, help="write JSON report instead of printing")
     args = parser.parse_args(argv)
-    if args.command == "verify-world":
+    if args.command == "balance-sheet":
+        from civitas.balance_sheet import capture_book_snapshot
+        scenario, state, _ = checkpoint_load(args.checkpoint)
+        state.validate()
+        report = capture_book_snapshot(state, scenario).as_dict(details=args.details)
+        result = json.dumps(report, indent=2, allow_nan=False) + "\n"
+        if args.output is None:
+            print(result, end="")
+        else:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            args.output.write_text(result, encoding="utf-8")
+            print(str(args.output))
+    elif args.command == "verify-world":
         from civitas.world_genesis import verify_world
         print(json.dumps(verify_world(args.world), indent=2))
     elif args.command == "genesis":

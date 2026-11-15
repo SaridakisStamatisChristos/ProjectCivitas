@@ -26,6 +26,7 @@ class Period:
     # Separate trace: financial claim extinguishment is NOT a money transfer.
     noncash_transactions: list[dict] = field(default_factory=list)
     physical_transactions: list[dict] = field(default_factory=list)
+    book_balance_report: dict[str, int] | None = None
 
 
 class Simulation:
@@ -124,6 +125,8 @@ class Simulation:
             opening_ledger = capture_opening(s)
             from civitas.physical_audit import capture_physical_opening
             opening_physical = capture_physical_opening(s)
+            from civitas.balance_sheet import capture_book_snapshot
+            opening_book = capture_book_snapshot(s, c)
         ns = len(c.sectors)
         nfirm_sector = c.firms_per_sector
         nf = ns * nfirm_sector
@@ -746,6 +749,8 @@ class Simulation:
             audit_period(opening_ledger, s, period)
             from civitas.physical_audit import audit_physical_period
             audit_physical_period(opening_physical, s, period, c)
+            from civitas.balance_sheet import audit_book_period
+            period.book_balance_report = audit_book_period(opening_book, s, period, c)
         return period
 
     def run(self, steps: int | None = None) -> list[Period]:
