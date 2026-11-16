@@ -1,3 +1,13 @@
+# 2026-11-16 — creditor-protected dividend control (experimental v0.2)
+
+- Added `src/civitas/dividend_policy.py`; opt-in lifecycle firms now limit dividends to the minimum of the historical proposed dividend, positive cost-basis equity, and cash exceeding outstanding principal. Under the existing zero-salvage liquidator this stops owner payouts from consuming lender recovery cash.
+- Historical default remains unchanged (`firm_lifecycle_enabled=false`). No scenario format or metric schema changes, no new random draws.
+- Added `tests/test_dividend_policy.py` (8 tests) and `docs/v02_dividend_solvency.md` documenting conservative assumptions and the next liquidation-market gate.
+- **Executed locally:** 255 tests passed against the archived pre-lifecycle codebase (247 existing + 8 additional), including a synthetic debt stress integration test. The 260-test latest lifecycle branch was reviewed via GitHub source but has **not** been checked out and rerun as one combined tree here; do not claim 268 executed tests. Remote Git object integrity and commit must be verified after publication.
+- **Next:** independently audited salvage sales, lender priority, genuine new incorporation and full combined-branch CI before declaring the feature complete. This remains `0.2.0.dev0`, without empirical validation. Stable `main` must remain unchanged.
+
+---
+
 # 2026-11-15 — bounded firm lifecycle accounting (v0.2.0.dev0)
 
 - **New opt-in feature:** `firm_lifecycle_enabled`, `firm_reentry_enabled`, and `firm_reentry_contribution_cents`; fixed firm IDs and owners, liquidation with tracked zero-salvage scrapping, actual-cash principal recoveries and owner distributions, noncash symmetrical principal defaults, recapitalization only from owner cash. Does **not** yet support genuinely new firm IDs or bankruptcies governed by legal/collateral priorities.

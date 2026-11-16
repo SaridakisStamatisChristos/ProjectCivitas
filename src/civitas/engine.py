@@ -16,6 +16,7 @@ from civitas.state import State
 from civitas.economy_costs import allocated_basis, checked_add_i64
 from civitas.finance import CreditFlows, service_loans, available_credit, originate
 from civitas.market_rules import expected_sales, updated_price
+from civitas.dividend_policy import creditor_protected_dividend
 from civitas.firm_lifecycle import LifecycleFlows, close_insolvent, reenter
 
 
@@ -550,6 +551,16 @@ class Simulation:
             profit = int(firm_cost_basis_earnings[f] if c.cost_basis_accounting_enabled
                          else firm_profit_proxy[f])
             distributed = min(int(s.firm_cash[f]), math.floor(max(0, profit) * c.dividend_share))
+            # The opt-in liquidator assumes zero recovery for noncash assets.
+            # Preserve creditors' full outstanding principal before any owner payout.
+            if getattr(c, "firm_lifecycle_enabled", False):
+                distributed = creditor_protected_dividend(
+                    proposed_cents=int(distributed),
+                    cash_cents=int(s.firm_cash[f]),
+                    inventory_basis_cents=int(s.firm_inventory_basis_cents[f]),
+                    capital_basis_cents=int(s.firm_capital_basis_cents[f]),
+                    loan_principal_cents=int(s.firm_loan_liabilities_cents[f]),
+                )
             owners = s.firm_owner_households[f]
             if distributed and len(owners):
                 base, remainder = divmod(distributed, len(owners))
